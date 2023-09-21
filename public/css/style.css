@@ -5,7 +5,10 @@ body {
 .logo {
   display: inline;
 }
+
 .logo img {
+  margin-top: 5vh;
+  margin-left: 10vh;
   width: 200px;
   float: left;
   display: inline;
@@ -13,20 +16,27 @@ body {
 
 .logo-sub {
   float: left;
-}
-
-.top-pic-left img {
-  width: 328px;
-  height: 455px;
+  position: relative;
 }
 
 .top-pic-right img {
+  width: 328px;
+  height: 455px;
+  display: inline;
+  position: absolute;
+  top: 43vh;
+  right: 10vw;
+}
+
+.top-pic-left img {
   width: 319px;
   height: 305px;
   border-radius: 157px;
+  display: inline;
 }
 
 .mori-icon img {
   width: 100px;
   height: 100px;
 }
+

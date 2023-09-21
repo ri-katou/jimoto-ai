@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="/css/style.css">
   <title>jimotoai</title>
 </head>
@@ -39,12 +40,12 @@
       <div class="mori-icon-middle"></div>
     </div>
     <div class="page-bottom">
-    <div class="pics">
-      <div class="top-pic4"></div>
-      <div class="top-pic5"></div>
-      <div class="top-pic6"></div>
-      <div class="top-pic7"></div>
-      <div class="top-pic8"></div>
+    <div class="top-pics">
+      <img class="top-pic4" src="/image/niwa.jpg" alt="niwa">
+      <img class="top-pic5" src="/image/rever.jpg" alt="rever">
+      <img class="top-pic6" src="/image/lion.jpg" alt="lion">
+      <img class="top-pic7" src="/image/stone.jpg" alt="stone">
+      <img class="top-pic8" src="/image/daruma.jpg" alt="daruma">
     </div>
     <div class="yusei">
       <p>お店やグルメ、景色など&emsp;地元の素晴らしさは無限大！</p>

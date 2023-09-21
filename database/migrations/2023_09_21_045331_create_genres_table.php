@@ -13,10 +13,10 @@ class CreateGenresTable extends Migration
      */
     public function up()
     {
-        Schema::create('genres', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->unsignedInteger('id');
-            $table->string('genre_name', 255);
-            $table->integer('category_id')->unsigned();
+            $table->string('category_name', 255);
+            $table->integer('genre_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateGenresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('genres');
+        Schema::dropIfExists('categories');
     }
 }

@@ -13,9 +13,9 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->unsignedInteger('id');
-            $table->string('category_name', 255);
+            $table->string('genre_name', 255);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('genres');
     }
 }

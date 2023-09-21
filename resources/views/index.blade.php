@@ -14,7 +14,7 @@
     <div class="page-top">
     <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
     <div class="logo-sub">jimoto</br>ai</div>
-    <button class="login-btn" type="button">ログイン</button>
+    <label  class="login-btn"><button type="button"><a href="">ログイン</a></button></label>
     <div class="yusei">
       <p class="top-subtitle1">あなたが知ってる地元のお店やグルメ</p>
       <p class="top-subtitle2">あなただけが知ってる地元の景色</p>

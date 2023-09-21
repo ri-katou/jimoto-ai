@@ -1,0 +1,32 @@
+body {
+  background-color: #F7FFD5;
+}
+
+.logo {
+  display: inline;
+}
+.logo img {
+  width: 200px;
+  float: left;
+  display: inline;
+}
+
+.logo-sub {
+  float: left;
+}
+
+.top-pic-left img {
+  width: 328px;
+  height: 455px;
+}
+
+.top-pic-right img {
+  width: 319px;
+  height: 305px;
+  border-radius: 157px;
+}
+
+.mori-icon img {
+  width: 100px;
+  height: 100px;
+}

@@ -1,164 +1,186 @@
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 body {
-  background-color: #F7FFD5;
+    background-color: #f7ffd5;
 }
 
 img {
-  height: ;
+    height: ;
 }
 
 /* top */
 .logo {
-  width: 130px;
-  height: 130px;
-  margin-top: 5vh;
-  margin-left: 10vh;
+    width: 130px;
+    height: 130px;
+    margin-top: 5vh;
+    margin-left: 10vh;
 }
 
-
 .logo-sub {
-  float: left;
-  position: relative;
-  display: inline;
-  font-size: 1.7rem;
-  font-weight: bold;
+    float: left;
+    position: relative;
+    display: inline;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .top-pic-right img {
-  width: 20%;
-  height: 350px;
-  display: inline-block;
-  margin-top: 10%;
-  margin-left: 75%;
+    width: 20%;
+    height: 350px;
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 75%;
 }
 
 .top-pic-left img {
-  width: 25%;
-  height: auto;
-  border-radius: 157px;
-  display: inline-block;
-  margin-top: -20%;
-  margin-left: 5%;
+    width: 25%;
+    height: auto;
+    border-radius: 157px;
+    display: inline-block;
+    margin-top: -20%;
+    margin-left: 5%;
 }
 
 .top-middle-comment {
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: Yusei Magic;
-  margin-left: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Yusei Magic;
+    margin-left: 10%;
 }
 
 .top-pic-middle img {
-  width: 35%;
-  height: 40%;
-  border-radius: 150px;
-  margin-right: 5%;
-  display: inline;
-  float: right;
+    width: 35%;
+    height: 40%;
+    border-radius: 150px;
+    margin-right: 5%;
+    display: inline;
+    float: right;
 }
 
 .top-mori-icon img {
-  width: 7%;
-  height: 7%;
-  margin: 10% 50%;
+    width: 7%;
+    height: 7%;
+    margin: 10% 50%;
 }
 
 .middle-mori-icon img {
-  display: inline-flex;
-  width: 7%;
-  height: 7%;
-  margin: 10% 50%;
+    display: inline-flex;
+    width: 7%;
+    height: 7%;
+    margin: 10% 50%;
 }
 
 .login-btn button {
-  margin-top: 2vh;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #FDC709A3;
-  border-radius: 150px;
-  font-style: none;
-  display: flex;
-  width: 15%;
-  height: 10%;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  right: 10vh;
+    margin-top: 2vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #fdc709a3;
+    border-radius: 150px;
+    font-style: none;
+    display: flex;
+    width: 15%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    right: 10vh;
 }
 
 .top-bottom-comment {
-  position: relative;
+    position: relative;
 }
 
 .top-pic4 {
-  width: 15%;
-  height: auto;
-  display: inline;
-  position: absolute;
-  top: 250vh;
-  left: 30vh;
+    width: 15%;
+    height: auto;
+    display: inline;
+    position: absolute;
+    top: 250vh;
+    left: 30vh;
 }
 
 .top-pic5 {
-  width: 15%;
-  height: auto;
-  display: inline;
-  position: absolute;
-  top: 245vh;
-  left: 45vh;
+    width: 15%;
+    height: auto;
+    display: inline;
+    position: absolute;
+    top: 245vh;
+    left: 45vh;
 }
 
 .top-pic6 {
-  width: 15%;
-  height: auto;
-  display: inline;
-  position: absolute;
-  top: 240vh;
-  left: 60vh;
+    width: 15%;
+    height: auto;
+    display: inline;
+    position: absolute;
+    top: 240vh;
+    left: 60vh;
 }
 
 .top-pic7 {
-  width: 15%;
-  height: auto;
-  display: inline;
-  position: absolute;
-  top: 230vh;
-  left: 75vh;
+    width: 15%;
+    height: auto;
+    display: inline;
+    position: absolute;
+    top: 230vh;
+    left: 75vh;
 }
 
 .top-pic8 {
-  width: 15%;
-  height: auto;
-  display: inline;
-  position: absolute;
-  top: 225vh;
-  left: 85vh;
+    width: 15%;
+    height: auto;
+    display: inline;
+    position: absolute;
+    top: 225vh;
+    left: 85vh;
 }
 
 .top-bottom-comment {
-  font-size: 1.2rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .top-bottom {
-  display: flex;
-  margin-left: 10%;
-  margin-top: 50%;
+    display: flex;
+    margin-left: 10%;
+    margin-top: 50%;
 }
 
 .top-kaiin {
-  margin-left: 5%;
-  font-size: 1.5rem;
-  font-weight: bold;
+    margin-left: 5%;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 /*top*/
+
+/*login.blade.php*/
+.login {
+    margin: 0 auto 0 auto;
+    max-width: 568px;
+}
+
+.login_botan {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.login_email {
+    width: 100%;
+}
+
+.login_link {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+/*login.blade.php*/

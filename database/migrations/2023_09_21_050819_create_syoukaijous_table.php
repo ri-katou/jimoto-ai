@@ -14,7 +14,7 @@ class CreateSyoukaijousTable extends Migration
     public function up()
     {
         Schema::create('syoukaijous', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->text('title');
             $table->string('image1', 255);

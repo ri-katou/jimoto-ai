@@ -14,7 +14,7 @@ class CreateVisitedsTable extends Migration
     public function up()
     {
         Schema::create('visiteds', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('syoukaijou_id')->unsigned();
             $table->timestamps();

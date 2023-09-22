@@ -14,7 +14,7 @@ class CreateUserDetailsTable extends Migration
     public function up()
     {
         Schema::create('user_details', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->increments('id');
             $table->integer('municipalitie_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->string('icon_image', 255);

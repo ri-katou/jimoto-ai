@@ -2,7 +2,15 @@ a {
   text-decoration: none;
 }
 
+top
 .rapper {
+=======
+img {
+  max-width: 100%;
+}
+
+body {
+ main
   background-color: #F7FFD5;
 }
 
@@ -18,17 +26,12 @@ img {
 
 /* top */
 .logo {
-  display: inline;
-}
-
-.logo img {
+  width: 130px;
+  height: 130px;
   margin-top: 5vh;
   margin-left: 10vh;
-  width: 10%;
-  height: auto;
-  float: left;
-  display: inline;
 }
+
 
 .logo-sub {
   float: left;

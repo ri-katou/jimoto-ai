@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('index');
 });
-
-
+Route::view('profile/', 'profile');
+Route::view('register/', 'Auth/register');

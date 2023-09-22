@@ -14,10 +14,11 @@
 <body>
   <div class="rapper">
   <header>
+    <div class="header-container">
     <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
     <div><a href="register/">新規登録</a></div>
     <div class="btn-orange"><button>ログイン</button></div>
-    
+  </div>
   </header>
   <main>
     @yield('content')

@@ -15,9 +15,11 @@
   <header>
     <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
     <div><a href="register/">新規登録</a></div>
+    <div><button>ログイン</button></div>
     
   </header>
   <main>
+    @yield('content')
   </main>
 </body>
 

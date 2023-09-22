@@ -13,8 +13,9 @@
   <main>
     <div class="page-top">
     <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
-    <div class="logo-sub">jimoto</br>ai</div>
     <label  class="login-btn"><button type="button"><a href="">ログイン</a></button></label>
+    <br><br><br><br>
+    <div class="logo-sub">jimoto</br>&emsp;ai</div>
     <div class="yusei">
       <p class="top-subtitle1">あなたが知ってる地元のお店やグルメ</p>
       <p class="top-subtitle2">あなただけが知ってる地元の景色</p>
@@ -23,21 +24,22 @@
     <div class="pics">
       <div class="top-pic-right"><img src="/image/oze.jpg" alt="oze"></div>
       <div class="top-pic-left"><img src="/image/udon.jpg" alt="udon"></div>
+      </div>
+      <div class="top-icon">
+      <div class="top-mori-icon"><img src="/image/forest.svg" alt="forest"></div>
+    </div>
+    <div class="pics">
       <div class="top-pic-middle"><img src="/image/burige.jpg" alt="burige"></div>
     </div>
-  </div>
-    <div class="top-icon">
-      <div class="mori-icon"><img src="/image/forest.svg" alt="forest"></div>
-    </div>
     <div class="page-middle">
-    <div class="yusei">
-      <p>地元ですごい景色が撮れた！みんなにも見てほしい。</p>
-      <p>そんな地元の素晴らしさを発信できるサイトです。</p>
+      <div class="yusei">
+        <div class="top-middle-comment">地元ですごい景色が撮れた！みんなにも見てほしい。<br><br><br>
+      そんな地元の素晴らしさを発信できるサイトです。</div>
+    </div>
     </div>
   </div>
-    <div class="icon">
-      <div class="mori-icon-middle"><img src="" alt=""></div>
-      <div class="mori-icon-middle"></div>
+  <div class="top-icon">
+      <div class="middle-mori-icon"><img src="/image/forest.svg" alt="forest"></div>
     </div>
     <div class="page-bottom">
     <div class="top-pics">
@@ -48,13 +50,19 @@
       <img class="top-pic8" src="/image/daruma.jpg" alt="daruma">
     </div>
     <div class="yusei">
-      <p>お店やグルメ、景色など&emsp;地元の素晴らしさは無限大！</p>
-      <p>みんなで地元の素晴らしさを伝え合おう！！</p>
-      <p class="top-kaiin">会員登録はこちら↓</p>
+      <div class="top-bottom">
+      <div class="top-bottom-comment">
+      お店やグルメ、景色など&emsp;地元の素晴らしさは無限大！<br>
+      みんなで地元の素晴らしさを伝え合おう！！
+      </div>
+      <div class="top-kaiin">会員登録はこちら↓<br>
+      <button class="btn-orange" type="button">会員登録</button> 
+      </div>
+      </div>
     </div>
-    <button class="btn-orange" type="button">会員登録</button>
+    
   </div>
   </main>
-  <hooter></hooter>
+  <hooter>a</hooter>
 </body>
 </html>

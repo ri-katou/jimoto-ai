@@ -1,29 +1,49 @@
+/* 共通設定 */
+html {
+  font-size: 16px;
+}
 a {
     text-decoration: none;
 }
 
-top
-.rapper {
-=======
-img {
-    max-width: 100%;
-}
 
-body {
- main
+.rapper {
   background-color: #F7FFD5;
 }
 
+
+
+
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
+/* 共通パーツ */
+.link {
+  color: #339DFF;
+}
+.link a:hover{
+  color: #339DFF;
+  text-decoration: underline;
+}
+.link a:visited{
+  color: #339DFF;
 
 .vertical {
   writing-mode: vertical-rl;
   font-size: 1.7rem;
   margin-left: 44%;
+
 }
 
+.btn-orange {
+  font-weight: bold;
+  background-color: #FDC709A3;
+  width: 200px;
+  border-radius: 150px;
+}
+.btn-orange button {
+  
+}
 /* top */
 .logo {
     width: 130px;

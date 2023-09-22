@@ -2,19 +2,23 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   background-color: #F7FFD5;
 }
 
 .logo {
-  display: inline;
+  width: 130px;
+  height: 130px;
 }
 
 .logo img {
   margin-top: 5vh;
   margin-left: 10vh;
-  width: 10%;
-  height: auto;
+
   float: left;
   display: inline;
 }

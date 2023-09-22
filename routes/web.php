@@ -14,5 +14,6 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::view('profile/','profile');
 
 

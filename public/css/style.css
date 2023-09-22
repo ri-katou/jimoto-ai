@@ -2,16 +2,26 @@ a {
     text-decoration: none;
 }
 
+top
+.rapper {
+=======
 img {
     max-width: 100%;
 }
 
 body {
-    background-color: #f7ffd5;
+ main
+  background-color: #F7FFD5;
 }
 
 img {
-    height: ;
+  max-width: 100%;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  font-size: 1.7rem;
+  margin-left: 44%;
 }
 
 /* top */
@@ -30,12 +40,16 @@ img {
     font-weight: bold;
 }
 
-.top-pic-right img {
-    width: 20%;
-    height: 350px;
-    display: inline-block;
-    margin-top: 10%;
-    margin-left: 75%;
+.top-pic-right {
+  
+  text-align: right;
+  margin-top: -27%;
+  margin-right: 2%;
+}
+
+.top-pic-right img{
+  width: 20%;
+  height: 60vh;
 }
 
 .top-pic-left img {
@@ -99,48 +113,43 @@ img {
 }
 
 .top-pic4 {
-    width: 15%;
-    height: auto;
-    display: inline;
-    position: absolute;
-    top: 250vh;
-    left: 30vh;
+  width: 15%;
+  height: auto;
+  position: relative;
+  margin-top: 15%;
+  margin-left: 10%;
 }
 
 .top-pic5 {
-    width: 15%;
-    height: auto;
-    display: inline;
-    position: absolute;
-    top: 245vh;
-    left: 45vh;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -5vh;
+  left: 12vh;
 }
 
 .top-pic6 {
-    width: 15%;
-    height: auto;
-    display: inline;
-    position: absolute;
-    top: 240vh;
-    left: 60vh;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -10vh;
+  left: 25vh;
 }
 
 .top-pic7 {
-    width: 15%;
-    height: auto;
-    display: inline;
-    position: absolute;
-    top: 230vh;
-    left: 75vh;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -15vh;
+  left: 45vh;
 }
 
 .top-pic8 {
-    width: 15%;
-    height: auto;
-    display: inline;
-    position: absolute;
-    top: 225vh;
-    left: 85vh;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: -20vh;
+  left: 60vh;
 }
 
 .top-bottom-comment {
@@ -149,15 +158,22 @@ img {
 }
 
 .top-bottom {
-    display: flex;
-    margin-left: 10%;
-    margin-top: 50%;
+  display: flex;
+  margin-left: 13%;
+  margin-top: 3%;
 }
 
 .top-kaiin {
-    margin-left: 5%;
-    font-size: 1.5rem;
-    font-weight: bold;
+  margin-top: 20%;
+  margin-left: 20%;
+  font-size: 1.5rem;
+}
+
+.top-bottom-right {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10%;
+  margin-top: -20%;
 }
 
 /*top*/

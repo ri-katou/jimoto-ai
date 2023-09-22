@@ -13,15 +13,10 @@ body {
 .logo {
   width: 130px;
   height: 130px;
-}
-
-.logo img {
   margin-top: 5vh;
   margin-left: 10vh;
-
-  float: left;
-  display: inline;
 }
+
 
 .logo-sub {
   float: left;

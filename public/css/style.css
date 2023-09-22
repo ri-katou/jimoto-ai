@@ -1,48 +1,50 @@
 /* 共通設定 */
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 a {
     text-decoration: none;
 }
 
-
 .rapper {
-  background-color: #F7FFD5;
+    background-color: #f7ffd5;
 }
-
-
-
 
 img {
     max-width: 100%;
 }
 /* 共通パーツ */
 .link {
-  color: #339DFF;
+    color: #339dff;
 }
-.link a:hover{
-  color: #339DFF;
-  text-decoration: underline;
+.link a:hover {
+    color: #339dff;
+    text-decoration: underline;
 }
-.link a:visited{
-  color: #339DFF;
+.link a:visited {
+    color: #339dff;
+}
 
 .vertical {
-  writing-mode: vertical-rl;
-  font-size: 1.7rem;
-  margin-left: 44%;
-
+    writing-mode: vertical-rl;
+    font-size: 1.7rem;
+    margin-left: 44%;
 }
 
 .btn-orange {
-  font-weight: bold;
-  background-color: #FDC709A3;
-  width: 200px;
-  border-radius: 150px;
+    font-weight: bold;
+    background-color: #fdc709a3;
+    width: 200px;
+    border-radius: 150px;
 }
 .btn-orange button {
-  
+}
+
+.midasi {
+    font-size: 24px;
+}
+.form {
+    width: 100%;
 }
 /* top */
 .logo {
@@ -61,15 +63,14 @@ img {
 }
 
 .top-pic-right {
-  
-  text-align: right;
-  margin-top: -27%;
-  margin-right: 2%;
+    text-align: right;
+    margin-top: -27%;
+    margin-right: 2%;
 }
 
-.top-pic-right img{
-  width: 20%;
-  height: 60vh;
+.top-pic-right img {
+    width: 20%;
+    height: 60vh;
 }
 
 .top-pic-left img {
@@ -133,43 +134,43 @@ img {
 }
 
 .top-pic4 {
-  width: 15%;
-  height: auto;
-  position: relative;
-  margin-top: 15%;
-  margin-left: 10%;
+    width: 15%;
+    height: auto;
+    position: relative;
+    margin-top: 15%;
+    margin-left: 10%;
 }
 
 .top-pic5 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -5vh;
-  left: 12vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -5vh;
+    left: 12vh;
 }
 
 .top-pic6 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -10vh;
-  left: 25vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -10vh;
+    left: 25vh;
 }
 
 .top-pic7 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -15vh;
-  left: 45vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -15vh;
+    left: 45vh;
 }
 
 .top-pic8 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -20vh;
-  left: 60vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -20vh;
+    left: 60vh;
 }
 
 .top-bottom-comment {
@@ -178,22 +179,22 @@ img {
 }
 
 .top-bottom {
-  display: flex;
-  margin-left: 13%;
-  margin-top: 3%;
+    display: flex;
+    margin-left: 13%;
+    margin-top: 3%;
 }
 
 .top-kaiin {
-  margin-top: 20%;
-  margin-left: 20%;
-  font-size: 1.5rem;
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 1.5rem;
 }
 
 .top-bottom-right {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-left: 10%;
-  margin-top: -20%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 10%;
+    margin-top: -20%;
 }
 
 /*top*/
@@ -203,18 +204,16 @@ img {
     margin: 0 auto 0 auto;
     max-width: 568px;
 }
-
-.login_botan {
+.login-header {
+    margin: 0, 0, 30px, 0;
+}
+.login-botan {
     display: flex;
     text-align: center;
     justify-content: space-between;
 }
 
-.login_email {
-    width: 100%;
-}
-
-.login_link {
+.login-link {
     display: flex;
     text-align: center;
     justify-content: space-between;

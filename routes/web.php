@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::view('profile/', 'profile');
+Route::view('home/', 'home');
 Route::view('login/', 'Auth/login');
 
 Route::view('register/', 'Auth/register');
-

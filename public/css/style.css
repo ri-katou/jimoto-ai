@@ -44,7 +44,8 @@ img {
     font-size: 24px;
 }
 .form {
-    width: 100%;
+    width: 98%;
+    height: 1.5rem;
 }
 /* top */
 .logo {
@@ -199,18 +200,27 @@ img {
 
 /*top*/
 
-/*login.blade.php*/
+/*login.blade.php register.blade.php*/
 .login {
     margin: 0 auto 0 auto;
     max-width: 568px;
 }
 .login-header {
-    margin: 0, 0, 30px, 0;
+    margin-bottom: 55px;
+}
+
+.form-inner {
+    margin-bottom: 55px;
+}
+
+.login-form-top {
+    margin-bottom: 30px;
 }
 .login-botan {
     display: flex;
     text-align: center;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .login-link {
@@ -218,4 +228,49 @@ img {
     text-align: center;
     justify-content: space-between;
 }
-/*login.blade.php*/
+/*login.blade.php register.blade.php*/
+
+.home {
+    margin: 0 auto 0 auto;
+    max-width: 1129px;
+}
+
+.home-body {
+    margin-bottom: 26px;
+}
+
+.syoukaijou-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 39.5px;
+    height: 250px;
+}
+
+.syou {
+    background-color: #339dff;
+}
+
+.profile-icon {
+    background-color: #339dff;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin-bottom: 39.3px;
+}
+
+.syoukaijou-header {
+    margin-bottom: 39px;
+}
+
+.mottomiru {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-margin {
+    margin-bottom: 5px;
+}
+
+.mottomiru {
+    margin-bottom: 10px;
+}

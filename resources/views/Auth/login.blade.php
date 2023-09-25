@@ -4,12 +4,12 @@
   <div class="login_body">
     <div class="midasi login-header">ログイン</div>
     <div class="login_form">
-      <div>
-        <div>メールアドレスを入力してください</div>
-        <input type="email" class="form">
+      <div class="form_inner">
+        <div class="login_form_top">メールアドレスを入力してください</div>
+        <input type=" email" class="form">
       </div>
-      <div>
-        <div>パスワードを入力してください</div>
+      <div class="form_inner">
+        <div class="login_form_top">パスワードを入力してください</div>
         <input type="password" class="form">
       </div>
     </div>

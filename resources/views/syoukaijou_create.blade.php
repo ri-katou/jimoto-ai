@@ -12,7 +12,7 @@
   <div><textarea name="title" id="" cols="80" rows="1"></textarea></div>
 </div>
 <div class="syoukaijou-main">
-  <div>本文（必須）</div>
+  <div class="syoukaijou-honbun">本文（必須）</div>
   <div class=""><textarea name="main" id="" cols="80" rows="20"></textarea></div>
 </div>
 <div class="syoukaijou-pic">
@@ -32,7 +32,7 @@
   </div>
   <div class="syoukaijou-area"></div>
   <div class="syoukaijou-area-title">エリア</div>
-    <div class="">tag</div>
+  <div class="">tag</div>
 </div>
 <div class="syoukaijou-supot">
   <div class="syoukaijou-supot-title">スポット情報</div>

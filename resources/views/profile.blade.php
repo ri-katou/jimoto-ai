@@ -1,11 +1,13 @@
 @extends('layout')
 @section('content')
     <div class="profile">
-      <div class="profile-image-container">
-        <div class="profile-myimage profile-icon"><img src="" alt="myimage"></div>
-        <div class="profile-edit-link">[<a href="#">編集</a>]</div>
-      </div>
-        <div class="profile-nickname">DBから拾う</div>
+        <div class="profile-container">
+            <div class="profile-image">
+                <div class="profile-myimage profile-icon"><img src="" alt="myimage"></div>
+                <div class="profile-edit-link link">[<a href="#">編集</a>]</div>
+            </div>
+            <div class="profile-nickname">DBから拾う</div>
+        </div>
         <div class="profile-email">
             <div class="profile-email-title underline-green">メールアドレス</div>
             <div class="profile-email-output">

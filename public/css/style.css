@@ -65,6 +65,10 @@ img {
     box-shadow: none;
     margin-top: 3px;
 }
+.underline-green {
+    display: inline;
+    border-bottom: 2px #12f128 solid;
+}
 /* header */
 header {
     margin: 0 5vh;
@@ -362,4 +366,110 @@ header {
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
     margin-right: 40%;
+}
+.syoukaijou-honbun {
+    margin-right: 45%;
+}
+.syoukaijou-pics {
+    display: flex;
+    column-gap: 10px;
+}
+.syoukaijou-jyanru-area {
+    display: flex;
+    justify-content: center;
+}
+.syoukaijou-jyanru {
+    margin-right: 20%;
+}
+.syoukaijou-supot-title {
+    font-size: 1.5rem;
+    margin-right: 40%;
+}
+.syoukaijou-supot-name {
+    margin-right: 36%;
+}
+.syoukaijou-supot-zyusyo {
+    margin-right: 45%;
+}
+.syoukaijou-supot-url {
+    margin-right: 45%;
+}
+.syoukaijou-supot-url-form {
+    margin-bottom: 2%;
+}
+.syoukaijou-bottom {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
+}
+/* profile */
+.profile {
+    margin: 0 auto;
+}
+.profile-container {
+    display: flex;
+    justify-content: center;
+}
+.profile-nickname {
+    font-size: 2rem;
+}
+
+/* syoukaijou_create */
+
+.syoukaijou_create {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    line-height: 2;
+}
+
+.syoukaijou-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.syoukaijou-daimei {
+    font-size: 1.5rem;
+    margin-right: 40%;
+}
+
+.syoukaijou-title-daimei {
+    margin-bottom: 1%;
+    margin-right: 40%;
+}
+.syoukaijou-honbun {
+    margin-right: 45%;
+}
+.syoukaijou-pics {
+    display: flex;
+    column-gap: 10px;
+}
+.syoukaijou-jyanru-area {
+    display: flex;
+    justify-content: center;
+}
+.syoukaijou-jyanru {
+    margin-right: 20%;
+}
+.syoukaijou-supot-title {
+    font-size: 1.5rem;
+    margin-right: 40%;
+}
+.syoukaijou-supot-name {
+    margin-right: 36%;
+}
+.syoukaijou-supot-zyusyo {
+    margin-right: 45%;
+}
+.syoukaijou-supot-url {
+    margin-right: 45%;
+}
+.syoukaijou-supot-url-form {
+    margin-bottom: 2%;
+}
+.syoukaijou-bottom {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
 }

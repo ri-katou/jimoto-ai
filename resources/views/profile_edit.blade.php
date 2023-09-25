@@ -9,6 +9,7 @@
             <div class="profile-nickname">DBから拾う</div>
         </div>
         <div class="profile-edit-content">
+          <form action="{{route('profile.edit')}}"></form>
             <div class="profile-edit-nickname">
                 <div class="profile-edit-nickname-title underline-green">現在のニックネーム</div>
                 <div class="profile-edit-now-nickname container">
@@ -19,7 +20,7 @@
                         </a>]
                     </div>
                 </div>
-                <input type="text" class="profile-edit-nickname-input form">
+                <input type="text" class="profile-edit-nickname-input form" name="nickname">
             </div>
             <div class="profile-email">
                 <div class="profile-email-title underline-green">メールアドレス</div>
@@ -31,7 +32,7 @@
                             編集する
                         </a>]</div>
                 </div>
-                <input type="text" class="profile-edit-email-input form">
+                <input type="text" class="profile-edit-email-input form" name="email">
             </div>
             <div class="profile-usereria">
                 <div class="profile-useereria-title underline-green">あなたのエリア</div>
@@ -39,6 +40,7 @@
                     <div class="profile-eria-output">
                         渋川市
                     </div>
+                    <input type="radio" name="eria">
                 </div>
             </div>
 

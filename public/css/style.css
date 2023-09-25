@@ -441,3 +441,38 @@ header {
   margin-right: 40%;
   
 }
+.syoukaijou-honbun {
+  margin-right: 45%;
+}
+.syoukaijou-pics {
+  display: flex;
+  column-gap: 10px;
+}
+.syoukaijou-jyanru-area {
+  display: flex;
+  justify-content: center;
+}
+.syoukaijou-jyanru {
+  margin-right: 20%;
+}
+.syoukaijou-supot-title {
+  font-size: 1.5rem;
+  margin-right: 40%;
+}
+.syoukaijou-supot-name {
+  margin-right: 36%;
+}
+.syoukaijou-supot-zyusyo {
+  margin-right: 45%;
+}
+.syoukaijou-supot-url {
+  margin-right: 45%;
+}
+.syoukaijou-supot-url-form {
+  margin-bottom: 2%;
+}
+.syoukaijou-bottom {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15%;
+}

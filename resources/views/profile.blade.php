@@ -24,10 +24,10 @@
         </div>
     </div>
     <div class="profile-botom-container">
-        <a href="#" class="btn-green">
+        <a href="{{route('profile.edit')}}" class="btn-green">
             編集する
         </a>
-        <div class="link profile-user-delete">退会する</div>
+        <a href="#" class="link profile-user-delete">退会する</a>
 
     </div>
 @endsection

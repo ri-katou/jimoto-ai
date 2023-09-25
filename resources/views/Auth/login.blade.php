@@ -3,19 +3,19 @@
 <div class="login">
   <div class="login_body">
     <div class="midasi login-header">ログイン</div>
-    <div class="login_form">
-      <div class="form_inner">
-        <div class="login_form_top">メールアドレスを入力してください</div>
+    <div class="login-form">
+      <div class="form-inner">
+        <div class="login-form-top">メールアドレスを入力してください</div>
         <input type=" email" class="form">
       </div>
-      <div class="form_inner">
-        <div class="login_form_top">パスワードを入力してください</div>
+      <div class="form-inner">
+        <div class="login-form-top">パスワードを入力してください</div>
         <input type="password" class="form">
       </div>
     </div>
     <div class="login-botan">
       <div class="return">戻る</div>
-      <div>OK</div>
+      <div><a href="" class="btn-green">OK</a></div>
     </div>
   </div>
   <div class="login-link">

@@ -12,7 +12,7 @@ a {
 
 .rapper {
     background-color: #f7ffd5;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 img {
@@ -69,6 +69,15 @@ img {
     display: inline;
     border-bottom: 2px #12f128 solid;
 }
+
+.midasi {
+    font-size: 24px;
+}
+.form {
+    width: 98%;
+    height: 1.5rem;
+}
+
 /* header */
 header {
     margin: 0 5vh;
@@ -327,7 +336,19 @@ header {
 }
 
 .syoukaijou-header {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 39px;
+}
+
+.icon-prof {
+    display: flex;
+    justify-content: center;
+}
+.home-icon-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mottomiru {
@@ -341,6 +362,43 @@ header {
 
 .mottomiru {
     margin-bottom: 10px;
+}
+
+.toukou {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 241px;
+}
+
+.icon-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 477px;
+    height: 136px;
+    border: 3px solid #b89d40;
+    background: #12f128;
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.serch-syoukaijou {
+    color: #f7ffd5;
+    font-size: 32px;
+}
+
+.letter-svg {
+    position: relative;
+    right: 27px;
+    width: 90px;
+    height: 90px;
+}
+
+.glass-svg {
+    position: absolute;
+    top: 330px;
+    right: 380px;
+    width: 90px;
+    height: 90px;
 }
 
 /* syoukaijou_create */

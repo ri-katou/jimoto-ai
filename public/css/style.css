@@ -2,17 +2,17 @@
 html {
   font-size: 16px;
 }
+* {
+  box-sizing: border-box;
+}
 a {
     text-decoration: none;
+    color: black;
 }
-
 
 .rapper {
   background-color: #F7FFD5;
 }
-
-
-
 
 img {
     max-width: 100%;
@@ -28,6 +28,7 @@ img {
 .link a:visited{
   color: #339DFF;
 }
+
 .vertical {
   writing-mode: vertical-rl;
   font-size: 1.7rem;
@@ -36,12 +37,71 @@ img {
 }
 
 .btn-orange {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
   font-weight: bold;
   background-color: #FDC709A3;
-  width: 200px;
   border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
+}
+.btn-orange:active {
+  box-shadow: none;
+  margin-top: 3px;
+}
+.btn-green {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
+.btn-green:active {
+  box-shadow: none;
+  margin-top: 3px;
+}
+.underline-green {
+  display: inline;
+  border-bottom: 2px #12F128 solid;
+}
+/* header */
+header {
+  margin: 0 5vh;
+  padding: 100px 0;
+  margin-bottom: 30px;
+}
+.header-container {
+  width: 95%;
+  margin: 0 5vh;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.header-not-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-top: 5vh;
+}
+/* top */
+.top-logo {
+    width: 150px;
+    height: 150px;
+    margin-left: 10vh;
+    padding-top: 5vh;
+}
 /* top */
 
 .vertical {
@@ -209,28 +269,80 @@ img {
 
 /*top*/
 
-/*login.blade.php*/
+/*login.blade.php register.blade.php*/
 .login {
-    margin: 0 auto 0 auto;
-    max-width: 568px;
+  margin: 0 auto 0 auto;
+  max-width: 568px;
+}
+.login-header {
+  margin-bottom: 55px;
 }
 
-.login_botan {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
+.form-inner {
+  margin-bottom: 55px;
 }
 
-.login_email {
-    width: 100%;
+.login-form-top {
+  margin-bottom: 30px;
+}
+.login-botan {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-.login_link {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
+.login-link {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
 }
-/*login.blade.php*/
+/*login.blade.php register.blade.php*/
+
+.home {
+  margin: 0 auto 0 auto;
+  max-width: 1129px;
+}
+
+.home-body {
+  margin-bottom: 26px;
+}
+
+.syoukaijou-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 39.5px;
+  height: 250px;
+}
+
+.syou {
+  background-color: #339dff;
+}
+
+.profile-icon {
+  background-color: #339dff;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin-bottom: 39.3px;
+}
+
+.syoukaijou-header {
+  margin-bottom: 39px;
+}
+
+.mottomiru {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-margin {
+  margin-bottom: 5px;
+}
+
+.mottomiru {
+  margin-bottom: 10px;
+}
 
 /* syoukaijou_create */
 
@@ -256,46 +368,108 @@ img {
   margin-bottom: 1%;
   margin-right: 40%;
 }
-
 .syoukaijou-honbun {
   margin-right: 45%;
 }
-
 .syoukaijou-pics {
   display: flex;
   column-gap: 10px;
 }
-
 .syoukaijou-jyanru-area {
   display: flex;
   justify-content: center;
 }
-
 .syoukaijou-jyanru {
   margin-right: 20%;
 }
-
 .syoukaijou-supot-title {
   font-size: 1.5rem;
   margin-right: 40%;
 }
-
 .syoukaijou-supot-name {
   margin-right: 36%;
 }
-
 .syoukaijou-supot-zyusyo {
   margin-right: 45%;
 }
-
 .syoukaijou-supot-url {
   margin-right: 45%;
 }
-
 .syoukaijou-supot-url-form {
   margin-bottom: 2%;
 }
+.syoukaijou-bottom {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15%;
+}
+/* profile */
+.profile {
+  margin: 0 auto;
+}
+.profile-container {
+  display: flex;
+  justify-content: center;
+}
+.profile-nickname {
+  font-size: 2rem;
+}
 
+/* syoukaijou_create */
+
+.syoukaijou_create {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  line-height: 2;
+}
+
+.syoukaijou-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.syoukaijou-daimei {
+  font-size: 1.5rem;
+  margin-right: 40%;
+}
+
+.syoukaijou-title-daimei {
+  margin-bottom: 1%;
+  margin-right: 40%;
+  
+}
+.syoukaijou-honbun {
+  margin-right: 45%;
+}
+.syoukaijou-pics {
+  display: flex;
+  column-gap: 10px;
+}
+.syoukaijou-jyanru-area {
+  display: flex;
+  justify-content: center;
+}
+.syoukaijou-jyanru {
+  margin-right: 20%;
+}
+.syoukaijou-supot-title {
+  font-size: 1.5rem;
+  margin-right: 40%;
+}
+.syoukaijou-supot-name {
+  margin-right: 36%;
+}
+.syoukaijou-supot-zyusyo {
+  margin-right: 45%;
+}
+.syoukaijou-supot-url {
+  margin-right: 45%;
+}
+.syoukaijou-supot-url-form {
+  margin-bottom: 2%;
+}
 .syoukaijou-bottom {
   display: flex;
   justify-content: center;

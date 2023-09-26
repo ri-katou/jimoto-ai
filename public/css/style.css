@@ -15,7 +15,6 @@ main{
 }
 .rapper {
   background-color: #F7FFD5;
-  height: 100%;
 }
 
 img {
@@ -86,6 +85,20 @@ input[submit] {
   border-bottom: #12F128 2px solid;
 }
 
+.btn-daidai {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background-color: #FF7A00;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
+}
+.btn-daidai:active {
+  box-shadow: none;
+  margin-top: 3px;
+}
 /* header */
 header {
   margin-bottom: 30px;
@@ -149,7 +162,6 @@ header {
   font-size: 1.7rem;
   margin-left: 44%;
 }
-
 
 
 .logo-sub {
@@ -513,6 +525,17 @@ header {
 .syoukaijou-honbun {
   margin-right: 45%;
 }
+
+#preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px silver;
+}
+
+.syoukaijou-pic-button {
+  margin-left: 22%;
+}
+
 .syoukaijou-pics {
   display: flex;
   column-gap: 10px;
@@ -524,6 +547,15 @@ header {
 .syoukaijou-jyanru {
   margin-right: 20%;
 }
+
+.syoukaijou-jyanru-title {
+  font-size: 1.5rem;
+}
+
+.syoukaijou-area-title {
+  font-size: 1.5rem;
+}
+
 .syoukaijou-supot-title {
   font-size: 1.5rem;
   margin-right: 40%;
@@ -544,4 +576,174 @@ header {
   display: flex;
   justify-content: center;
   margin-bottom: 15%;
+}
+
+/* preview */
+
+.preview-top {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-daimei {
+  font-size: 1.5rem;
+  margin-right: 35%;
+  margin-bottom: 3%;
+}
+
+.preview-naiyou {
+  margin-left: 15%;
+  margin-bottom: 3%;
+}
+
+.syoukaijou {
+  text-align: left;
+  margin: 0 15%;
+  padding: 5%;
+  background-color: #FFFFFF;
+  border-radius: 64px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.syoukaijou-day {
+  margin-right: 20%;
+  margin-bottom: 3%;
+}
+
+.preview-syoukaijou-top {
+  display: flex;
+  justify-content: left;
+}
+
+.janru-area {
+  display: flex;
+  justify-content: right;
+}
+
+.syoukaijou-title {
+  font-size: 1.5rem;
+  margin-right: 40%;
+  margin-bottom: 3%;
+}
+
+.preview-main {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-honbun {
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+.preview-spot-info {
+  text-align: left;
+}
+
+.preview-spot {
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+}
+
+.spot-info {
+  font-size: 1.5rem;
+  margin-right: 75%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+.preview-spot-info {
+  margin-left: 20%;
+}
+
+.preview-sam {
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-bottom: 3%;
+  font-size: 1.5rem;
+}
+ 
+.syoukaijou-sam {
+  margin-left: 15%;
+  width: 350px;
+  height: 250px;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3%;
+}
+
+.preview-syoukaijou-top-sam {
+  margin-top: 10px;
+}
+
+.sum-top {
+  display: flex;
+  justify-content: left;
+}
+
+.syoukaijou-title-sam {
+  margin-left: 3%;
+  font-size: 1.5rem;
+}
+
+.preview-main-sam {
+  display: flex;
+  justify-content: left;
+}
+
+.janru-area-sam {
+  display: flex;
+  justify-content: right;
+}
+
+.preview-bottom {
+  text-align: center;
+}
+
+.preview-button-sub {
+  margin-top: 2%;
+  margin-left: 43%;
+  margin-bottom: 3%;
+}
+
+.preview-pic1 {
+  height: 250px;
+  width: 150px;
+}
+
+.preview-pic1-sam {
+  height: 70px;
+  width: 50px;
+}
+
+/* disp */
+.disp-top {
+  display: flex;
+  justify-content: center;
+}
+
+.disp-delete{
+  display: block;
+  color: #FFFFFF;
+  background: #F00;
+  padding-top: 5%;
+  width: 200px;
+  height: 40px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.disp-delete:active {
+  box-shadow: none;
+  margin-top: 3px;
+}
+
+.disp-retrune {
+  margin-right: 30%;
+  margin-bottom: 5%;
+}
+
+.disp-map {
+  margin: 20%;
 }

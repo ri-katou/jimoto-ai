@@ -3,19 +3,22 @@
 <div class="login">
   <div class="login_body">
     <div class="midasi login-header">ログイン</div>
-    <div class="login-form">
-      <div class="form-inner">
-        <div class="login-form-top">メールアドレスを入力してください</div>
-        <input type=" email" class="form">
+    <form action="{{ route('login') }}" method="post">
+      @csrf
+      <div class="login-form">
+        <div class="form-inner">
+          <div class="login-form-top">メールアドレスを入力してください</div>
+          <input type=" email" class="form" name="email">
+        </div>
+        <div class="form-inner">
+          <div class="login-form-top">パスワードを入力してください</div>
+          <input type="password" class="form" name="password">
+        </div>
       </div>
-      <div class="form-inner">
-        <div class="login-form-top">パスワードを入力してください</div>
-        <input type="password" class="form">
-      </div>
-    </div>
-    <div class="login-botan">
+    </form>
+    <div class="login-btn-space">
       <div class="return">戻る</div>
-      <div><a href="" class="btn-green">OK</a></div>
+      <div><input type="submit" class="btn-green">OK</div>
     </div>
   </div>
   <div class="login-link">

@@ -78,6 +78,10 @@ img {
     height: 1.5rem;
 }
 
+.return {
+    display: flex;
+    align-items: center;
+}
 /* header */
 header {
     margin: 0 5vh;
@@ -293,7 +297,7 @@ header {
 .login-form-top {
     margin-bottom: 30px;
 }
-.login-botan {
+.login-btn-space {
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -400,6 +404,49 @@ header {
     width: 90px;
     height: 90px;
 }
+
+/*register_check.blade.php*/
+.register-check-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.register-check-part {
+    margin-bottom: 10px;
+}
+
+.register-check {
+    margin-bottom: 30px;
+}
+.register-check-space {
+    margin-bottom: 20px;
+}
+
+.register-check-point {
+    margin-left: 20px;
+}
+
+.area-select {
+    display: flex;
+    justify-content: center;
+    gap: 72px;
+}
+
+.area-select-top {
+    margin-bottom: 30px;
+}
+
+.area-choice {
+    margin: 0 0 23px 120px;
+}
+
+.area-teach {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 91px;
+}
+/*register_check.blade.php*/
 
 /* syoukaijou_create */
 

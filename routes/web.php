@@ -11,14 +11,23 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
     return view('index');
 });
 
-// Auth::routes();
+// Route::get('test/', 'UserEriaContoroller@index');
+
+Route::get('user/area_select/', 'UserEriaContoroller@index');
+
+Auth::routes();
 Route::view('profile/', 'profile');
 Route::view('home/', 'home');
-Route::view('login/', 'Auth/login');
 Route::view('syoukaijou/', 'syoukaijou_create');
 
-Route::view('register', 'Auth/register');
+// Route::view('area_select/', 'area_select');
+
+
+// Route::view('register', 'auth/register');
+Route::view('register_check', 'auth/register_check');

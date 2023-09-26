@@ -22,9 +22,9 @@
       </div>
     </div>
   </div>
-  <div class="login-link">
-    <div class="link"><a href="">登録済の方はこちら!</a></div>
-    <div>OK</div>
+  <div class="login-btn-space">
+    <div class="return">戻る</div>
+    <div><a href="" class="btn-green">OK</a></div>
   </div>
 </div>
 

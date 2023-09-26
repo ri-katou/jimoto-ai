@@ -18,8 +18,14 @@ Route::get('/', function () {
 
 Route::view('profile/', 'profile');
 Route::view('login/', 'Auth/login');
+Route::view('syoukaijou/', 'syoukaijou_create');
+
+Route::get('profile/edit/','ProfileController@showProfileEdit')->name('profile.edit');
+Route::post('profile/edit/','ProfileController@profileEditCheck');
+
 Route::view('create/', 'syoukaijou_create');
 Route::view('create/preview', 'preview');
 Route::view('syoukaijou', 'syoukaijou_disp');
+
 Route::view('register/', 'Auth/register');
 

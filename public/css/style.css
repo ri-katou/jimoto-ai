@@ -9,7 +9,10 @@ a {
     text-decoration: none;
     color: black;
 }
-
+main{
+  margin: 0 auto;
+  max-width: 1024px;
+}
 .rapper {
   background-color: #F7FFD5;
 }
@@ -18,6 +21,9 @@ img {
     max-width: 100%;
 }
 /* 共通パーツ */
+.container {
+  display: flex;
+}
 .link {
   color: #339DFF;
 }
@@ -27,6 +33,10 @@ img {
 }
 .link a:visited{
   color: #339DFF;
+}
+input[submit] {
+  border: none;
+  text-decoration: none;
 }
 
 .vertical {
@@ -91,29 +101,51 @@ img {
 }
 /* header */
 header {
-  margin: 0 5vh;
-  padding: 100px 0;
   margin-bottom: 30px;
+  height: 30vh;
 }
 .header-container {
   width: 95%;
-  margin: 0 5vh;
+  margin: 5vh 10vh 0 10vh;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
 }
+.header-login,
 .header-not-login {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
 }
+.header-login {
+  gap: 3rem;
+}
+.header-btn a {
+  margin-bottom: 1rem;
+}
 .logo {
-  width: 150px;
-  height: 150px;
-  margin-top: 5vh;
+  width: 130px;
+  height: 130px;
+}
+.header-login-profile {
+  margin-bottom: 1.5rem;
+}
+.header-profile-myimag {
+  background-color: #339dff;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+.error-message {
+  color: red;
+}
+/* footer */
+.footer {
+  height: 100px;
 }
 /* top */
 .top-logo {
@@ -333,7 +365,7 @@ header {
   width: 200px;
   height: 200px;
   border-radius: 100%;
-  margin-bottom: 39.3px;
+  margin-bottom: 2rem;
 }
 
 .syoukaijou-header {
@@ -438,7 +470,8 @@ header {
   margin-bottom: 2rem;
 }
 .profile-email-output,
-.profile-eria-output {
+.profile-eria-output,
+.profile-edit-nickname-output {
   font-size: 1.5rem;
 }
 .profile-botom-container {
@@ -446,6 +479,22 @@ header {
   justify-content: center;
   align-items: center;
   gap: 5rem;
+}
+/* profile_edit */
+.profile-edit-content {
+  max-width: 40vw;
+  margin: 0 auto 100px auto;
+}
+.profile-edit-now-nickname,
+.profile-edit-nickname-title,
+.profile-edit-email-input,
+.profile-edit-nickname-input {
+  margin-bottom: 2rem;
+}
+.profile-edit-now-eria,
+.profile-edit-now-nickname,
+.profile-edit-now-eria {
+  align-items: center;
 }
 
 

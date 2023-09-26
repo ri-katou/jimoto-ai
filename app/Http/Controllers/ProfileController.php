@@ -10,7 +10,7 @@ class ProfileController extends Controller
     public function showProfileEdit(){
         return view('profile_edit');
     }
-    public function ProfileEditCeck(EditProfile $request){
+    public function profileEditCheck(EditProfile $request){
         return view('profile_edit_check',
         ['input' => $request ]);
     }

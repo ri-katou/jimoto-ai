@@ -9,7 +9,10 @@ a {
     text-decoration: none;
     color: black;
 }
-
+main{
+  margin: 0 auto;
+  max-width: 1024px;
+}
 .rapper {
   background-color: #F7FFD5;
   height: 100%;
@@ -31,6 +34,10 @@ img {
 }
 .link a:visited{
   color: #339DFF;
+}
+input[submit] {
+  border: none;
+  text-decoration: none;
 }
 
 .vertical {
@@ -78,31 +85,54 @@ img {
   border-left: #12F128 6px bold;
   border-bottom: #12F128 2px solid;
 }
+
 /* header */
 header {
-  margin: 0 5vh;
-  padding: 100px 0;
   margin-bottom: 30px;
+  height: 30vh;
 }
 .header-container {
   width: 95%;
-  margin: 0 5vh;
+  margin: 5vh 10vh 0 10vh;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
 }
+.header-login,
 .header-not-login {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
 }
+.header-login {
+  gap: 3rem;
+}
+.header-btn a {
+  margin-bottom: 1rem;
+}
 .logo {
-  width: 150px;
-  height: 150px;
-  margin-top: 5vh;
+  width: 130px;
+  height: 130px;
+}
+.header-login-profile {
+  margin-bottom: 1.5rem;
+}
+.header-profile-myimag {
+  background-color: #339dff;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+.error-message {
+  color: red;
+}
+/* footer */
+.footer {
+  height: 100px;
 }
 /* top */
 .top-logo {

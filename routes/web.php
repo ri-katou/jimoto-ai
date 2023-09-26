@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::view('profile/', 'profile');
 Route::view('login/', 'Auth/login');
 Route::view('syoukaijou/', 'syoukaijou_create');
+
 Route::get('profile/edit/','ProfileController@showProfileEdit')->name('profile.edit');
 Route::post('profile/edit/','ProfileController@profileEditCheck');
 

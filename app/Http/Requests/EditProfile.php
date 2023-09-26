@@ -24,8 +24,8 @@ class EditProfile extends FormRequest
     public function rules()
     {
         return [
-            'nickname'=>'min:2'| 'max:255',
-            'email'=> 'max:255'|'email',
+            'nickname'=> 'max:255 | min:2',
+            'email'=> 'max:255 | email',
         ];
     }
 }

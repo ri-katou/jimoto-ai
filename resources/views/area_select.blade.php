@@ -3,7 +3,7 @@
 
 <div class="area-choice midasi">エリア選択画面</div>
 
-<div class="area-teach">あなたの素敵な地元を教えてください!</div>
+<div class="area-teach">あなたの素敵な地元を教えてください!!</div>
 
 <div class="area-select">
   <div class="toubu">

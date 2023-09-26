@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::view('profile/', 'profile');
 Route::view('login/', 'Auth/login');
-Route::view('syoukaijou/', 'syoukaijou_create');
-
+Route::view('create/', 'syoukaijou_create');
+Route::view('create/preview', 'preview');
 Route::view('register/', 'Auth/register');
 

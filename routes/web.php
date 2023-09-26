@@ -20,5 +20,6 @@ Route::view('profile/', 'profile');
 Route::view('login/', 'Auth/login');
 Route::view('create/', 'syoukaijou_create');
 Route::view('create/preview', 'preview');
+Route::view('syoukaijou', 'syoukaijou_disp');
 Route::view('register/', 'Auth/register');
 

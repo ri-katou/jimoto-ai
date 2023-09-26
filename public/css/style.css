@@ -75,6 +75,7 @@ input[submit] {
   box-shadow: none;
   margin-top: 3px;
 }
+
 .underline-green {
   width: max-content;
   border-bottom: 2px #12F128 solid;
@@ -83,6 +84,22 @@ input[submit] {
 .block-green {
   border-left: #12F128 6px bold;
   border-bottom: #12F128 2px solid;
+}
+
+
+.btn-gray {
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background-color: #D9D9D9;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
+}
+.btn-gray:active {
+  box-shadow: none;
+  margin-top: 3px;
 }
 
 .btn-daidai {
@@ -99,6 +116,30 @@ input[submit] {
   box-shadow: none;
   margin-top: 3px;
 }
+
+.area-tag {
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid rgba(204, 6, 253, 0.22);
+  background: rgba(204, 6, 253, 0.22);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 35px;
+}
+
+.janru-tag {
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid #FFCD1E;
+  background: rgba(253, 199, 6, 0.30);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 35px;
+}
+
+
 /* header */
 header {
   margin-bottom: 30px;
@@ -663,14 +704,21 @@ header {
   font-size: 1.5rem;
 }
  
-.syoukaijou-sam {
+.syoukaijou-day-sam {
+  margin: 2%;
+}
+
+.syoukaijou-sam-disp {
   margin-left: 15%;
+  margin-bottom: 3%;
+}
+
+.syoukaijou-sam {
   width: 350px;
   height: 250px;
   border-radius: 20px;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 3%;
 }
 
 .preview-syoukaijou-top-sam {
@@ -683,7 +731,8 @@ header {
 }
 
 .syoukaijou-title-sam {
-  margin-left: 3%;
+  margin-top: 2%;
+  margin-left: 10%;
   font-size: 1.5rem;
 }
 
@@ -695,6 +744,7 @@ header {
 .janru-area-sam {
   display: flex;
   justify-content: right;
+  margin-top: 3%;
 }
 
 .preview-bottom {
@@ -717,7 +767,21 @@ header {
   width: 50px;
 }
 
+.honbun-sum {
+  margin-top: 10%;
+}
+
+.preview-main-sam {
+  margin-top: 3%;
+}
+
+
 /* disp */
+
+
+
+
+
 .disp-top {
   display: flex;
   justify-content: center;
@@ -746,4 +810,24 @@ header {
 
 .disp-map {
   margin: 20%;
+}
+
+/* jimoto spot */
+
+.jimoto-search-top {
+  display: flex;
+  justify-content: center;
+  width: 30;
+  margin-bottom: 5%;
+}
+
+.jimoto-search {
+  margin-right: 10%;
+}
+
+.janru-area-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  z-index: 2;
 }

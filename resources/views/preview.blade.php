@@ -51,6 +51,7 @@
     </div>
 
     <div class="preview-sam">サムネイルイメージ</div>
+    <div class="syoukaijou-sam-disp">
     <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
@@ -58,7 +59,7 @@
         <div class="syoukaijou-title-sam">タイトル</div>
         </div>
         <div class="janru-area-sam">
-          <div class="jyanru"> ジャンル：</div><div class="jyanru-sub">ラメン</div>
+          <div class="jyanru"> ジャンル：</div><div class="jyanru-sub">ラーメン</div>
           <div class="area"> エリア：</div><div class="area-sub">渋川</div>
         </div>
       </div>
@@ -77,6 +78,7 @@
           <div class="ittemitai"></div>
          <div class="ittayo"></div>
         </div>
+      </div>
       </div>
     </div>
 

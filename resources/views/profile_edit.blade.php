@@ -17,9 +17,14 @@
                     <div class="profile-edit-now-nickname container">
                         <div class="profile-edit-nickname-output">群馬　太郎</div>
                         <div>[
-                            <a href="#" class="link edit-btn">
+                            <strong class="link edit-btn">
                                 編集する
-                            </a>]
+                            </strong>]
+                        </div>
+                        <br>
+                        <div class="hidden">
+                            <input type="text" class="profile-edit-nickname-input form" name="nickname"
+                                value="{{ old('nickname') }}">
                         </div>
                     </div>
                     @if ($errors->any())
@@ -31,7 +36,6 @@
                             </ul>
                         </div>
                     @endif
-                    <input type="text" class="profile-edit-nickname-input form" name="nickname" value="{{old('nickname')}}">
                 </div>
                 <div class="profile-email">
                     <div class="profile-email-title underline-green">メールアドレス</div>
@@ -39,10 +43,15 @@
                         <div class="profile-email-output">
                             email@mail.com
                         </div>
-                        <div>[<a href="#" class="link edit-btn">
+                        <div>[<strong class="link edit-btn">
                                 編集する
-                            </a>]</div>
+                            </strong>]</div>
                     </div>
+                    <div class="hidden">
+                        <input type="text" class="profile-edit-email-input form" name="email"
+                            value="{{ old('email') }}">
+                    </div>
+
                     @if ($errors->any())
                         <div class="error-message">
                             <ul>
@@ -52,7 +61,7 @@
                             </ul>
                         </div>
                     @endif
-                    <input type="text" class="profile-edit-email-input form" name="email" value="{{old('email')}}">
+
                 </div>
                 <div class="profile-usereria">
                     <div class="profile-useereria-title underline-green">あなたのエリア</div>

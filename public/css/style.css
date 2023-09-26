@@ -85,7 +85,9 @@ input[submit] {
   border-left: #12F128 6px bold;
   border-bottom: #12F128 2px solid;
 }
-
+.hidden {
+  display: none;
+}
 /* header */
 header {
   margin-bottom: 30px;

@@ -440,7 +440,9 @@ header {
   justify-content: center;
   margin-bottom: 2%;
 }
-
+.syoukaijou-day {
+  white-space: nowrap;
+}
 .syoukaijou-daimei {
   font-size: 1.5rem;
   margin-right: 40%;
@@ -623,7 +625,9 @@ header {
 
 .preview-top {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 15%;
+  margin-right: -30%;
 }
 
 .preview-daimei {
@@ -639,7 +643,7 @@ header {
 
 .syoukaijou {
   text-align: left;
-  margin: 0 15%;
+  margin: 0 5%;
   padding: 5%;
   background-color: #FFFFFF;
   border-radius: 64px;
@@ -657,9 +661,11 @@ header {
 }
 
 .janru-area {
+  margin-left: 40%;
   display: flex;
   justify-content: right;
 }
+
 
 .syoukaijou-title {
   font-size: 1.5rem;
@@ -669,12 +675,35 @@ header {
 
 .preview-main {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+}
+
+.preview-pic1 img{
+  margin-top: 15%;
+  margin-right: 20%;
+  max-width: 500px;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.preview-pics-sub {
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
 }
 
 .preview-honbun {
   margin-left: 5%;
   margin-bottom: 3%;
+}
+
+.syoukaijou-text {
+  width: 480px;
+    max-height: 400px;
+    word-wrap: break-word;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
 }
 
 .preview-spot-info {
@@ -694,12 +723,12 @@ header {
 }
 
 .preview-spot-info {
-  margin-left: 20%;
+  margin-left: 5%;
 }
 
 .preview-sam {
   margin-top: 5%;
-  margin-left: 20%;
+
   margin-bottom: 3%;
   font-size: 1.5rem;
 }
@@ -757,22 +786,27 @@ header {
   margin-bottom: 3%;
 }
 
-.preview-pic1 {
-  height: 250px;
-  width: 150px;
-}
 
 .preview-pic1-sam {
-  height: 70px;
-  width: 50px;
+  margin-left: 10%;
+  height: 100px;
+  width: 100px;
 }
 
-.honbun-sum {
-  margin-top: 10%;
-}
+
 
 .preview-main-sam {
   margin-top: 3%;
+}
+
+.preview-sam-all {
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+.preview-bottom-text {
+  font-weight: bold;
+  margin-left: 5%;
 }
 
 
@@ -784,10 +818,13 @@ header {
 
 .disp-top {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 15%;
+  margin-bottom: 3%;
 }
 
 .disp-delete{
+  margin-left: 200%;
   display: block;
   color: #FFFFFF;
   background: #F00;
@@ -830,4 +867,41 @@ header {
   justify-content: center;
   margin-bottom: 5%;
   z-index: 2;
+}
+
+.syoukaijou-link {
+  width: 350px;
+  height: 250px;
+}
+
+.jimoto-sam {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+}
+
+.honbun-sum {
+    width: 220px;
+    max-height: 95px;
+    word-wrap: break-word;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
+}
+
+.fav_btn-ittemitai {
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+.fav-btn-ittayo {
+  margin-top: -27%;
+  margin-left: 50%;
+}
+
+.ittayo-math {
+  margin-left: 15px;
+}
+
+.ittemitai-math {
+  margin-left: 15px;
 }

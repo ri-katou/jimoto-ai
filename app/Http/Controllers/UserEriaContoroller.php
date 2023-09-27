@@ -11,6 +11,7 @@ class UserEriaContoroller extends Controller
 {
     public function index()
     {
+        dd('bbbb');
         // すべての市区町村を取得する
         // Area::find(1)->municipalities()->get();
         $tone_numata = Area::find(1)->municipalities()->get();

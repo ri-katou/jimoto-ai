@@ -18,12 +18,12 @@
     </form>
     <div class="login-btn-space">
       <div class="return">戻る</div>
-      <div><input type="submit" class="btn-green">OK</div>
+      <div><input type="submit" class="btn-green" value="OK"></div>
     </div>
   </div>
   <div class="login-link">
     <div class="link"><a href="">パスワードを忘れた場合はこちら</a></div>
-    <div class="link"><a href="">新規登録はこちら</a></div>
+    <div class="link"><a href="{{route('register')}}">新規登録はこちら</a></div>
   </div>
 </div>
 

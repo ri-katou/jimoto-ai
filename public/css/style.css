@@ -431,6 +431,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 72px;
+    margin-bottom: 30px;
 }
 
 .area-select-top {
@@ -445,6 +446,19 @@ header {
     display: flex;
     justify-content: center;
     margin: 0 0 91px;
+}
+
+.city-select {
+    list-style: none;
+}
+
+.area-photo {
+    display: flex;
+    justify-content: center;
+}
+.area-img {
+    width: 300px;
+    height: 300px;
 }
 /*register_check.blade.php*/
 

@@ -16,32 +16,15 @@
         <header>
             <div class="header-container">
                 <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
-                {{-- @if (Auth::check()){ --}}
-                <div class="header-login">
-                    <div class="header-login-profile">
-                        <div class="header-profile-myimag"><img src="" alt="myimage"></div>
-                        <a href="" class="link-green">マイページ</a>
-                    </div>
-                    <div class="header-btn">
-                        <a class="btn-orange header-create-btn" href=#>紹介状の作成</a>
-                        <a class="btn-green header-serch-btn" href=#>紹介状の発見</a>
-                    </div>
+                <div class="header-not-login">
+                    <a class="btn-orange" href=#>新規登録</a>
+                    <a class="btn-green" href=#>ログイン</a>
                 </div>
-                {{-- } @else {
-                    <div class="header-not-login">
-                        <a class="btn-orange" href=#>新規登録</a>
-                        <a class="btn-green" href=#>ログイン</a>
-                      </div>
-                } --}}
-                {{-- @endif --}}
-
             </div>
         </header>
         <main>
             @yield('content')
         </main>
-        <footer class="footer">
-        </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{asset('js/script.js')}}"></script>

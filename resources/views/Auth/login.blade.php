@@ -2,25 +2,28 @@
 @section('content')
 <div class="login">
   <div class="login_body">
-    <div class="midasi">ログイン</div>
-    <div class="login_form">
-      <div>
-        <label>メールアドレスを入力してください</label>
-        <input type="email" class="login_email">
+    <div class="midasi login-header">ログイン</div>
+    <form action="{{ route('login') }}" method="post">
+      @csrf
+      <div class="login-form">
+        <div class="form-inner">
+          <div class="login-form-top">メールアドレスを入力してください</div>
+          <input type=" email" class="form" name="email">
+        </div>
+        <div class="form-inner">
+          <div class="login-form-top">パスワードを入力してください</div>
+          <input type="password" class="form" name="password">
+        </div>
       </div>
-      <div>
-        <div>パスワードを入力してください</div>
-        <input type="password" class="login_pass">
-      </div>
-    </div>
-    <div class="login_botan">
+    </form>
+    <div class="login-btn-space">
       <div class="return">戻る</div>
-      <div>OK</div>
+      <div><input type="submit" class="btn-green" value="OK"></div>
     </div>
   </div>
-  <div class="login_link">
+  <div class="login-link">
     <div class="link"><a href="">パスワードを忘れた場合はこちら</a></div>
-    <div class="link"><a href="">新規登録はこちら</a></div>
+    <div class="link"><a href="{{route('register')}}">新規登録はこちら</a></div>
   </div>
 </div>
 

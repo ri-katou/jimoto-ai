@@ -13,7 +13,7 @@ main{
   margin: 0 auto;
   max-width: 1024px;
 }
-.rapper {
+body {
   background-color: #F7FFD5;
 }
 
@@ -23,6 +23,7 @@ img {
 /* 共通パーツ */
 .container {
   display: flex;
+  align-items: center;
 }
 .link {
   color: #339DFF;
@@ -38,12 +39,34 @@ input[submit] {
   border: none;
   text-decoration: none;
 }
+.return {
+  color: #555;
+  font-size: 2rem;
+  padding-left: 35px;
+  position: relative;
+}
+.return:hover{
+  cursor : pointer;
+}
+.return:active {
+  margin-top: 2px;
+}
+.return::before {
+  content: '';
+  position: absolute;
+  background-image: url(../image/arrow.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+}
 
 .vertical {
   writing-mode: vertical-rl;
   font-size: 1.7rem;
   margin-left: 44%;
-
 }
 
 .btn-orange {
@@ -84,7 +107,9 @@ input[submit] {
   border-left: #12F128 6px bold;
   border-bottom: #12F128 2px solid;
 }
-
+.hidden {
+  display: none;
+}
 .btn-daidai {
   display: block;
   text-align: center;
@@ -109,7 +134,7 @@ header {
   margin: 5vh 10vh 0 10vh;
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
 }

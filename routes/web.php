@@ -13,6 +13,8 @@
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\EditProfile;
+
 
 Route::get('/', function () {
     return view('index');
@@ -30,8 +32,11 @@ Route::view('profile/', 'profile');
 
 Route::view('syoukaijou/', 'syoukaijou_create');
 
+Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
+Route::post('profile/edit/', 'ProfileController@profileEditCheck');
 
-// Route::view('area_select/', 'area_select');
-// Route::view('register', 'auth/register');
-// Route::view('register_check', 'auth/register_check');
-// Route::get('test/', 'UserEriaContoroller@index');
+
+Route::view('create/', 'syoukaijou_create');
+Route::view('create/preview', 'preview');
+Route::view('syoukaijou', 'syoukaijou_disp');
+Route::view('jimoto_spot', 'jimoto_spot');

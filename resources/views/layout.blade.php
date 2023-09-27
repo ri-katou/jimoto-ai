@@ -17,8 +17,8 @@
             <div class="header-container">
                 <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
                 <div class="header-not-login">
-                  <a class="btn-orange" href=#>新規登録</a>
-                  <a class="btn-green" href=#>ログイン</a>
+                    <a class="btn-orange" href=#>新規登録</a>
+                    <a class="btn-green" href=#>ログイン</a>
                 </div>
             </div>
         </header>
@@ -26,7 +26,8 @@
             @yield('content')
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 
 </html>

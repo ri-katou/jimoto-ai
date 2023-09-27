@@ -1,69 +1,31 @@
 @extends('layout')
 @section('content')
-<div class="preview-top">
-  <div class="preview-daimei">紹介状作成</div>
-  <div class="return">戻る</div>
-</div>
-<div class="preview-naiyou">この内容でよろしいですか？</div>
-<div class="syoukaijou">
-  <div class="preview-syoukaijou-top">
-    <div class="syoukaijou-day">日付</div>
-    <div class="janru-area">
-      <div class="janru-tag">
-      <div class="jyanru"> ジャンル：</div>
-      <div class="jyanru-sub">ラーメン</div>
-      </div>
-      <div class="area-tag">
-      <div class="area"> エリア：</div>
-      <div class="area-sub">渋川</div>
-      </div>
-    </div>
-  </div>
-  <div class="syoukaijou-title">タイトル</div>
-  <div class="preview-main">
-    <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-      <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-      </div>
-    </div>
-    <div class="preview-honbun">
-      <div class="preview-spot">スポット名&emsp;<div class="spot-name"></div>
-      </div>
-      <div class="syoukaijou-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-</div>
-      <div class="ittemitai"></div>
-      <div class="ittayo"></div>
-    </div>
-  </div>
-  <div class="preview-spot-info">
-    <div class="spot-info">スポット情報</div>
-    <table>
-      <tr>
-        <td height="30" width="100">スポット名</td>
-        <td class="spot-name" height="30"></td>
-      </tr>
-      <tr>
-        <td height="30">住所</td>
-        <td class="spot-address" height="30"></td>
-      </tr>
-      <tr>
-        <td height="30">URL</td>
-        <td class="spot-url" height="30"></td>
-      </tr>
-    </table>
-  </div>
 
+<div class="jimoto-search-top">
+  <div class="jimoto-search">
+    <form action="" method="get">
+      <input type="search" name="search" placeholder="キーワードを入力" size="40">
+      <input type="image" src="/image/glass.svg" width="30" height="30" alt="検索" value="検索する">
+    </form>
+  </div>
+  <select name="example">
+    <option>昇順</option>
+    <option>降順</option>
+  </select>
 </div>
 
-<div class="preview-sam-all">
-<div class="preview-sam">サムネイルイメージ</div>
-<div class="syoukaijou-sam">
+<div class="janru-area-search">
+  <div class="janru-search"><a class="btn-gray" href=#>エリアを指定して探す</a></div>
+  <div class="janru-search"><a class="btn-gray" href=#>ジャンルを指定して探す</a></div>
+  <div class="map-search"><a class="btn-gray" href=#>マップから探す</a></div>
+</div>
+
+
+
+
+<div class="jimoto-sam">
+  <a class="syoukaijou-link" href="">
+    <div class="syoukaijou-sam">
       <div class="preview-syoukaijou-top-sam">
         <div class="sum-top">
           <div class="syoukaijou-day-sam">日付</div>
@@ -129,11 +91,10 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         </div>
       </div>
     </div>
-    </div>
-<div class="preview-bottom">
-  <div class="preview-bottom-text">この内容で投稿します。</div>
-  <div class="preview-button-sub"><a class="btn-daidai" href=#>投稿する</a></div>
-  <div class="return">戻る</div>
+  </a>
+  
 </div>
-</div>
+
+
+
 @endsection

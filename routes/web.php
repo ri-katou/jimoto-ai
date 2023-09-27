@@ -29,6 +29,7 @@ Route::post('profile/edit/','ProfileController@profileEditCheck');
 Route::view('create/', 'syoukaijou_create');
 Route::view('create/preview', 'preview');
 Route::view('syoukaijou', 'syoukaijou_disp');
+Route::view('jimoto_spot', 'jimoto_spot');
 
 Route::view('register/', 'Auth/register');
 

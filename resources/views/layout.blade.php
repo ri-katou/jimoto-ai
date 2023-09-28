@@ -29,8 +29,8 @@
                 </div>
                 {{-- } @else {
                     <div class="header-not-login">
-                        <a class="btn-orange" href=#>新規登録</a>
-                        <a class="btn-green" href=#>ログイン</a>
+                        <a class="btn-orange" href="{{route('register')}}">新規登録</a>
+                        <a class="btn-green" href="{{route('login')}}">ログイン</a>
                       </div>
                 } --}}
                 {{-- @endif --}}

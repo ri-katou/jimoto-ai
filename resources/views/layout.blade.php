@@ -18,20 +18,23 @@
                 @if (Auth::check())
                 <div class="header-login">
                     <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
-                <a href="{{route('profile')}}"></a>
-                <a href=# class="link logout">ログアウト</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form>
-                    <a class="btn-orange" href="{{ route('syoukaijou.create')}}">紹介状の作成</a>
-                    <a class="btn-green" href="{{ route('syoukaijou.serch')}}">紹介状の発見</a>
+                    <a href="{{route('profile')}}"></a>
+                    <!-- <a href=# class="link logout">ログアウト</a> -->
+                    <form class="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <input type="submit" value="ログアウト">
+                    </form>
+                    <a class="btn-orange" href="">紹介状の作成</a>
+                    <a class="btn-green" href="">紹介状の発見</a>
+
+
                 </div>
 
                 @else
-                    <div class="header-not-login">
-                        <a class="btn-orange" href="{{route('register')}}">新規登録</a>
-                        <a class="btn-green" href="{{route('login')}}">ログイン</a>
-                      </div>
+                <div class="header-not-login">
+                    <a class="btn-orange" href="{{route('register')}}">新規登録</a>
+                    <a class="btn-green" href="{{route('login')}}">ログイン</a>
+                </div>
                 @endif
 
 

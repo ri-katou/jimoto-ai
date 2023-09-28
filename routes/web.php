@@ -22,15 +22,18 @@ Route::get('/', function () {
 
 
 Route::get('user/area_select/', 'UserEriaContoroller@index');
+Route::post('user/area_select/', 'UserEriaContoroller@areaChoice')->name('area.select');
 
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
 Auth::routes();
 
-Route::view('home/', 'home');
+Route::get('home/', function () {
+    return view('home');
+})->name('home');
 
 
-Route::get('profile/', function(){
+Route::get('profile/', function () {
     return view('profile');
 })->name('profile');
 
@@ -39,12 +42,12 @@ Route::view('syoukaijou/', 'syoukaijou_create');
 Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
 Route::post('profile/edit/', 'ProfileController@profileEditCheck');
 
-Route::get('profile/edit/check',function(){
+Route::get('profile/edit/check', function () {
     return view('profile_edit_check');
 })->name('profile.edit.check');
-Route::post('profile/edit/check','ProfileController@profileEditRegi');
+Route::post('profile/edit/check', 'ProfileController@profileEditRegi');
 
-Route::get('user/delete/',function(){
+Route::get('user/delete/', function () {
     return view('user_delete');
 });
 

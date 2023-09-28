@@ -1,20 +1,20 @@
 /* 共通設定 */
 html {
-  font-size: 16px;
+    font-size: 16px;
 }
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
     color: black;
 }
-main{
-  margin: 0 auto;
-  max-width: 1024px;
+main {
+    margin: 0 auto;
+    max-width: 1024px;
 }
 body {
-  background-color: #F7FFD5;
+    background-color: #f7ffd5;
 }
 
 img {
@@ -22,155 +22,196 @@ img {
 }
 /* 共通パーツ */
 .container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .link {
-  color: #339DFF;
+    color: #339dff;
 }
-.link a:hover{
-  color: #339DFF;
-  text-decoration: underline;
+.link a:hover {
+    color: #339dff;
+    text-decoration: underline;
 }
-.link a:visited{
-  color: #339DFF;
-}
-input[submit] {
-  border: none;
-  text-decoration: none;
+.link a:visited {
+    color: #339dff;
 }
 .return {
-  color: #555;
-  font-size: 2rem;
-  padding-left: 35px;
-  position: relative;
+    color: #555;
+    font-size: 2rem;
+    padding-left: 35px;
+    position: relative;
 }
-.return:hover{
-  cursor : pointer;
+.return:hover {
+    cursor: pointer;
 }
 .return:active {
-  margin-top: 2px;
+    margin-top: 2px;
 }
 .return::before {
-  content: '';
-  position: absolute;
-  background-image: url(../image/arrow.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  top: 0;
-  left: 0;
+    content: "";
+    position: absolute;
+    background-image: url(../image/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+.return {
+    color: #555;
+    font-size: 2rem;
+    padding-left: 35px;
+    position: relative;
+}
+.return:hover {
+    cursor: pointer;
+}
+.return:active {
+    margin-top: 2px;
+}
+.return::before {
+    content: "";
+    position: absolute;
+    background-image: url(../image/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
 }
 
 .vertical {
-  writing-mode: vertical-rl;
-  font-size: 1.7rem;
-  margin-left: 44%;
+    writing-mode: vertical-rl;
+    font-size: 1.7rem;
+    margin-left: 44%;
+    writing-mode: vertical-rl;
+    font-size: 1.7rem;
+    margin-left: 44%;
 }
 
 .btn-orange {
-  display: block;
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: bold;
-  background-color: #FDC709A3;
-  border-radius: 150px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 200px;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+    background-color: #fdc709a3;
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
 }
 .btn-orange:active {
-  box-shadow: none;
-  margin-top: 3px;
+    box-shadow: none;
+    margin-top: 3px;
 }
 .btn-green {
-  display: block;
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: bold;
-  background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
-  border-radius: 150px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 200px;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+    background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
 }
 
 .btn-green:active {
-  box-shadow: none;
-  margin-top: 3px;
+    box-shadow: none;
+    margin-top: 3px;
 }
+
 .underline-green {
-  width: max-content;
-  border-bottom: 2px #12F128 solid;
-  margin-bottom: 1rem;
+    width: max-content;
+    border-bottom: 2px #12f128 solid;
+    margin-bottom: 1rem;
 }
 .block-green {
-  border-left: #12F128 6px bold;
-  border-bottom: #12F128 2px solid;
+    border-left: #12f128 6px bold;
+    border-bottom: #12f128 2px solid;
 }
+
+.btn-gray {
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+    background-color: #d9d9d9;
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+}
+.btn-gray:active {
+    box-shadow: none;
+    margin-top: 3px;
+}
+
 .hidden {
-  display: none;
+    display: none;
 }
+
 .btn-daidai {
-  display: block;
-  text-align: center;
-  padding: 1rem 0;
-  font-weight: bold;
-  background-color: #FF7A00;
-  border-radius: 150px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 200px;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+    background-color: #ff7a00;
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
 }
 .btn-daidai:active {
-  box-shadow: none;
-  margin-top: 3px;
+    box-shadow: none;
+    margin-top: 3px;
 }
+
+.area-tag {
+    display: block;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid rgba(204, 6, 253, 0.22);
+    background: rgba(204, 6, 253, 0.22);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 150px;
+    height: 35px;
+}
+
+.janru-tag {
+    display: block;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid #ffcd1e;
+    background: rgba(253, 199, 6, 0.3);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 150px;
+    height: 35px;
+}
+
 /* header */
 header {
-  margin-bottom: 30px;
-  height: 30vh;
+    margin: 0 5vh;
+    padding: 100px 0;
+    margin-bottom: 30px;
 }
 .header-container {
-  width: 95%;
-  margin: 5vh 10vh 0 10vh;
-  display: flex;
-  justify-content: space-between;
-  /* position: fixed; */
-  top: 0;
-  left: 0;
+    width: 95%;
+    margin: 5vh 10vh 0 10vh;
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
 }
-.header-login,
 .header-not-login {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 1rem;
-}
-.header-login {
-  gap: 3rem;
-}
-.header-btn a {
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 .logo {
-  width: 130px;
-  height: 130px;
-}
-.header-login-profile {
-  margin-bottom: 1.5rem;
-}
-.header-profile-myimag {
-  background-color: #339dff;
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  margin-bottom: 1rem;
-}
-.error-message {
-  color: red;
-}
-/* footer */
-.footer {
-  height: 100px;
+    width: 150px;
+    height: 150px;
+    margin-top: 5vh;
 }
 /* top */
 .top-logo {
@@ -179,596 +220,779 @@ header {
     margin-left: 10vh;
     padding-top: 5vh;
 }
-
 /* top */
 
 .vertical {
-  writing-mode: vertical-rl;
-  font-size: 1.7rem;
-  margin-left: 44%;
+    writing-mode: vertical-rl;
+    font-size: 1.7rem;
+    margin-left: 44%;
 }
 
+.logo {
+    display: inline;
+}
+
+.logo img {
+    margin-top: 5vh;
+    margin-left: 10vh;
+    height: auto;
+    float: left;
+    display: inline;
+}
 
 .logo-sub {
-  float: left;
-  position: relative;
-  display: inline;
-  font-size: 1.7rem;
-  font-weight: bold;
+    float: left;
+    position: relative;
+    display: inline;
+    font-size: 1.7rem;
+    font-weight: bold;
 }
 
 .top-pic-right {
-  text-align: right;
-  margin-top: -27%;
-  margin-right: 2%;
+    text-align: right;
+    margin-top: -27%;
+    margin-right: 2%;
 }
 
-.top-pic-right img{
-  width: 20%;
-  height: 60vh;
+.top-pic-right img {
+    width: 20%;
+    height: 60vh;
 }
 
 .top-pic-left img {
-  width: 25%;
-  height: auto;
-  border-radius: 157px;
-  display: inline-block;
-  margin-top: -20%;
-  margin-left: 5%;
+    width: 25%;
+    height: auto;
+    border-radius: 157px;
+    display: inline-block;
+    margin-top: -20%;
+    margin-left: 5%;
 }
 
 .top-middle-comment {
-  font-size: 1.2rem;
-  font-weight: bold;
-  font-family: Yusei Magic;
-  margin-left: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Yusei Magic;
+    margin-left: 10%;
 }
 
 .top-pic-middle img {
-  width: 35%;
-  height: 40%;
-  border-radius: 150px;
-  margin-right: 5%;
-  display: inline;
-  float: right;
+    width: 35%;
+    height: 40%;
+    border-radius: 150px;
+    margin-right: 5%;
+    display: inline;
+    float: right;
 }
 
 .top-mori-icon img {
-  width: 7%;
-  height: 7%;
-  margin: 10% 50%;
+    width: 7%;
+    height: 7%;
+    margin: 10% 50%;
 }
 
 .middle-mori-icon img {
-  display: inline-flex;
-  width: 7%;
-  height: 7%;
-  margin: 10% 50%;
+    display: inline-flex;
+    width: 7%;
+    height: 7%;
+    margin: 10% 50%;
 }
 
 .login-btn button {
-  margin-top: 2vh;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: #FDC709A3;
-  border-radius: 150px;
-  font-style: none;
-  display: flex;
-  width: 15%;
-  height: 10%;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  right: 10vh;
+    margin-top: 2vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #fdc709a3;
+    border-radius: 150px;
+    font-style: none;
+    display: flex;
+    width: 15%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    right: 10vh;
 }
 
 .top-bottom-comment {
-  position: relative;
+    position: relative;
 }
 
 .top-pic4 {
-  width: 15%;
-  height: auto;
-  position: relative;
-  margin-top: 15%;
-  margin-left: 10%;
+    width: 15%;
+    height: auto;
+    position: relative;
+    margin-top: 15%;
+    margin-left: 10%;
 }
 
 .top-pic5 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -5vh;
-  left: 12vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -5vh;
+    left: 12vh;
 }
 
 .top-pic6 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -10vh;
-  left: 25vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -10vh;
+    left: 25vh;
 }
 
 .top-pic7 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -15vh;
-  left: 45vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -15vh;
+    left: 45vh;
 }
 
 .top-pic8 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: -20vh;
-  left: 60vh;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: -20vh;
+    left: 60vh;
 }
 
 .top-bottom-comment {
-  font-size: 1.2rem;
-  font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .top-bottom {
-  display: flex;
-  margin-left: 13%;
-  margin-top: 3%;
-  margin-bottom: 5%;
+    display: flex;
+    margin-left: 13%;
+    margin-top: 3%;
+    margin-bottom: 5%;
 }
 
 .top-kaiin {
-  margin-top: 20%;
-  margin-left: 20%;
-  font-size: 1.5rem;
+    margin-top: 20%;
+    margin-left: 20%;
+    font-size: 1.5rem;
 }
 
 .top-bottom-right {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-left: 10%;
-  margin-top: -20%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 10%;
+    margin-top: -20%;
 }
 
 /*top*/
 
 /*login.blade.php register.blade.php*/
 .login {
-  margin: 0 auto 0 auto;
-  max-width: 568px;
+    margin: 0 auto 0 auto;
+    max-width: 568px;
 }
 .login-header {
-  margin-bottom: 55px;
+    margin-bottom: 55px;
 }
 
 .form-inner {
-  margin-bottom: 55px;
+    margin-bottom: 55px;
 }
 
 .login-form-top {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
-.login-botan {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
+.login-btn-space {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .login-link {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
 }
 /*login.blade.php register.blade.php*/
 
 .home {
-  margin: 0 auto 0 auto;
-  max-width: 1129px;
+    margin: 0 auto 0 auto;
+    max-width: 1129px;
 }
 
 .home-body {
-  margin-bottom: 26px;
+    margin-bottom: 26px;
 }
 
 .syoukaijou-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 39.5px;
-  height: 250px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 39.5px;
+    height: 250px;
 }
 
 .syou {
-  background-color: #339dff;
+    background-color: #339dff;
 }
 
 .profile-icon {
-  background-color: #339dff;
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  margin-bottom: 2rem;
+    background-color: #339dff;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin-bottom: 39.3px;
 }
 
 .syoukaijou-header {
-  margin-bottom: 39px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 39px;
+}
+
+.icon-prof {
+    display: flex;
+    justify-content: center;
+}
+.home-icon-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mottomiru {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .card-margin {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .mottomiru {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
+.toukou {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 241px;
+}
+
+.icon-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 477px;
+    height: 136px;
+    border: 3px solid #b89d40;
+    background: #12f128;
+    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.serch-syoukaijou {
+    color: #f7ffd5;
+    font-size: 32px;
+}
+
+.letter-svg {
+    position: relative;
+    right: 27px;
+    width: 90px;
+    height: 90px;
+}
+
+.glass-svg {
+    position: absolute;
+    top: 330px;
+    right: 380px;
+    width: 90px;
+    height: 90px;
+}
+
+/*register_check.blade.php*/
+.register-check-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.register-check-part {
+    margin-bottom: 10px;
+}
+
+.register-check {
+    margin-bottom: 30px;
+}
+.register-check-space {
+    margin-bottom: 20px;
+}
+
+.register-check-point {
+    margin-left: 20px;
+}
+
+.area-select {
+    display: flex;
+    justify-content: center;
+    gap: 72px;
+    margin-bottom: 30px;
+}
+
+.area-select-top {
+    margin-bottom: 30px;
+}
+
+.area-choice {
+    margin: 0 0 23px 120px;
+}
+
+.area-teach {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 91px;
+}
+
+.city-select {
+    list-style: none;
+}
+
+.area-photo {
+    display: flex;
+    justify-content: center;
+}
+.area-img {
+    width: 300px;
+    height: 300px;
+}
+/*register_check.blade.php*/
 
 /* syoukaijou_create */
 
 .syoukaijou_create {
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
-  line-height: 2;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    line-height: 2;
 }
 
 .syoukaijou-top {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
 }
-
+.syoukaijou-day {
+    white-space: nowrap;
+}
 .syoukaijou-daimei {
-  font-size: 1.5rem;
-  margin-right: 40%;
+    font-size: 1.5rem;
+    margin-right: 40%;
 }
 
 .syoukaijou-title-daimei {
-  margin-bottom: 1%;
-  margin-right: 40%;
+    margin-bottom: 1%;
+    margin-right: 40%;
 }
 .syoukaijou-honbun {
-  margin-right: 45%;
+    margin-right: 45%;
 }
 .syoukaijou-pics {
-  display: flex;
-  column-gap: 10px;
+    display: flex;
+    column-gap: 10px;
 }
 .syoukaijou-jyanru-area {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .syoukaijou-jyanru {
-  margin-right: 20%;
+    margin-right: 20%;
 }
 .syoukaijou-supot-title {
-  font-size: 1.5rem;
-  margin-right: 40%;
+    font-size: 1.5rem;
+    margin-right: 40%;
 }
 .syoukaijou-supot-name {
-  margin-right: 36%;
+    margin-right: 36%;
 }
 .syoukaijou-supot-zyusyo {
-  margin-right: 45%;
+    margin-right: 45%;
 }
 .syoukaijou-supot-url {
-  margin-right: 45%;
+    margin-right: 45%;
 }
 .syoukaijou-supot-url-form {
-  margin-bottom: 2%;
+    margin-bottom: 2%;
 }
 .syoukaijou-bottom {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15%;
 }
 /* profile */
-.profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
+.profile {
+    margin: 0 auto;
 }
-.profile-image {
-  text-align: center;
+.profile-container {
+    display: flex;
+    justify-content: center;
 }
 .profile-nickname {
-  font-size: 2rem;
+    font-size: 2rem;
 }
-.profile-content {
-  max-width: 40vw;
-  margin: 0 auto 100px auto;
-}
-.profile-email-title ,
-.profile-email-output,
-.profile-useereria-title,
-.profile-eria-output
-{
-  margin-bottom: 2rem;
-}
-.profile-email-output,
-.profile-eria-output,
-.profile-edit-nickname-output {
-  font-size: 1.5rem;
-}
-.profile-botom-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-}
-/* profile_edit */
-.profile-edit-content {
-  max-width: 40vw;
-  margin: 0 auto 100px auto;
-}
-.profile-edit-now-nickname,
-.profile-edit-nickname-title,
-.profile-edit-email-input,
-.profile-edit-nickname-input {
-  margin-bottom: 2rem;
-}
-.profile-edit-now-eria,
-.profile-edit-now-nickname,
-.profile-edit-now-eria {
-  align-items: center;
-}
-
 
 /* syoukaijou_create */
 
 .syoukaijou_create {
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
-  line-height: 2;
+    line-height: 2;
 }
 
+.syoukaijou-title {
+    margin-left: 14%;
+    word-wrap: break-word;
+}
 .syoukaijou-top {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 2%;
+    margin-left: 10%;
 }
 
 .syoukaijou-daimei {
-  font-size: 1.5rem;
-  margin-right: 40%;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .syoukaijou-title-daimei {
-  margin-bottom: 1%;
-  margin-right: 40%;
+    margin-bottom: 1%;
 }
 .syoukaijou-honbun {
-  margin-right: 45%;
-}
-
-#preview img {
-  width: 200px;
-  margin: 10px;
-  border: solid 1px silver;
+    margin-left: -15%;
 }
 
 .syoukaijou-pic-button {
-  margin-left: 22%;
+    margin-left: 22%;
 }
 
 .syoukaijou-pics {
-  display: flex;
-  column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .syoukaijou-jyanru-area {
-  display: flex;
-  justify-content: center;
-}
-.syoukaijou-jyanru {
-  margin-right: 20%;
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-jyanru-title {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.area-select {
+    width: 100px;
+    margin-top: -15%;
 }
 
 .syoukaijou-area-title {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
+    margin-left: -70%;
 }
 
 .syoukaijou-supot-title {
-  font-size: 1.5rem;
-  margin-right: 40%;
+    margin-top: 3%;
+    font-size: 1.5rem;
+    margin-left: -15%;
 }
 .syoukaijou-supot-name {
-  margin-right: 36%;
+    margin-left: -12%;
 }
 .syoukaijou-supot-zyusyo {
-  margin-right: 45%;
+    margin-left: -15%;
 }
 .syoukaijou-supot-url {
-  margin-right: 45%;
+    margin-left: -15%;
 }
 .syoukaijou-supot-url-form {
-  margin-bottom: 2%;
+    margin-bottom: 2%;
 }
 .syoukaijou-bottom {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 15%;
+}
+
+.syoukaijou-bottom {
+    margin-top: 5%;
+    margin-left: 25%;
 }
 
 /* preview */
 
 .preview-top {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: left;
+    margin-left: 15%;
+    margin-right: -30%;
 }
 
 .preview-daimei {
-  font-size: 1.5rem;
-  margin-right: 35%;
-  margin-bottom: 3%;
+    font-size: 1.5rem;
+    margin-right: 35%;
+    margin-bottom: 3%;
 }
 
 .preview-naiyou {
-  margin-left: 15%;
-  margin-bottom: 3%;
+    margin-left: 15%;
+    margin-bottom: 3%;
 }
 
 .syoukaijou {
-  text-align: left;
-  margin: 0 15%;
-  padding: 5%;
-  background-color: #FFFFFF;
-  border-radius: 64px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    margin: 0 5%;
+    padding: 5%;
+    background-color: #ffffff;
+    border-radius: 64px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .syoukaijou-day {
-  margin-right: 20%;
-  margin-bottom: 3%;
+    margin-right: 20%;
+    margin-bottom: 3%;
 }
 
 .preview-syoukaijou-top {
-  display: flex;
-  justify-content: left;
+    display: flex;
+    justify-content: left;
 }
 
 .janru-area {
-  display: flex;
-  justify-content: right;
+    margin-left: 40%;
+    display: flex;
+    justify-content: right;
 }
 
 .syoukaijou-title {
-  font-size: 1.5rem;
-  margin-right: 40%;
-  margin-bottom: 3%;
+    font-size: 1.5rem;
+    margin-right: 40%;
+    margin-bottom: 3%;
 }
 
 .preview-main {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: left;
+}
+
+.preview-pic1 img {
+    margin-top: 15%;
+    margin-right: 20%;
+    max-width: 500px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.preview-pics-sub {
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
 }
 
 .preview-honbun {
-  margin-left: 5%;
-  margin-bottom: 3%;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+.syoukaijou-text {
+    width: 480px;
+    max-height: 400px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .preview-spot-info {
-  text-align: left;
+    text-align: left;
 }
 
 .preview-spot {
-  margin-bottom: 5%;
-  font-size: 1.5rem;
+    margin-bottom: 5%;
+    font-size: 1.5rem;
 }
 
 .spot-info {
-  font-size: 1.5rem;
-  margin-right: 75%;
-  margin-bottom: 3%;
-  margin-top: 3%;
+    font-size: 1.5rem;
+    margin-right: 75%;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 .preview-spot-info {
-  margin-left: 20%;
+    margin-left: 5%;
 }
 
 .preview-sam {
-  margin-top: 5%;
-  margin-left: 20%;
-  margin-bottom: 3%;
-  font-size: 1.5rem;
+    margin-top: 5%;
+
+    margin-bottom: 3%;
+    font-size: 1.5rem;
 }
- 
+
+.syoukaijou-day-sam {
+    margin: 2%;
+}
+
+.syoukaijou-sam-disp {
+    margin-left: 15%;
+    margin-bottom: 3%;
+}
+
 .syoukaijou-sam {
-  margin-left: 15%;
-  width: 350px;
-  height: 250px;
-  border-radius: 20px;
-  background: #FFF;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 3%;
+    width: 350px;
+    height: 250px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .preview-syoukaijou-top-sam {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .sum-top {
-  display: flex;
-  justify-content: left;
+    display: flex;
+    justify-content: left;
 }
 
 .syoukaijou-title-sam {
-  margin-left: 3%;
-  font-size: 1.5rem;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 1.5rem;
 }
 
 .preview-main-sam {
-  display: flex;
-  justify-content: left;
+    display: flex;
+    justify-content: left;
 }
 
 .janru-area-sam {
-  display: flex;
-  justify-content: right;
-}
-
-.preview-bottom {
-  text-align: center;
+    display: flex;
+    justify-content: right;
+    margin-top: 3%;
 }
 
 .preview-button-sub {
-  margin-top: 2%;
-  margin-left: 43%;
-  margin-bottom: 3%;
-}
-
-.preview-pic1 {
-  height: 250px;
-  width: 150px;
+    margin-top: 2%;
+    margin-left: 43%;
+    margin-bottom: 3%;
 }
 
 .preview-pic1-sam {
-  height: 70px;
-  width: 50px;
+    margin-left: 10%;
+    height: 100px;
+    width: 100px;
+}
+
+.preview-main-sam {
+    margin-top: 3%;
+}
+
+.preview-sam-all {
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+.preview-bottom-text {
+    font-weight: bold;
+    margin-left: 5%;
 }
 
 /* disp */
+
 .disp-top {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: left;
+    margin-left: 15%;
+    margin-bottom: 3%;
 }
 
-.disp-delete{
-  display: block;
-  color: #FFFFFF;
-  background: #F00;
-  padding-top: 5%;
-  width: 200px;
-  height: 40px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  text-align: center;
+.disp-delete {
+    margin-left: 200%;
+    display: block;
+    color: #ffffff;
+    background: #f00;
+    padding-top: 5%;
+    width: 200px;
+    height: 40px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
 }
 
 .disp-delete:active {
-  box-shadow: none;
-  margin-top: 3px;
+    box-shadow: none;
+    margin-top: 3px;
 }
 
 .disp-retrune {
-  margin-right: 30%;
-  margin-bottom: 5%;
+    margin-right: 30%;
+    margin-bottom: 5%;
 }
 
 .disp-map {
-  margin: 20%;
+    margin: 20%;
+}
+
+/* jimoto spot */
+
+.jimoto-search-top {
+    display: flex;
+    justify-content: center;
+    width: 30;
+    margin-bottom: 5%;
+}
+
+.jimoto-search {
+    margin-right: 10%;
+}
+
+.janru-area-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    z-index: 2;
+}
+
+.syoukaijou-link {
+    width: 350px;
+    height: 250px;
+}
+
+.jimoto-sam {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+}
+
+.honbun-sum {
+    width: 220px;
+    max-height: 95px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fav_btn-ittemitai {
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.fav-btn-ittayo {
+    margin-top: -27%;
+    margin-left: 50%;
+}
+
+.ittayo-math {
+    margin-left: 15px;
+}
+
+.ittemitai-math {
+    margin-left: 15px;
 }

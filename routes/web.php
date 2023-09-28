@@ -49,7 +49,7 @@ Route::get('user/delete/',function(){
 })->name('user.delete');
 Route::post('user/delete','UserController@userDelete');
 
-Route::view('create/', 'syoukaijou_create');
+
 Route::view('create/preview', 'preview');
 Route::view('syoukaijou', 'syoukaijou_disp');
 Route::view('jimoto_spot', 'jimoto_spot');

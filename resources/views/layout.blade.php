@@ -23,8 +23,8 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                   </form>
-                    <a class="btn-orange" href="{{ route('syoukaijou.create')}}">紹介状の作成</a>
-                    <a class="btn-green" href="{{ route('syoukaijou.serch')}}">紹介状の発見</a>
+                    <a class="btn-orange" href="#">紹介状の作成</a>
+                    <a class="btn-green" href="#">紹介状の発見</a>
                 </div>
 
                 @else

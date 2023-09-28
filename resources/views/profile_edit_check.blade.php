@@ -10,6 +10,7 @@
           <div class="profile-edit-check-nickname container">
               <div class="profile-edit-nickname-output">{{$input->nickname}}</div>
           </div>
+          <input type="hidden" value="{{$input->nickname}}" name="nickname">
       </div>
       <div class="profile-email">
           <div class="profile-email-title underline-green">メールアドレス</div>
@@ -17,6 +18,7 @@
               <div class="profile-email-output">
                   {{$input->email}}
               </div>
+              <input type="hidden" value="{{$input->email}}" name="email">
           </div>
       </div>
       <div class="profile-usereria">
@@ -25,6 +27,7 @@
               <div class="profile-eria-output">
                   {{$input->eria}}
               </div>
+              <input type="hidden" value="{{$input->eria}}" name="eria">
           </div>
       </div>
       <div class="profile-botom-container">

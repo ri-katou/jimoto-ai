@@ -13,6 +13,12 @@ $(document).ready(function () {
     $(".edit-btn").on("click", function () {
         togleForm.removeClass("hidden");
     });
+
+    // ログアウト処理
+    $('.logout').on('click',function($e){
+        $e.preventDefault();
+        $('#logout-form').submit();
+    })
 });
 
 function previewFile(file) {

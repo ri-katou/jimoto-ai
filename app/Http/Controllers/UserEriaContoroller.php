@@ -30,4 +30,9 @@ class UserEriaContoroller extends Controller
             'toubu' => $toubu,
         ]);
     }
+
+    public function areaChoice(Request $request)
+    {
+        $area = $request->input('area');
+    }
 }

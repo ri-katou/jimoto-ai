@@ -11,7 +11,7 @@
       <div class="city-select">
         @foreach($toubu as $tou)
         <li>
-          <input type="radio" name="area-choice">
+          <input type="radio" name="area-choice" value="area">
           {{$tou['municipalities_name']}}
         </li>
         @endforeach
@@ -69,6 +69,7 @@
       </div>
     </div>
   </div>
+  <div><input type="submit" class="btn-green" value="OK"></div>
 </form>
 
 <!-- <div class="area-photo"><img src="/image/gunma.png" class="area-img"></div> -->

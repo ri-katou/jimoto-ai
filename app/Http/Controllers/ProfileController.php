@@ -6,6 +6,7 @@ use App\Http\Requests\EditProfile;
 use Illuminate\Http\Request;
 use App\User;
 use App\User_detail;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -18,8 +19,8 @@ class ProfileController extends Controller
         ]);
     }
     public function profileEditRegi(EditProfile $request){
-        $user = new User();
-        $user_detail = new User_detail();
+        $user = Auth::user();
+        $user_detail = User_detail::find($user->id);
         $user->name = $request->nickname;
         $user->email = $request->email;
         $user_detail->aria_id = $request->eria;

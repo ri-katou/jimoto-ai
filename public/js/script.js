@@ -15,10 +15,11 @@ $(document).ready(function () {
     });
 
     // ログアウト処理
-    $('.logout').on('click',function($e){
-        $e.preventDefault();
-        $('#logout-form').submit();
-    })
+    // $(".logout").on("click", function ($e) {
+    //     $e.preventDefault();
+    //     console.log("hoge");
+    //     $(".logout-form").submit();
+    // });
 });
 
 function previewFile(file) {

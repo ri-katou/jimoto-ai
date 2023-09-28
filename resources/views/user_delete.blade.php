@@ -20,9 +20,11 @@
           渋川市
       </div>
   </div>
+  <div class="user-delete-message">このアカウントを削除しますか？</div>
   <div class="profile-botom-container">
-    <form action=""></form>
-    <input type="submit" class="btn-green" value="退会する">
+    <form action="{{route('user.delete')}}" method="POST"></form>
+    @csrf
+    <input type="submit" class="btn-delete" value="退会する">
     <div class="return">戻る</div>
 </div>
 </div>

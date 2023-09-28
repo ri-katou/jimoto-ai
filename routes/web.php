@@ -45,7 +45,8 @@ Route::post('profile/edit/check','ProfileController@profileEditRegi');
 
 Route::get('user/delete/',function(){
     return view('user_delete');
-});
+})->name('user.delete');
+Route::post('user/delete','UserController@userDelete');
 Route::get('create/', function () {
     return view('syoukaijou_create');
 })->name('syoukaijou.create');

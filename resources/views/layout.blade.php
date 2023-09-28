@@ -15,19 +15,24 @@
     <div class="rapper">
         <header>
             <div class="header-container">
-                <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
-                <div class="header-not-login">
-                    <a class="btn-orange" href=#>新規登録</a>
-                    <a class="btn-green" href=#>ログイン</a>
+                @if (Auth::check())
+                <div class="header-login">
+                    <div class="logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
+                <a href="{{route('profile')}}"></a>
+                <a href=# class="link logout">ログアウト</a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                    <a class="btn-orange" href="{{ route('syoukaijou.create')}}">紹介状の作成</a>
+                    <a class="btn-green" href="{{ route('syoukaijou.serch')}}">紹介状の発見</a>
                 </div>
 
-                {{-- } @else {
+                @else
                     <div class="header-not-login">
                         <a class="btn-orange" href="{{route('register')}}">新規登録</a>
                         <a class="btn-green" href="{{route('login')}}">ログイン</a>
                       </div>
-                } --}}
-                {{-- @endif --}}
+                @endif
 
 
             </div>

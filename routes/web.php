@@ -30,7 +30,9 @@ Auth::routes();
 Route::view('home/', 'home');
 
 
-Route::view('profile/', 'profile');
+Route::get('profile/', function(){
+    return view('profile');
+})->name('profile');
 
 Route::view('syoukaijou/', 'syoukaijou_create');
 
@@ -41,6 +43,10 @@ Route::get('profile/edit/check',function(){
     return view('profile_edit_check');
 })->name('profile.edit.check');
 Route::post('profile/edit/check','ProfileController@profileEditRegi');
+
+Route::get('user/delete/',function(){
+    return view('user_delete');
+});
 
 Route::view('create/', 'syoukaijou_create');
 Route::view('create/preview', 'preview');

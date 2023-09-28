@@ -120,6 +120,32 @@ img {
     box-shadow: none;
     margin-top: 3px;
 }
+.btn-delete {
+    display: block;
+    text-align: center;
+    padding: 1rem 0 1rem 2rem;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    position: relative;
+}
+.btn-delete::before {
+    content: '';
+    position: absolute;
+    background-image: url(../image/dust-box.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+.btn-delete:active {
+    box-shadow: none;
+    margin-top: 3px;
+}
 
 .underline-green {
     width: max-content;

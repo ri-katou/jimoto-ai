@@ -21,7 +21,9 @@ class CreateSyoukaijousTable extends Migration
             $table->string('image2', 255)->nullable();
             $table->string('image3', 255)->nullable();
             $table->string('image4', 255)->nullable();
-            $table->text('store_infomation')->nullable();
+            $table->text('spotname');
+            $table->text('address')->nullable();
+            $table->text('url')->nullable();
             $table->text('body');
             $table->integer('municipalities_id')->unsigned();
             $table->integer('category_id')->unsigned();

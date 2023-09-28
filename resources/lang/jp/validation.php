@@ -30,7 +30,7 @@ return [
     'array' => 'The :attribute must have between :min and :max items.',
   ],
   'boolean' => 'The :attribute field must be true or false.',
-  'confirmed' => 'The :attribute confirmation does not match.',
+  'confirmed'            => ':attribute が確認欄と一致していません。',
   'date' => 'The :attribute is not a valid date.',
   'date_equals' => 'The :attribute must be a date equal to :date.',
   'date_format' => 'The :attribute does not match the format :format.',
@@ -96,7 +96,7 @@ return [
   'password' => 'The password is incorrect.',
   'present' => 'The :attribute field must be present.',
   'regex' => 'The :attribute format is invalid.',
-  'required' => 'The :attribute field is required.',
+  'required'             => ':attribute は必須入力です。',
   'required_if' => 'The :attribute field is required when :other is :value.',
   'required_unless' => 'The :attribute field is required unless :other is in :values.',
   'required_with' => 'The :attribute field is required when :values is present.',
@@ -111,9 +111,9 @@ return [
     'array' => 'The :attribute must contain :size items.',
   ],
   'starts_with' => 'The :attribute must start with one of the following: :values.',
-  'string' => 'The :attribute must be a string.',
+  'string'               => ':attribute には文字を入力してください。',
   'timezone' => 'The :attribute must be a valid zone.',
-  'unique' => 'The :attribute has already been taken.',
+  'unique'               => '入力いただいた :attribute はすでに使用されています。',
   'uploaded' => 'The :attribute failed to upload.',
   'url' => 'The :attribute format is invalid.',
   'uuid' => 'The :attribute must be a valid UUID.',
@@ -133,7 +133,8 @@ return [
     'attribute-name' => [
       'rule-name' => 'custom-message',
       'nickname' => 'ニックネーム',
-      'email' => 'メールアドレス'
+      'email' => 'メールアドレス',
+      'password' => 'パスワード',
     ],
   ],
 
@@ -150,7 +151,8 @@ return [
 
   'attributes' => [
     'nickname' => 'ニックネーム',
-    'email' => 'メールアドレス'
+    'email' => 'メールアドレス',
+    'password' => 'パスワード',
   ],
 
 ];

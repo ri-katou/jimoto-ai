@@ -5,13 +5,13 @@
 
 <div class="area-teach">あなたの素敵な地元を教えてください!!</div>
 <form action="">
-  <div class="area-select">
+  <div class="area-select-choice">
     <div class="toubu">
       <div class="midasi area-select-top">東武</div>
       <div class="city-select">
         @foreach($toubu as $tou)
         <li>
-          <input type="checkbox">
+          <input type="radio" name="area-choice">
           {{$tou['municipalities_name']}}
         </li>
         @endforeach
@@ -24,7 +24,7 @@
       <div class="city-select">
         @foreach($seibu as $sei)
         <li>
-          <input type="checkbox">
+          <input type="radio" name="area-choice">
           {{$sei['municipalities_name']}}
         </li>
         @endforeach
@@ -37,7 +37,7 @@
       <div class="city-select">
         @foreach($kenou as $ken)
         <li>
-          <input type="checkbox">
+          <input type="radio" name="area-choice">
           {{$ken['municipalities_name']}}
         </li>
         @endforeach
@@ -50,7 +50,7 @@
       <div class="city-select">
         @foreach($agatuma as $aga)
         <li>
-          <input type="checkbox">
+          <input type="radio" name="area-choice">
           {{$aga['municipalities_name']}}
         </li>
         @endforeach
@@ -62,7 +62,7 @@
       <div class="city-select">
         @foreach($tone_numata as $numatacity)
         <li>
-          <input type="checkbox">
+          <input type="radio" name="area-choice">
           {{$numatacity['municipalities_name']}}
         </li>
         @endforeach
@@ -71,5 +71,5 @@
   </div>
 </form>
 
-<div class="area-photo"><img src="/image/gunma.png" class="area-img"></div>
+<!-- <div class="area-photo"><img src="/image/gunma.png" class="area-img"></div> -->
 @endsection

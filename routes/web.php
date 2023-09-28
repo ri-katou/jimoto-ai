@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('user/area_select/', 'UserEriaContoroller@index');
 
-Route::post('register/check/', 'UserController@showRegisterCheck');
+Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
 Auth::routes();
 

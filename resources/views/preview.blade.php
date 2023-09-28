@@ -19,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="syoukaijou-title">タイトル</div>
+  <div class="syoukaijou-title">{{$input->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
       <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
@@ -30,13 +30,9 @@
       </div>
     </div>
     <div class="preview-honbun">
-      <div class="preview-spot">スポット名&emsp;<div class="spot-name"></div>
+      <div class="preview-spot"><div class="spotname">{{$input->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-</div>
+      <div class="syoukaijou-text">{{$input->main}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>
@@ -46,15 +42,15 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     <table>
       <tr>
         <td height="30" width="100">スポット名</td>
-        <td class="spot-name" height="30"></td>
+        <td class="spot-name" height="30">{{$input->spotname}}</td>
       </tr>
       <tr>
         <td height="30">住所</td>
-        <td class="spot-address" height="30"></td>
+        <td class="spot-addles" height="30">{{$input->addles}}</td>
       </tr>
       <tr>
         <td height="30">URL</td>
-        <td class="spot-url" height="30"></td>
+        <td class="spot-url" height="30">{{$input->url}}</td>
       </tr>
     </table>
   </div>
@@ -67,7 +63,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
       <div class="preview-syoukaijou-top-sam">
         <div class="sum-top">
           <div class="syoukaijou-day-sam">日付</div>
-          <div class="syoukaijou-title-sam">タイトル</div>
+          <div class="syoukaijou-title-sam">{{$input->title}}</div>
         </div>
         <div class="janru-area-sam">
           <div class="janru-tag"> ジャンル：<div class="jyanru-sub">ラーメン</div>
@@ -86,7 +82,7 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           </div>
         </div>
         <div class="preview-honbun">
-          <div class="honbun-sum">あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+          <div class="honbun-sum">{{$input->main}}</div>
           <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">

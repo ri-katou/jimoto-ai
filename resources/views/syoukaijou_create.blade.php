@@ -7,48 +7,86 @@
   </div>
   <div class="syoukaijou-create">
     <div class="syoukaijou-title">
-      <form action="upload.php" method="post" enctype="multipart/form-data">
+      <form action="{{ route('preview.edit') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="syoukaijou-title-daimei">
           <div class="yusei">タイトル入力(必須)</div>
         </div>
-        <div><textarea name="title" id="" cols="80" rows="1"></textarea></div>
+        @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @error('title')
+              <li>{{ $message }}</li>
+              @enderror
+            </ul>
+          </div>
+          @endif
+        <div><textarea name="title" id="" cols="80" rows="2">{{ old('title') }}</textarea></div>
     </div>
     <div class="syoukaijou-main">
       <div class="syoukaijou-honbun">本文（必須）</div>
-      <div class="form"><textarea name="main" id="" cols="80" rows="20"></textarea></div>
+      @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @error('main')
+              <li>{{ $message }}</li>
+              @enderror
+            </ul>
+          </div>
+          @endif
+      <div class="form"><textarea name="main" id="" cols="80" rows="20">{{ old('main') }}</textarea></div>
     </div>
     <div class="syoukaijou-pic">
-      <!-- データのエンコード方式である enctype は、必ず以下のようにしなければなりません -->
-      <form enctype="multipart/form-data" action="__URL__" method="POST">
-        <!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
-        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-        <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
-        このファイルをアップロード: <input name="userfile" type="file" />
-        <input type="submit" value="ファイルを送信" />
-      </form>
     </div>
     <div class="syoukaijou-jyanru-area">
       <div class="syoukaijou-jyanru">
         <div class="syoukaijou-jyanru-title">ジャンル</div>
+        @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @error('janru')
+              <li>{{ $message }}</li>
+              @enderror
+            </ul>
+          </div>
+          @endif
         <div class="janru-select"><select name="jyanru" id=""></select></div>
       </div>
       <div class="syoukaijou-area">
         <div class="syoukaijou-area-title">エリア</div><br><br>
+        @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @error('area')
+              <li>{{ $message }}</li>
+              @enderror
+            </ul>
+          </div>
+          @endif
         <div class="area-select"><select name="area" id=""></select></div>
       </div>
     </div>
     <div class="syoukaijou-supot">
       <div class="syoukaijou-supot-title">スポット情報</div>
       <div class="syoukaijou-supot-name">スポット名、店名（必須）</div>
-      <div class="form"><textarea name="" id="" cols="80" rows="1"></textarea></div>
+      @if($errors->any())
+          <div class="error-message">
+            <ul>
+              @error('spot-name')
+              <li>{{ $message }}</li>
+              @enderror
+            </ul>
+          </div>
+          @endif
+      <div class="form"><textarea name="spotname" id="" cols="80" rows="1">{{ old('spotname') }}</textarea></div>
       <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
-      <div class="form"><textarea name="zyusyo" id="" cols="80" rows="1"></textarea></div>
+      <div class="form"><textarea name="addles" id="" cols="80" rows="1">{{ old('addles') }}</textarea></div>
       <div class="syoukaijou-supot-url">URL（任意）</div>
-      <div class="form"><textarea name="url" id="" cols="80" rows="1"></textarea></div>
+      <div class="form"><textarea name="url" id="" cols="80" rows="1">{{ old('url') }}</textarea></div>
     </div>
     <div class="syoukaijou-bottom">
       <div class="return">戻る</div>
-      <div class="syoukaijou-pic-button"><a class="btn-daidai" href=#>投稿する</a></div>
+      <div class="syoukaijou-pic-button"><input class="btn-daidai" type="submit" value="投稿する"></div>
       </form>
     </div>
   </div>

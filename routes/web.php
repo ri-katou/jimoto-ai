@@ -30,13 +30,14 @@ Route::view('home/', 'home');
 
 Route::view('profile/', 'profile');
 
-Route::view('syoukaijou/', 'syoukaijou_create');
 
 Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
 Route::post('profile/edit/', 'ProfileController@profileEditCheck');
 
+Route::get('create/', function () {
+    return view('syoukaijou_create');
+})->name('syoukaijou.create');
 
-Route::view('create/', 'syoukaijou_create');
-Route::view('create/preview', 'preview');
-Route::view('syoukaijou', 'syoukaijou_disp');
-Route::view('jimoto_spot', 'jimoto_spot');
+Route::post('create/preview/', 'CreateController@showPreview')->name('preview.edit');
+Route::view('syoukaijou/', 'syoukaijou_disp');
+Route::view('jimoto_spot/', 'jimoto_spot');

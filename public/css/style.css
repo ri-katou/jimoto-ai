@@ -186,7 +186,9 @@ img {
     width: 150px;
     height: 35px;
 }
-
+.form {
+    width: 98%;
+}
 /* header */
 header {
     margin: 0 5vh;
@@ -516,6 +518,9 @@ header {
     justify-content: center;
     margin-bottom: 30px;
 }
+.register-part {
+    margin-bottom: 15px;
+}
 
 .register-check-part {
     margin-bottom: 10px;
@@ -532,7 +537,7 @@ header {
     margin-left: 20px;
 }
 
-.area-select {
+.area-select-choice {
     display: flex;
     justify-content: center;
     gap: 72px;
@@ -550,7 +555,7 @@ header {
 .area-teach {
     display: flex;
     justify-content: center;
-    margin: 0 0 91px;
+    margin: 0 0 91px 0;
 }
 
 .city-select {

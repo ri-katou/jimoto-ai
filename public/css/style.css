@@ -20,6 +20,17 @@ body {
 img {
     max-width: 100%;
 }
+input[type='submit'] {
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  font: inherit;
+  outline: none;
+}
+input[type='submit']:hover {
+    cursor: pointer;
+}
 /* 共通パーツ */
 .container {
     display: flex;
@@ -27,6 +38,7 @@ img {
 }
 .link {
     color: #339dff;
+    background: transparent;
 }
 .link a:hover {
     color: #339dff;
@@ -93,6 +105,7 @@ img {
 
 .btn-orange {
     display: block;
+    height: 3rem;
     text-align: center;
     padding: 1rem 0;
     font-weight: bold;
@@ -107,6 +120,7 @@ img {
 }
 .btn-green {
     display: block;
+    height: 3rem;
     text-align: center;
     padding: 1rem 0;
     font-weight: bold;
@@ -216,30 +230,43 @@ img {
     width: 98%;
 }
 /* header */
-header {
-    margin: 0 5vh;
-    padding: 100px 0;
-    margin-bottom: 30px;
+.header-fixed {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .header-container {
     width: 95%;
-    margin: 5vh 10vh 0 10vh;
+    margin: 0 5vh;
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
-    top: 0;
-    left: 0;
+    background-color: #f7ffd5;
+}
+.header-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 10px;
+    gap: 1rem;
 }
 .header-not-login {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    margin-bottom: 10px;
     gap: 1rem;
 }
 .logo {
     width: 150px;
     height: 150px;
     margin-top: 5vh;
+}
+.header-profile-icon {
+    background-color: #339dff;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    margin: 0 auto;
 }
 /* top */
 .top-logo {

@@ -22,9 +22,10 @@
   </div>
   <div class="user-delete-message">このアカウントを削除しますか？</div>
   <div class="profile-botom-container">
-    <form action="{{route('user.delete')}}" method="POST"></form>
+    <form action="{{route('user.delete')}}" method="POST">
     @csrf
     <input type="submit" class="btn-delete" value="退会する">
+    </form>
     <div class="return">戻る</div>
 </div>
 </div>

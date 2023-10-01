@@ -50,30 +50,7 @@ input[type='submit']:hover {
 }
 .return {
     color: #555;
-    font-size: 2rem;
-    padding-left: 35px;
-    position: relative;
-}
-.return:hover {
-    cursor: pointer;
-}
-.return:active {
-    margin-top: 2px;
-}
-.return::before {
-    content: "";
-    position: absolute;
-    background-image: url(../image/arrow.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
-}
-.return {
-    color: #555;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-left: 35px;
     position: relative;
 }
@@ -708,6 +685,42 @@ input[type='submit']:hover {
     align-items: center;
     gap: 3rem;
 }
+/* profile_edit */
+.profile-edit-center-content {
+    margin: 0 auto;
+    width: max-content;
+}
+.profile-edit-now-nickname,
+.profile-edit-now-email,
+.profile-edit-now-eria {
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+.profile-edit-nickname-input,
+.profile-edit-email-input {
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+/* profile_edit_check */
+.profile-edit-check-message {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.profile-edit-check-email,
+.profile-edit-check-nickname,
+.profile-edit-check-eria {
+    margin-left: 1rem;
+}
+.profile-edit-check-email-output,
+.profile-edit-check-nickname-output,
+.profile-edit-check-eria-output {
+    margin-bottom: 2rem;
+}
+
+
+
 
 /* syoukaijou_create */
 
@@ -1064,4 +1077,12 @@ input[type='submit']:hover {
 
 .ittemitai-math {
     margin-left: 15px;
+}
+/* user?delete */
+.user-delete-center-content {
+    margin: 0 auto;
+    width: max-content;
+}
+.user-delete-message {
+    margin-bottom: 2rem;
 }

@@ -15,7 +15,8 @@
     <header class="header-fixed">
         <div class="header-container">
             <div class="logo">
-                <img src="/image/jimotoai-logo.png" alt="logo">
+                <a href="{{route('home')}}">
+                <img src="/image/jimotoai-logo.png" alt="logo"></a>
             </div>
             @if (Auth::check())
                 <div class="header-login">

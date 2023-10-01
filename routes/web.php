@@ -27,12 +27,12 @@ Route::post('register/check/', 'UserController@showRegisterCheck')->name('regist
 
 Auth::routes();
 
-Route::view('home/', 'home');
+Route::get('home/',function(){
+    return view('home');
+})->name('home');
 
 
-Route::get('profile/', function(){
-    return view('profile');
-})->name('profile');
+Route::get('profile/','ProfileController@showProfile')->name('profile');
 
 Route::view('syoukaijou/', 'syoukaijou_create');
 

@@ -6,19 +6,19 @@
                 <div class=" profile-icon"><img src="" alt="myimage"></div>
                 <div class="profile-edit-link">[<a href="#" class="link">画像の編集</a>]</div>
             </div>
-            <div class="profile-nickname">DBから拾う</div>
+            <div class="profile-nickname">{{$user->name}}</div>
         </div>
         <div class="profile-center-content">
             <div class="profile-email">
                 <div class="profile-email-title underline-green">メールアドレス</div>
                 <div class="profile-email-output">
-                    email@mail.com
+                    {{$user->email}}
                 </div>
             </div>
             <div class="profile-usereria">
                 <div class="profile-useereria-title underline-green">あなたのエリア</div>
                 <div class="profile-eria-output">
-                    渋川市
+                      {{$municipalitie}}
                 </div>
             </div>
         </div>

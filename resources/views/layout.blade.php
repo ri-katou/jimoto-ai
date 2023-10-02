@@ -41,8 +41,6 @@
                     <a class="btn-green" href="{{ route('login') }}">ログイン</a>
                 </div>
             @endif
-
-
         </div>
     </header>
     <main>

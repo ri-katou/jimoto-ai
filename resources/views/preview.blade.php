@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<input type="hidden" $Request>
 <div class="preview-top">
   <div class="preview-daimei">紹介状作成</div>
   <div class="return">戻る</div>
@@ -46,7 +47,7 @@
       </tr>
       <tr>
         <td height="30">住所</td>
-        <td class="spot-addles" height="30">{{$input->addles}}</td>
+        <td class="spot-address" height="30">{{$input->address}}</td>
       </tr>
       <tr>
         <td height="30">URL</td>
@@ -128,7 +129,7 @@
     </div>
 <div class="preview-bottom">
   <div class="preview-bottom-text">この内容で投稿します。</div>
-  <div class="preview-button-sub"><a class="btn-daidai" href=#>投稿する</a></div>
+  <div class="preview-button-sub"><input type="submit" class="btn-daidai" value="投稿する" href=#></div>
   <div class="return">戻る</div>
 </div>
 </div>

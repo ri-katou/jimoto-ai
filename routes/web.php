@@ -47,10 +47,11 @@ Route::get('user/delete/',function(){
     return view('user_delete');
 })->name('user.delete');
 Route::post('user/delete','UserController@userDelete');
+
 Route::get('create/', function () {
     return view('syoukaijou_create');
 })->name('syoukaijou.create');
+Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
+Route::post('create/preview/', 'CreateConroller@create');
 
-Route::post('create/preview/', 'CreateController@showPreview')->name('preview.edit');
-Route::view('syoukaijou/', 'syoukaijou_disp');
 Route::view('jimoto_spot/', 'jimoto_spot');

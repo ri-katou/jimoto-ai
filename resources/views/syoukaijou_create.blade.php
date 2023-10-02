@@ -80,7 +80,7 @@
           @endif
       <div class="form"><textarea name="spotname" id="" cols="80" rows="1">{{ old('spotname') }}</textarea></div>
       <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
-      <div class="form"><textarea name="addles" id="" cols="80" rows="1">{{ old('addles') }}</textarea></div>
+      <div class="form"><textarea name="address" id="" cols="80" rows="1">{{ old('address') }}</textarea></div>
       <div class="syoukaijou-supot-url">URL（任意）</div>
       <div class="form"><textarea name="url" id="" cols="80" rows="1">{{ old('url') }}</textarea></div>
     </div>

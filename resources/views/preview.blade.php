@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-<input type="hidden" $Request>
 <div class="preview-top">
   <div class="preview-daimei">紹介状作成</div>
   <div class="return">戻る</div>
@@ -11,27 +10,29 @@
     <div class="syoukaijou-day">日付</div>
     <div class="janru-area">
       <div class="janru-tag">
-      <div class="jyanru"> ジャンル：</div>
-      <div class="jyanru-sub">ラーメン</div>
+        <div class="jyanru"> ジャンル：</div>
+        <div class="jyanru-sub">ラーメン</div>
       </div>
       <div class="area-tag">
-      <div class="area"> エリア：</div>
-      <div class="area-sub">渋川</div>
+        <div class="area"> エリア：</div>
+        <div class="area-sub">渋川</div>
       </div>
     </div>
   </div>
   <div class="syoukaijou-title">{{$input->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
+      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+      {{$input->image1}}
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
+        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
       </div>
     </div>
     <div class="preview-honbun">
-      <div class="preview-spot"><div class="spotname">{{$input->spotname}}</div>
+      <div class="preview-spot">
+        <div class="spotname">{{$input->spotname}}</div>
       </div>
       <div class="syoukaijou-text">{{$input->main}}</div>
       <div class="ittemitai"></div>
@@ -59,32 +60,32 @@
 </div>
 
 <div class="preview-sam-all">
-<div class="preview-sam">サムネイルイメージ</div>
-<div class="syoukaijou-sam">
-      <div class="preview-syoukaijou-top-sam">
-        <div class="sum-top">
-          <div class="syoukaijou-day-sam">日付</div>
-          <div class="syoukaijou-title-sam">{{$input->title}}</div>
+  <div class="preview-sam">サムネイルイメージ</div>
+  <div class="syoukaijou-sam">
+    <div class="preview-syoukaijou-top-sam">
+      <div class="sum-top">
+        <div class="syoukaijou-day-sam">日付</div>
+        <div class="syoukaijou-title-sam">{{$input->title}}</div>
+      </div>
+      <div class="janru-area-sam">
+        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">ラーメン</div>
         </div>
-        <div class="janru-area-sam">
-          <div class="janru-tag"> ジャンル：<div class="jyanru-sub">ラーメン</div>
-          </div>
-          <div class="area-tag"> エリア：<div class="area-sub">渋川</div>
-          </div>
+        <div class="area-tag"> エリア：<div class="area-sub">渋川</div>
         </div>
       </div>
-      <div class="preview-main-sam">
-        <div class="preview-pics-sam">
-          <div class="preview-pic1-sam"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" width="100%" height="100%" border="0" alt=""></div>
-          <div class="preview-pics-sub">
-            <div class="preview-pic2-sam"></div>
-            <div class="preview-pic3-sam"></div>
-            <div class="preview-pic4-sam"></div>
-          </div>
+    </div>
+    <div class="preview-main-sam">
+      <div class="preview-pics-sam">
+        <div class="preview-pic1-sam"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" width="100%" height="100%" border="0" alt=""></div>
+        <div class="preview-pics-sub">
+          <div class="preview-pic2-sam"></div>
+          <div class="preview-pic3-sam"></div>
+          <div class="preview-pic4-sam"></div>
         </div>
-        <div class="preview-honbun">
-          <div class="honbun-sum">{{$input->main}}</div>
-          <div class="fav_btn">
+      </div>
+      <div class="preview-honbun">
+        <div class="honbun-sum">{{$input->main}}</div>
+        <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">
                 <style type="text/css">
@@ -102,7 +103,7 @@
             <div class="ittemitai-math">0</div>
           </div>
 
-<div class="fav-btn-ittayo">
+          <div class="fav-btn-ittayo">
             <i class="fa-ittayo" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">
                 <style type="text/css">
                   .st0 {
@@ -120,17 +121,34 @@
 		211.134,165.33 	" style="fill: rgb(192, 192, 192);"></polygon>
                 </g>
               </svg></i>
-              <div class="ittayo-math">0</div>
-              </div>
+            <div class="ittayo-math">0</div>
           </div>
         </div>
       </div>
     </div>
-    </div>
+  </div>
+</div>
 <div class="preview-bottom">
   <div class="preview-bottom-text">この内容で投稿します。</div>
-  <div class="preview-button-sub"><input type="submit" class="btn-daidai" value="投稿する" href=#></div>
+  <div class="preview-button-sub">
+    <form action="{{ route('home') }}" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type="hidden" value="{{$input->title}}" name="title">
+      <input type="hidden" value="{{$input->main}}" name="main">
+      <input type="hidden" value="{{$input->image1}}" name="image1">
+      <input type="hidden" value="{{$input->image2}}" name="image2">
+      <input type="hidden" value="{{$input->image3}}" name="image3">
+      <input type="hidden" value="{{$input->image4}}" name="image4">
+      <input type="hidden" value="{{$input->janru}}" name="janru">
+      <input type="hidden" value="{{$input->area}}" name="area">
+      <input type="hidden" value="{{$input->spotname}}" name="spotname">
+      <input type="hidden" value="{{$input->address}}" name="address">
+      <input type="hidden" value="{{$input->url}}" name="url">
+      <input type="submit" class="btn-daidai" value="投稿する">
+    </form>
+  </div>
+
   <div class="return">戻る</div>
 </div>
-</div>
+
 @endsection

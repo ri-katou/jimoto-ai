@@ -19,5 +19,6 @@ class UserController extends Controller
     }
     public function userDelete(){
         User::find(Auth::id())->delete();
+        return view('/');
     }
 }

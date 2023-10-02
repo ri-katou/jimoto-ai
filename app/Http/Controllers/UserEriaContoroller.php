@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Area;
-use App\Municipalitie;
+use App\User;
+use App\User_detail;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class UserEriaContoroller extends Controller
 {
@@ -33,6 +35,18 @@ class UserEriaContoroller extends Controller
 
     public function areaChoice(Request $request)
     {
-        $area = $request->input('area');
+
+        $detail = new User_detail();
+        // データベース接続
+
+        $detail->user_id = Auth::id();
+        $detail->municipalitie_id = intval($request->input('area_choice'));
+        $detail->created_at = Carbon::now();
+        $detail->updated_at = Carbon::now();
+        // データベースに保存
+        $detail->save();
+        // 登録が完了したらリダイレクト
+        return
+            redirect()->route('home');
     }
 }

@@ -151,6 +151,7 @@ return [
 
   'attributes' => [
     'nickname' => 'ニックネーム',
+    'name' => 'ニックネーム（名前）',
     'email' => 'メールアドレス',
     'password' => 'パスワード',
   ],

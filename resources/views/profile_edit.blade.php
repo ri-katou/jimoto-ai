@@ -7,14 +7,14 @@
                     <div class="profile-myimage profile-icon"><img src="" alt="myimage"></div>
                     <div class="profile-edit-link">[<a href="#" class="link">編集</a>]</div>
                 </div>
-                <div class="profile-nickname">DBから拾う</div>
+                <div class="profile-nickname">{{$user->name}}</div>
             </div>
-            <div class="profile-edit-content">
+            <div class="profile-edit-center-content">
                 @csrf
                 <div class="profile-edit-nickname">
                     <div class="profile-edit-nickname-title underline-green">現在のニックネーム</div>
                     <div class="profile-edit-now-nickname container">
-                        <div class="profile-edit-nickname-output">群馬　太郎</div>
+                        <div class="profile-edit-nickname-output">{{$user->name}}</div>
                         <div>[
                             <strong class="link edit-btn">
                                 編集する
@@ -37,8 +37,8 @@
                     <div class="profile-email">
                         <div class="profile-email-title underline-green">メールアドレス</div>
                         <div class="profile-edit-now-email container">
-                            <div class="profile-email-output">
-                                email@mail.com
+                            <div class="profile-edit-email-output">
+                                {{$user->email}}
                             </div>
                             <div>[<strong class="link edit-btn">
                                     編集する
@@ -62,7 +62,7 @@
                         <div class="profile-useereria-title underline-green">あなたのエリア</div>
                         <div class="profile-edit-now-eria container">
                             <div class="profile-eria-output">
-                                渋川市
+                                {{$municipalitie}}
                             </div>
                             <select name="eria">
                                 <option value="県央">県央</option>
@@ -70,10 +70,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="profile-botom-container">
-                    <input type="submit" class="btn-green" value="編集する">
-                    <div class="link profile-user-delete">退会する</div>
+                <div class="profile-botom-btn">
+                    <input type="submit" class="btn-green" value="OK">
                 </div>
+            </div>
         </form>
     </div>
 @endsection

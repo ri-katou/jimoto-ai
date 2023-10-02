@@ -28,14 +28,14 @@ Route::post('register/check/', 'UserController@showRegisterCheck')->name('regist
 
 Auth::routes();
 
+
 Route::get('home/', function () {
     return view('home');
 })->name('home');
 
 
-Route::get('profile/', function () {
-    return view('profile');
-})->name('profile');
+Route::get('profile/','ProfileController@showProfile')->name('profile');
+
 
 Route::view('syoukaijou/', 'syoukaijou_create');
 
@@ -52,7 +52,7 @@ Route::get('user/delete/', function () {
 })->name('user.delete');
 Route::post('user/delete','UserController@userDelete');
 
-Route::view('create/', 'syoukaijou_create');
+
 Route::view('create/preview', 'preview');
 Route::view('syoukaijou', 'syoukaijou_disp');
 Route::view('jimoto_spot', 'jimoto_spot');

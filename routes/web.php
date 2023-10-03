@@ -31,6 +31,8 @@ Auth::routes();
 
 Route::get('home/', 'HomeController@test')->name('home');
 
+Route::get('home/post/list', 'HomeController@message')->name('home.post.check');
+
 
 Route::get('profile/', 'ProfileController@showProfile')->name('profile');
 

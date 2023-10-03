@@ -134,6 +134,12 @@ return [
       'rule-name' => 'custom-message',
       'nickname' => 'ニックネーム',
       'email' => 'メールアドレス',
+      'title' => 'タイトル',
+      'main' => 'メイン',
+      'janru' => 'ジャンル',
+      'spot-name' => 'スポット名',
+      'addles' => '住所',
+      'url' => 'URL',
       'password' => 'パスワード',
     ],
   ],
@@ -151,7 +157,14 @@ return [
 
   'attributes' => [
     'nickname' => 'ニックネーム',
+    'name' => 'ニックネーム（名前）',
     'email' => 'メールアドレス',
+    'title' => 'タイトル',
+      'main' => 'メイン',
+      'janru' => 'ジャンル',
+      'spot-name' => 'スポット名',
+      'addles' => '住所',
+      'url' => 'URL',
     'password' => 'パスワード',
   ],
 

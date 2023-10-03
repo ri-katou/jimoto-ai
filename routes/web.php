@@ -29,15 +29,13 @@ Route::post('register/check/', 'UserController@showRegisterCheck')->name('regist
 Auth::routes();
 
 
-Route::get('home/', function () {
-    return view('home');
-})->name('home');
+Route::get('home/', 'HomeController@test')->name('home');
+
+Route::get('home/post/list', 'HomeController@message')->name('home.post.check');
 
 
-Route::get('profile/','ProfileController@showProfile')->name('profile');
+Route::get('profile/', 'ProfileController@showProfile')->name('profile');
 
-
-Route::view('syoukaijou/', 'syoukaijou_create');
 
 Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
 Route::post('profile/edit/', 'ProfileController@profileEditCheck');
@@ -50,11 +48,9 @@ Route::post('profile/edit/check', 'ProfileController@profileEditRegi');
 Route::get('user/delete/', function () {
     return view('user_delete');
 })->name('user.delete');
-Route::post('user/delete','UserController@userDelete');
+Route::post('user/delete', 'UserController@userDelete');
 
 
-Route::view('create/preview', 'preview');
-Route::view('syoukaijou', 'syoukaijou_disp');
-Route::view('jimoto_spot', 'jimoto_spot');
-
-Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter');
+Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');
+Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
+Route::post('create/preview/', 'CreateController@create')->name('home');

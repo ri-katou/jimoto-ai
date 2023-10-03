@@ -743,7 +743,7 @@ input[type="submit"]:hover {
 
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
-}
+}spot-addles
 .syoukaijou-honbun {
     margin-left: -15%;
 }
@@ -851,7 +851,6 @@ input[type="submit"]:hover {
 
 .syoukaijou-title {
     font-size: 1.5rem;
-    margin-right: 40%;
     margin-bottom: 3%;
 }
 
@@ -916,7 +915,9 @@ input[type="submit"]:hover {
 }
 
 .syoukaijou-day-sam {
-    margin: 2%;
+    margin-top: 5%;
+    margin-left: 5%;
+    white-space: nowrap;
 }
 
 .syoukaijou-sam-disp {
@@ -942,9 +943,12 @@ input[type="submit"]:hover {
 }
 
 .syoukaijou-title-sam {
-    margin-top: 2%;
+    margin-top: 7%;
     margin-left: 10%;
     font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .preview-main-sam {
@@ -1052,7 +1056,7 @@ input[type="submit"]:hover {
 
 .honbun-sum {
     width: 220px;
-    max-height: 95px;
+    max-height: 80px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;

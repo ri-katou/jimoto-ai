@@ -11,18 +11,19 @@
     <div class="janru-area">
       <div class="janru-tag">
         <div class="jyanru"> ジャンル：</div>
-        <div class="jyanru-sub">ラーメン</div>
+        <div class="jyanru-sub">{{ $categorie->category_name}}</div>
       </div>
       <div class="area-tag">
         <div class="area"> エリア：</div>
-        <div class="area-sub">渋川</div>
+        <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
       </div>
     </div>
   </div>
-  <div class="syoukaijou-title">タイトル</div>
+  <div class="syoukaijou-title">{{$input->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
       <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+      {{$input->image1}}
       <div class="preview-pics-sub">
         <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
         <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
@@ -30,13 +31,10 @@
       </div>
     </div>
     <div class="preview-honbun">
-      <div class="preview-spot">スポット名&emsp;<div class="spot-name"></div>
+      <div class="preview-spot">
+        <div class="spotname">{{$input->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </div>
+      <div class="syoukaijou-text">{{$input->main}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>
@@ -46,15 +44,15 @@
     <table>
       <tr>
         <td height="30" width="100">スポット名</td>
-        <td class="spot-name" height="30"></td>
+        <td class="spot-name" height="30">{{$input->spotname}}</td>
       </tr>
       <tr>
         <td height="30">住所</td>
-        <td class="spot-address" height="30"></td>
+        <td class="spot-address" height="30">{{$input->address}}</td>
       </tr>
       <tr>
         <td height="30">URL</td>
-        <td class="spot-url" height="30"></td>
+        <td class="spot-url" height="30">{{$input->url}}</td>
       </tr>
     </table>
   </div>
@@ -67,12 +65,12 @@
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
         <div class="syoukaijou-day-sam">日付</div>
-        <div class="syoukaijou-title-sam">タイトル</div>
+        <div class="syoukaijou-title-sam">{{$input->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">ラーメン</div>
+        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{ $input->categorie}}</div>
         </div>
-        <div class="area-tag"> エリア：<div class="area-sub">渋川</div>
+        <div class="area-tag"> エリア：<div class="area-sub">{{ $input->municipalitie}}</div>
         </div>
       </div>
     </div>
@@ -86,7 +84,7 @@
         </div>
       </div>
       <div class="preview-honbun">
-        <div class="honbun-sum">あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+        <div class="honbun-sum">{{$input->main}}</div>
         <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">
@@ -132,8 +130,25 @@
 </div>
 <div class="preview-bottom">
   <div class="preview-bottom-text">この内容で投稿します。</div>
-  <div class="preview-button-sub"><a class="btn-daidai" href=#>投稿する</a></div>
+  <div class="preview-button-sub">
+    <form action="{{ route('home') }}" method="post" enctype="multipart/form-data">
+      @csrf
+      <input type="hidden" value="{{$input->title}}" name="title">
+      <input type="hidden" value="{{$input->main}}" name="main">
+      <input type="hidden" value="{{$input->image1}}" name="image1">
+      <input type="hidden" value="{{$input->image2}}" name="image2">
+      <input type="hidden" value="{{$input->image3}}" name="image3">
+      <input type="hidden" value="{{$input->image4}}" name="image4">
+      <input type="hidden" value="{{$input->categorie}}" name="categorie">
+      <input type="hidden" value="{{$input->municipalitie}}" name="area">
+      <input type="hidden" value="{{$input->spotname}}" name="spotname">
+      <input type="hidden" value="{{$input->address}}" name="address">
+      <input type="hidden" value="{{$input->url}}" name="url">
+      <input type="submit" class="btn-daidai" value="投稿する">
+    </form>
+  </div>
+
   <div class="return">戻る</div>
 </div>
-</div>
+
 @endsection

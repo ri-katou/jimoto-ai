@@ -8,6 +8,6 @@ class Area extends Model
 {
     public function municipalities()
     {
-        return $this->hasMany('App\municipalitie');
+        return $this->hasMany('App\Municipalitie');
     }
 }

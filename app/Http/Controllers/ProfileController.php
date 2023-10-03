@@ -8,14 +8,15 @@ use Illuminate\Http\Request;
 use App\User;
 use App\User_detail;
 use Illuminate\Support\Facades\Auth;
+use App\Syoukaijou;
 
 
 class ProfileController extends Controller
 {
-    public function showProfile(User_detail $user_detail) {
+    public function showProfile() {
         $user = Auth::user();
-        $municipalitie = $user_detail;
-        // Municipalitie::find($user_detail->municipalitie_id)->get();
+        $municipalitie = $user->join('user_detials','users.id','=','user_details.user_id')->join('municipalities','user_detials.municipalitie_id','=','municipalities.id');
+
         return view('profile',compact('user','municipalitie'));
     }
     public function showProfileEdit(){
@@ -32,12 +33,14 @@ class ProfileController extends Controller
     public function profileEditRegi(EditProfiles $request){
         $user = Auth::user();
         $user_detail = User_detail::find($user->id);
-        $user->name = $request->nickname;
-        $user->email = $request->email;
+        $user->name = $request->input('nickname');
+        $user->email = $request->input('email');
         $user_detail->aria_id = $request->eria;
 
         $user->save();
         $user_detail->save();
+
+
 
     }
 }

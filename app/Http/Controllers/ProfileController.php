@@ -15,7 +15,7 @@ class ProfileController extends Controller
 {
     public function showProfile() {
         $user = Auth::user();
-        $municipalitie = $user->join('user_detials','users.id','=','user_details.user_id')->join('municipalities','user_detials.municipalitie_id','=','municipalities.id');
+        $municipalitie = Auth::user()->join('user_detials','users.id','=','user_details.user_id')->join('municipalities','user_detials.municipalitie_id','=','municipalities.id');
 
         return view('profile',compact('user','municipalitie'));
     }

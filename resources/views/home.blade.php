@@ -4,7 +4,7 @@
   <div class="syoukaijou-header">
     <div class="home-icon-right">
       <div class="profile-icon"></div>
-      <div class="icon-prof"><a href="">プロフィール画面へ</a></div>
+      <div class="icon-prof"><a href="{{route('profile')}}">プロフィール画面へ</a></div>
     </div>
     <div class="home-icon-left">
       <div class="icon-space">

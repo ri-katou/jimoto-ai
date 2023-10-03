@@ -21,15 +21,15 @@ body {
 img {
     max-width: 100%;
 }
-input[type='submit'] {
+input[type="submit"] {
     -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  font: inherit;
-  outline: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    font: inherit;
+    outline: none;
 }
-input[type='submit']:hover {
+input[type="submit"]:hover {
     cursor: pointer;
 }
 /* 共通パーツ */
@@ -124,7 +124,7 @@ input[type='submit']:hover {
     position: relative;
 }
 .btn-delete::before {
-    content: '';
+    content: "";
     position: absolute;
     background-image: url(../image/dust-box.svg);
     background-size: 100%;
@@ -719,9 +719,6 @@ input[type='submit']:hover {
     margin-bottom: 2rem;
 }
 
-
-
-
 /* syoukaijou_create */
 
 .syoukaijou_create {
@@ -1090,3 +1087,45 @@ input[type='submit']:hover {
 .user-delete-message {
     margin-bottom: 2rem;
 }
+
+/* start 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
+.all-list {
+    display: flex;
+    justify-content: center;
+}
+.post-list-header {
+    display: flex;
+    justify-content: center;
+}
+.syoukaijougrit {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px 0;
+}
+.post-grid {
+    width: 350px;
+    height: 250px;
+}
+.list-head {
+    width: 388px;
+    height: 138px;
+    flex-shrink: 0;
+    border-radius: 30px 50px 0px 0px;
+    border-top: 3px solid #ebff9c;
+    border-right: 3px solid #ebff9c;
+    border-left: 3px solid #ebff9c;
+    background: rgba(255, 255, 255, 0.6);
+}
+.post-all-space {
+    width: 1164px;
+    height: 921px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 30px 30px;
+    border-right: 3px solid #ebff9c;
+    border-bottom: 3px solid #ebff9c;
+    border-left: 3px solid #ebff9c;
+    background: #fff;
+}
+
+/* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/

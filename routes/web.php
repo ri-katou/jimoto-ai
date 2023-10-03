@@ -29,12 +29,12 @@ Route::post('register/check/', 'UserController@showRegisterCheck')->name('regist
 Auth::routes();
 
 
-Route::get('home/', function () {
-    return view('home');
-})->name('home');
+Route::get('home/', 'HomeController@test')->name('home');
+
+Route::get('home/post/list', 'HomeController@message')->name('home.post.check');
 
 
-Route::get('profile/','ProfileController@showProfile')->name('profile');
+Route::get('profile/', 'ProfileController@showProfile')->name('profile');
 
 
 Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
@@ -48,7 +48,7 @@ Route::post('profile/edit/check', 'ProfileController@profileEditRegi');
 Route::get('user/delete/', function () {
     return view('user_delete');
 })->name('user.delete');
-Route::post('user/delete','UserController@userDelete');
+Route::post('user/delete', 'UserController@userDelete');
 
 
 Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');

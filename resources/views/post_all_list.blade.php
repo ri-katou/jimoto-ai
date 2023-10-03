@@ -3,12 +3,26 @@
 <div class="post-all-list">
   <div class="post-list-header">
     <div class="list-head">
-      <div class="post-syoukaijou-head">
-        <div class="post-head-font "></div>font
+      <div class="post-syoukaijou-head container">
+        <div class="post-head-img"></div>
+        <div class="post-head-font post-underline-green">投稿した紹介状</div>
+
       </div>
     </div>
-    <div class="list-head"></div>
-    <div class="list-head"></div>
+    <div class="list-head">
+      <div class="post-syoukaijou-head container">
+        <div class="post-head-img"></div>
+        <div class="post-head-font post-underline-green">行ってみたい</div>
+
+      </div>
+    </div>
+    <div class="list-head">
+      <div class="post-syoukaijou-head container">
+        <div class="post-head-img"></div>
+        <div class="post-head-font post-underline-green">行ったよ</div>
+
+      </div>
+    </div>
   </div>
   <div class="all-list">
     <div class="post-all-space">

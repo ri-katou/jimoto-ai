@@ -31,9 +31,11 @@
                 <div class="syoukaijou-title-sam">{{$post->title}}</div>
               </div>
               <div class="janru-area-sam">
-                <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{$post->category_id}}</div>
+                <div class="janru-tag">
+                  {{$post->category_name}}
                 </div>
-                <div class="area-tag"> エリア：<div class="area-sub">{{$post->municipalities_id}}</div>
+                <div class="area-tag">
+                  <div class="area-sub">{{$post->municipalities_name}}</div>
                 </div>
               </div>
             </div>

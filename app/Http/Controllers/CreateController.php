@@ -8,16 +8,16 @@ use App\syoukaijou;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use App\Municipalitie;
-use App\Categorie;
+use App\Category;
 
 
 class CreateController extends Controller
 {
     public function showPreview(CreateSyoukaijou $Request)
     {
-        $categorie = Categorie::where('id', $Request->categorie)->get();
-        $municipalitie = Municipalitie::where('id', $Request->municipalitie)->get();
-        return view('preview', compact('categorie','Request','municipalitie'));
+        $category = Category::where('id', $Request->category)->first();
+        $municipalitie = Municipalitie::where('id', $Request->municipalitie)->first();
+        return view('preview', compact('category','Request','municipalitie'));
     }
 
 
@@ -30,8 +30,8 @@ class CreateController extends Controller
         $syoukaijou->image2 = $Request->image2;
         $syoukaijou->image3 = $Request->image3;
         $syoukaijou->image4 = $Request->image4;
-        $syoukaijou->municipalities_id = $Request->municipalitie;
-        $syoukaijou->category_id = $Request->categorie;
+        $syoukaijou->municipalities_id = intval($Request->municipalitie);
+        $syoukaijou->category_id = intval($Request->category);
         $syoukaijou->spotname = $Request->spotname;
         $syoukaijou->address = $Request->address;
         $syoukaijou->url = $Request->url;
@@ -48,9 +48,9 @@ class CreateController extends Controller
     public function showCreate()
     {
         $municipalitie = Municipalitie::all();
-        $categorie = Categorie::all();
+        $category = Category::all();
 
-        return view('syoukaijou_create', compact('municipalitie','categorie'));
+        return view('syoukaijou_create', compact('municipalitie','category'));
 
     }
     

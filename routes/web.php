@@ -37,8 +37,6 @@ Route::get('home/', function () {
 Route::get('profile/','ProfileController@showProfile')->name('profile');
 
 
-Route::view('syoukaijou/', 'syoukaijou_create');
-
 Route::get('profile/edit/', 'ProfileController@showProfileEdit')->name('profile.edit');
 Route::post('profile/edit/', 'ProfileController@profileEditCheck');
 
@@ -56,3 +54,8 @@ Route::post('user/delete','UserController@userDelete');
 Route::view('create/preview', 'preview');
 Route::view('syoukaijou', 'syoukaijou_disp');
 Route::view('jimoto_spot', 'jimoto_spot');
+Route::get('create/', function () {
+    return view('syoukaijou_create');
+})->name('syoukaijou.create');
+Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
+Route::post('create/preview/', 'CreateController@create')->name('home');

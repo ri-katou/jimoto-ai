@@ -139,16 +139,16 @@
       <input type="hidden" value="{{$input->image2}}" name="image2">
       <input type="hidden" value="{{$input->image3}}" name="image3">
       <input type="hidden" value="{{$input->image4}}" name="image4">
-      <input type="hidden" value="{{$input->categorie}}" name="categorie">
-      <input type="hidden" value="{{$input->municipalitie}}" name="area">
+      <input type="hidden" value="{{$categorie->id}}" name="categorie">
+      <input type="hidden" value="{{$municipalitie->id}}" name="area">
       <input type="hidden" value="{{$input->spotname}}" name="spotname">
       <input type="hidden" value="{{$input->address}}" name="address">
       <input type="hidden" value="{{$input->url}}" name="url">
       <input type="submit" class="btn-daidai" value="投稿する">
     </form>
   </div>
-
-  <div class="return">戻る</div>
 </div>
+
+<div class="return">戻る</div>
 
 @endsection

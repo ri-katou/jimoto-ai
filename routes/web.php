@@ -51,11 +51,6 @@ Route::get('user/delete/', function () {
 Route::post('user/delete','UserController@userDelete');
 
 
-Route::view('create/preview', 'preview');
-Route::view('syoukaijou', 'syoukaijou_disp');
-Route::view('jimoto_spot', 'jimoto_spot');
-Route::get('create/', function () {
-    return view('syoukaijou_create');
-})->name('syoukaijou.create');
+Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');
 Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
 Route::post('create/preview/', 'CreateController@create')->name('home');

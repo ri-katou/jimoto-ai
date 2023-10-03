@@ -11,11 +11,11 @@
     <div class="janru-area">
       <div class="janru-tag">
         <div class="jyanru"> ジャンル：</div>
-        <div class="jyanru-sub">ラーメン</div>
+        <div class="jyanru-sub">{{ $categorie->category_name}}</div>
       </div>
       <div class="area-tag">
         <div class="area"> エリア：</div>
-        <div class="area-sub">渋川</div>
+        <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
       </div>
     </div>
   </div>
@@ -68,9 +68,9 @@
         <div class="syoukaijou-title-sam">{{$input->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">ラーメン</div>
+        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{ $input->categorie}}</div>
         </div>
-        <div class="area-tag"> エリア：<div class="area-sub">渋川</div>
+        <div class="area-tag"> エリア：<div class="area-sub">{{ $input->municipalitie}}</div>
         </div>
       </div>
     </div>
@@ -139,8 +139,8 @@
       <input type="hidden" value="{{$input->image2}}" name="image2">
       <input type="hidden" value="{{$input->image3}}" name="image3">
       <input type="hidden" value="{{$input->image4}}" name="image4">
-      <input type="hidden" value="{{$input->janru}}" name="janru">
-      <input type="hidden" value="{{$input->area}}" name="area">
+      <input type="hidden" value="{{$input->categorie}}" name="categorie">
+      <input type="hidden" value="{{$input->municipalitie}}" name="area">
       <input type="hidden" value="{{$input->spotname}}" name="spotname">
       <input type="hidden" value="{{$input->address}}" name="address">
       <input type="hidden" value="{{$input->url}}" name="url">

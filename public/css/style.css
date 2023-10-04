@@ -743,8 +743,8 @@ input[type="submit"]:hover {
 
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
-}spot-addles
-.syoukaijou-honbun {
+}
+spot-addles .syoukaijou-honbun {
     margin-left: -15%;
 }
 
@@ -1097,6 +1097,11 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
 }
+.list-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .syoukaijougrit {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1109,7 +1114,7 @@ input[type="submit"]:hover {
 }
 .list-head {
     width: 388px;
-    height: 138px;
+    height: 5rem;
     flex-shrink: 0;
     border-radius: 30px 50px 0px 0px;
     border-top: 3px solid #ebff9c;
@@ -1127,5 +1132,19 @@ input[type="submit"]:hover {
     border-left: 3px solid #ebff9c;
     background: #fff;
 }
-
+.post-syoukaijou-head {
+    gap: 30px;
+}
+.post-head-font {
+    font-size: 1.7rem;
+}
+.post-head-img {
+    width: 50px;
+    height: 50px;
+    background-color: #12f128;
+}
+.post-underline-green {
+    width: max-content;
+    border-bottom: 2px #12f128 solid;
+}
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/

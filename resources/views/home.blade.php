@@ -98,7 +98,7 @@
         <div class="syou"></div>
       </div>
     </div>
-    <div class="mottomiru"><a href="">もっと見る</a></div>
+    <div class="mottomiru"><a href="{{route('home.post.check')}}">もっと見る</a></div>
   </div>
   <div class="syoukaijyou-hyouji">
     <div class="home-body midasi">

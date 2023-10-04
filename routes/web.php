@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('user.delete');
     Route::post('user/delete', 'UserController@userDelete');
 
+
     Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');

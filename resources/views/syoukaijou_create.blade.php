@@ -57,8 +57,8 @@
           @endif
           <!-- ジャンルプルダウン -->
           <div class="form-group">
-            <select class="form-control" id="id" name="categorie">
-              @foreach ($categorie as $item)
+            <select class="form-control" id="id" name="category">
+              @foreach ($category as $item)
               <option value="{{ $item->id }}">{{ $item->category_name }}</option>
               @endforeach
             </select>
@@ -77,13 +77,13 @@
           </div>
           @endif
           <div class="area-select">
-          <div class="form-group">
-            <select class="form-control" id="id" name="municipalitie">
-              @foreach ($municipalitie as $area)
-              <option value="{{ $area->id }}">{{ $area->municipalities_name }}</option>
-              @endforeach
-            </select>
-          </div>
+            <div class="form-group">
+              <select class="form-control" id="id" name="municipalitie">
+                @foreach ($municipalitie as $area)
+                <option value="{{ $area->id }}">{{ $area->municipalities_name }}</option>
+                @endforeach
+              </select>
+            </div>
           </div>
         </div>
         <div class="syoukaijou-supot">

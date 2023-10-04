@@ -15,22 +15,19 @@ class SpotController extends Controller
 {
 
     public function showSpot(){
-        $syoukaijou = Syoukaijou::all();
-        $municipalitie = Municipalitie::all();
-        $category = Category::all();
 
-        $syoukaijou = Syoukaijou::orderBy('created_at','desc')->get();
+        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
 
-        return view ('jimoto_spot',compact('syoukaijou','municipalitie','category'));
+        return view ('jimoto_spot',compact('syoukaijou'));
     }
-
+    
     public function showSpotFilter(){
-        $meisyo = Categorie::where('genre_id',3)->get();
-        $insyokuten = Categorie::where('genre_id',1)->get();
-        $gurme = Categorie::where('genre_id',2)->get();
-        $event = Categorie::where('genre_id',5)->get();
-        $shop = Categorie::where('genre_id',6)->get();
-        $onsen = Categorie::where('genre_id',4)->get();
+        $meisyo = Category::where('genre_id',3)->get();
+        $insyokuten = Category::where('genre_id',1)->get();
+        $gurme = Category::where('genre_id',2)->get();
+        $event = Category::where('genre_id',5)->get();
+        $shop = Category::where('genre_id',6)->get();
+        $onsen = Category::where('genre_id',4)->get();
 
         $center = Municipalitie::where('area_id',3)->get();
         $west = Municipalitie::where('area_id',4)->get();
@@ -39,5 +36,42 @@ class SpotController extends Controller
         $tonenumata = Municipalitie::where('area_id',1)->get();
 
         return view('jimoto_spot_filter',compact('meisyo','insyokuten','gurme','event','shop','onsen','center','west','east','agatuma','tonenumata'));
+    }
+
+    public function keywordSearch(Request $Request)
+    {
+
+        $syoukaijous = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->paginate(20);
+
+        /*$count = \App\Syoukaijou::where('body','search')->count();*/
+
+        $search = $Request->input('search');
+
+        $query = Syoukaijou::query();
+
+        if ($search) {
+
+            $spaceConversion = mb_convert_kana($search, 's');
+
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+
+            foreach($wordArraySearched as $value) {
+                $query->where('body', 'like', '%'.$value.'%');
+            }
+
+            $syoukaijous = $query->paginate(20);
+
+        }
+
+        return view('jimoto_spot_search')
+            ->with([
+                'syoukaijous' => $syoukaijous,
+                'search' => $search,
+                /*'count' => $count,*/
+            ]);
+    
+            
+
     }
 }

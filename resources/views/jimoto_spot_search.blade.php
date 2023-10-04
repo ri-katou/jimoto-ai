@@ -3,9 +3,10 @@
 
 <div class="jimoto-search-top">
   <div class="jimoto-search">
-    <form action="" method="get">
+  <form action="{{ route('keyword.search') }}" method="get">
       <input type="search" name="search" placeholder="キーワードを入力" size="40">
-      <input type="image" src="/image/glass.svg" width="30" height="30" alt="検索" value="検索する">
+      <input type="submit" value="検索する">
+    </form>
     </form>
   </div>
 </div>
@@ -22,7 +23,7 @@
     <div class="if-janru">ジャンル：</div>
     <div class="if-area">エリア：</div>
   </div>
-  <div class="search-disp">検索結果：.件.</div>
+  <div class="search-disp">検索結果：件</div>
   <div class="search-pull">
   <select name="example">
     <option>新着順</option>
@@ -32,26 +33,32 @@
 </div>
 
 <div class="jimoto-sam">
+@foreach ($syoukaijous as $item)
   <a class="syoukaijou-link" href="">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
-        <div class="syoukaijou-day-sam">日付</div>
-        <div class="syoukaijou-title-sam">タイトル</div>
+        <div class="syoukaijou-day-sam">{{$item->updated_at}}</div>
+        <div class="syoukaijou-title-sam">{{$item->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"><div class="jyanru-sub">ラーメン</div>
+        <div class="janru-tag"><div class="jyanru-sub">{{$item->category_name}}</div>
         </div>
-        <div class="area-tag"><div class="area-sub">渋川</div>
+        <div class="area-tag"><div class="area-sub">{{$item->municipalities_name}}</div>
         </div>
       </div>
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="" width="100%" height="100%" border="0" alt=""></div>
+        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($item->image1)}}" width="100%" height="100%" border="0" alt=""></div>
+        <div class="preview-pics-sub">
+          <div class="preview-pic2-sam"></div>
+          <div class="preview-pic3-sam"></div>
+          <div class="preview-pic4-sam"></div>
+        </div>
       </div>
       <div class="preview-honbun">
-        <div class="honbun-sum">本文</div>
+        <div class="honbun-sum">{{$item->body}}</div>
         <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">
@@ -95,6 +102,7 @@
     </div>
   </div>
   </a>
+  @endforeach
 </div>
 
 

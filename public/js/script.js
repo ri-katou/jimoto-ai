@@ -32,6 +32,8 @@ $(document).ready(function () {
 
     })
 
+    let moji = $('.syoukaijou-day-sam').text().slice(10).replace('-','/');
+    console.log(moji);
 });
 
 function previewFile(file) {

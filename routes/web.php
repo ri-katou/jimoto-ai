@@ -51,6 +51,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');
 
+    Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter');
+
 });
 
 

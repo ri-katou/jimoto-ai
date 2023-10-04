@@ -9,6 +9,7 @@ use App\User;
 use App\User_detail;
 use Illuminate\Support\Facades\Auth;
 use App\Syoukaijou;
+use App\category;
 
 class ProfileController extends Controller
 {
@@ -40,7 +41,7 @@ class ProfileController extends Controller
         $user->save();
         $user_detail->save();
 
-
+        return redirect()->route('home');
 
     }
 }

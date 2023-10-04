@@ -5,18 +5,19 @@
   <div class="jimoto-search">
     <form action="" method="get">
       <input type="search" name="search" placeholder="キーワードを入力" size="40">
-      <input type="image" src="/image/glass.svg" width="30" height="30" alt="検索" value="検索する">
+      <input type="submit" value="検索する">
     </form>
   </div>
   <select name="example">
-    <option>昇順</option>
-    <option>降順</option>
+    <option>新着順</option>
+    <option>行ってみたいが多い順</option>
+    <option>訪問済みが多い順</option>
   </select>
 </div>
 
 <div class="janru-area-search">
-  <div class="janru-search"><a class="btn-gray" href=#>エリアを指定して探す</a></div>
-  <div class="janru-search"><a class="btn-gray" href=#>ジャンルを指定して探す</a></div>
+  <div class="janru-search"><a class="btn-gray" href="{{route('spot.filter')}}#aria">エリアを指定して探す</a></div>
+  <div class="janru-search"><a class="btn-gray" href="{{route('spot.filter')}}#genre">ジャンルを指定して探す</a></div>
   <div class="map-search"><a class="btn-gray" href=#>マップから探す</a></div>
 </div>
 

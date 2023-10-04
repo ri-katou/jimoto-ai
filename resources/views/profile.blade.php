@@ -18,7 +18,7 @@
             <div class="profile-usereria">
                 <div class="profile-useereria-title underline-green">あなたのエリア</div>
                 <div class="profile-eria-output">
-                      {{$municipalitie}}
+                      {{$municipalitie[0]['municipalities_name']}}
                 </div>
             </div>
         </div>

@@ -6,13 +6,12 @@ $(document).ready(function () {
     });
 
     // 編集ボタンを押すと入力フォームの出現
-    // let togleForm = $(this).parent().parent().next();
-    // if (togleForm.is([value != ""])) {
-    //     togleForm.removeClass("hidden");
-    // }
-    // $(".edit-btn").on("click", function () {
-    //     togleForm.removeClass("hidden");
-    // });
+
+    $(".edit-btn").on("click", function () {
+        let togleForm = $(this).parent().parent().next();
+        togleForm.toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
 
     // 大項目をチェックすると小項目が全部チェックされる
     $('.aria-check').click(function(){
@@ -24,6 +23,13 @@ $(document).ready(function () {
         } else {
             console.log('else');
         }
+    })
+    //プロフィール編集にてエリアを選ぶと表記変更
+    $('.profile-edit-eria-change').change(function(){
+        let neweria = $('[name=eria] option:selected').text();
+
+        $('.profile-eria-output').text(neweria);
+
     })
 
 });

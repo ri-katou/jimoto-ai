@@ -10,12 +10,11 @@ use App\User_detail;
 use Illuminate\Support\Facades\Auth;
 use App\Syoukaijou;
 
-
 class ProfileController extends Controller
 {
     public function showProfile() {
         $user = Auth::user();
-        $municipalitie = Auth::user()->join('user_detials','users.id','=','user_details.user_id')->join('municipalities','user_detials.municipalitie_id','=','municipalities.id');
+        $municipalitie = User::find(Auth::id())->join('user_details','users.id','=','user_details.user_id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->get();
 
         return view('profile',compact('user','municipalitie'));
     }
@@ -23,7 +22,8 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user_detail = User_detail::where('user_id',Auth::id())->get();
         $municipalitie = Municipalitie::find($user_detail);
-        return view('profile_edit',compact('user','municipalitie'));
+        $aria_list = Municipalitie::all();
+        return view('profile_edit',compact('user','municipalitie','aria_list'));
     }
     public function profileEditCheck(EditProfiles $request){
         return view('profile_edit_check',[

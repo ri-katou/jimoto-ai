@@ -51,7 +51,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');
 
-
 });
 
 

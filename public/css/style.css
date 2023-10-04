@@ -32,6 +32,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
     cursor: pointer;
 }
+li {
+    list-style: none;
+}
 /* 共通パーツ */
 .container {
     display: flex;
@@ -144,9 +147,31 @@ input[type="submit"]:hover {
     border-bottom: 2px #12f128 solid;
     margin-bottom: 1rem;
 }
+.underline-orange {
+    width: max-content;
+    border-bottom: 2px #ff7a00 solid;
+    margin-bottom: 1rem;
+}
+.underline-pink {
+    width: max-content;
+    border-bottom: 2px palevioletred solid;
+    margin-bottom: 1rem;
+}
+.underline-blue {
+    width: max-content;
+    border-bottom: 2px skyblue solid;
+    margin-bottom: 1rem;
+}
+.underline-purple {
+    width: max-content;
+    border-bottom: 2px purple solid;
+    margin-bottom: 1rem;
+}
 .block-green {
-    border-left: #12f128 6px bold;
+    width: max-content;
+    border-left: #12f128 6px solid;
     border-bottom: #12f128 2px solid;
+    margin-bottom: 2rem;
 }
 
 .btn-gray {
@@ -206,6 +231,12 @@ input[type="submit"]:hover {
 }
 .form {
     width: 98%;
+}
+.error-message {
+    color: #f00;
+}
+.error-message li {
+    list-style: none;
 }
 /* header */
 .header-fixed {
@@ -743,8 +774,8 @@ input[type="submit"]:hover {
 
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
-}spot-addles
-.syoukaijou-honbun {
+}
+spot-addles .syoukaijou-honbun {
     margin-left: -15%;
 }
 
@@ -1088,6 +1119,32 @@ input[type="submit"]:hover {
 .user-delete-message {
     margin-bottom: 2rem;
 }
+<<<<<<< HEAD
+/* spot_filter */
+.spot-filter-content {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+.spot-filter-content-genre-title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.spot-filter-content-genre-title-item {
+    height: 220px;
+}
+.spot-filter-content-genre-title-item ul,
+.spot-filter-content-aria-title-item ul
+ {
+    padding-left: 0;
+    margin-left: 1rem;
+}
+.spot-filter-content-aria-title-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+=======
 
 /* start 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
 .all-list {
@@ -1097,6 +1154,11 @@ input[type="submit"]:hover {
 .post-list-header {
     display: flex;
     justify-content: center;
+}
+.list-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .syoukaijougrit {
     display: grid;
@@ -1110,7 +1172,7 @@ input[type="submit"]:hover {
 }
 .list-head {
     width: 388px;
-    height: 138px;
+    height: 5rem;
     flex-shrink: 0;
     border-radius: 30px 50px 0px 0px;
     border-top: 3px solid #ebff9c;
@@ -1128,7 +1190,21 @@ input[type="submit"]:hover {
     border-left: 3px solid #ebff9c;
     background: #fff;
 }
-
+.post-syoukaijou-head {
+    gap: 30px;
+}
+.post-head-font {
+    font-size: 1.7rem;
+}
+.post-head-img {
+    width: 50px;
+    height: 50px;
+    background-color: #12f128;
+}
+.post-underline-green {
+    width: max-content;
+    border-bottom: 2px #12f128 solid;
+}
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
 
 /* 検索結果画面開始 */

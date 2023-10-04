@@ -6,20 +6,26 @@ $(document).ready(function () {
     });
 
     // 編集ボタンを押すと入力フォームの出現
-    let togleForm = $(this).parent().parent().next();
-    if (togleForm.is([value != ""])) {
-        togleForm.removeClass("hidden");
-    }
-    $(".edit-btn").on("click", function () {
-        togleForm.removeClass("hidden");
-    });
-
-    // ログアウト処理
-    // $(".logout").on("click", function ($e) {
-    //     $e.preventDefault();
-    //     console.log("hoge");
-    //     $(".logout-form").submit();
+    // let togleForm = $(this).parent().parent().next();
+    // if (togleForm.is([value != ""])) {
+    //     togleForm.removeClass("hidden");
+    // }
+    // $(".edit-btn").on("click", function () {
+    //     togleForm.removeClass("hidden");
     // });
+
+    // 大項目をチェックすると小項目が全部チェックされる
+    $('.aria-check').click(function(){
+        console.log($(this).prop('checked'));
+        if($(this).prop('cheked')){
+            let area_id = $(this).attr('class');
+            console.log('hello');
+            $('.'+ area_id).prop('checked',true)
+        } else {
+            console.log('else');
+        }
+    })
+
 });
 
 function previewFile(file) {
@@ -49,7 +55,7 @@ const handleFileSelect = () => {
         previewFile(files[i]);
     }
 };
-fileInput.addEventListener("change", handleFileSelect);
+// fileInput.addEventListener("change", handleFileSelect);
 
 /* preview */
 

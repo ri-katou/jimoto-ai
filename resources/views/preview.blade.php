@@ -131,7 +131,7 @@
 <div class="preview-bottom">
   <div class="preview-bottom-text">この内容で投稿します。</div>
   <div class="preview-button-sub">
-    <form action="{{ route('home') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('create') }}" method="post" enctype="multipart/form-data">
       @csrf
       <input type="hidden" value="{{$Request->title}}" name="title">
       <input type="hidden" value="{{$Request->main}}" name="main">

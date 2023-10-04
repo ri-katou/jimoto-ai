@@ -4,7 +4,7 @@
   <div class="syoukaijou-header">
     <div class="home-icon-right">
       <div class="profile-icon"></div>
-      <div class="icon-prof"><a href="">プロフィール画面へ</a></div>
+      <div class="icon-prof"><a href="{{route('profile')}}">プロフィール画面へ</a></div>
     </div>
     <div class="home-icon-left">
       <div class="icon-space">
@@ -98,7 +98,7 @@
         <div class="syou"></div>
       </div>
     </div>
-    <div class="mottomiru"><a href="">もっと見る</a></div>
+    <div class="mottomiru"><a href="{{route('home.post.check')}}">もっと見る</a></div>
   </div>
   <div class="syoukaijyou-hyouji">
     <div class="home-body midasi">

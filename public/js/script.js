@@ -15,17 +15,20 @@ $(document).ready(function () {
     // });
 
     // 大項目をチェックすると小項目が全部チェックされる
-    $('.aria-check').click(function(){
-        console.log($(this).prop('checked'));
-        if($(this).prop('cheked')){
-            let area_id = $(this).attr('class');
-            console.log('hello');
-            $('.'+ area_id).prop('checked',true)
+    $(".aria-check").click(function () {
+        console.log($(this).prop("checked"));
+        if ($(this).prop("cheked")) {
+            let area_id = $(this).attr("class");
+            console.log("hello");
+            $("." + area_id).prop("checked", true);
         } else {
-            console.log('else');
+            console.log("else");
         }
-    })
-
+    });
+    let moji = $(".syoukaijou-day-sam").text().slice(0, 10).replace("-", "/");
+    $(".syoukaijou-day-sam").text(moji);
+    console.log(moji);
+    // .text().slice(10).replace("-", "/")
 });
 
 function previewFile(file) {

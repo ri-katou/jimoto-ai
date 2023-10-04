@@ -23,13 +23,17 @@ Route::get('/', function () {
 });
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('user/area_select/', 'UserEriaContoroller@index');
     Route::post('user/area_select/', 'UserEriaContoroller@areaChoice')->name('area.select');
 
     Route::get('home/', 'HomeController@test')->name('home');
 
     Route::get('home/post/list', 'HomeController@message')->name('home.post.check');
+
+    Route::get('home/interest/list/', 'HomeController@interest')->name('home.interest.check');
+
+    Route::get('home/visited/list/', 'HomeController@visited')->name('home.visit.check');
 
     Route::get('profile/', 'ProfileController@showProfile')->name('profile');
 
@@ -50,11 +54,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');
-
 });
 
 
-Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
-Route::get('jimoto_spot/search/',function(){
+Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
+Route::get('jimoto_spot/search/', function () {
     return view('jimoto_spot_search');
 });

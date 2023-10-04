@@ -17,7 +17,7 @@ class CreateController extends Controller
     {
         $category = Category::where('id', $Request->category)->first();
         $municipalitie = Municipalitie::where('id', $Request->municipalitie)->first();
-        return view('preview', compact('category','Request','municipalitie'));
+        return view('preview', compact('category', 'Request', 'municipalitie'));
     }
 
 
@@ -40,7 +40,6 @@ class CreateController extends Controller
         $syoukaijou->updated_at = Carbon::now();
 
         $syoukaijou->save();
-
         return redirect()->route('home');
     }
 
@@ -50,8 +49,6 @@ class CreateController extends Controller
         $municipalitie = Municipalitie::all();
         $category = Category::all();
 
-        return view('syoukaijou_create', compact('municipalitie','category'));
-
+        return view('syoukaijou_create', compact('municipalitie', 'category'));
     }
-    
 }

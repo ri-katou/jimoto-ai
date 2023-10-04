@@ -8,10 +8,6 @@
       <input type="image" src="/image/glass.svg" width="30" height="30" alt="検索" value="検索する">
     </form>
   </div>
-  <select name="example">
-    <option>昇順</option>
-    <option>降順</option>
-  </select>
 </div>
 
 <div class="janru-area-search">
@@ -20,8 +16,20 @@
   <div class="map-search"><a class="btn-gray" href=#>マップから探す</a></div>
 </div>
 
-
-
+<div class="if-search">
+  <div class="search-title">検索条件</div>
+  <div class="if-area-janru">
+    <div class="if-janru">ジャンル：</div>
+    <div class="if-area">エリア：</div>
+  </div>
+  <div class="search-disp">検索結果：.件.</div>
+  <div class="search-pull">
+  <select name="example">
+    <option>新着順</option>
+    <option>古い順</option>
+  </select>
+  </div>
+</div>
 
 <div class="jimoto-sam">
   <a class="syoukaijou-link" href="">
@@ -29,26 +37,21 @@
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
         <div class="syoukaijou-day-sam">日付</div>
-        <div class="syoukaijou-title-sam">{{$Request->title}}</div>
+        <div class="syoukaijou-title-sam">タイトル</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{ $category->category_name}}</div>
+        <div class="janru-tag"><div class="jyanru-sub">ラーメン</div>
         </div>
-        <div class="area-tag"> エリア：<div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
+        <div class="area-tag"><div class="area-sub">渋川</div>
         </div>
       </div>
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($Request->image1)}}" width="100%" height="100%" border="0" alt=""></div>
-        <div class="preview-pics-sub">
-          <div class="preview-pic2-sam"></div>
-          <div class="preview-pic3-sam"></div>
-          <div class="preview-pic4-sam"></div>
-        </div>
+        <div class="preview-pic1-sam"><img id="gazo" src="" width="100%" height="100%" border="0" alt=""></div>
       </div>
       <div class="preview-honbun">
-        <div class="honbun-sum">{{$Request->main}}</div>
+        <div class="honbun-sum">本文</div>
         <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">
@@ -92,9 +95,7 @@
     </div>
   </div>
   </a>
-  
 </div>
-
 
 
 @endsection

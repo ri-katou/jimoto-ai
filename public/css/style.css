@@ -1072,6 +1072,7 @@ spot-addles .syoukaijou-honbun {
     justify-content: center;
     margin-bottom: 5%;
     z-index: 2;
+    gap: 0 5%;
 }
 
 .syoukaijou-link {
@@ -1205,4 +1206,31 @@ spot-addles .syoukaijou-honbun {
     border-bottom: 2px #12f128 solid;
 }
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
->>>>>>> 049cb16b8203081089dbd8f89240058e1037c4da
+
+/* 検索結果画面開始 */
+
+.if-search {
+    margin-left: 10%;
+}
+
+.search-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+.if-area-janru {
+    display: flex;
+    gap: 0 10%;
+    margin-bottom: 2%;
+}
+
+.search-disp {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.search-pull {
+    margin-left: 90%;
+    margin-bottom: 2%;
+}

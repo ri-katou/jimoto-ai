@@ -54,12 +54,7 @@ Route::group(['middleware' => 'auth'], function(){
 });
 
 
-
-
-
-
-
-
-
-
-
+Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
+Route::get('jimoto_spot/search/',function(){
+    return view('jimoto_spot_search');
+});

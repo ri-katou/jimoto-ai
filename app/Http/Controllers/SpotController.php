@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\category;
 use App\Categorie;
+use App\Syoukaijou;
 use App\Genre;
 use App\Area;
 use App\Municipalitie;
@@ -11,6 +13,17 @@ use Faker\Provider\sv_SE\Municipality;
 
 class SpotController extends Controller
 {
+
+    public function showSpot(){
+        $syoukaijou = Syoukaijou::all();
+        $municipalitie = Municipalitie::all();
+        $category = Category::all();
+
+        $syoukaijou = Syoukaijou::orderBy('created_at','desc')->get();
+
+        return view ('jimoto_spot',compact('syoukaijou','municipalitie','category'));
+    }
+
     public function showSpotFilter(){
         $meisyo = Categorie::where('genre_id',3)->get();
         $insyokuten = Categorie::where('genre_id',1)->get();
@@ -26,27 +39,5 @@ class SpotController extends Controller
         $tonenumata = Municipalitie::where('area_id',1)->get();
 
         return view('jimoto_spot_filter',compact('meisyo','insyokuten','gurme','event','shop','onsen','center','west','east','agatuma','tonenumata'));
-    }
-}
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Syoukaijou;
-use App\Municipalitie;
-use App\category;
-use Faker\Provider\sv_SE\Municipality;
-
-class SpotController extends Controller
-{
-    public function showSpot(){
-        $syoukaijou = Syoukaijou::all();
-        $municipalitie = Municipalitie::all();
-        $category = Category::all();
-
-        $syoukaijou = Syoukaijou::orderBy('created_at','desc')->get();
-
-        return view ('jimoto_spot',compact('syoukaijou','municipalitie','category'));
     }
 }

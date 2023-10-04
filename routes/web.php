@@ -56,6 +56,7 @@ Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
 Route::post('create/preview/', 'CreateController@create')->name('create.preview');
 
 
+Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
 Route::get('jimoto_spot/search/',function(){
     return view('jimoto_spot_search');
 });

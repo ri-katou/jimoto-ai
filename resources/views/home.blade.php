@@ -104,19 +104,6 @@
       </div>
       <div class="syoukaijyou-hyouji">
         <div class="home-body midasi">
-          行ったよ
-        </div>
-        <div class="card-margin">
-          <div class="syoukaijou-card">
-            <div class="syou"></div>
-            <div class="syou"></div>
-            <div class="syou"></div>
-          </div>
-        </div>
-        <div class="mottomiru"><a href="">もっと見る</a></div>
-      </div>
-      <div class="syoukaijyou-hyouji">
-        <div class="home-body midasi">
           行ってみたい
         </div>
         <div class="card-margin">
@@ -126,9 +113,22 @@
             <div class="syou"></div>
           </div>
         </div>
-        <div class="mottomiru"><a href="">もっと見る</a></div>
+        <div class="mottomiru"><a href="{{route('home.interest.check')}}">もっと見る</a></div>
       </div>
-      <div class="toukou">紹介状作成</div>
+      <div class="syoukaijyou-hyouji">
+        <div class="home-body midasi">
+          行ったよ
+        </div>
+        <div class="card-margin">
+          <div class="syoukaijou-card">
+            <div class="syou"></div>
+            <div class="syou"></div>
+            <div class="syou"></div>
+          </div>
+        </div>
+        <div class="mottomiru"><a href="{{route('home.visit.check')}}">もっと見る</a></div>
+      </div>
+      <div class="toukou"><a href="{{route('syoukaijou.create')}}">紹介状作成</a></div>
     </div>
   </div>
 </div>

@@ -21,6 +21,21 @@ class HomeController extends Controller
             ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
             ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
             ->where('users.id', '=', Auth::user()->id)
+            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->select(
+                'Syoukaijous.title',
+                'Syoukaijous.image1',
+                'Syoukaijous.image2',
+                'Syoukaijous.image3',
+                'Syoukaijous.image4',
+                'Syoukaijous.spotname',
+                'Syoukaijous.address',
+                'Syoukaijous.url',
+                'Syoukaijous.body',
+                'Syoukaijous.created_at as create_day',
+                'municipalities.municipalities_name',
+                'category_name'
+            )
             ->limit(3)->get();
 
         // $category_name = Auth::user()
@@ -40,7 +55,7 @@ class HomeController extends Controller
 
 
         return view('home', [
-            'syoukai' => $post
+            'post' => $post
         ]);
     }
 
@@ -51,10 +66,84 @@ class HomeController extends Controller
             ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
             ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
             ->where('users.id', '=', Auth::user()->id)
+            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->select(
+                'Syoukaijous.title',
+                'Syoukaijous.image1',
+                'Syoukaijous.image2',
+                'Syoukaijous.image3',
+                'Syoukaijous.image4',
+                'Syoukaijous.spotname',
+                'Syoukaijous.address',
+                'Syoukaijous.url',
+                'Syoukaijous.body',
+                'Syoukaijous.created_at as create_day',
+                'municipalities.municipalities_name',
+                'category_name'
+            )
             ->get();
 
         return view('post_all_list', [
             'all_message' => $message
+        ]);
+    }
+
+    public function interest()
+    {
+        $interest = Auth::user()
+            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
+            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
+            ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
+            ->where('users.id', '=', Auth::user()->id)
+            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->select(
+                'Syoukaijous.title',
+                'Syoukaijous.image1',
+                'Syoukaijous.image2',
+                'Syoukaijous.image3',
+                'Syoukaijous.image4',
+                'Syoukaijous.spotname',
+                'Syoukaijous.address',
+                'Syoukaijous.url',
+                'Syoukaijous.body',
+                'Syoukaijous.created_at as create_day',
+                'municipalities.municipalities_name',
+                'category_name'
+            )
+            ->limit(5)
+            ->get();
+
+        return view('interest_all_list', [
+            'all_message' => $interest
+        ]);
+    }
+
+    public function visited()
+    {
+        $visited = Auth::user()
+            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
+            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
+            ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
+            ->where('users.id', '=', Auth::user()->id)
+            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->select(
+                'Syoukaijous.title',
+                'Syoukaijous.image1',
+                'Syoukaijous.image2',
+                'Syoukaijous.image3',
+                'Syoukaijous.image4',
+                'Syoukaijous.spotname',
+                'Syoukaijous.address',
+                'Syoukaijous.url',
+                'Syoukaijous.body',
+                'Syoukaijous.created_at as create_day',
+                'municipalities.municipalities_name',
+                'category_name'
+            )
+            ->limit(7)->get();
+
+        return view('visited_all_list', [
+            'all_message' => $visited
         ]);
     }
 }

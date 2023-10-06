@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(function () {
+
     // もどるボタン
     $(".return").on("click", function () {
         history.back();

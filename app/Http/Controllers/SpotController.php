@@ -39,4 +39,29 @@ class SpotController extends Controller
 
         return view('jimoto_spot_filter',compact('meisyo','insyokuten','gurme','event','shop','onsen','center','west','east','agatuma','tonenumata'));
     }
+    public function serchFilter(Request $request){
+        $syoukaijou = '';
+        if(isset($request->categoryCheck) and isset($request->municipalitieCheck)){
+            $syoukaijou = Syoukaijou::whereIN('category_id',$request->categoryCheck)->Wherein('municipalities_id',$request->municipalitieCheck)->get();
+        } else if(isset($request->categoryCheck)){
+            $syoukaijou = Syoukaijou::whereIN('category_id',$request->categoryCheck)->get();
+        } else if(isset($request->municipalitieCheck)){
+            $syoukaijou = Syoukaijou::whereIN('municipalities_id',$request->municipalitieCheck)->get();
+        } else {
+            $syoukaijou = Syoukaijou::All();
+        };
+
+        $count = count($syoukaijou);
+        $categoryConditions = '';
+        if(isset($request->categoryCheck)){
+            category::wherein('id',$request->categoryCheck)->get();
+        }
+        $municipalitieCondetions = '';
+         if($request->municipalitieCheck)
+            {Municipalitie::wherein('id',        $request->municipalitieCheck)->get();
+        }
+
+
+        return view('jimoto_spot_search',compact('syoukaijou','count','categoryConditions','municipalitieCondetions'));
+    }
 }

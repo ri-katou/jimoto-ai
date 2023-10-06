@@ -57,10 +57,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('create/preview/', 'CreateController@create')->name('create');
 
     Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
+
     Route::get('jimoto_spot/search/', function () {
         return view('jimoto_spot_search');
     });
+    Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch');
+
     Route::get('jimoto_spot/filter/','SpotController@showSpotFilter')->name('spot.filter');
+
 });
 
 

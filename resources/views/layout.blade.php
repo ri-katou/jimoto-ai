@@ -32,7 +32,7 @@
                 </form>
                 <div class="header-btn">
                     <a class="btn-orange" href="{{route('syoukaijou.create')}}">紹介状の作成</a><br>
-                    <a class="btn-green" href="#">紹介状の発見</a>
+                    <a class="btn-green" href="{{route('spot.search')}}">紹介状の発見</a>
                 </div>
             </div>
             @else
@@ -46,6 +46,8 @@
     <main>
         @yield('content')
     </main>
+    <footer>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>

@@ -1,34 +1,40 @@
 "use strict";
 $(document).ready(function () {
+
     // もどるボタン
     $(".return").on("click", function () {
         history.back();
     });
 
     // 編集ボタンを押すと入力フォームの出現
-    // let togleForm = $(this).parent().parent().next();
-    // if (togleForm.is([value != ""])) {
-    //     togleForm.removeClass("hidden");
-    // }
-    // $(".edit-btn").on("click", function () {
-    //     togleForm.removeClass("hidden");
-    // });
+
+    $(".edit-btn").on("click", function () {
+        let togleForm = $(this).parent().parent().next();
+        togleForm.toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
 
     // 大項目をチェックすると小項目が全部チェックされる
-    $(".aria-check").click(function () {
-        console.log($(this).prop("checked"));
-        if ($(this).prop("cheked")) {
-            let area_id = $(this).attr("class");
-            console.log("hello");
-            $("." + area_id).prop("checked", true);
+    $('.aria-check').click(function(){
+        console.log($(this).prop('checked'));
+        if($(this).prop('cheked')){
+            let area_id = $(this).attr('class');
+            console.log('hello');
+            $('.'+ area_id).prop('checked',true)
         } else {
-            console.log("else");
+            console.log('else');
         }
-    });
-    let moji = $(".syoukaijou-day-sam").text().slice(0, 10).replace("-", "/");
-    $(".syoukaijou-day-sam").text(moji);
+    })
+    //プロフィール編集にてエリアを選ぶと表記変更
+    $('.profile-edit-eria-change').change(function(){
+        let neweria = $('[name=eria] option:selected').text();
+
+        $('.profile-eria-output').text(neweria);
+
+    })
+
+    let moji = $('.syoukaijou-day-sam').text().slice(10).replace('-','/');
     console.log(moji);
-    // .text().slice(10).replace("-", "/")
 });
 
 function previewFile(file) {

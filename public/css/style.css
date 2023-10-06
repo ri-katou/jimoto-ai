@@ -278,6 +278,10 @@ li {
     border-radius: 35px;
     margin: 0 auto;
 }
+/* footer */
+footer {
+    height: 100px;
+}
 /* top */
 .top-logo {
     width: 150px;

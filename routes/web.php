@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\SpotController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\EditProfile;
@@ -54,10 +55,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create');
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');
+
+    Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
+    Route::get('jimoto_spot/search/', function () {
+        return view('jimoto_spot_search');
+    });
+    Route::get('jimoto_spot/filter/','SpotController@showSpotFilter')->name('spot.filter');
 });
 
 
-Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
-Route::get('jimoto_spot/search/', function () {
-    return view('jimoto_spot_search');
-});
+

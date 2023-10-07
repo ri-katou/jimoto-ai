@@ -25,7 +25,7 @@
   <div class="search-title">検索条件</div>
   <div class="if-area-janru">
     <div class="if-janru">ジャンル：
-      @if ($categoryConditions = '')
+      @if ($categoryConditions !== '')
       @foreach ($categoryConditions as $item)
           <span class="serch-Condtions">{{$item->category_name}}</span>
       @endforeach
@@ -34,7 +34,7 @@
       @endif
     </div>
     <div class="if-area">エリア：
-      @if ($municipalitieCondetions = '')
+      @if ($municipalitieCondetions !== '')
           @foreach ($municipalitieCondetions as $item)
           <span class="serch-Condtions">{{$item->municipalities_name}}</span>
       @endforeach

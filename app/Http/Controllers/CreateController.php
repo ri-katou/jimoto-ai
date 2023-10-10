@@ -17,7 +17,8 @@ class CreateController extends Controller
     {
         $category = Category::where('id', $Request->category)->first();
         $municipalitie = Municipalitie::where('id', $Request->municipalitie)->first();
-        return view('preview', compact('category', 'Request', 'municipalitie'));
+        $day = Carbon::now();
+        return view('preview', compact('category', 'Request', 'municipalitie','day'));
     }
 
 

@@ -1101,10 +1101,9 @@ spot-addles .syoukaijou-honbun {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
-.spot-filter-content-genre-title-item {
-    height: 220px;
-}
+
 .spot-filter-content-genre-title-item ul,
 .spot-filter-content-aria-title-item ul {
     padding-left: 0;
@@ -1114,6 +1113,10 @@ spot-addles .syoukaijou-honbun {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    margin-bottom: 2rem;
+}
+.spot-filter-genre-submit {
+    margin: 0 auto 100px auto;
 }
 
 /* start 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/

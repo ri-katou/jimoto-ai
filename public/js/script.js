@@ -14,6 +14,20 @@ $(document).ready(function () {
     });
 
     // 大項目をチェックすると小項目が全部チェックされる
+
+    // 1. 「全選択」する
+    
+    $(".check").on('click', function() {
+        let check = $(this).parent().next().children().children().children();
+        if($(this).children().is(':checked')){
+            $(check).prop('checked', this.click);
+        } else {
+            $(check).prop('checked', false);
+            $(this).prop('checked', false);
+        }
+        });
+
+
     $(".aria-check").click(function () {
         console.log($(this).prop("checked"));
         if ($(this).prop("cheked")) {
@@ -24,6 +38,7 @@ $(document).ready(function () {
             console.log("else");
         }
     });
+
     //プロフィール編集にてエリアを選ぶと表記変更
     $(".profile-edit-eria-change").change(function () {
         let neweria = $("[name=eria] option:selected").text();

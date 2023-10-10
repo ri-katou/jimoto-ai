@@ -56,10 +56,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit');
     Route::post('create/preview/', 'CreateController@create')->name('create');
 
+
+
+
+
+    Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch');
+
+
+
+
+
     Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
     Route::get('jimoto_spot/search/','spotController@keywordSearch')->name('keyword.search');
 
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter');
+
 
 });
 

@@ -9,7 +9,7 @@ use App\User;
 use App\User_detail;
 use Illuminate\Support\Facades\Auth;
 use App\Syoukaijou;
-
+use App\category;
 
 class ProfileController extends Controller
 {
@@ -37,12 +37,12 @@ class ProfileController extends Controller
         $user_detail = User_detail::find($user->id);
         $user->name = $request->input('nickname');
         $user->email = $request->input('email');
-        $user_detail->aria_id = $request->eria;
+        $user_detail->municipalitie_id = $request->eria;
 
         $user->save();
         $user_detail->save();
 
-
+        return redirect()->route('home');
 
     }
 }

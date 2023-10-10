@@ -2,7 +2,7 @@
 @section('content')
     <div class="profile">
         <div class="profile-edit-check-message">以下の内容でお間違いないですか</div>
-        <form action="{{ route('profile.edit') }}" method="POST">
+        <form action="{{ route('profile.edit.check') }}" method="POST">
             @csrf
             <div class="profile-edit-center-content">
                 <div class="profile-edit-nickname">

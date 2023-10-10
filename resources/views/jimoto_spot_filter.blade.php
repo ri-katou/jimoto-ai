@@ -1,20 +1,19 @@
 @extends('layout')
 @section('content')
-    <form action="" method="get">
-        <div class="jimoto-search-top">
-            <div class="jimoto-search">
-
+    <div class="jimoto-search-top">
+        <div class="jimoto-search">
+            <form action="{{ route('keyword.search') }}" method="get">
                 <input type="search" name="search" placeholder="キーワードを入力" size="40">
                 <input type="submit" value="検索する">
-
-            </div>
-            <select name="example">
-                <option>新着順</option>
-                <option>行ってみたいが多い順</option>
-                <option>訪問済みが多い順</option>
-            </select>
+            </form>
         </div>
-    </form>
+        <select name="example">
+            <option>新着順</option>
+            <option>行ってみたいが多い順</option>
+            <option>訪問済みが多い順</option>
+        </select>
+    </div>
+
 
     <div class="janru-area-search">
         <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>

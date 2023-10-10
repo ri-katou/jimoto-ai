@@ -40,13 +40,13 @@ class SpotController extends Controller
     public function serchFilter(Request $request){
         $syoukaijou = '';
         if(isset($request->categoryCheck) and isset($request->municipalitieCheck)){
-            $syoukaijou = Syoukaijou::whereIN('category_id',$request->categoryCheck)->Wherein('municipalities_id',$request->municipalitieCheck)->get();
+            $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->whereIN('category_id',$request->categoryCheck)->Wherein('municipalities_id',$request->municipalitieCheck)->get();
         } else if(isset($request->categoryCheck)){
-            $syoukaijou = Syoukaijou::whereIN('category_id',$request->categoryCheck)->get();
+            $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->whereIN('category_id',$request->categoryCheck)->get();
         } else if(isset($request->municipalitieCheck)){
-            $syoukaijou = Syoukaijou::whereIN('municipalities_id',$request->municipalitieCheck)->get();
+            $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->whereIN('municipalities_id',$request->municipalitieCheck)->get();
         } else {
-            $syoukaijou = Syoukaijou::All();
+            $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->All();
         };
 
         $count = count($syoukaijou);
@@ -58,7 +58,6 @@ class SpotController extends Controller
          if($request->municipalitieCheck){
             $municipalitieCondetions = Municipalitie::wherein('id',        $request->municipalitieCheck)->get();
         }
-
 
         return view('jimoto_spot_search',compact('syoukaijou','count','categoryConditions','municipalitieCondetions'));
     }
@@ -74,14 +73,19 @@ class SpotController extends Controller
 
 
             foreach($wordArraySearched as $value) {
-                $syoukaijous = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
+                $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
             }
             $search = $wordArraySearched;
         }
+        else {
+            $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
+        }
 
-        $count = count($syoukaijous);
+        $count = count($syoukaijou);
+        $categoryConditions = '';
+        $municipalitieCondetions = '';
 
-        return view('jimoto_spot_search',compact('syoukaijous','search','count'));
+        return view('jimoto_spot_search',compact('syoukaijou','search','count','categoryConditions','municipalitieCondetions'));
 
     }
 }

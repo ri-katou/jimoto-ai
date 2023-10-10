@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\SpotController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\EditProfile;
@@ -23,13 +24,17 @@ Route::get('/', function () {
 });
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('user/area_select/', 'UserEriaContoroller@index');
     Route::post('user/area_select/', 'UserEriaContoroller@areaChoice')->name('area.select');
 
     Route::get('home/', 'HomeController@test')->name('home');
 
     Route::get('home/post/list', 'HomeController@message')->name('home.post.check');
+
+    Route::get('home/interest/list/', 'HomeController@interest')->name('home.interest.check');
+
+    Route::get('home/visited/list/', 'HomeController@visited')->name('home.visit.check');
 
     Route::get('profile/', 'ProfileController@showProfile')->name('profile');
 

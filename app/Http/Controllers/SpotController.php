@@ -54,11 +54,11 @@ class SpotController extends Controller
         $count = count($syoukaijou);
         $categoryConditions = '';
         if(isset($request->categoryCheck)){
-            category::wherein('id',$request->categoryCheck)->get();
+            $categoryConditions = category::wherein('id',$request->categoryCheck)->get();
         }
         $municipalitieCondetions = '';
-         if($request->municipalitieCheck)
-            {Municipalitie::wherein('id',        $request->municipalitieCheck)->get();
+         if($request->municipalitieCheck){
+            $municipalitieCondetions = Municipalitie::wherein('id',        $request->municipalitieCheck)->get();
         }
 
 

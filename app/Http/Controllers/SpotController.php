@@ -39,12 +39,7 @@ class SpotController extends Controller
 
     public function keywordSearch(Request $Request)
     {
-
-        
-
         $search = $Request->input('search');
-
-
 
         if ($search) {
 
@@ -62,5 +57,12 @@ class SpotController extends Controller
         $count = count($syoukaijous);
 
         return view('jimoto_spot_search',compact('syoukaijous','search','syoukaijous'));
+    }
+
+    public function showDisp(int $id)
+    {
+        $syoukaijou = Syoukaijou::find($id);
+        return view('syoukaijou_disp',compact('syoukaijou'));
+
     }
 }

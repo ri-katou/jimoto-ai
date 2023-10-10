@@ -61,6 +61,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter');
 
+    Route::get('syoukaijou/{id}/','SpotController@showDisp')->name('syoukaijou.disp');
+
 });
 
 

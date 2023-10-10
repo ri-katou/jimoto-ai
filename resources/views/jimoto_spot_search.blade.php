@@ -34,7 +34,7 @@
 
 <div class="jimoto-sam">
 @foreach ($syoukaijous as $item)
-  <a class="syoukaijou-link" href="">
+  <a class="syoukaijou-link" href="{{ Route('syoukaijou.disp'),['syoukaijou' => $item->id] }}">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">

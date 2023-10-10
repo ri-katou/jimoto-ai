@@ -40,13 +40,11 @@ class SpotController extends Controller
     public function keywordSearch(Request $Request)
     {
 
-        $syoukaijous = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->paginate(20);
-
-        /*$count = \App\Syoukaijou::where('body','search')->count();*/
+        
 
         $search = $Request->input('search');
 
-        $query = Syoukaijou::query();
+
 
         if ($search) {
 
@@ -56,21 +54,13 @@ class SpotController extends Controller
 
 
             foreach($wordArraySearched as $value) {
-                $query->where('body', 'like', '%'.$value.'%');
+                $syoukaijous = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
             }
-
-            $syoukaijous = $query->paginate(20);
 
         }
 
-        return view('jimoto_spot_search')
-            ->with([
-                'syoukaijous' => $syoukaijous,
-                'search' => $search,
-                /*'count' => $count,*/
-            ]);
-    
-            
+        $count = count($syoukaijous);
 
+        return view('jimoto_spot_search',compact('syoukaijous','search','syoukaijous'));
     }
 }

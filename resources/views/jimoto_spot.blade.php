@@ -3,7 +3,7 @@
 
 <div class="jimoto-search-top">
   <div class="jimoto-search">
-    <form action="" method="get">
+    <form action="{{ route('keyword.search') }}" method="get">
       <input type="search" name="search" placeholder="キーワードを入力" size="40">
       <input type="submit" value="検索する">
     </form>
@@ -34,9 +34,9 @@
         <div class="syoukaijou-title-sam">{{$syoukaijou->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"><div class="jyanru-sub">{{$syoukaijou->category_id}}</div>
+        <div class="janru-tag"><div class="jyanru-sub">{{$syoukaijou->category_name}}</div>
         </div>
-        <div class="area-tag"><div class="area-sub">{{$syoukaijou->municipalities_id}}</div>
+        <div class="area-tag"><div class="area-sub">{{$syoukaijou->municipalities_name}}</div>
         </div>
       </div>
     </div>

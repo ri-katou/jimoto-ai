@@ -23,6 +23,7 @@
           自分の投稿した紹介状
         </div>
         <div class="card-margin">
+          @if(count($post)>=1)
           <div class="syoukaijou-card">
             @foreach ($post as $post)
             <div class="syou">
@@ -96,9 +97,10 @@
               </div>
             </div>
             @endforeach
-            <div class="syou"></div>
-            <div class="syou"></div>
           </div>
+          @else
+          <div class="dummy">投稿がされていません<br><a href="{{route('syoukaijou.create')}}">紹介状作成はこちら</a></div>
+          @endif
         </div>
         <div class="mottomiru"><a href="{{route('home.post.check')}}">もっと見る</a></div>
       </div>

@@ -35,6 +35,22 @@ input[type="submit"]:hover {
 li {
     list-style: none;
 }
+
+/* タブレットサイズ */
+@media (max-width: 767px) {
+    .home-icon-left {
+        visibility: hidden;
+    }
+    main {
+        max-width: 767px;
+    }
+    .syoukaijou-all {
+        width: 100%;
+    }
+    .syoukaijou-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 /* 共通パーツ */
 .container {
     display: flex;
@@ -290,6 +306,11 @@ li {
     border-radius: 35px;
     margin: 0 auto;
 }
+
+.yu-sei {
+    font-family: "Raleway", sans-serif;
+    font-family: "Yusei Magic", sans-serif;
+}
 /* footer */
 footer {
     height: 100px;
@@ -487,7 +508,7 @@ footer {
 
 .home {
     margin: 0 auto 0 auto;
-    max-width: 1129px;
+    max-width: 100%;
 }
 
 .home-body {
@@ -498,11 +519,13 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 39.5px;
-    height: 250px;
 }
 
 .syou {
     /* background-color: #339dff; */
+}
+.dummy {
+    height: 250px;
 }
 
 .profile-icon {
@@ -1227,7 +1250,7 @@ spot-addles .syoukaijou-honbun {
     justify-content: center;
 }
 .syoukaijou-all {
-    width: 1164px;
+    width: 100%;
 }
 .free-svg {
     width: 50px;
@@ -1300,7 +1323,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .close:hover {
-    opacity: 0.7;
+    opacity: 0.3;
 }
 
 .mask {
@@ -1355,6 +1378,10 @@ spot-addles .syoukaijou-honbun {
     display: flex;
     justify-content: center;
 }
+.area-select-center {
+    display: flex;
+    justify-content: center;
+}
 /* モーダル */
 
 /* 検索結果画面開始 */
@@ -1383,4 +1410,15 @@ spot-addles .syoukaijou-honbun {
 .search-pull {
     margin-left: 90%;
     margin-bottom: 2%;
+}
+
+/* マップ検索画面 */
+.spot-map {
+    margin: 0 auto 0 auto;
+    max-width: 998px;
+}
+
+.map-space {
+    width: 998px;
+    height: 690px;
 }

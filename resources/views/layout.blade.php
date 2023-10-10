@@ -8,7 +8,15 @@
     <title>地元あい</title>
     <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Yusei+Magic&display=swap" rel="stylesheet">
+
+    <script src="http://maps.google.com/maps/api/js?key={}&callback=console.debug&language=ja"></script>
+
     <link rel="stylesheet" href="/css/style.css">
+
+
 </head>
 
 <body>

@@ -95,6 +95,18 @@ li {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
 }
+
+.btn-white {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    padding: 0.5rem 0 1rem 0;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 150px;
+    border: 1px solid black;
+    width: 200px;
+}
 .btn-orange:active {
     box-shadow: none;
     margin-top: 3px;
@@ -1222,6 +1234,128 @@ spot-addles .syoukaijou-honbun {
     height: 50px;
 }
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
+
+/* モーダル */
+.answer:hover {
+    opacity: 0.7;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#mask.hidden {
+    display: none;
+}
+#mask {
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.exit-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.show {
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: center;
+    width: 500px;
+    padding: 25px;
+    border: 1px solid #ccc;
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #000;
+    z-index: 2;
+    display: block;
+    animation: show 1s linear 0s;
+    z-index: 1;
+}
+
+.mask.hidden {
+    display: none;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.exit {
+    color: #555;
+    font-size: 1.5rem;
+    padding-left: 35px;
+    position: relative;
+}
+.exit:hover {
+    cursor: pointer;
+}
+.exit:active {
+    margin-top: 2px;
+}
+.exit::before {
+    content: "";
+    position: absolute;
+    background-image: url(../image/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+
+.btn-green-modal {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+}
+
+.area-check-text {
+    padding: 30px 0;
+}
+.check-text-space {
+    display: flex;
+    justify-content: center;
+}
+/* モーダル */
 
 /* 検索結果画面開始 */
 

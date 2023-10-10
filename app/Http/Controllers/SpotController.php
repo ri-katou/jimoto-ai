@@ -14,15 +14,12 @@ class SpotController extends Controller
 {
 
     public function showSpot(){
-        $syoukaijou = Syoukaijou::all();
-        $municipalitie = Municipalitie::all();
-        $category = Category::all();
 
-        $syoukaijou = Syoukaijou::orderBy('created_at','desc')->get();
+        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
 
-        return view ('jimoto_spot',compact('syoukaijou','municipalitie','category'));
+        return view ('jimoto_spot',compact('syoukaijou'));
     }
-
+    
     public function showSpotFilter(){
         $meisyo = category::where('genre_id',3)->get();
         $insyokuten = category::where('genre_id',1)->get();
@@ -39,6 +36,7 @@ class SpotController extends Controller
 
         return view('jimoto_spot_filter',compact('meisyo','insyokuten','gurme','event','shop','onsen','center','west','east','agatuma','tonenumata'));
     }
+
     public function serchFilter(Request $request){
         $syoukaijou = '';
         if(isset($request->categoryCheck) and isset($request->municipalitieCheck)){
@@ -63,5 +61,33 @@ class SpotController extends Controller
 
 
         return view('jimoto_spot_search',compact('syoukaijou','count','categoryConditions','municipalitieCondetions'));
+
+
+    public function keywordSearch(Request $Request)
+    {
+
+        
+
+        $search = $Request->input('search');
+
+
+
+        if ($search) {
+
+            $spaceConversion = mb_convert_kana($search, 's');
+
+            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+
+
+            foreach($wordArraySearched as $value) {
+                $syoukaijous = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
+            }
+
+        }
+
+        $count = count($syoukaijous);
+
+        return view('jimoto_spot_search',compact('syoukaijous','search','syoukaijous'));
+
     }
 }

@@ -1,6 +1,5 @@
 "use strict";
 $(document).ready(function () {
-
     // もどるボタン
     $(".return").on("click", function () {
         history.back();
@@ -15,6 +14,7 @@ $(document).ready(function () {
     });
 
     // 大項目をチェックすると小項目が全部チェックされる
+
     // 1. 「全選択」する
     
     $(".check").on('click', function() {
@@ -27,17 +27,35 @@ $(document).ready(function () {
         }
         });
 
+
+    $(".aria-check").click(function () {
+        console.log($(this).prop("checked"));
+        if ($(this).prop("cheked")) {
+            let area_id = $(this).attr("class");
+            console.log("hello");
+            $("." + area_id).prop("checked", true);
+        } else {
+            console.log("else");
+        }
+    });
+
     //プロフィール編集にてエリアを選ぶと表記変更
-    $('.profile-edit-eria-change').change(function(){
-        let neweria = $('[name=eria] option:selected').text();
+    $(".profile-edit-eria-change").change(function () {
+        let neweria = $("[name=eria] option:selected").text();
 
-        $('.profile-eria-output').text(neweria);
+        $(".profile-eria-output").text(neweria);
+    });
 
-    })
-
-    let moji = $('.syoukaijou-day-sam').text().slice(10).replace('-','/');
+    let moji = $(".syoukaijou-day-sam").text().slice(10).replace("-", "/");
     console.log(moji);
+
+    $(".area_choice").change(function () {
+        let areatext = $(this).parent().text();
+        $(".area-text").text(areatext);
+    });
 });
+
+//ここまでJquery
 
 function previewFile(file) {
     // プレビュー画像を追加する要素
@@ -95,3 +113,32 @@ function changeIMG() {
     //画像を切り替える
     document.getElementById("gazo").src = img[cnt].src;
 }
+
+// モーダル
+let show = false;
+
+document.getElementById("answer").onclick = function () {
+    document.getElementById("modal").classList.add("show"); // 画面表示
+    document.getElementById("mask").classList.remove("hidden"); //マスク表示
+    show = true;
+};
+
+document.getElementById("close").onclick = function () {
+    // flag = 0;
+    document.getElementById("modal").classList.remove("show"); // 閉じる
+    document.getElementById("mask").classList.add("hidden"); //マスク非表示
+};
+document.querySelector("#mask").onclick = function () {
+    // flag = 0;
+    if (document.getElementById("modal").classList.contains("show")) {
+        document.getElementById("modal").classList.remove("show"); // 閉じる
+        document.getElementById("mask").classList.add("hidden"); //マスク非表示
+    }
+};
+
+// let selectElement = document.querySelector('select[name="area_choice"]');
+// let selectedOption = selectElement.options[selectElement.selectedIndex];
+// let selectedOptionText = selectedOption.textContent;
+// let resultElement = document.getElementById("area_text");
+// console.log(resultElement);
+// resultElement.textContent = "area_text" + selectedOptionText;

@@ -15,8 +15,7 @@ class SpotController extends Controller
 
     public function showSpot(){
 
-        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
-
+        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->select('syoukaijous.id as syoukaijou_id','title','image1','image2','image3','image4','spotname','address','url','body')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
         return view ('jimoto_spot',compact('syoukaijou'));
     }
     
@@ -40,8 +39,6 @@ class SpotController extends Controller
     public function keywordSearch(Request $Request)
     {
 
-        
-
         $search = $Request->input('search');
 
 
@@ -52,10 +49,15 @@ class SpotController extends Controller
 
             $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
 
-
-            foreach($wordArraySearched as $value) {
-                $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
+            foreach($wordArraySearched as $key => $value) {
+                if($key == 0){
+                    $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
+                }else {
+                    ${$syoukaijou . $key} = Syoukaijou::orderBy('syoukaijous.created_at','desc')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->where('body', 'like', '%'.$value.'%')->get();
+                    $syoukaijou = collect($syoukaijou)->merge(${$syoukaijou . $key});
+                }
             }
+
             $search = $wordArraySearched;
         }
         else {

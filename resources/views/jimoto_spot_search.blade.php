@@ -53,8 +53,8 @@
         </div>
     </div>
   <div class="jimoto-sam">
-@foreach ($syoukaijous as $item)
-  <a class="syoukaijou-link" href="{{ Route('syoukaijou.disp'),['syoukaijou' => $item->id] }}">
+@foreach ($syoukaijou as $item)
+  <a class="syoukaijou-link" href="">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
@@ -63,7 +63,6 @@
       </div>
       <div class="janru-area-sam">
         <div class="janru-tag"><div class="jyanru-sub">{{$item->category_name}}</div>
-                                <div class="jyanru-sub">{{ $item->category_name }}</div>
                             </div>
                             <div class="area-tag">
                                 <div class="area-sub">{{ $item->municipalities_name }}</div>

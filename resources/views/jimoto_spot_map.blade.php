@@ -23,18 +23,74 @@
   </div>
   <div class="spot-map">
     <div class="spot-filter-map block-green">マップで探す</div>
-    <div class="map-space" id="map">
-    </div>
-    <div id="map"></div>
+    <!-- <div id="map"></div>
     <script>
-      let MyLatLng = new google.maps.LatLng(36.653141021728516, 138.84703063964844);
-      let Options = {
-        zoom: 15, //地図の縮尺値
-        center: MyLatLng, //地図の中心座標
-        mapTypeId: 'roadmap' //地図の種類
-      };
-      let map = new google.maps.Map(document.getElementById('map'), Options);
+      function initMap() {
+        let canvas = document.getElementById('map');
+        let MyLatLng = new google.maps.LatLng(36.653141021728516, 138.84703063964844);
+        let Options = {
+          zoom: 15, //地図の縮尺値
+          center: MyLatLng, //地図の中心座標
+          mapTypeId: 'roadmap' //地図の種類
+        };
+        let map = new google.maps.Map(canvas, Options);
+
+        let marker = new google.maps.Marker({
+          map: map, //先ほど作った、地図のインスタンス([map]) を設定
+          position: MyLatLng //ピンを刺す場所 今回、ピンを挿す位置と地図の中心を同じにしています。
+        });
+      }
+    </script> -->
+    <!-- <div id="floating-panel">
+      <input id="address" type="textbox" value="群馬県">
+      <input id="submit" type="button" value="Geocode">
+    </div> -->
+    <div id="map" class="spot-map"></div>
+
+    <div class="hoge">
+      @foreach ($all_address as $item)
+      <p>
+        {{$item->address}}
+      </p>
+      @endforeach
+    </div>
+    <script>
+      function initMap() {
+        let map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {
+            lat: 36.653141021728516,
+            lng: 150.644
+          }
+        });
+        let geocoder = new google.maps.Geocoder();
+
+        // document.getElementById('submit').addEventListener('click', function() {
+        geocodeAddress(geocoder, map);
+        // });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        // ここに紹介状テーブルのアドレス列の数字を一個づつ入れて行って処理を実行したい
+        let hogehoge = document.querySelectorAll('.hoge p')
+        console.log(hogehoge);
+        let address = "京都府";
+        geocoder.geocode({
+          'address': address
+        }, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            let marker = new google.maps.Marker({
+              map: resultsMap, //先ほど作った、地図のインスタンス([map]) を設定
+              position: results[0].geometry.location //ピンを刺す場所
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
     </script>
-  </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8Wb1SiTpXP-R0nvjAH9Dwko9nqe3Ywxw&callback=initMap">
+    </script>
 </form>
 @endsection

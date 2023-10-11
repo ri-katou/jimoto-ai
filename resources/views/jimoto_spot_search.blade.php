@@ -20,6 +20,7 @@
         <div class="map-search"><a class="btn-gray" href=#>マップから探す</a></div>
     </div>
 
+
     <div class="if-search">
         <div class="search-title">検索条件</div>
         <div class="if-area-janru">
@@ -51,17 +52,17 @@
 
         </div>
     </div>
-    <div class="jimoto-sam">
-        @foreach ($syoukaijou as $item)
-            <a class="syoukaijou-link" href="">
-                <div class="syoukaijou-sam">
-                    <div class="preview-syoukaijou-top-sam">
-                        <div class="sum-top">
-                            <div class="syoukaijou-day-sam">{{ $item->updated_at }}</div>
-                            <div class="syoukaijou-title-sam">{{ $item->title }}</div>
-                        </div>
-                        <div class="janru-area-sam">
-                            <div class="janru-tag">
+  <div class="jimoto-sam">
+@foreach ($syoukaijous as $item)
+  <a class="syoukaijou-link" href="{{ Route('syoukaijou.disp'),['syoukaijou' => $item->id] }}">
+  <div class="syoukaijou-sam">
+    <div class="preview-syoukaijou-top-sam">
+      <div class="sum-top">
+        <div class="syoukaijou-day-sam">{{$item->updated_at}}</div>
+        <div class="syoukaijou-title-sam">{{$item->title}}</div>
+      </div>
+      <div class="janru-area-sam">
+        <div class="janru-tag"><div class="jyanru-sub">{{$item->category_name}}</div>
                                 <div class="jyanru-sub">{{ $item->category_name }}</div>
                             </div>
                             <div class="area-tag">

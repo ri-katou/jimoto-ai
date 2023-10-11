@@ -26,6 +26,7 @@
 
 <div class="jimoto-sam">
 @foreach ($syoukaijou as $item)
+
 <a class="syoukaijou-link" href="">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">

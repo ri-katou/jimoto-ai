@@ -43,6 +43,11 @@ class SpotController extends Controller
 
 
 
+
+
+        $search = $Request->input('search');
+
+
         if ($search) {
 
             $spaceConversion = mb_convert_kana($search, 's');

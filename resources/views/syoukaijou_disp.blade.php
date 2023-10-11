@@ -26,7 +26,9 @@
       <div class="preview-pics-sub">
         <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
         <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+
         <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  alt=""></div>
+
       </div>
     </div>
     <div class="preview-honbun">

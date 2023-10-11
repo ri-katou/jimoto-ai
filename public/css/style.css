@@ -665,15 +665,11 @@ footer {
 /* syoukaijou_create */
 
 .syoukaijou_create {
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
+    margin-left: 25%;
     line-height: 2;
 }
 
 .syoukaijou-top {
-    display: flex;
-    justify-content: center;
     margin-bottom: 2%;
 }
 .syoukaijou-day {
@@ -686,42 +682,19 @@ footer {
 
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
-    margin-right: 40%;
 }
-.syoukaijou-honbun {
-    margin-right: 45%;
-}
+
 .syoukaijou-pics {
     display: flex;
     column-gap: 10px;
 }
-.syoukaijou-jyanru-area {
-    display: flex;
-    justify-content: center;
-}
-.syoukaijou-jyanru {
-    margin-right: 20%;
-}
+
 .syoukaijou-supot-title {
     font-size: 1.5rem;
-    margin-right: 40%;
 }
-.syoukaijou-supot-name {
-    margin-right: 36%;
-}
-.syoukaijou-supot-zyusyo {
-    margin-right: 45%;
-}
-.syoukaijou-supot-url {
-    margin-right: 45%;
-}
+
 .syoukaijou-supot-url-form {
     margin-bottom: 2%;
-}
-.syoukaijou-bottom {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15%;
 }
 /* profile */
 .profile {
@@ -796,14 +769,12 @@ footer {
 }
 
 .syoukaijou-title {
-    margin-left: 14%;
     word-wrap: break-word;
 }
 .syoukaijou-top {
     display: flex;
     justify-content: left;
     margin-bottom: 2%;
-    margin-left: 10%;
 }
 
 .syoukaijou-daimei {
@@ -813,6 +784,9 @@ footer {
 
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
+}
+.syoukaijou-honbun{
+    font-size: 1.5rem;
 }
 spot-addles .syoukaijou-honbun {
     margin-left: -15%;
@@ -836,29 +810,14 @@ spot-addles .syoukaijou-honbun {
     font-size: 1.5rem;
 }
 
-.area-select {
-    width: 100px;
-    margin-top: -15%;
-}
 
 .syoukaijou-area-title {
     font-size: 1.5rem;
-    margin-left: -70%;
 }
 
 .syoukaijou-supot-title {
     margin-top: 3%;
     font-size: 1.5rem;
-    margin-left: -15%;
-}
-.syoukaijou-supot-name {
-    margin-left: -12%;
-}
-.syoukaijou-supot-zyusyo {
-    margin-left: -15%;
-}
-.syoukaijou-supot-url {
-    margin-left: -15%;
 }
 .syoukaijou-supot-url-form {
     margin-bottom: 2%;
@@ -866,12 +825,14 @@ spot-addles .syoukaijou-honbun {
 .syoukaijou-bottom {
     display: flex;
     justify-content: left;
-    margin-bottom: 15%;
 }
 
 .syoukaijou-bottom {
     margin-top: 5%;
-    margin-left: 25%;
+}
+
+.syoukaijou-view {
+    font-size: 1.5rem;
 }
 
 /* preview */
@@ -914,7 +875,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .janru-area {
-    margin-left: 40%;
+    margin-left: 25%;
     display: flex;
     justify-content: right;
 }
@@ -979,7 +940,6 @@ spot-addles .syoukaijou-honbun {
 
 .preview-sam {
     margin-top: 5%;
-
     margin-bottom: 3%;
     font-size: 1.5rem;
 }
@@ -1007,15 +967,10 @@ spot-addles .syoukaijou-honbun {
     margin-top: 10px;
 }
 
-.sum-top {
-    display: flex;
-    justify-content: left;
-}
 
 .syoukaijou-title-sam {
-    margin-top: 7%;
+    margin-top: 2%;
     margin-left: 10%;
-    font-size: 1.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1127,20 +1082,22 @@ spot-addles .syoukaijou-honbun {
 
 .honbun-sum {
     width: 220px;
-    max-height: 80px;
+    max-height: 70px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.fav_btn {
+    display: flex;
+}
+
 .fav_btn-ittemitai {
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-left: 20%;
 }
 
 .fav-btn-ittayo {
-    margin-top: -27%;
-    margin-left: 50%;
+    margin-left: 20%;
 }
 
 .ittayo-math {

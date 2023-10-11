@@ -7,14 +7,14 @@
 <div class="preview-naiyou">この内容でよろしいですか？</div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">
-    <div class="syoukaijou-day">日付</div>
+    <div class="syoukaijou-day">{{$day}}</div>
     <div class="janru-area">
       <div class="janru-tag">
-        <div class="jyanru"> ジャンル：</div>
+        <div class="jyanru"></div>
         <div class="jyanru-sub">{{ $category->category_name}}</div>
       </div>
       <div class="area-tag">
-        <div class="area"> エリア：</div>
+        <div class="area"></div>
         <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
       </div>
     </div>
@@ -64,13 +64,13 @@
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
-        <div class="syoukaijou-day-sam">日付</div>
+        <div class="syoukaijou-day-sam">{{$day}}</div>
         <div class="syoukaijou-title-sam">{{$Request->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{ $category->category_name}}</div>
+        <div class="janru-tag"><div class="jyanru-sub">{{ $category->category_name}}</div>
         </div>
-        <div class="area-tag"> エリア：<div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
+        <div class="area-tag"><div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
         </div>
       </div>
     </div>

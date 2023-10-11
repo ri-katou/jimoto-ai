@@ -65,6 +65,7 @@ class SpotController extends Controller
     public function keywordSearch(Request $Request){
 
         $search = $Request->input('search');
+
         if ($search) {
 
             $spaceConversion = mb_convert_kana($search, 's');
@@ -86,6 +87,13 @@ class SpotController extends Controller
         $municipalitieCondetions = '';
 
         return view('jimoto_spot_search',compact('syoukaijou','search','count','categoryConditions','municipalitieCondetions'));
+
+    }
+
+    public function showDisp(int $id)
+    {
+        $syoukaijou = Syoukaijou::find($id);
+        return view('syoukaijou_disp',compact('syoukaijou'));
 
     }
 }

@@ -50,6 +50,7 @@ class CreateController extends Controller
         $municipalitie = Municipalitie::all();
         $category = Category::all();
 
+        
         return view('syoukaijou_create', compact('municipalitie', 'category'));
     }
 }

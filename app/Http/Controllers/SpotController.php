@@ -15,8 +15,13 @@ class SpotController extends Controller
 
     public function showSpot(){
 
-        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->select('syoukaijous.id as syoukaijou_id','title','image1','image2','image3','image4','spotname','address','url','body')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
-        return view ('jimoto_spot',compact('syoukaijou'));
+        $categoryConditions = '';
+        $municipalitieCondetions = '';
+
+        $syoukaijou = Syoukaijou::orderBy('syoukaijous.created_at','desc')->select('*')->join('municipalities','syoukaijous.municipalities_id', '=' ,'municipalities.id')->join('categories','syoukaijous.category_id','=','categories.id')->get();
+        dd($syoukaijou);
+        return view ('jimoto_spot',compact('syoukaijou','categoryConditions','municipalitieCondetions'));
+
     }
     
     public function showSpotFilter(){
@@ -38,15 +43,9 @@ class SpotController extends Controller
 
     public function keywordSearch(Request $Request)
     {
-
         $search = $Request->input('search');
 
-
-
-
-
         $search = $Request->input('search');
-
 
         if ($search) {
 

@@ -90,7 +90,7 @@
         });
       }
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8Wb1SiTpXP-R0nvjAH9Dwko9nqe3Ywxw&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
 </form>
 @endsection

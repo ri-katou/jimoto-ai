@@ -72,8 +72,7 @@
                     </div>
                     <div class="preview-main-sam">
                         <div class="preview-pics-sam">
-                            <div class="preview-pic1-sam"><img id="gazo" src="{{ asset($item->image1) }}"
-                                    width="100%" height="100%" border="0" alt=""></div>
+                            <div class="preview-pic1-sam"><img src="{{ asset('storage/' . $item->image1) }}" alt=""></div>
                             <div class="preview-pics-sub">
                                 <div class="preview-pic2-sam"></div>
                                 <div class="preview-pic3-sam"></div>

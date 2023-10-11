@@ -22,12 +22,11 @@
   <div class="syoukaijou-title">{{$Request->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-      {{$Request->image1}}
+      <div class="preview-pic1"><img src="/public/storage/ダウンロード.jpg"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+        <div class="preview-pic2"><img  src="{{$file_name2}}"  alt=""></div>
+        <div class="preview-pic3"><img  src="{{$file_name3}}"  alt=""></div>
+        <div class="preview-pic4"><img  src="{{$file_name4}}"  alt=""></div>
       </div>
     </div>
     <div class="preview-honbun">
@@ -76,12 +75,7 @@
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($Request->image1)}}" width="100%" height="100%" border="0" alt=""></div>
-        <div class="preview-pics-sub">
-          <div class="preview-pic2-sam"></div>
-          <div class="preview-pic3-sam"></div>
-          <div class="preview-pic4-sam"></div>
-        </div>
+        <div class="preview-pic1-sam"><img src="{{$file_name1}}" width="100%" height="100%" border="0" alt=""></div>
       </div>
       <div class="preview-honbun">
         <div class="honbun-sum">{{$Request->main}}</div>

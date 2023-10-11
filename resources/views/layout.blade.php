@@ -12,10 +12,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Yusei+Magic&display=swap" rel="stylesheet">
 
-    <script src="http://maps.google.com/maps/api/js?key={}&callback=console.debug&language=ja"></script>
-
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
+        #map {
+            height: 500px;
+            width: 70%;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 35%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
 
 </head>
 

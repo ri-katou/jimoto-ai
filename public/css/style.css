@@ -36,21 +36,6 @@ li {
     list-style: none;
 }
 
-/* タブレットサイズ */
-@media (max-width: 767px) {
-    .home-icon-left {
-        visibility: hidden;
-    }
-    main {
-        max-width: 767px;
-    }
-    .syoukaijou-all {
-        width: 100%;
-    }
-    .syoukaijou-card {
-        grid-template-columns: 1fr 1fr;
-    }
-}
 /* 共通パーツ */
 .container {
     display: flex;
@@ -521,9 +506,6 @@ footer {
     gap: 39.5px;
 }
 
-.syou {
-    /* background-color: #339dff; */
-}
 .dummy {
     height: 250px;
 }
@@ -785,7 +767,7 @@ footer {
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
 }
-.syoukaijou-honbun{
+.syoukaijou-honbun {
     font-size: 1.5rem;
 }
 spot-addles .syoukaijou-honbun {
@@ -809,7 +791,6 @@ spot-addles .syoukaijou-honbun {
 .syoukaijou-jyanru-title {
     font-size: 1.5rem;
 }
-
 
 .syoukaijou-area-title {
     font-size: 1.5rem;
@@ -966,7 +947,6 @@ spot-addles .syoukaijou-honbun {
 .preview-syoukaijou-top-sam {
     margin-top: 10px;
 }
-
 
 .syoukaijou-title-sam {
     margin-top: 2%;
@@ -1378,4 +1358,27 @@ spot-addles .syoukaijou-honbun {
 .map-space {
     width: 998px;
     height: 690px;
+}
+
+/* タブレットサイズ */
+@media (max-width: 767px) {
+    .home-icon-left {
+        visibility: hidden;
+    }
+    main {
+        max-width: 767px;
+    }
+    .syoukaijou-all {
+        width: 100%;
+    }
+    .syoukaijou-card {
+        grid-template-columns: 1fr;
+    }
+
+    .syou {
+        margin: 0 auto;
+    }
+    .spot-map {
+        margin: 0 auto;
+    }
 }

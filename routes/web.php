@@ -60,7 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('jimoto_spot/map/', function () {
         return view('jimoto_spot_map');
-    });
+    })->name('jimoto.spot.name');
 
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
     Route::get('jimoto_spot/search/', 'spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果

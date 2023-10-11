@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\category;
+use App\Interest;
+use App\Visited;
 use App\Municipalitie;
 use App\Syoukaijou;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,7 @@ class HomeController extends Controller
             ->where('users.id', '=', Auth::user()->id)
             ->orderBy('Syoukaijous.created_at', 'desc')
             ->select(
+                'Syoukaijous.id as syoukaijou_id',
                 'Syoukaijous.title',
                 'Syoukaijous.image1',
                 'Syoukaijous.image2',
@@ -37,6 +41,12 @@ class HomeController extends Controller
                 'category_name'
             )
             ->limit(3)->get();
+
+            $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
+
+            $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
         // $category_name = Auth::user()
         //     ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
@@ -54,9 +64,7 @@ class HomeController extends Controller
         // })->get();
 
 
-        return view('home', [
-            'post' => $post
-        ]);
+        return view('home', compact('post','interest_list', 'interest_count','visited_list','visited_count'));
     }
 
     public function message()
@@ -110,7 +118,7 @@ class HomeController extends Controller
                 'municipalities.municipalities_name',
                 'category_name'
             )
-            ->limit(5)
+            ->limit(3)
             ->get();
 
         return view('interest_all_list', [
@@ -140,7 +148,7 @@ class HomeController extends Controller
                 'municipalities.municipalities_name',
                 'category_name'
             )
-            ->limit(7)->get();
+            ->limit(3)->get();
 
         return view('visited_all_list', [
             'all_message' => $visited

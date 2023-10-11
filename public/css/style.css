@@ -36,6 +36,22 @@ li {
     list-style: none;
 }
 /* 共通パーツ */
+.fav_btn {
+    display: flex;
+    justify-content: space-around;
+}
+.fas {
+    color: gray;
+}
+.fav_btn-interest:hover {
+    cursor: pointer;
+}
+.interest-active {
+    color: pink;
+}
+.visited-active {
+    color: #12f128;
+}
 .container {
     display: flex;
     align-items: center;
@@ -1110,23 +1126,7 @@ spot-addles .syoukaijou-honbun {
     text-overflow: ellipsis;
 }
 
-.fav_btn-ittemitai {
-    margin-top: 3%;
-    margin-left: 5%;
-}
 
-.fav-btn-ittayo {
-    margin-top: -27%;
-    margin-left: 50%;
-}
-
-.ittayo-math {
-    margin-left: 15px;
-}
-
-.ittemitai-math {
-    margin-left: 15px;
-}
 /* user?delete */
 .user-delete-center-content {
     margin: 0 auto;

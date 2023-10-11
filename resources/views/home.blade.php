@@ -25,20 +25,20 @@
         <div class="card-margin">
           @if(count($post)>=1)
           <div class="syoukaijou-card">
-            @foreach ($post as $post)
+            @foreach ($post as $item)
             <div class="syou">
               <div class="syoukaijou-sam">
                 <div class="preview-syoukaijou-top-sam">
                   <div class="sum-top">
-                    <div class="syoukaijou-day-sam">{{$post->create_day}}</div>
-                    <div class="syoukaijou-title-sam">{{$post->title}}</div>
+                    <div class="syoukaijou-day-sam">{{$item->create_day}}</div>
+                    <div class="syoukaijou-title-sam">{{$item->title}}</div>
                   </div>
                   <div class="janru-area-sam">
                     <div class="janru-tag">
-                      {{$post->category_name}}
+                      {{$item->category_name}}
                     </div>
                     <div class="area-tag">
-                      <div class="area-sub">{{$post->municipalities_name}}</div>
+                      <div class="area-sub">{{$item->municipalities_name}}</div>
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                     </div>
                   </div>
                   <div class="preview-honbun">
-                    <div class="honbun-sum">{{$post->body}}</div>
+                    <div class="honbun-sum">{{$item->body}}</div>
                     <div class="fav_btn">
                       <div class="fav_btn-ittemitai">
                         <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">

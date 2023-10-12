@@ -90,6 +90,7 @@
         });
       }
     </script>
+    <!-- キー情報入れると警告出る -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
 </form>

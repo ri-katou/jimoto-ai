@@ -16,17 +16,16 @@ $(document).ready(function () {
     // 大項目をチェックすると小項目が全部チェックされる
 
     // 1. 「全選択」する
-    
-    $(".check").on('click', function() {
-        let check = $(this).parent().next().children().children().children();
-        if($(this).children().is(':checked')){
-            $(check).prop('checked', this.click);
-        } else {
-            $(check).prop('checked', false);
-            $(this).prop('checked', false);
-        }
-        });
 
+    $(".check").on("click", function () {
+        let check = $(this).parent().next().children().children().children();
+        if ($(this).children().is(":checked")) {
+            $(check).prop("checked", this.click);
+        } else {
+            $(check).prop("checked", false);
+            $(this).prop("checked", false);
+        }
+    });
 
     $(".aria-check").click(function () {
         console.log($(this).prop("checked"));
@@ -115,26 +114,26 @@ function changeIMG() {
 }
 
 // モーダル
-let show = false;
+// let show = false;
 
-document.getElementById("answer").onclick = function () {
-    document.getElementById("modal").classList.add("show"); // 画面表示
-    document.getElementById("mask").classList.remove("hidden"); //マスク表示
-    show = true;
-};
+// document.getElementById("answer").onclick = function () {
+//     document.getElementById("modal").classList.add("show"); // 画面表示
+//     document.getElementById("mask").classList.remove("hidden"); //マスク表示
+//     show = true;
+// };
 
-document.getElementById("close").onclick = function () {
-    // flag = 0;
-    document.getElementById("modal").classList.remove("show"); // 閉じる
-    document.getElementById("mask").classList.add("hidden"); //マスク非表示
-};
-document.querySelector("#mask").onclick = function () {
-    // flag = 0;
-    if (document.getElementById("modal").classList.contains("show")) {
-        document.getElementById("modal").classList.remove("show"); // 閉じる
-        document.getElementById("mask").classList.add("hidden"); //マスク非表示
-    }
-};
+// document.getElementById("close").onclick = function () {
+//     // flag = 0;
+//     document.getElementById("modal").classList.remove("show"); // 閉じる
+//     document.getElementById("mask").classList.add("hidden"); //マスク非表示
+// };
+// document.querySelector("#mask").onclick = function () {
+//     // flag = 0;
+//     if (document.getElementById("modal").classList.contains("show")) {
+//         document.getElementById("modal").classList.remove("show"); // 閉じる
+//         document.getElementById("mask").classList.add("hidden"); //マスク非表示
+//     }
+// };
 
 // let selectElement = document.querySelector('select[name="area_choice"]');
 // let selectedOption = selectElement.options[selectElement.selectedIndex];

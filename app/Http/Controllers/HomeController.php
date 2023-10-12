@@ -42,29 +42,31 @@ class HomeController extends Controller
             )
             ->limit(3)->get();
 
+            $interest = Interest::select(
+            'interests.user_id as interest_user_id',
+            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.title',
+            'Syoukaijous.image1',
+            'Syoukaijous.image2',
+            'Syoukaijous.image3',
+            'Syoukaijous.image4',
+            'Syoukaijous.spotname',
+            'Syoukaijous.address',
+            'Syoukaijous.url',
+            'Syoukaijous.body',
+            'Syoukaijous.created_at as create_day',
+            'municipalities.municipalities_name',
+            'category_name')->join('Syoukaijous', 'interests.user_id', '=', 'Syoukaijous.user_id')->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
+            ->where('interests.user_id', '=', Auth::id())
+            ->get();
+
             $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
             $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-        // $category_name = Auth::user()
-        //     ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
-        //     ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-        //     ->where('users.id', '=', Auth::user()->id)
-        //     ->limit(3)->get();
-
-        // dd($post);
-
-        // $areaname = $post->
-        // $cityId = Auth::user()->Syoukaijous()->limit(3)->municipalities_id()->get();
-        // $cityName = Municipalitie::whereHas('syoukaijous', function ($name) {
-        //     //市区町村テーブルのIDと数値が同じ市区町村IDの市区町村を取得
-        //     $name->where('id',);
-        // })->get();
-
-
-        return view('home', compact('post','interest_list', 'interest_count','visited_list','visited_count'));
+        return view('home', compact('post','interest','interest_list', 'interest_count','visited_list','visited_count'));
     }
 
     public function message()

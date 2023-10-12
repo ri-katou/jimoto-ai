@@ -63,6 +63,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     //行ってみたい
     Route::post('/interest','InterestController@interestAjax')->name('interest');
+    //行っったよ
+    Route::post('/visited','visitedController@visitedAjax')->name('visited');
 
 });
 

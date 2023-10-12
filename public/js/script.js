@@ -39,31 +39,63 @@ $(document).ready(function () {
         }
     });
     // 行ってみたいボタン
-    $(".fav_btn-interest").on("click", function () {
+    $(".fav_btn-interest-icon").on("click", function () {
         var origin = location.origin;
-        var $syoukaijouId = $(this).parent().data('syoukaijouId');
-        var $myId = $(this).parent().data('me');
+        var $syoukaijouId = $(this).parent().parent().attr('id');
+        var $myId = $(this).parent().parent().data('me');
+        let $interestIcon = $(this);
+        console.log($myId);
+        console.log($syoukaijouId);
         $.ajaxSetup({
             headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
         });
         $.ajax({
             url: origin + "/interest ",
             type: 'post',
-            async: true,
-            cache: false,
             data: {
                 'syoukaijou_id': $syoukaijouId,
                 'user_id': $myId,
             }, success: function (data) {
+                console.log(data);
                 if (data == 1) {
-                    $("fa-heart").addClass('interest-active');
+                    $interestIcon.addClass('interest-active');
                 } else {
-                    $("fa-heart").removeClass('interest-active');
+                    $interestIcon.removeClass('interest-active');
                 }
             }
         });
         return false;
     });
+    // 行ったよボタン
+    $(".fav_btn-visited-icon").on("click", function () {
+        var origin = location.origin;
+        var $syoukaijouId = $(this).parent().parent().attr('id');
+        var $myId = $(this).parent().parent().data('me');
+        let $visitedIcon = $(this);
+        console.log($myId);
+        console.log($syoukaijouId);
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
+        });
+        $.ajax({
+            url: origin + "/interest ",
+            type: 'post',
+            data: {
+                'syoukaijou_id': $syoukaijouId,
+                'user_id': $myId,
+            }, success: function (data) {
+                console.log(data);
+                if (data == 1) {
+
+                    $visitedIcon.addClass('visited-active');
+                } else {
+                    $visitedIcon.removeClass('visited-active');
+                }
+            }
+        });
+        return false;
+    });
+
 
     //プロフィール編集にてエリアを選ぶと表記変更
     $(".profile-edit-eria-change").change(function () {
@@ -83,7 +115,7 @@ $(document).ready(function () {
 
 //ここまでJquery
 
-// モーダル
+モーダル
 let show = false;
 
 document.getElementById("answer").onclick = function () {

@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Interest;
 use Illuminate\Support\Carbon;
+use App\Visited;
 use Illuminate\Support\Facades\DB;
 
-class InterestController extends Controller
+class VisitedController extends Controller
 {
-    public function interestAjax(Request $request)
+    public function visitedAjax(Request $request)
     {
 
         DB::beginTransaction();
 
-        $rec = Interest::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->get();
+        $rec = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->get();
         $fav_falg = 0;
 
         if ($rec->isEmpty()) {
-            $interest = new Interest();
+            $interest = new Visited();
             $interest->user_id = $request->input('user_id');
             $interest->syoukaijou_id = $request->input('syoukaijou_id');
             $interest->created_at = Carbon::now();
@@ -27,7 +27,7 @@ class InterestController extends Controller
             $interest->save();
             $fav_falg = 1;
         } else {
-            Interest::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
+            Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
 
             $fav_falg = 0;
         }

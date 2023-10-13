@@ -78,7 +78,7 @@ $(document).ready(function () {
             headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
         });
         $.ajax({
-            url: origin + "/interest ",
+            url: origin + "/visited ",
             type: 'post',
             data: {
                 'syoukaijou_id': $syoukaijouId,

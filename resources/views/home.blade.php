@@ -104,11 +104,6 @@
                     </div>
                     <div class="mottomiru"><a href="{{ route('home.post.check') }}">もっと見る</a></div>
                 </div>
-                <form action="/interest" method="POST">
-                  @csrf
-                <input type="hidden"  name="syoukaijou_id" value="1">
-                <input type="hidden"  name="user_id" value="1">
-              <input type="submit"></form>
                 <div class="syoukaijyou-hyouji">
                     <div class="home-body midasi">
                         行ってみたい
@@ -188,7 +183,7 @@
                                     </div>
                                 @endforeach
                             </div>
-                            @else
+                        @else
                             <div class="dummy">行ってみたいがありません</div>
                         @endif
                     </div>
@@ -199,17 +194,90 @@
                         行ったよ
                     </div>
                     <div class="card-margin">
-                        <div class="syoukaijou-card">
-                            <div class="syou"></div>
-                            <div class="syou"></div>
-                            <div class="syou"></div>
-                        </div>
+                        @if (count($visited) >= 1)
+                            <div class="syoukaijou-card">
+                                @foreach ($visited as $item)
+                                    <div class="syou">
+                                        <div class="syoukaijou-sam">
+                                            <div class="preview-syoukaijou-top-sam">
+                                                <div class="sum-top">
+                                                    <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
+                                                    <div class="syoukaijou-title-sam">{{ $item->title }}</div>
+                                                </div>
+                                                <div class="janru-area-sam">
+                                                    <div class="janru-tag">
+                                                        {{ $item->category_name }}
+                                                    </div>
+                                                    <div class="area-tag">
+                                                        <div class="area-sub">{{ $item->municipalities_name }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="preview-main-sam">
+                                                <div class="preview-pics-sam">
+                                                    <div class="preview-pic1-sam"><img id="gazo"
+                                                            onclick="changeIMG()" src="/image/noimage.jpg" width="100%"
+                                                            height="100%" border="0" alt=""></div>
+                                                    <div class="preview-pics-sub">
+                                                        <div class="preview-pic2-sam"></div>
+                                                        <div class="preview-pic3-sam"></div>
+                                                        <div class="preview-pic4-sam"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="preview-honbun">
+                                                    <div class="honbun-sum">{{ $item->body }}</div>
+                                                    <div class="fav_btn" id="{{ $item->syoukaijou_id }}"
+                                                        data-me="{{ Auth::id() }}">
+                                                        <div class="fav_btn-interest">
+                                                            <i
+                                                                class="fav_btn-interest-icon fas fa-heart 
+                      @foreach ($interest_list as $value)
+                      @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                       interest-active
+                      @endif @endforeach
+                      "></i>
+                                                            <div class="interest-count">
+                                                                @foreach ($interest_count as $value)
+                                                                    @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                                        {{ $item->syoukaijou_id_count }}
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="fav-btn-visited">
+                                                            <i
+                                                                class="fav_btn-visited-icon fas fa-flag 
+                      @foreach ($visited_list as $value)
+                      @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                      visited-active
+                      @endif @endforeach
+                      "></i>
+                                                            <div class="visited-math">
+                                                                @foreach ($visited_count as $value)
+                                                                    @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                                        {{ $item->syoukaijou_id_count }}
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                            <div class="dummy">行ったよ がありません</div>
+                        @endif
                     </div>
                     <div class="mottomiru"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
                 </div>
-                <div class="toukou"><a href="{{ route('syoukaijou.create') }}">紹介状作成</a></div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 
 

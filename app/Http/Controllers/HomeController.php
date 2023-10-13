@@ -56,9 +56,29 @@ class HomeController extends Controller
             'Syoukaijous.body',
             'Syoukaijous.created_at as create_day',
             'municipalities.municipalities_name',
-            'category_name')->join('Syoukaijous', 'interests.user_id', '=', 'Syoukaijous.user_id')->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-            ->where('interests.user_id', '=', Auth::id())
+            'category_name')->join('Syoukaijous', 'interests.syoukaijou_id', '=', 'Syoukaijous.id')->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
+            ->where('interests.user_id', '=', Auth::id())->orderBy('Syoukaijous.created_at', 'desc')
+            ->limit(3)
             ->get();
+
+            $visited = Visited::select(
+                'visiteds.user_id as interest_user_id',
+                'Syoukaijous.id as syoukaijou_id',
+                'Syoukaijous.title',
+                'Syoukaijous.image1',
+                'Syoukaijous.image2',
+                'Syoukaijous.image3',
+                'Syoukaijous.image4',
+                'Syoukaijous.spotname',
+                'Syoukaijous.address',
+                'Syoukaijous.url',
+                'Syoukaijous.body',
+                'Syoukaijous.created_at as create_day',
+                'municipalities.municipalities_name',
+                'category_name')->join('Syoukaijous', 'visiteds.syoukaijou_id', '=', 'Syoukaijous.id')->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
+                ->where('visiteds.user_id', '=', Auth::id())->orderBy('Syoukaijous.created_at', 'desc')
+                ->limit(3)
+                ->get();
 
             $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
@@ -66,7 +86,7 @@ class HomeController extends Controller
             $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-        return view('home', compact('post','interest','interest_list', 'interest_count','visited_list','visited_count'));
+        return view('home', compact('post','interest','interest_list', 'interest_count','visited','visited_list','visited_count'));
     }
 
     public function message()

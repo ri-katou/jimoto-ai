@@ -57,14 +57,18 @@ Route::group(['middleware' => 'auth'], function () {
 
     // 発見
     Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
+    Route::get('syoukaijou/{id}','SpotController@showDisp')->name('syoukaijou.disp');
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
     Route::get('jimoto_spot/search/','spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
     Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
+
 
     //行ってみたい
     Route::post('/interest','InterestController@interestAjax')->name('interest');
     //行っったよ
     Route::post('/visited','visitedController@visitedAjax')->name('visited');
+
+
 
 });
 

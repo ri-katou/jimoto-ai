@@ -25,24 +25,25 @@
 
 
 <div class="jimoto-sam">
-@foreach ($syoukaijou as $syoukaijou)
-  <a class="syoukaijou-link" href="">
+@foreach ($syoukaijou as $item)
+
+<a class="syoukaijou-link" href="{{ route('syoukaijou.disp',['id' => $item->syoukaijous_id]) }}">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
-        <div class="syoukaijou-day-sam">{{$syoukaijou->updated_at}}</div>
-        <div class="syoukaijou-title-sam">{{$syoukaijou->title}}</div>
+        <div class="syoukaijou-day-sam">{{$item->create_day}}</div>
+        <div class="syoukaijou-title-sam">{{$item->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"><div class="jyanru-sub">{{$syoukaijou->category_name}}</div>
+        <div class="janru-tag"><div class="jyanru-sub">{{$item->category_name}}</div>
         </div>
-        <div class="area-tag"><div class="area-sub">{{$syoukaijou->municipalities_name}}</div>
+        <div class="area-tag"><div class="area-sub">{{$item->municipalities_name}}</div>
         </div>
       </div>
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($syoukaijou->image1)}}" width="100%" height="100%" border="0" alt=""></div>
+        <div class="preview-pic1-sam"><img src="{{$item->image1}}"></div>
         <div class="preview-pics-sub">
           <div class="preview-pic2-sam"></div>
           <div class="preview-pic3-sam"></div>
@@ -50,7 +51,7 @@
         </div>
       </div>
       <div class="preview-honbun">
-        <div class="honbun-sum">{{$syoukaijou->body}}</div>
+        <div class="honbun-sum">{{$item->body}}</div>
         <div class="fav_btn">
           <div class="fav_btn-ittemitai">
             <i class="fa-ittemitai" aria-hidden="true"><svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 512 512" style="width: 40px; height: 40px; opacity: 1;" xml:space="preserve">

@@ -6,36 +6,33 @@
 </div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">
-    <div class="syoukaijou-day">日付</div>
+    <div class="syoukaijou-day">{{$day}}</div>
     <div class="janru-area">
       <div class="janru-tag">
-      <div class="jyanru"> ジャンル：</div>
-      <div class="jyanru-sub">ラーメン</div>
+        <div class="jyanru"></div>
+        <div class="jyanru-sub">{{ $category->category_name}}</div>
       </div>
       <div class="area-tag">
-      <div class="area"> エリア：</div>
-      <div class="area-sub">渋川</div>
+        <div class="area"></div>
+        <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
       </div>
     </div>
   </div>
-  <div class="syoukaijou-title">タイトル</div>
+  <div class="syoukaijou-title">{{$Request->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
+      <div class="preview-pic1"><img src="{{$file_name1}}"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg"  border="0" alt=""></div>
+        <div class="preview-pic2"><img  src="{{$file_name2}}"  alt=""></div>
+        <div class="preview-pic3"><img  src="{{$file_name3}}"  alt=""></div>
+        <div class="preview-pic4"><img  src="{{$file_name4}}"  alt=""></div>
       </div>
     </div>
     <div class="preview-honbun">
-      <div class="preview-spot">スポット名&emsp;<div class="spotname"></div>
+      <div class="preview-spot">
+        <div class="spotname">{{$Request->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-</div>
+      <div class="syoukaijou-text">{{$Request->main}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>
@@ -45,15 +42,15 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     <table>
       <tr>
         <td height="30" width="100">スポット名</td>
-        <td class="spot-name" height="30"></td>
+        <td class="spot-name" height="30">{{$Request->spotname}}</td>
       </tr>
       <tr>
         <td height="30">住所</td>
-        <td class="spot-address" height="30"></td>
+        <td class="spot-address" height="30">{{$Request->address}}</td>
       </tr>
       <tr>
         <td height="30">URL</td>
-        <td class="spot-url" height="30"></td>
+        <td class="spot-url" height="30">{{$Request->url}}</td>
       </tr>
     </table>
   </div>

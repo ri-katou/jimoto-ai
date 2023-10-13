@@ -7,14 +7,14 @@
 <div class="preview-naiyou">この内容でよろしいですか？</div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">
-    <div class="syoukaijou-day">日付</div>
+    <div class="syoukaijou-day">{{$day}}</div>
     <div class="janru-area">
       <div class="janru-tag">
-        <div class="jyanru"> ジャンル：</div>
+        <div class="jyanru"></div>
         <div class="jyanru-sub">{{ $category->category_name}}</div>
       </div>
       <div class="area-tag">
-        <div class="area"> エリア：</div>
+        <div class="area"></div>
         <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
       </div>
     </div>
@@ -22,12 +22,11 @@
   <div class="syoukaijou-title">{{$Request->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-      {{$Request->image1}}
+      <div class="preview-pic1"><img src="{{$file_name1}}"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+        <div class="preview-pic2"><img  src="{{$file_name2}}"  alt=""></div>
+        <div class="preview-pic3"><img  src="{{$file_name3}}"  alt=""></div>
+        <div class="preview-pic4"><img  src="{{$file_name4}}"  alt=""></div>
       </div>
     </div>
     <div class="preview-honbun">
@@ -64,24 +63,19 @@
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
-        <div class="syoukaijou-day-sam">日付</div>
+        <div class="syoukaijou-day-sam">{{$day}}</div>
         <div class="syoukaijou-title-sam">{{$Request->title}}</div>
       </div>
       <div class="janru-area-sam">
-        <div class="janru-tag"> ジャンル：<div class="jyanru-sub">{{ $category->category_name}}</div>
+        <div class="janru-tag"><div class="jyanru-sub">{{ $category->category_name}}</div>
         </div>
-        <div class="area-tag"> エリア：<div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
+        <div class="area-tag"><div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
         </div>
       </div>
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($Request->image1)}}" width="100%" height="100%" border="0" alt=""></div>
-        <div class="preview-pics-sub">
-          <div class="preview-pic2-sam"></div>
-          <div class="preview-pic3-sam"></div>
-          <div class="preview-pic4-sam"></div>
-        </div>
+        <div class="preview-pic1-sam"><img src="{{$file_name1}}" width="100%" height="100%" border="0" alt=""></div>
       </div>
       <div class="preview-honbun">
         <div class="honbun-sum">{{$Request->main}}</div>
@@ -135,10 +129,10 @@
       @csrf
       <input type="hidden" value="{{$Request->title}}" name="title">
       <input type="hidden" value="{{$Request->main}}" name="main">
-      <input type="hidden" value="{{$Request->image1}}" name="image1">
-      <input type="hidden" value="{{$Request->image2}}" name="image2">
-      <input type="hidden" value="{{$Request->image3}}" name="image3">
-      <input type="hidden" value="{{$Request->image4}}" name="image4">
+      <input type="hidden" value="{{$file_name1}}" name="image1">
+      <input type="hidden" value="{{$file_name2}}" name="image2">
+      <input type="hidden" value="{{$file_name3}}" name="image3">
+      <input type="hidden" value="{{$file_name4}}" name="image4">
       <input type="hidden" value="{{$category->id}}" name="category">
       <input type="hidden" value="{{$municipalitie->id}}" name="municipalitie">
       <input type="hidden" value="{{$Request->spotname}}" name="spotname">

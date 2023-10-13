@@ -20,6 +20,7 @@
         <div class="map-search"><a class="btn-gray" href=#>マップから探す</a></div>
     </div>
 
+
     <div class="if-search">
         <div class="search-title">検索条件</div>
         <div class="if-area-janru">
@@ -51,18 +52,17 @@
 
         </div>
     </div>
-    <div class="jimoto-sam">
-        @foreach ($syoukaijou as $item)
-            <a class="syoukaijou-link" href="">
-                <div class="syoukaijou-sam">
-                    <div class="preview-syoukaijou-top-sam">
-                        <div class="sum-top">
-                            <div class="syoukaijou-day-sam">{{ $item->updated_at }}</div>
-                            <div class="syoukaijou-title-sam">{{ $item->title }}</div>
-                        </div>
-                        <div class="janru-area-sam">
-                            <div class="janru-tag">
-                                <div class="jyanru-sub">{{ $item->category_name }}</div>
+  <div class="jimoto-sam">
+@foreach ($syoukaijou as $item)
+  <a class="syoukaijou-link" href="{{ route('syoukaijou.disp',['id' => $item->syoukaijous_id]) }}">
+  <div class="syoukaijou-sam">
+    <div class="preview-syoukaijou-top-sam">
+      <div class="sum-top">
+        <div class="syoukaijou-day-sam">{{$item->create_day}}</div>
+        <div class="syoukaijou-title-sam">{{$item->title}}</div>
+      </div>
+      <div class="janru-area-sam">
+        <div class="janru-tag"><div class="jyanru-sub">{{$item->category_name}}</div>
                             </div>
                             <div class="area-tag">
                                 <div class="area-sub">{{ $item->municipalities_name }}</div>
@@ -71,8 +71,7 @@
                     </div>
                     <div class="preview-main-sam">
                         <div class="preview-pics-sam">
-                            <div class="preview-pic1-sam"><img id="gazo" src="{{ asset($item->image1) }}"
-                                    width="100%" height="100%" border="0" alt=""></div>
+                            <div class="preview-pic1-sam"><img src="{{$item->image1}}"></div>
                             <div class="preview-pics-sub">
                                 <div class="preview-pic2-sam"></div>
                                 <div class="preview-pic3-sam"></div>

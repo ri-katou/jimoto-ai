@@ -22,7 +22,6 @@ class ProfileController extends Controller
     public function showProfileEdit(){
         $user = Auth::user();
         $user_detail = User_detail::where('user_id',Auth::id())->get();
-        // dd($user_detail);
         $municipalitie = Municipalitie::find($user_detail[0]['municipalitie_id']);
         $aria_list = Municipalitie::all();
         return view('profile_edit',compact('user','municipalitie','aria_list'));

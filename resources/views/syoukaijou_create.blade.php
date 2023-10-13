@@ -37,6 +37,16 @@
         @endif
         <div class="form"><textarea name="main" id="" cols="80" rows="20">{{ old('main') }}</textarea></div>
       </div>
+      <div class="syoukaijou-view">スポットビュー（１枚必須）</div>
+      @if($errors->any())
+        <div class="error-message">
+          <ul>
+            @error('image1')
+            <li>{{ $message }}</li>
+            @enderror
+          </ul>
+        </div>
+        @endif
       <div class="syoukaijou-pic">
         <input type="file" name="image1">
         <input type="file" name="image2">
@@ -45,68 +55,72 @@
       </div>
       <div class="syoukaijou-jyanru-area">
         <div class="syoukaijou-jyanru">
-          <div class="syoukaijou-jyanru-title">ジャンル</div>
-          @if($errors->any())
-          <div class="error-message">
-            <ul>
-              @error('janru')
-              <li>{{ $message }}</li>
-              @enderror
-            </ul>
-          </div>
-          @endif
-          <!-- ジャンルプルダウン -->
-          <div class="form-group">
-            <select class="form-control" id="id" name="category">
-              @foreach ($category as $item)
-              <option value="{{ $item->id }}">{{ $item->category_name }}</option>
-              @endforeach
-            </select>
-          </div>
-        </div>
-        <div class="syoukaijou-area">
-
-          <div class="syoukaijou-area-title">エリア</div><br><br>
-          @if($errors->any())
-          <div class="error-message">
-            <ul>
-              @error('area')
-              <li>{{ $message }}</li>
-              @enderror
-            </ul>
-          </div>
-          @endif
-          <div class="area-select">
+          <div class="syoukaijou-jyanru-title">ジャンル
+            @if($errors->any())
+            <div class="error-message">
+              <ul>
+                @error('janru')
+                <li>{{ $message }}</li>
+                @enderror
+              </ul>
+            </div>
+            @endif
             <div class="form-group">
-              <select class="form-control" id="id" name="municipalitie">
-                @foreach ($municipalitie as $area)
-                <option value="{{ $area->id }}">{{ $area->municipalities_name }}</option>
+              <select class="form-control" id="id" name="category">
+                @foreach ($category as $item)
+                <option value="{{ $item->id }}">{{ $item->category_name }}</option>
                 @endforeach
               </select>
             </div>
           </div>
         </div>
-        <div class="syoukaijou-supot">
-          <div class="syoukaijou-supot-title">スポット情報</div>
-          <div class="syoukaijou-supot-name">スポット名、店名（必須）</div>
-          @if($errors->any())
-          <div class="error-message">
-            <ul>
-              @error('spot-name')
-              <li>{{ $message }}</li>
-              @enderror
-            </ul>
+        <div class="syoukaijou-area">
+
+          <div class="syoukaijou-area-title">エリア
+            @if($errors->any())
+            <div class="error-message">
+              <ul>
+                @error('area')
+                <li>{{ $message }}</li>
+                @enderror
+              </ul>
+            </div>
+            @endif
+            <div class="area-select">
+              <div class="form-group">
+                <select class="form-control" id="id" name="municipalitie">
+                  @foreach ($municipalitie as $area)
+                  <option value="{{ $area->id }}">{{ $area->municipalities_name }}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
           </div>
-          @endif
-          <div class="form"><textarea name="spotname" id="" cols="80" rows="1">{{ old('spotname') }}</textarea></div>
-          <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
-          <div class="form"><textarea name="address" id="" cols="80" rows="1">{{ old('address') }}</textarea></div>
-          <div class="syoukaijou-supot-url">URL（任意）</div>
-          <div class="form"><textarea name="url" id="" cols="80" rows="1">{{ old('url') }}</textarea></div>
         </div>
-        <div class="syoukaijou-bottom">
-          <div class="return">戻る</div>
-          <div class="syoukaijou-pic-button"><input class="btn-daidai" type="submit" value="投稿する"></div>
+      </div>
+      <div class="syoukaijou-supot">
+        <div class="syoukaijou-supot-title">スポット情報</div>
+        <div class="syoukaijou-supot-name">スポット名、店名（必須）</div>
+        @if($errors->any())
+        <div class="error-message">
+          <ul>
+            @error('title')
+            <li>{{ $message }}</li>
+            @enderror
+          </ul>
+        </div>
+        @endif
+        <div class="form"><textarea name="spotname" id="" cols="80" rows="1">{{ old('spotname') }}</textarea></div>
+        <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
+        <div class="form"><textarea name="address" id="" cols="80" rows="1">{{ old('address') }}</textarea></div>
+        <div class="syoukaijou-supot-url">URL（任意）</div>
+        <div class="form"><textarea name="url" id="" cols="80" rows="1">{{ old('url') }}</textarea></div>
+      </div>
+
+      <div class="syoukaijou-bottom">
+        <div class="return">戻る</div>
+        <div class="syoukaijou-pic-button"><input class="btn-daidai" type="submit" value="投稿する"></div>
+      </div>
     </form>
   </div>
 </div>

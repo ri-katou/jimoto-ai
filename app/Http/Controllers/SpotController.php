@@ -146,7 +146,10 @@ class SpotController extends Controller
         'municipalities.municipalities_name',
         'category_name')->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')->where('syoukaijous.id','=',$id)->get();
 
-        return view('syoukaijou_disp',compact('syoukaijou'));
+        $categoryConditions = '';
+        $municipalitieCondetions = '';
+
+        return view('syoukaijou_disp',compact('syoukaijou','categoryConditions','municipalitieCondetions'));
 
     }
 }

@@ -15,7 +15,7 @@
       <a href="{{route('home.interest.check')}}">
         <div class="post-syoukaijou-head container">
           <div class="post-img"><img src="/image/hart2.svg" alt="free-svg"></div>
-          <div class="post-head-font post-underline-green">行ってみたい</div>
+          <div class="post-head-font">行ってみたい</div>
 
         </div>
       </a>
@@ -24,7 +24,7 @@
       <a href="{{route('home.visit.check')}}">
         <div class="post-syoukaijou-head container">
           <div class="post-img"><img src="/image/goal.svg" alt class="free-svg"></div>
-          <div class="post-head-font post-underline-green">行ったよ</div>
+          <div class="post-head-font">行ったよ</div>
 
         </div>
       </a>

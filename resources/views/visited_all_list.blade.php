@@ -6,7 +6,7 @@
       <a href="{{route('home.post.check')}}">
         <div class="post-syoukaijou-head container">
           <div class="post-img"><img src="/image/mail8.svg" alt class="free-svg"></div>
-          <div class="post-head-font post-underline-green">投稿した紹介状</div>
+          <div class="post-head-font">投稿した紹介状</div>
 
         </div>
       </a>
@@ -15,7 +15,7 @@
       <a href="{{route('home.interest.check')}}">
         <div class="post-syoukaijou-head container">
           <div class="post-img"><img src="/image/hart2.svg" alt="free-svg"></div>
-          <div class="post-head-font post-underline-green">行ってみたい</div>
+          <div class="post-head-font">行ってみたい</div>
 
         </div>
       </a>

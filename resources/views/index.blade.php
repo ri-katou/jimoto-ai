@@ -72,7 +72,9 @@
             </div>
             <div class="top-bottom-right"> みんなで地元の素晴らしさを伝え合おう！！
               <div class="top-kaiin">会員登録はこちら↓<br>
-                <button class="btn-orange" type="button"><a href="{{ route('register') }}">会員登録</a></button>
+              <div class="top-kaiin-btn">
+                <a class="btn-orange" href="{{ route('register') }}"  type="button">会員登録</a>
+                </div>
               </div>
             </div>
           </div>

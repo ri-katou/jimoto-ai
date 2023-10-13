@@ -37,6 +37,22 @@ li {
 }
 
 /* 共通パーツ */
+.fav_btn {
+    display: flex;
+    justify-content: space-around;
+}
+.fas {
+    color: gray;
+}
+.fav_btn-interest:hover {
+    cursor: pointer;
+}
+.interest-active {
+    color: pink;
+}
+.visited-active {
+    color: #12f128;
+}
 .container {
     display: flex;
     align-items: center;
@@ -390,16 +406,13 @@ footer {
     right: 10vh;
 }
 
-.top-bottom-comment {
-    position: relative;
-}
+
 
 .top-pic4 {
     width: 15%;
     height: auto;
     position: relative;
     margin-top: 15%;
-    margin-left: 10%;
 }
 
 .top-pic5 {
@@ -437,6 +450,9 @@ footer {
 .top-bottom-comment {
     font-size: 1.2rem;
     font-weight: bold;
+    word-wrap: normal;
+    width: 504px;
+    margin-left: -10%;
 }
 
 .top-bottom {
@@ -450,6 +466,10 @@ footer {
     margin-top: 20%;
     margin-left: 20%;
     font-size: 1.5rem;
+}
+
+.top-kaiin-btn {
+    margin-top: 5%;
 }
 
 .top-bottom-right {
@@ -585,6 +605,7 @@ footer {
 }
 
 /*register_check.blade.php*/
+
 .register-check-header {
     display: flex;
     justify-content: center;
@@ -641,6 +662,10 @@ footer {
 .area-img {
     width: 300px;
     height: 300px;
+}
+
+.register-form {
+    margin-bottom: 5%;
 }
 /*register_check.blade.php*/
 
@@ -973,7 +998,7 @@ spot-addles .syoukaijou-honbun {
     margin-bottom: 3%;
 }
 
-.preview-pic1-sam {
+.preview-pic1-sam  img{
     margin-left: 10%;
     height: 100px;
     width: 100px;
@@ -1072,21 +1097,7 @@ spot-addles .syoukaijou-honbun {
     display: flex;
 }
 
-.fav_btn-ittemitai {
-    margin-left: 20%;
-}
 
-.fav-btn-ittayo {
-    margin-left: 20%;
-}
-
-.ittayo-math {
-    margin-left: 15px;
-}
-
-.ittemitai-math {
-    margin-left: 15px;
-}
 /* user?delete */
 .user-delete-center-content {
     margin: 0 auto;

@@ -56,13 +56,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('create/preview/', 'CreateController@create')->name('create'); //紹介状のDB登録
 
     // 発見
-    Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
-
+    Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
+    Route::get('syoukaijou/{id}','SpotController@showDisp')->name('syoukaijou.disp');
+    Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
+    Route::get('jimoto_spot/search/','spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
+    Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
     Route::get('jimoto_spot/map/', 'SpotController@spotMap')->name('spot.map'); //マップ検索画面
 
-    Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
-    Route::get('jimoto_spot/search/', 'spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
-    Route::post('jimoto_spot/serch', 'SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
 
-    Route::get('syoukaijou/{id}/', 'SpotController@showDisp')->name('syoukaijou.disp');
+    //行ってみたい
+    Route::post('/interest','InterestController@interestAjax')->name('interest');
+    //行っったよ
+    Route::post('/visited','visitedController@visitedAjax')->name('visited');
+
+
+    
+
+
 });

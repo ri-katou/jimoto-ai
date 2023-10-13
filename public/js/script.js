@@ -111,9 +111,16 @@ $(document).ready(function () {
         let areatext = $(this).parent().text();
         $(".area-text").text(areatext);
     });
-});
 
-//ここまでJquery
+    $(".sourtselect").on('change', function(){
+        let setvalue = $('option:selected').val();
+        $(".keywordserch").attr('name', setvalue);
+        
+        $(".keywordserch").submit();
+    })
+
+
+}); //ここまでJquery
 
 /* preview */
 

@@ -16,8 +16,6 @@ class SpotController extends Controller
 
     public function showSpot()
     {
-
-
         $categoryConditions = '';
         $municipalitieCondetions = '';
 
@@ -87,78 +85,79 @@ class SpotController extends Controller
 
     public function keywordSearch(Request $Request)
     {
-
-
+        dd($Request);
         $search = $Request->input('search');
+        if($Request->has('sourtNew')){
+            if ($search) {
 
-
-        if ($search) {
-
-            $spaceConversion = mb_convert_kana($search, 's');
-
-            $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
-
-            foreach ($wordArraySearched as $key => $value) {
-                if ($key == 0) {
-                    $syoukaijou = Syoukaijou::select(
-                        'syoukaijous.id as syoukaijous_id',
-                        'Syoukaijous.title',
-                        'Syoukaijous.image1',
-                        'Syoukaijous.image2',
-                        'Syoukaijous.image3',
-                        'Syoukaijous.image4',
-                        'Syoukaijous.spotname',
-                        'Syoukaijous.address',
-                        'Syoukaijous.url',
-                        'Syoukaijous.body',
-                        'Syoukaijous.created_at as create_day',
-                        'municipalities.municipalities_name',
-                        'category_name'
-                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->where('body', 'like', '%' . $value . '%')->orderBy('syoukaijous.created_at', 'desc')->get();
-                } else {
-                    ${$syoukaijou . $key} = Syoukaijou::select(
-                        'syoukaijous.id as syoukaijous_id',
-                        'Syoukaijous.title',
-                        'Syoukaijous.image1',
-                        'Syoukaijous.image2',
-                        'Syoukaijous.image3',
-                        'Syoukaijous.image4',
-                        'Syoukaijous.spotname',
-                        'Syoukaijous.address',
-                        'Syoukaijous.url',
-                        'Syoukaijous.body',
-                        'Syoukaijous.created_at as create_day',
-                        'municipalities.municipalities_name',
-                        'category_name'
-                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->where('body', 'like', '%' . $value . '%')->orderBy('syoukaijous.created_at', 'desc')->get();
-                    $syoukaijou = collect($syoukaijou)->merge(${$syoukaijou . $key});
+                $spaceConversion = mb_convert_kana($search, 's');
+    
+                $wordArraySearched = preg_split('/[\s,]+/', $spaceConversion, -1, PREG_SPLIT_NO_EMPTY);
+    
+                foreach ($wordArraySearched as $key => $value) {
+                    if ($key == 0) {
+                        $syoukaijou = Syoukaijou::select(
+                            'syoukaijous.id as syoukaijous_id',
+                            'Syoukaijous.title',
+                            'Syoukaijous.image1',
+                            'Syoukaijous.image2',
+                            'Syoukaijous.image3',
+                            'Syoukaijous.image4',
+                            'Syoukaijous.spotname',
+                            'Syoukaijous.address',
+                            'Syoukaijous.url',
+                            'Syoukaijous.body',
+                            'Syoukaijous.created_at as create_day',
+                            'municipalities.municipalities_name',
+                            'category_name'
+                        )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->where('body', 'like', '%' . $value . '%')->orderBy('syoukaijous.created_at', 'desc')->get();
+                    } else {
+                        ${$syoukaijou . $key} = Syoukaijou::select(
+                            'syoukaijous.id as syoukaijous_id',
+                            'Syoukaijous.title',
+                            'Syoukaijous.image1',
+                            'Syoukaijous.image2',
+                            'Syoukaijous.image3',
+                            'Syoukaijous.image4',
+                            'Syoukaijous.spotname',
+                            'Syoukaijous.address',
+                            'Syoukaijous.url',
+                            'Syoukaijous.body',
+                            'Syoukaijous.created_at as create_day',
+                            'municipalities.municipalities_name',
+                            'category_name'
+                        )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->where('body', 'like', '%' . $value . '%')->orderBy('syoukaijous.created_at', 'desc')->get();
+                        $syoukaijou = collect($syoukaijou)->merge(${$syoukaijou . $key});
+                    }
                 }
+                $search = $wordArraySearched;
+            } else {
+                $syoukaijou = Syoukaijou::select(
+                    'syoukaijous.id as syoukaijous_id',
+                    'Syoukaijous.title',
+                    'Syoukaijous.image1',
+                    'Syoukaijous.image2',
+                    'Syoukaijous.image3',
+                    'Syoukaijous.image4',
+                    'Syoukaijous.spotname',
+                    'Syoukaijous.address',
+                    'Syoukaijous.url',
+                    'Syoukaijous.body',
+                    'Syoukaijous.created_at as create_day',
+                    'municipalities.municipalities_name',
+                    'category_name'
+                )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->orderBy('syoukaijous.created_at', 'desc')->get();
             }
+    
+            $count = count($syoukaijou);
+            $categoryConditions = '';
+            $municipalitieCondetions = '';
+    
+            return view('jimoto_spot_search', compact('syoukaijou', 'search', 'count', 'categoryConditions', 'municipalitieCondetions'));
+        } else if ($Request->has('sourtInterest')){
+            dd($Request->has('sourtInterest'));
+        };
 
-            $search = $wordArraySearched;
-        } else {
-            $syoukaijou = Syoukaijou::select(
-                'syoukaijous.id as syoukaijous_id',
-                'Syoukaijous.title',
-                'Syoukaijous.image1',
-                'Syoukaijous.image2',
-                'Syoukaijous.image3',
-                'Syoukaijous.image4',
-                'Syoukaijous.spotname',
-                'Syoukaijous.address',
-                'Syoukaijous.url',
-                'Syoukaijous.body',
-                'Syoukaijous.created_at as create_day',
-                'municipalities.municipalities_name',
-                'category_name'
-            )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->orderBy('syoukaijous.created_at', 'desc')->get();
-        }
-
-        $count = count($syoukaijou);
-        $categoryConditions = '';
-        $municipalitieCondetions = '';
-
-        return view('jimoto_spot_search', compact('syoukaijou', 'search', 'count', 'categoryConditions', 'municipalitieCondetions'));
     }
 
     public function showDisp(int $id)

@@ -11,7 +11,9 @@
         <img src="/image/letter.svg" alt="" class="letter-svg">
         <img src="/image/magnifying-glass.svg" alt="" class="glass-svg">
         <div class="serch-syoukaijou">
-          紹介状を見つける
+          <a href="{{route('spot.search')}}">
+            紹介状を見つける
+          </a>
         </div>
       </div>
     </div>

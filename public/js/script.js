@@ -17,16 +17,16 @@ $(document).ready(function () {
 
     // 1. 「全選択」する
 
-    $(".check").on('click', function () {
+    $(".check").on("click", function () {
         let check = $(this).parent().next().children().children().children();
-        if ($(this).children().is(':checked')) {
-            $(check).prop('checked', this.click);
+        if ($(this).children().is(":checked")) {
+            $(check).prop("checked", this.click);
+
         } else {
-            $(check).prop('checked', false);
-            $(this).prop('checked', false);
+            $(check).prop("checked", false);
+            $(this).prop("checked", false);
         }
     });
-
 
     $(".aria-check").click(function () {
         console.log($(this).prop("checked"));
@@ -115,6 +115,9 @@ $(document).ready(function () {
 
 //ここまでJquery
 
+/* preview */
+
+
 モーダル
 let show = false;
 
@@ -136,5 +139,6 @@ document.querySelector("#mask").onclick = function () {
         document.getElementById("mask").classList.add("hidden"); //マスク非表示
     }
 };
+
 
 

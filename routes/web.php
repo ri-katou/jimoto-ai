@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
     Route::get('jimoto_spot/search/','spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
     Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
+    Route::get('jimoto_spot/map/', 'SpotController@spotMap')->name('spot.map'); //マップ検索画面
 
 
     //行ってみたい
@@ -69,7 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/visited','visitedController@visitedAjax')->name('visited');
 
 
+    
+
 
 });
-
-

@@ -186,6 +186,7 @@
                         @else
                             <div class="dummy">行ってみたいがありません</div>
                         @endif
+
                     </div>
                     <div class="mottomiru"><a href="{{ route('home.interest.check') }}">もっと見る</a></div>
                 </div>

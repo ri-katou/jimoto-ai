@@ -1,8 +1,8 @@
 @extends('layout')
-  @section('content')
-  <div class="disp-top">
-<div class="return">戻る</div>
-<div class="delete"><a class="disp-delete" href=#>この投稿を削除する</a></div>
+@section('content')
+<div class="disp-top">
+  <div class="return">戻る</div>
+  <div class="delete"><a class="disp-delete" href=#>この投稿を削除する</a></div>
 </div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">
@@ -58,5 +58,80 @@
 </div>
 
 
-    <div class="disp-map"> まあああああああああああああああああああああああああああああああああああああああああああああああああああああああぷ</div>
-    @endsection
+<div class="disp-map">
+</div>
+
+<div id="map" class="spot-map"></div>
+
+<div class="address-choice" style="display: none;">
+  <div class="item-unique">
+    </p>
+    <p class="item-in-address">
+      スポット名：{{$syoukaijou->address}},住所：{{$syoukaijou->address}}
+    </p>
+  </div>
+</div>
+<script>
+  function initMap() {
+    let map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: {
+        lat: 36.653141021728516,
+        lng: 150.644
+      }
+    });
+    let geocoder = new google.maps.Geocoder();
+    geocodeAddress(geocoder, map);
+  }
+
+  function geocodeAddress(geocoder, resultsMap) {
+    // ここに紹介状テーブルのアドレス列の数字を一個づつ入れて行って処理を実行したい
+    let addresspin = document.querySelectorAll('.address-choice .item-in-address')
+    let urlpin = document.getElementById('spot-url')
+    let infoWindows = [];
+    let origin = location.origin;
+
+
+    addresspin.forEach(function(element) {
+      let spotinfo = '<div class="sample">' +
+        element.textContent.replace(',', '<br>') +
+        '</div>';
+      let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);
+      console.log(trimname);
+      geocoder.geocode({
+        'address': element.textContent
+      }, function(results, status) {
+        if (status === 'OK') {
+          resultsMap.setCenter(results[0].geometry.location);
+          let marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+
+          let infoWindow = new google.maps.InfoWindow({
+            content: spotinfo
+            //複数の要素をコンテントで送る方法
+          });
+
+          marker.addListener('click', function() {
+            // 開いている infoWindow を閉じる
+            infoWindows.forEach(function(infoWin) {
+              infoWin.close();
+            });
+
+            // クリックしたマーカーに関連する infoWindow を開く
+            infoWindow.open(map, this);
+          });
+
+          // infoWindow を配列に追加
+          infoWindows.push(infoWindow);
+        } else {
+          alert('以下の理由でジオコードに失敗しました。: ' + status);
+        }
+      });
+    })
+  };
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
+</script>
+@endsection

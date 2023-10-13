@@ -101,8 +101,6 @@ class SpotController extends Controller
     public function spotMap()
     {
         $spot = Syoukaijou::whereNotNull('address')->get();
-        return view('jimoto_spot_map', [
-            'all_address' => $spot
-        ]);
+        return view('jimoto_spot_map', compact('spot'));
     }
 }

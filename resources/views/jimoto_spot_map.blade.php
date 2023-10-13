@@ -27,14 +27,13 @@
     <div id="map" class="spot-map"></div>
 
     <div class="address-choice" style="display: none;">
-      @foreach ($all_address as $item)
+      @foreach ($spot as $item)
       <div class="item-unique">
-        </p>
         <p class="item-in-address">
-          {{$item->address}}
+          スポット名：{{$item->spotname}},住所：{{$item->address}}
         </p>
-        <p class="item-in-spotname">
-          {{$item->spotname}}
+        <p>
+          {{$item->id}}
         </p>
       </div>
       @endforeach
@@ -42,7 +41,7 @@
     <script>
       function initMap() {
         let map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 7,
+          zoom: 8,
           center: {
             lat: 36.653141021728516,
             lng: 150.644
@@ -55,21 +54,32 @@
       function geocodeAddress(geocoder, resultsMap) {
         // ここに紹介状テーブルのアドレス列の数字を一個づつ入れて行って処理を実行したい
         let addresspin = document.querySelectorAll('.address-choice .item-in-address')
+        let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
+        let origin = location.origin;
         let infoWindows = [];
 
+
         addresspin.forEach(function(element) {
+          let getMapid = (element.nextElementSibling.textContent).trim();
+          let routesmap = '/syoukaijou/' + getMapid + '/';
+          let spotinfo = '<div class="sample"><a href=" ' + origin + routesmap + '">' +
+            element.textContent.replace(',', '<br>') +
+            '</a></div>';
+          let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);
+          console.log(trimname);
+          console.log(getMapid);
           geocoder.geocode({
-            'address': element.textContent
+            'address': trimname
           }, function(results, status) {
             if (status === 'OK') {
               resultsMap.setCenter(results[0].geometry.location);
               let marker = new google.maps.Marker({
                 map: resultsMap,
-                position: results[0].geometry.location
+                position: results[0].geometry.location,
               });
 
               let infoWindow = new google.maps.InfoWindow({
-                content: '<div class="sample">' + element.textContent + '</div>'
+                content: spotinfo
                 //複数の要素をコンテントで送る方法
               });
 
@@ -86,7 +96,7 @@
               // infoWindow を配列に追加
               infoWindows.push(infoWindow);
             } else {
-              alert('Geocode was not successful for the following reason: ' + status);
+              alert('以下の理由でジオコードに失敗しました。: ' + status);
             }
           });
         })

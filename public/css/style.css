@@ -384,16 +384,13 @@ footer {
     right: 10vh;
 }
 
-.top-bottom-comment {
-    position: relative;
-}
+
 
 .top-pic4 {
     width: 15%;
     height: auto;
     position: relative;
     margin-top: 15%;
-    margin-left: 10%;
 }
 
 .top-pic5 {
@@ -431,6 +428,9 @@ footer {
 .top-bottom-comment {
     font-size: 1.2rem;
     font-weight: bold;
+    word-wrap: normal;
+    width: 504px;
+    margin-left: -10%;
 }
 
 .top-bottom {
@@ -444,6 +444,10 @@ footer {
     margin-top: 20%;
     margin-left: 20%;
     font-size: 1.5rem;
+}
+
+.top-kaiin-btn {
+    margin-top: 5%;
 }
 
 .top-bottom-right {
@@ -580,6 +584,7 @@ footer {
 }
 
 /*register_check.blade.php*/
+
 .register-check-header {
     display: flex;
     justify-content: center;
@@ -636,6 +641,10 @@ footer {
 .area-img {
     width: 300px;
     height: 300px;
+}
+
+.register-form {
+    margin-bottom: 5%;
 }
 /*register_check.blade.php*/
 

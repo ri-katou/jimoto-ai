@@ -54,11 +54,11 @@
     </div>
   <div class="jimoto-sam">
 @foreach ($syoukaijou as $item)
-  <a class="syoukaijou-link" href="">
+  <a class="syoukaijou-link" href="{{ route('syoukaijou.disp',['id' => $item->syoukaijous_id]) }}">
   <div class="syoukaijou-sam">
     <div class="preview-syoukaijou-top-sam">
       <div class="sum-top">
-        <div class="syoukaijou-day-sam">{{$item->updated_at}}</div>
+        <div class="syoukaijou-day-sam">{{$item->create_day}}</div>
         <div class="syoukaijou-title-sam">{{$item->title}}</div>
       </div>
       <div class="janru-area-sam">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="preview-main-sam">
                         <div class="preview-pics-sam">
-                            <div class="preview-pic1-sam"><img src="{{ asset('storage/' . $item->image1) }}" alt=""></div>
+                            <div class="preview-pic1-sam"><img src="{{$item->image1}}"></div>
                             <div class="preview-pics-sub">
                                 <div class="preview-pic2-sam"></div>
                                 <div class="preview-pic3-sam"></div>

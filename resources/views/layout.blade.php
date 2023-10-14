@@ -22,7 +22,7 @@
 
         #map {
             height: 500px;
-            width: 70%;
+            width: 90%;
         }
 
         #floating-panel {

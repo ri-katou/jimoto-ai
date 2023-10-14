@@ -36,9 +36,9 @@ Route::group(['middleware' => 'auth'], function () {
     // 紹介状一覧系
     Route::get('home/', 'HomeController@test')->name('home');
 
-    Route::get('home/post/list', 'HomeController@message')->name('home.post.check'); //自分の過去投稿
-    Route::get('home/interest/list/', 'HomeController@interest')->name('home.interest.check'); //行ってみたい
-    Route::get('home/visited/list/', 'HomeController@visited')->name('home.visit.check'); //行ったよ
+    Route::get('home/post/list', 'HomeController@postALL')->name('home.post.check'); //自分の過去投稿
+    Route::get('home/interest/list/', 'HomeController@interestAll')->name('home.interest.check'); //行ってみたい
+    Route::get('home/visited/list/', 'HomeController@visitedAll')->name('home.visit.check'); //行ったよ
 
     // プロフィール、プロフィール編集
     Route::get('profile/', 'ProfileController@showProfile')->name('profile');

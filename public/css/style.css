@@ -1050,7 +1050,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .disp-map {
-    margin: 20%;
+    margin-top: 2rem;
 }
 
 /* jimoto spot */
@@ -1079,10 +1079,10 @@ spot-addles .syoukaijou-honbun {
     height: 250px;
 }
 
-.jimoto-sam {
+.jimoto-spot-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2%;
+    gap: 1rem;
 }
 
 .honbun-sum {

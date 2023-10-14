@@ -112,11 +112,12 @@ $(document).ready(function () {
         $(".area-text").text(areatext);
     });
 
+    // ソート
     $(".sourtselect").on('change', function(){
         let setvalue = $('option:selected').val();
-        $(".keywordserch").attr('name', setvalue);
-        
-        $(".keywordserch").submit();
+        $(".serchForm").attr('name', setvalue);
+        console.log($(".serchForm"));
+        $(".serchForm").submit();
     })
 
 

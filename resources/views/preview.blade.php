@@ -22,12 +22,11 @@
   <div class="syoukaijou-title">{{$Request->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-      {{$Request->image1}}
+      <div class="preview-pic1"><img src="{{$file_name1}}"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic3"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
-        <div class="preview-pic4"><img id="gazo" onclick="changeIMG()" src="/image/noimage.jpg" border="0" alt=""></div>
+        <div class="preview-pic2"><img  src="{{$file_name2}}"  alt=""></div>
+        <div class="preview-pic3"><img  src="{{$file_name3}}"  alt=""></div>
+        <div class="preview-pic4"><img  src="{{$file_name4}}"  alt=""></div>
       </div>
     </div>
     <div class="preview-honbun">
@@ -76,12 +75,7 @@
     </div>
     <div class="preview-main-sam">
       <div class="preview-pics-sam">
-        <div class="preview-pic1-sam"><img id="gazo" src="{{asset($Request->image1)}}" width="100%" height="100%" border="0" alt=""></div>
-        <div class="preview-pics-sub">
-          <div class="preview-pic2-sam"></div>
-          <div class="preview-pic3-sam"></div>
-          <div class="preview-pic4-sam"></div>
-        </div>
+        <div class="preview-pic1-sam"><img src="{{$file_name1}}" width="100%" height="100%" border="0" alt=""></div>
       </div>
       <div class="preview-honbun">
         <div class="honbun-sum">{{$Request->main}}</div>
@@ -135,10 +129,10 @@
       @csrf
       <input type="hidden" value="{{$Request->title}}" name="title">
       <input type="hidden" value="{{$Request->main}}" name="main">
-      <input type="hidden" value="{{$Request->image1}}" name="image1">
-      <input type="hidden" value="{{$Request->image2}}" name="image2">
-      <input type="hidden" value="{{$Request->image3}}" name="image3">
-      <input type="hidden" value="{{$Request->image4}}" name="image4">
+      <input type="hidden" value="{{$file_name1}}" name="image1">
+      <input type="hidden" value="{{$file_name2}}" name="image2">
+      <input type="hidden" value="{{$file_name3}}" name="image3">
+      <input type="hidden" value="{{$file_name4}}" name="image4">
       <input type="hidden" value="{{$category->id}}" name="category">
       <input type="hidden" value="{{$municipalitie->id}}" name="municipalitie">
       <input type="hidden" value="{{$Request->spotname}}" name="spotname">

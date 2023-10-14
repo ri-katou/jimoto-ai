@@ -41,7 +41,7 @@
       @if($errors->any())
         <div class="error-message">
           <ul>
-            @error('main')
+            @error('image1')
             <li>{{ $message }}</li>
             @enderror
           </ul>

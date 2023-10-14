@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="area-choice midasi">エリア選択画面</div>
+<div class="yu-sei area-choice midasi block-green">エリア選択画面</div>
 
 <div class="area-teach">あなたの素敵な地元を教えてください!!</div>
 <div class="hidden" id="mask"></div>
@@ -9,7 +9,7 @@
   @csrf
   <div class="area-select-choice">
     <div class="toubu">
-      <div class="midasi area-select-top">東武</div>
+      <div class="yu-sei midasi area-select-top underline-orange">東武</div>
       <div class="city-select">
         @foreach($toubu as $tou)
         <li>
@@ -22,7 +22,7 @@
 
 
     <div class="seibu">
-      <div class="midasi area-select-top">西部</div>
+      <div class="yu-sei midasi area-select-top underline-blue">西部</div>
       <div class="city-select">
         @foreach($seibu as $sei)
         <li>
@@ -35,7 +35,7 @@
 
 
     <div class="kenou">
-      <div class="midasi area-select-top">県央</div>
+      <div class="yu-sei midasi area-select-top underline-pink">県央</div>
       <div class="city-select">
         @foreach($kenou as $ken)
         <li>
@@ -48,7 +48,7 @@
 
 
     <div class="agatumas">
-      <div class="midasi area-select-top">吾妻</div>
+      <div class="yu-sei area-select-top underline-green">吾妻</div>
       <div class="city-select">
         @foreach($agatuma as $aga)
         <li>
@@ -60,7 +60,7 @@
     </div>
 
     <div class="tone">
-      <div class="midasi area-select-top">利根・沼田</div>
+      <div class="yu-sei midasi area-select-top underline-purple">利根・沼田</div>
       <div class="city-select">
         @foreach($tone_numata as $numatacity)
         <li>
@@ -71,7 +71,9 @@
       </div>
     </div>
   </div>
-  <div class="answer btn-green" id="answer">OK</div>
+  <div class="area-select-center">
+    <div class="answer btn-green" id="answer">OK</div>
+  </div>
   <div class="modal" id="modal">
     <div class="check-text-space">
       <div class="area-text btn-white">無し</div>

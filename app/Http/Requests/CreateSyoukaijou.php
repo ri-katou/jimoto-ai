@@ -27,6 +27,14 @@ class CreateSyoukaijou extends FormRequest
             'title' => 'required',
             'main' => 'required',
             'spotname' => 'required',
-         ];
+            'image1' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'image1.required' => 'スポットビューには、画像が１枚必須です。',
+        ];
     }
 }

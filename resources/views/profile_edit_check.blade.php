@@ -25,7 +25,7 @@
                     <div class="profile-useereria-title underline-green">あなたのエリア</div>
                     <div class="profile-edit-check-eria container">
                         <div class="profile-edit-check-eria-output">
-                            {{ $input->eria }}
+                            {{ $municipalitie->municipalities_name }}
                         </div>
                         <input type="hidden" value="{{ $input->eria }}" name="eria">
                     </div>

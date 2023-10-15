@@ -11,6 +11,7 @@ use App\Municipalitie;
 use App\Category;
 use App\Post;
 use Illuminate\Support\Facades\Storage;
+use App\User_detail;
 
 
 class CreateController extends Controller
@@ -109,9 +110,10 @@ class CreateController extends Controller
 
     public function showCreate()
     {
+        $userdetail = User_detail::select('user_details.municipalitie_id','municipalities.municipalities_name')->join('users','user_details.user_id','=','users.id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->where('user_details.user_id',Auth::id())->get();
         $municipalitie = Municipalitie::all();
         $category = Category::all();
 
-        return view('syoukaijou_create', compact('municipalitie', 'category'));
+        return view('syoukaijou_create', compact('userdetail','municipalitie', 'category'));
     }
 }

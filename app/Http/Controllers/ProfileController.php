@@ -26,10 +26,9 @@ class ProfileController extends Controller
         $aria_list = Municipalitie::all();
         return view('profile_edit',compact('user','municipalitie','aria_list'));
     }
-    public function profileEditCheck(EditProfiles $request){
-        return view('profile_edit_check',[
-            'input' => $request
-        ]);
+    public function profileEditCheck(EditProfiles $input){
+        $municipalitie = Municipalitie::find($input->input('eria'));
+        return view('profile_edit_check',compact('input','municipalitie'));
     }
     public function profileEditRegi(EditProfiles $request){
         $user = Auth::user();

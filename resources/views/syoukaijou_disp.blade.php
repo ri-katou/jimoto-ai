@@ -2,37 +2,39 @@
 @section('content')
 <div class="disp-top">
   <div class="return">戻る</div>
+  @if($syoukaijou[0]->creater_id == Auth::id())
   <div class="delete"><a class="disp-delete" href=#>この投稿を削除する</a></div>
+  @endif
 </div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">
-    <div class="syoukaijou-day">{{$day}}</div>
+    <div class="syoukaijou-day">{{$syoukaijou[0]->create_day}}</div>
     <div class="janru-area">
       <div class="janru-tag">
         <div class="jyanru"></div>
-        <div class="jyanru-sub">{{ $category->category_name}}</div>
+        <div class="jyanru-sub">{{ $syoukaijou[0]->category_name}}</div>
       </div>
       <div class="area-tag">
         <div class="area"></div>
-        <div class="area-sub">{{ $municipalitie->municipalities_name}}</div>
+        <div class="area-sub">{{ $syoukaijou[0]->municipalities_name}}</div>
       </div>
     </div>
   </div>
-  <div class="syoukaijou-title">{{$Request->title}}</div>
+  <div class="syoukaijou-title">{{$syoukaijou[0]->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
-      <div class="preview-pic1"><img src="{{$file_name1}}"></div>
+      <div class="preview-pic1"><img src="{{$syoukaijou[0]->image1}}" alt="1枚目"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img  src="{{$file_name2}}"  alt=""></div>
-        <div class="preview-pic3"><img  src="{{$file_name3}}"  alt=""></div>
-        <div class="preview-pic4"><img  src="{{$file_name4}}"  alt=""></div>
+        <div class="preview-pic2"><img  src="{{$syoukaijou[0]->image2}}"  alt="2枚目"></div>
+        <div class="preview-pic3"><img  src="{{$syoukaijou[0]->image3}}"  alt="3枚目"></div>
+        <div class="preview-pic4"><img  src="{{$syoukaijou[0]->image4}}"  alt="4枚目"></div>
       </div>
     </div>
     <div class="preview-honbun">
       <div class="preview-spot">
-        <div class="spotname">{{$Request->spotname}}</div>
+        <div class="spotname">{{$syoukaijou[0]->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">{{$Request->main}}</div>
+      <div class="syoukaijou-text">{{$syoukaijou[0]->main}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>
@@ -42,35 +44,35 @@
     <table>
       <tr>
         <td height="30" width="100">スポット名</td>
-        <td class="spot-name" height="30">{{$Request->spotname}}</td>
+        <td class="spot-name" height="30">{{$syoukaijou[0]->spotname}}</td>
       </tr>
       <tr>
         <td height="30">住所</td>
-        <td class="spot-address" height="30">{{$Request->address}}</td>
+        <td class="spot-address" height="30">{{$syoukaijou[0]->address}}</td>
       </tr>
       <tr>
         <td height="30">URL</td>
-        <td class="spot-url" height="30">{{$Request->url}}</td>
+        <td class="spot-url" height="30">{{$syoukaijou[0]->url}}</td>
       </tr>
     </table>
   </div>
+    <div class="disp-map">
+    </div>
+    <div id="map" class="spot-map"></div>
+
 
 </div>
 
-
-<div class="disp-map">
-</div>
-
-<div id="map" class="spot-map"></div>
-
+{{-- ここから画面表示しない --}}
 <div class="address-choice" style="display: none;">
   <div class="item-unique">
     </p>
     <p class="item-in-address">
-      スポット名：{{$syoukaijou->address}},住所：{{$syoukaijou->address}}
+      スポット名：{{$syoukaijou[0]->address}},住所：{{$syoukaijou[0]->address}}
     </p>
   </div>
 </div>
+{{-- ここまで画面表示しない --}}
 <script>
   function initMap() {
     let map = new google.maps.Map(document.getElementById('map'), {

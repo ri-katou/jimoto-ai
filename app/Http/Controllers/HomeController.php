@@ -19,32 +19,31 @@ class HomeController extends Controller
         // ユーザー情報に紐づく紹介状情報を取得
         // $post = User::find(Auth::id())->Syoukaijous()->get();
 
-        $post = Auth::user()
-            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
-            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
+        $post = Syoukaijou::select(
+            'Syoukaijous.id as syoukaijous_id',
+            'Syoukaijous.title',
+            'Syoukaijous.image1',
+            'Syoukaijous.image2',
+            'Syoukaijous.image3',
+            'Syoukaijous.image4',
+            'Syoukaijous.spotname',
+            'Syoukaijous.address',
+            'Syoukaijous.url',
+            'Syoukaijous.body',
+            'Syoukaijous.created_at as create_day',
+            'municipalities.municipalities_name',
+            'category_name'
+        )
+            ->join('users', 'syoukaijous.user_id', '=', 'users.id')
+            ->join('municipalities', 'Syoukaijous.municipalities_id','=','municipalities.id')
             ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-            ->where('users.id', '=', Auth::user()->id)
+            ->where('syoukaijous.user_id', '=', Auth::user()->id)
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->select(
-                'Syoukaijous.id as syoukaijou_id',
-                'Syoukaijous.title',
-                'Syoukaijous.image1',
-                'Syoukaijous.image2',
-                'Syoukaijous.image3',
-                'Syoukaijous.image4',
-                'Syoukaijous.spotname',
-                'Syoukaijous.address',
-                'Syoukaijous.url',
-                'Syoukaijous.body',
-                'Syoukaijous.created_at as create_day',
-                'municipalities.municipalities_name',
-                'category_name'
-            )
             ->limit(3)->get();
 
             $interest = Interest::select(
             'interests.user_id as interest_user_id',
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -62,8 +61,8 @@ class HomeController extends Controller
             ->get();
 
             $visited = Visited::select(
-                'visiteds.user_id as interest_user_id',
-                'Syoukaijous.id as syoukaijou_id',
+                'visiteds.user_id as visited_user_id',
+                'Syoukaijous.id as syoukaijous_id',
                 'Syoukaijous.title',
                 'Syoukaijous.image1',
                 'Syoukaijous.image2',
@@ -80,100 +79,111 @@ class HomeController extends Controller
                 ->limit(3)
                 ->get();
 
+                $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+                $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
+    
+                $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+                $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
+
+        return view('home', compact('post','interest','interest_list', 'interest_count','visited','visited_list','visited_count'));
+    }
+
+    public function postAll()
+    {
+        $postAll = Syoukaijou::select(
+            'Syoukaijous.id as syoukaijous_id',
+            'Syoukaijous.title',
+            'Syoukaijous.image1',
+            'Syoukaijous.image2',
+            'Syoukaijous.image3',
+            'Syoukaijous.image4',
+            'Syoukaijous.spotname',
+            'Syoukaijous.address',
+            'Syoukaijous.url',
+            'Syoukaijous.body',
+            'Syoukaijous.created_at as create_day',
+            'municipalities.municipalities_name',
+            'category_name'
+        )
+            ->join('Users','Syoukaijous.user_id' , '=', 'users.id')
+            ->join('municipalities', 'Syoukaijous.municipalities_id', '=','municipalities.id' )
+            ->join('categories', 'Syoukaijous.category_id', '=', 'categories.id')
+            ->where('syoukaijous.user_id', '=', Auth::id())
+            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->get();
+
             $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
             $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-        return view('home', compact('post','interest','interest_list', 'interest_count','visited','visited_list','visited_count'));
+        return view('post_all_list', compact('postAll','interest_list', 'interest_count','visited_list','visited_count'));
     }
 
-    public function message()
+    public function interestAll()
     {
-        $message = Auth::user()
-            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
-            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
-            ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-            ->where('users.id', '=', Auth::user()->id)
+        $interestAll = Interest::select(
+            'Syoukaijous.id as syoukaijous_id',
+            'Syoukaijous.title',
+            'Syoukaijous.image1',
+            'Syoukaijous.image2',
+            'Syoukaijous.image3',
+            'Syoukaijous.image4',
+            'Syoukaijous.spotname',
+            'Syoukaijous.address',
+            'Syoukaijous.url',
+            'Syoukaijous.body',
+            'Syoukaijous.created_at as create_day',
+            'municipalities.municipalities_name',
+            'category_name'
+        )->rightJoin('syoukaijous','interests.syoukaijou_id', '=','syoukaijous.id')
+            ->join('Users','Syoukaijous.user_id' , '=', 'users.id')
+            ->join('municipalities', 'Syoukaijous.municipalities_id', '=','municipalities.id' )
+            ->join('categories', 'Syoukaijous.category_id', '=', 'categories.id')
+            ->where('interests.user_id', '=', Auth::id())
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->select(
-                'Syoukaijous.title',
-                'Syoukaijous.image1',
-                'Syoukaijous.image2',
-                'Syoukaijous.image3',
-                'Syoukaijous.image4',
-                'Syoukaijous.spotname',
-                'Syoukaijous.address',
-                'Syoukaijous.url',
-                'Syoukaijous.body',
-                'Syoukaijous.created_at as create_day',
-                'municipalities.municipalities_name',
-                'category_name'
-            )
             ->get();
 
-        return view('post_all_list', [
-            'all_message' => $message
-        ]);
+            $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
+
+            $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
+
+        return view('interest_all_list',compact('interestAll','interest_list', 'interest_count','visited_list','visited_count'));
     }
 
-    public function interest()
+    public function visitedAll()
     {
-        $interest = Auth::user()
-            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
-            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
-            ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-            ->where('users.id', '=', Auth::user()->id)
+        $visitedAll = Visited::select(
+            'Syoukaijous.id as syoukaijous_id',
+            'Syoukaijous.title',
+            'Syoukaijous.image1',
+            'Syoukaijous.image2',
+            'Syoukaijous.image3',
+            'Syoukaijous.image4',
+            'Syoukaijous.spotname',
+            'Syoukaijous.address',
+            'Syoukaijous.url',
+            'Syoukaijous.body',
+            'Syoukaijous.created_at as create_day',
+            'municipalities.municipalities_name',
+            'category_name'
+        )->rightJoin('syoukaijous','visiteds.syoukaijou_id', '=','syoukaijous.id')
+            ->join('Users','Syoukaijous.user_id' , '=', 'users.id')
+            ->join('municipalities', 'Syoukaijous.municipalities_id', '=','municipalities.id' )
+            ->join('categories', 'Syoukaijous.category_id', '=', 'categories.id')
+            ->where('visiteds.user_id', '=', Auth::id())
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->select(
-                'Syoukaijous.title',
-                'Syoukaijous.image1',
-                'Syoukaijous.image2',
-                'Syoukaijous.image3',
-                'Syoukaijous.image4',
-                'Syoukaijous.spotname',
-                'Syoukaijous.address',
-                'Syoukaijous.url',
-                'Syoukaijous.body',
-                'Syoukaijous.created_at as create_day',
-                'municipalities.municipalities_name',
-                'category_name'
-            )
-            ->limit(3)
             ->get();
 
-        return view('interest_all_list', [
-            'all_message' => $interest
-        ]);
-    }
+            $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $interest_count = Interest::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-    public function visited()
-    {
-        $visited = Auth::user()
-            ->join('Syoukaijous', 'users.id', '=', 'Syoukaijous.user_id')
-            ->join('municipalities', 'municipalities.id', '=', 'Syoukaijous.municipalities_id')
-            ->join('categories', 'categories.id', '=', 'Syoukaijous.category_id')
-            ->where('users.id', '=', Auth::user()->id)
-            ->orderBy('Syoukaijous.created_at', 'desc')
-            ->select(
-                'Syoukaijous.title',
-                'Syoukaijous.image1',
-                'Syoukaijous.image2',
-                'Syoukaijous.image3',
-                'Syoukaijous.image4',
-                'Syoukaijous.spotname',
-                'Syoukaijous.address',
-                'Syoukaijous.url',
-                'Syoukaijous.body',
-                'Syoukaijous.created_at as create_day',
-                'municipalities.municipalities_name',
-                'category_name'
-            )
-            ->limit(3)->get();
+            $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
+            $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-        return view('visited_all_list', [
-            'all_message' => $visited
-        ]);
+        return view('visited_all_list',compact('visitedAll','interest_list', 'interest_count','visited_list','visited_count'));
     }
 }

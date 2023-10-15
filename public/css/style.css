@@ -43,6 +43,15 @@ li {
 }
 .fas {
     color: gray;
+    font-size: 1.5rem;
+}
+.fav_btn-interest{
+    text-align: center;
+}
+.fav-btn-visited {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
 }
 .fav_btn-interest:hover {
     cursor: pointer;
@@ -52,6 +61,11 @@ li {
 }
 .visited-active {
     color: #12f128;
+}
+.interest-count,
+.visited-count {
+    color: gray;
+    font-size: 1rem;
 }
 .container {
     display: flex;

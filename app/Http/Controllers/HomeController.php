@@ -20,7 +20,7 @@ class HomeController extends Controller
         // $post = User::find(Auth::id())->Syoukaijous()->get();
 
         $post = Syoukaijou::select(
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -43,7 +43,7 @@ class HomeController extends Controller
 
             $interest = Interest::select(
             'interests.user_id as interest_user_id',
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -62,7 +62,7 @@ class HomeController extends Controller
 
             $visited = Visited::select(
                 'visiteds.user_id as visited_user_id',
-                'Syoukaijous.id as syoukaijou_id',
+                'Syoukaijous.id as syoukaijous_id',
                 'Syoukaijous.title',
                 'Syoukaijous.image1',
                 'Syoukaijous.image2',
@@ -91,7 +91,7 @@ class HomeController extends Controller
     public function postAll()
     {
         $postAll = Syoukaijou::select(
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -124,7 +124,7 @@ class HomeController extends Controller
     public function interestAll()
     {
         $interestAll = Interest::select(
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -157,7 +157,7 @@ class HomeController extends Controller
     public function visitedAll()
     {
         $visitedAll = Visited::select(
-            'Syoukaijous.id as syoukaijou_id',
+            'Syoukaijous.id as syoukaijous_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',
@@ -184,6 +184,6 @@ class HomeController extends Controller
             $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get();
             $visited_count = Visited::select(DB::raw('syoukaijou_id , COUNT(syoukaijou_id) AS syoukaijou_id_count'))->groupBy('syoukaijou_id')->get();
 
-        return view('interest_all_list',compact('visitedAll','interest_list', 'interest_count','visited_list','visited_count'));
+        return view('visited_all_list',compact('visitedAll','interest_list', 'interest_count','visited_list','visited_count'));
     }
 }

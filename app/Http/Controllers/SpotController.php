@@ -237,6 +237,7 @@ class SpotController extends Controller
     {
         $syoukaijou = Syoukaijou::select(
             'syoukaijous.id as syoukaijous_id',
+            'syoukaijous.user_id as creater_id',
             'Syoukaijous.title',
             'Syoukaijous.image1',
             'Syoukaijous.image2',

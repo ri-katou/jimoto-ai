@@ -55,7 +55,7 @@
                     <div class="header-profile-icon">
                         <img src="" alt="myimage">
                     </div>
-                    <a href="{{ route('profile') }}" class="link">マイページへ</a>
+                    <a href="{{ route('home') }}" class="link">マイページへ</a>
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf

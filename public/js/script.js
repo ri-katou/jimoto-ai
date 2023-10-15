@@ -59,8 +59,12 @@ $(document).ready(function () {
                 console.log(data);
                 if (data == 1) {
                     $interestIcon.addClass('interest-active');
+                    let countNow = Number($interestIcon.next().text());
+                    $interestIcon.next().text(countNow + 1);
                 } else {
                     $interestIcon.removeClass('interest-active');
+                    let countNow = Number($interestIcon.next().text());
+                    $interestIcon.next().text(countNow - 1);
                 }
             }
         });
@@ -88,8 +92,12 @@ $(document).ready(function () {
                 if (data == 1) {
 
                     $visitedIcon.addClass('visited-active');
+                    let countNow = Number($visitedIcon.next().text());
+                    $visitedIcon.next().text(countNow + 1);
                 } else {
                     $visitedIcon.removeClass('visited-active');
+                    let countNow = Number($visitedIcon.next().text());
+                    $visitedIcon.next().text(countNow - 1);
                 }
             }
         });
@@ -104,13 +112,13 @@ $(document).ready(function () {
         $(".profile-eria-output").text(neweria);
     });
 
-    let moji = $(".syoukaijou-day-sam").text().slice(10).replace("-", "/");
-    console.log(moji);
-
     $(".area_choice").change(function () {
         let areatext = $(this).parent().text();
         $(".area-text").text(areatext);
     });
+
+    // 日付のフォーマット
+    $(".syoukaijou-day-sam").text().replaceAll('-', '/').slice(0,10);
 
     // ソート
     $(".sourtselect").on('change', function(){
@@ -120,20 +128,26 @@ $(document).ready(function () {
         $(".serchForm").submit();
     })
 
+    // $("#answer").on('click',function(){
+    //     $("#modal").addClass('show');
+    //     $("#mask").removeClass('hidden');
+    //     show = true;
+    // })
+
 
 }); //ここまでJquery
 
 /* preview */
 
 
-モーダル
+// モーダル
 let show = false;
 
-document.getElementById("answer").onclick = function () {
+document.getElementById("answer").addEventListener('click',function () {
     document.getElementById("modal").classList.add("show"); // 画面表示
     document.getElementById("mask").classList.remove("hidden"); //マスク表示
     show = true;
-};
+});
 
 document.getElementById("close").onclick = function () {
     // flag = 0;

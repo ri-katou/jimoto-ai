@@ -16,7 +16,7 @@
 
     <div class="janru-area-search">
         <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
-        <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
+        <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}">ジャンルを指定して探す</a></div>
         <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
     </div>
 
@@ -57,19 +57,19 @@
                             </div>
                             <div class="preview-honbun">
                                 <div class="honbun-sum">{{ $item->body }}</div>
-                                <div class="fav_btn" id="{{ $item->syoukaijou_id }}"
+                                <div class="fav_btn" id="{{ $item->syoukaijous_id }}"
                                     data-me="{{ Auth::id() }}">
                                     <div class="fav_btn-interest">
                                         <i
                                             class="fav_btn-interest-icon fas fa-heart 
     @foreach ($interest_list as $value)
-    @if ($item->syoukaijou_id == $value->syoukaijou_id)
+    @if ($item->syoukaijous_id == $value->syoukaijou_id)
      interest-active
     @endif @endforeach
     "></i>
                                         <div class="interest-count">
                                             @foreach ($interest_count as $value)
-                                                @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                                     {{ $value->syoukaijou_id_count }}
                                                     @break
                                                 @endif
@@ -81,13 +81,13 @@
                                         <i
                                             class="fav_btn-visited-icon fas fa-flag 
     @foreach ($visited_list as $value)
-    @if ($item->syoukaijou_id == $value->syoukaijou_id)
+    @if ($item->syoukaijous_id == $value->syoukaijou_id)
     visited-active
     @endif @endforeach
     "></i>
-                                        <div class="visited-math">
+                                        <div class="visited-count">
                                             @foreach ($visited_count as $value)
-                                                @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                                     {{ $value->syoukaijou_id_count }}
                                                     @break
                                                 @endif

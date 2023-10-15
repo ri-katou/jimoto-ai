@@ -37,6 +37,7 @@
                     {{-- ここから紹介状１枚 --}}
                     <div class="syoukaijou-card">
                       @foreach ($visitedAll as $item)
+                      <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
                           <div class="syou">
                               <div class="syoukaijou-sam">
                                   <div class="preview-syoukaijou-top-sam">
@@ -66,19 +67,19 @@
                                       </div>
                                       <div class="preview-honbun">
                                           <div class="honbun-sum">{{ $item->body }}</div>
-                                          <div class="fav_btn" id="{{ $item->syoukaijou_id }}"
+                                          <div class="fav_btn" id="{{ $item->syoukaijous_id }}"
                                               data-me="{{ Auth::id() }}">
                                               <div class="fav_btn-interest">
                                                   <i
                                                       class="fav_btn-interest-icon fas fa-heart 
               @foreach ($interest_list as $value)
-              @if ($item->syoukaijou_id == $value->syoukaijou_id)
+              @if ($item->syoukaijous_id == $value->syoukaijou_id)
                interest-active
               @endif @endforeach
               "></i>
                                                   <div class="interest-count">
                                                       @foreach ($interest_count as $value)
-                                                          @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                          @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                                               {{ $value->syoukaijou_id_count }}
                                                               @break
                                                           @endif
@@ -90,13 +91,13 @@
                                                   <i
                                                       class="fav_btn-visited-icon fas fa-flag 
               @foreach ($visited_list as $value)
-              @if ($item->syoukaijou_id == $value->syoukaijou_id)
+              @if ($item->syoukaijous_id == $value->syoukaijou_id)
               visited-active
               @endif @endforeach
               "></i>
-                                                  <div class="visited-math">
+                                                  <div class="visited-count">
                                                       @foreach ($visited_count as $value)
-                                                          @if ($item->syoukaijou_id == $value->syoukaijou_id)
+                                                          @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                                               {{ $value->syoukaijou_id_count }}
                                                               @break
                                                           @endif
@@ -108,6 +109,7 @@
                                   </div>
                               </div>
                           </div>
+                      </a>
                       @endforeach
                   </div>
                   {{-- ここまで紹介状1枚 --}}

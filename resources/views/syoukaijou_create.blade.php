@@ -89,8 +89,13 @@
             <div class="area-select">
               <div class="form-group">
                 <select class="form-control" id="id" name="municipalitie">
-                  @foreach ($municipalitie as $area)
-                  <option value="{{ $area->id }}">{{ $area->municipalities_name }}</option>
+                  @if(count($userdetail)>0)
+                    @if($item->id = $userdetail[0]->municipalitie_id)
+                    <option value="{{ $userdetail[0]->municipalitie_id }}" selected>{{$userdetail[0]->municipalities_name}}</option>
+                    @endif
+                    @endif
+                  @foreach ($municipalitie as $item)
+                  <option value="{{ $item->id }}">{{ $item->municipalities_name }}</option>
                   @endforeach
                 </select>
               </div>

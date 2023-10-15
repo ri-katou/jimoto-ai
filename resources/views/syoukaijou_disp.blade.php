@@ -2,7 +2,9 @@
 @section('content')
 <div class="disp-top">
   <div class="return">戻る</div>
+  @if($syoukaijou[0]->creater_id == Auth::id())
   <div class="delete"><a class="disp-delete" href=#>この投稿を削除する</a></div>
+  @endif
 </div>
 <div class="syoukaijou">
   <div class="preview-syoukaijou-top">

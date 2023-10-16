@@ -95,8 +95,6 @@
 
               // infoWindow を配列に追加
               infoWindows.push(infoWindow);
-            } else {
-              alert('以下の理由でジオコードに失敗しました。: ' + status);
             }
           });
         })

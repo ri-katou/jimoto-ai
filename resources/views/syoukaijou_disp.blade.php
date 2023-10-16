@@ -25,9 +25,9 @@
     <div class="preview-pics">
       <div class="preview-pic1"><img src="{{$syoukaijou[0]->image1}}" alt="1枚目"></div>
       <div class="preview-pics-sub">
-        <div class="preview-pic2"><img  src="{{$syoukaijou[0]->image2}}"  alt="2枚目"></div>
-        <div class="preview-pic3"><img  src="{{$syoukaijou[0]->image3}}"  alt="3枚目"></div>
-        <div class="preview-pic4"><img  src="{{$syoukaijou[0]->image4}}"  alt="4枚目"></div>
+        <div class="preview-pic2"><img src="{{$syoukaijou[0]->image2}}" alt="2枚目"></div>
+        <div class="preview-pic3"><img src="{{$syoukaijou[0]->image3}}" alt="3枚目"></div>
+        <div class="preview-pic4"><img src="{{$syoukaijou[0]->image4}}" alt="4枚目"></div>
       </div>
     </div>
     <div class="preview-honbun">
@@ -56,9 +56,9 @@
       </tr>
     </table>
   </div>
-    <div class="disp-map">
-    </div>
-    <div id="map" class="spot-map"></div>
+  <div class="disp-map">
+  </div>
+  <div id="map" class="spot-map"></div>
 
 
 </div>
@@ -93,6 +93,7 @@
     let infoWindows = [];
     let origin = location.origin;
 
+    // 取得したアドレスが住所形式かのバリデーション
 
     addresspin.forEach(function(element) {
       let spotinfo = '<div class="sample">' +
@@ -104,6 +105,7 @@
         'address': element.textContent
       }, function(results, status) {
         if (status === 'OK') {
+          console.log(status);
           resultsMap.setCenter(results[0].geometry.location);
           let marker = new google.maps.Marker({
             map: resultsMap,
@@ -128,12 +130,11 @@
           // infoWindow を配列に追加
           infoWindows.push(infoWindow);
         } else {
-          alert('以下の理由でジオコードに失敗しました。: ' + status);
+          // statusが='OK'でない場合mapを非表示にする
+          document.getElementById("map").classList.add("hidden")
         }
       });
     })
   };
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
 </script>
 @endsection

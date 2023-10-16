@@ -66,12 +66,11 @@
             element.textContent.replace(',', '<br>') +
             '</a></div>';
           let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);
-          console.log(trimname);
-          console.log(getMapid);
           geocoder.geocode({
             'address': trimname
           }, function(results, status) {
             if (status === 'OK') {
+              console.log(results);
               resultsMap.setCenter(results[0].geometry.location);
               let marker = new google.maps.Marker({
                 map: resultsMap,
@@ -80,9 +79,10 @@
 
               let infoWindow = new google.maps.InfoWindow({
                 content: spotinfo
-                //複数の要素をコンテントで送る方法
               });
 
+              // infoWindow を配列に追加
+              infoWindows.push(infoWindow);
               marker.addListener('click', function() {
                 // 開いている infoWindow を閉じる
                 infoWindows.forEach(function(infoWin) {
@@ -92,17 +92,10 @@
                 // クリックしたマーカーに関連する infoWindow を開く
                 infoWindow.open(map, this);
               });
-
-              // infoWindow を配列に追加
-              infoWindows.push(infoWindow);
-            } else {
-              alert('以下の理由でジオコードに失敗しました。: ' + status);
             }
           });
         })
       };
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
     </script>
 </form>
 @endsection

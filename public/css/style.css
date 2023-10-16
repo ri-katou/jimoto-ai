@@ -45,6 +45,7 @@ li {
     color: gray;
     font-size: 1.5rem;
 }
+
 .fav_btn-interest,
 .fav-btn-visited {
     display: flex;
@@ -279,6 +280,7 @@ li {
 .error-message li {
     list-style: none;
 }
+
 /* header */
 .header-fixed {
     position: sticky;
@@ -417,8 +419,6 @@ footer {
     position: absolute;
     right: 10vh;
 }
-
-
 
 .top-pic4 {
     width: 15%;
@@ -1010,7 +1010,7 @@ spot-addles .syoukaijou-honbun {
     margin-bottom: 3%;
 }
 
-.preview-pic1-sam  img{
+.preview-pic1-sam img {
     margin-left: 10%;
     height: 100px;
     width: 100px;
@@ -1108,7 +1108,6 @@ spot-addles .syoukaijou-honbun {
 .fav_btn {
     display: flex;
 }
-
 
 /* user?delete */
 .user-delete-center-content {
@@ -1349,7 +1348,7 @@ spot-addles .syoukaijou-honbun {
 
 /* 検索結果画面開始 */
 
-.if-search {
+.search-title {
     margin-left: 10%;
 }
 
@@ -1384,6 +1383,24 @@ spot-addles .syoukaijou-honbun {
 .map-space {
     width: 998px;
     height: 690px;
+}
+#map {
+    height: 500px;
+    width: 90%;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 35%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
 }
 
 /* タブレットサイズ */

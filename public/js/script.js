@@ -134,6 +134,11 @@ $(document).ready(function () {
     //     show = true;
     // })
 
+    //ソート
+    console.log($('.syou'));
+    $('.syou').sort(function(){
+        
+    })
 
 }); //ここまでJquery
 

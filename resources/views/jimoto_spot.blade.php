@@ -28,7 +28,9 @@
         <div class="syoukaijou-card">
             @foreach ($syoukaijouAll as $item)
             <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
-                <div class="syou">
+                <div class="syou" 
+                data-id="{{$item->syoukaijous_id}}" 
+                data-interest="{{$item->interest_count ?: 0}}" data-visited="{{$item->visited_count ?: 0}}">
                     <div class="syoukaijou-sam">
                         <div class="preview-syoukaijou-top-sam">
                             <div class="sum-top">
@@ -68,12 +70,7 @@
     @endif @endforeach
     "></i>
                                         <div class="interest-count">
-                                            @foreach ($interest_count as $value)
-                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
-                                                    {{ $value->syoukaijou_id_count }}
-                                                    @break
-                                                @endif
-                                            @endforeach
+                                            {{$item->interest_count}}
                                         </div>
                                     </div>
 
@@ -86,12 +83,7 @@
     @endif @endforeach
     "></i>
                                         <div class="visited-count">
-                                            @foreach ($visited_count as $value)
-                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
-                                                    {{ $value->syoukaijou_id_count }}
-                                                    @break
-                                                @endif
-                                            @endforeach
+                                            {{$item->visited_count}}
                                         </div>
                                     </div>
                                 </div>

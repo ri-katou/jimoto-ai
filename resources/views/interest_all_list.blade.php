@@ -78,12 +78,7 @@
     @endif @endforeach
     "></i>
                                         <div class="interest-count">
-                                            @foreach ($interest_count as $value)
-                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
-                                                    {{ $value->syoukaijou_id_count }}
-                                                    @break
-                                                @endif
-                                            @endforeach
+                                          {{$item->interest_count}}
                                         </div>
                                     </div>
 
@@ -96,12 +91,7 @@
     @endif @endforeach
     "></i>
                                         <div class="visited-count">
-                                            @foreach ($visited_count as $value)
-                                                @if ($item->syoukaijous_id == $value->syoukaijou_id)
-                                                    {{ $value->syoukaijou_id_count }}
-                                                    @break
-                                                @endif
-                                            @endforeach
+                                          {{$item->visited_count}}
                                         </div>
                                     </div>
                                 </div>

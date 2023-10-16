@@ -48,7 +48,7 @@
                                             </div>
                                             <div class="preview-main-sam">
                                                 <div class="preview-pics-sam">
-                                                    <div class="preview-pic1-sam"><img id="gazo" src="{{$item->image1}}"><</div>
+                                                    <div class="preview-pic1-sam"><img id="gazo" src="{{$item->image1}}"></div>
                                                     <div class="preview-pics-sub">
                                                         <div class="preview-pic2-sam"></div>
                                                         <div class="preview-pic3-sam"></div>

@@ -45,9 +45,8 @@ li {
     color: gray;
     font-size: 1.5rem;
 }
-.fav_btn-interest {
-    text-align: center;
-}
+
+.fav_btn-interest,
 .fav-btn-visited {
     display: flex;
     justify-content: space-around;

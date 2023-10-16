@@ -27,64 +27,62 @@
         {{-- ここから紹介状１枚 --}}
         <div class="syoukaijou-card">
             @foreach ($syoukaijouAll as $item)
-            <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
-                <div class="syou" 
-                data-id="{{$item->syoukaijous_id}}" 
-                data-interest="{{$item->interest_count ?: 0}}" data-visited="{{$item->visited_count ?: 0}}">
-                    <div class="syoukaijou-sam">
-                        <div class="preview-syoukaijou-top-sam">
-                            <div class="sum-top">
-                                <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                                <div class="syoukaijou-title-sam">{{ $item->title }}</div>
-                            </div>
-                            <div class="janru-area-sam">
-                                <div class="janru-tag">
-                                    {{ $item->category_name }}
+                <div class="syou" data-id="{{ $item->syoukaijous_id }}" data-interest="{{ $item->interest_count ?: 0 }}"
+                    data-visited="{{ $item->visited_count ?: 0 }}">
+                    <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
+                        <div class="syoukaijou-sam">
+                            <div class="preview-syoukaijou-top-sam">
+                                <div class="sum-top">
+                                    <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
+                                    <div class="syoukaijou-title-sam">{{ $item->title }}</div>
                                 </div>
-                                <div class="area-tag">
-                                    <div class="area-sub">{{ $item->municipalities_name }}</div>
+                                <div class="janru-area-sam">
+                                    <div class="janru-tag">
+                                        {{ $item->category_name }}
+                                    </div>
+                                    <div class="area-tag">
+                                        <div class="area-sub">{{ $item->municipalities_name }}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="preview-main-sam">
-                            <div class="preview-pics-sam">
-                                <div class="preview-pic1-sam"><img id="gazo" src="{{$item->image1}}"></div>
-                            </div>
-                            <div class="preview-honbun">
-                                <div class="honbun-sum">{{ $item->body }}</div>
-                                <div class="fav_btn" id="{{ $item->syoukaijous_id }}"
-                                    data-me="{{ Auth::id() }}">
-                                    <div class="fav_btn-interest">
-                                        <i
-                                            class="fav_btn-interest-icon fas fa-heart 
+                            <div class="preview-main-sam">
+                                <div class="preview-pics-sam">
+                                    <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
+                                </div>
+                                <div class="preview-honbun">
+                                    <div class="honbun-sum">{{ $item->body }}</div>
+                                    <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
+                                        <div class="fav_btn-interest">
+                                            <i
+                                                class="fav_btn-interest-icon fas fa-heart 
     @foreach ($interest_list as $value)
     @if ($item->syoukaijous_id == $value->syoukaijou_id)
      interest-active
     @endif @endforeach
     "></i>
-                                        <div class="interest-count">
-                                            {{$item->interest_count}}
+                                            <div class="interest-count">
+                                                {{ $item->interest_count }}
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="fav-btn-visited">
-                                        <i
-                                            class="fav_btn-visited-icon fas fa-flag 
+                                        <div class="fav-btn-visited">
+                                            <i
+                                                class="fav_btn-visited-icon fas fa-flag 
     @foreach ($visited_list as $value)
     @if ($item->syoukaijous_id == $value->syoukaijou_id)
     visited-active
     @endif @endforeach
     "></i>
-                                        <div class="visited-count">
-                                            {{$item->visited_count}}
+                                            <div class="visited-count">
+                                                {{ $item->visited_count }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
             @endforeach
         </div>
         {{-- ここまで紹介状1枚 --}}

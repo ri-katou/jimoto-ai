@@ -281,6 +281,7 @@ li {
 .error-message li {
     list-style: none;
 }
+
 /* header */
 .header-fixed {
     position: sticky;
@@ -1383,6 +1384,24 @@ spot-addles .syoukaijou-honbun {
 .map-space {
     width: 998px;
     height: 690px;
+}
+#map {
+    height: 500px;
+    width: 90%;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 35%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
 }
 
 /* タブレットサイズ */

@@ -54,6 +54,11 @@ li {
 }
 .fav_btn-interest:hover {
     cursor: pointer;
+    padding-top: 1px;
+}
+.fav-btn-visited:hover {
+    cursor: pointer;
+    padding-top: 1px;
 }
 .interest-active {
     color: pink;

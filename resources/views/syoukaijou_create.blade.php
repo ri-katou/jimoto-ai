@@ -48,10 +48,10 @@
         </div>
         @endif
       <div class="syoukaijou-pic">
-        <input type="file" name="image1">
-        <input type="file" name="image2">
-        <input type="file" name="image3">
-        <input type="file" name="image4">
+        <input type="file" name="image1" accept="image/*">
+        <input type="file" name="image2" accept="image/*">
+        <input type="file" name="image3" accept="image/*">
+        <input type="file" name="image4" accept="image/*">
       </div>
       <div class="syoukaijou-jyanru-area">
         <div class="syoukaijou-jyanru">

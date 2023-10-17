@@ -25,7 +25,7 @@
             <div class="header-login">
                 <div class="header-mypage">
                     <div class="header-profile-icon">
-                        <img src="" alt="myimage">
+                        <img src="{{ isset(\App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image )?: 'https://jimotoai2023.s3.ap-northeast-1.amazonaws.com/jimotoaiprofile/cgj35n6IhyLz3mbaMJ3kt0EfsRtP1yuIJhDDJ9XP.jpg'}}" alt="myimage" class="profile-icon-img">
                     </div>
                     <a href="{{ route('home') }}" class="link">マイページへ</a>
                 </div>
@@ -51,10 +51,10 @@
     </main>
     <footer>
     </footer>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
-    </script>
+    @yield('script')
 </body>
 
 </html>

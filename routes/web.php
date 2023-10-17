@@ -49,11 +49,13 @@ Route::group(['middleware' => 'auth'], function () {
         return view('profile_edit_check');
     })->name('profile.edit.check');
     Route::post('profile/edit/check', 'ProfileController@profileEditRegi');
+    Route::post('profile/image/edit', 'ProfileController@profileEditImg')->name('edit.image');
 
     // 紹介状作成
     Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create'); //作成画面へのリンク
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit'); //プレビューの表示（入力の送信)
     Route::post('create/preview/', 'CreateController@create')->name('create'); //紹介状のDB登録
+    Route::get('syoukaijou/delete/{id}','CreateController@delete')->name('syoukaijou.delete');
 
     // 発見
     Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');

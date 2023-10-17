@@ -3,7 +3,9 @@
     <div class="home">
         <div class="syoukaijou-header">
             <div class="home-icon-right">
-                <div class="profile-icon"></div>
+                <div class="profile-icon">
+                    <img src="{{ isset(\App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image ) ?: 'https://jimotoai2023.s3.ap-northeast-1.amazonaws.com/jimotoaiprofile/cgj35n6IhyLz3mbaMJ3kt0EfsRtP1yuIJhDDJ9XP.jpg'}}" alt="myimage" class="profile-icon-img">
+                </div>
                 <div class="icon-prof link"><a href="{{ route('profile') }}">プロフィール画面へ</a></div>
             </div>
             <div class="home-icon-left">

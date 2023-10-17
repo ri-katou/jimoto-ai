@@ -117,4 +117,7 @@ class CreateController extends Controller
 
         return view('syoukaijou_create', compact('userdetail','municipalitie', 'category'));
     }
+    public function delete(){
+        
+    }
 }

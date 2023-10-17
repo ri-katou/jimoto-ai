@@ -79,9 +79,10 @@ li {
     color: #339dff;
     background: transparent;
 }
-.link a:hover {
+.link :hover {
     color: #339dff;
     text-decoration: underline;
+    cursor: pointer;
 }
 .link a:visited {
     color: #339dff;
@@ -320,7 +321,6 @@ li {
     margin-top: 2vh;
 }
 .header-profile-icon {
-    background-color: #339dff;
     width: 70px;
     height: 70px;
     border-radius: 35px;
@@ -548,7 +548,6 @@ footer {
 }
 
 .profile-icon {
-    background-color: #339dff;
     width: 200px;
     height: 200px;
     border-radius: 100%;
@@ -751,6 +750,9 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+}
+.profile-icon-img {
+    border-radius: 100%;
 }
 /* profile_edit */
 .profile-edit-center-content {

@@ -3,30 +3,32 @@
     <div class="profile">
         <div class="profile-container">
             <div class="profile-image">
-                <div class=" profile-icon"><img src="" alt="myimage"></div>
-                <div class="profile-edit-link">[<a href="#" class="link">画像の編集</a>]</div>
+                <div class="profile-myimage profile-icon"><img src="" alt="myimage"></div>
             </div>
-            <div class="profile-nickname">{{$user->name}}</div>
+            <div class="profile-nickname">DBから拾う</div>
         </div>
-        <div class="profile-center-content">
+        <div class="user-delete-center-content">
             <div class="profile-email">
                 <div class="profile-email-title underline-green">メールアドレス</div>
                 <div class="profile-email-output">
-                    {{$user->email}}
+                    email@mail.com
                 </div>
             </div>
             <div class="profile-usereria">
                 <div class="profile-useereria-title underline-green">あなたのエリア</div>
                 <div class="profile-eria-output">
-                      {{$municipalitie[0]['municipalities_name']}}
+                    渋川市
                 </div>
             </div>
+
+            <div class="user-delete-message">このアカウントを削除しますか？</div>
         </div>
         <div class="profile-botom-btn">
-            <a href="{{route('profile.edit')}}" class="btn-green">
-                プロフィールを編集する
-            </a>
-            <div class="link"><a href="{{ route('user.delete') }}">退会する</a></div>
+            <form action="{{ route('user.delete') }}" method="POST">
+                @csrf
+                <input type="submit" class="btn-delete" value="削除する">
+            </form>
+            <div class="return">戻る</div>
         </div>
     </div>
 @endsection

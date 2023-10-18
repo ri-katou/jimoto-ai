@@ -34,7 +34,7 @@
       <div class="preview-spot">
         <div class="spotname">{{$syoukaijou[0]->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">{{$syoukaijou[0]->main}}</div>
+      <div class="syoukaijou-text">{{$syoukaijou[0]->body}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>

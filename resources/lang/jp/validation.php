@@ -79,7 +79,7 @@ return [
   'max' => [
     'numeric' => 'The :attribute may not be greater than :max.',
     'file' => 'The :attribute may not be greater than :max kilobytes.',
-    'string' => ' :attribute は255文字以内で入力してください。',
+    'string' => ' :attribute は30文字以内で入力してください。',
     'array' => 'The :attribute may not have more than :max items.',
   ],
   'mimes' => 'The :attribute must be a file of type: :values.',
@@ -95,7 +95,7 @@ return [
   'numeric' => 'The :attribute must be a number.',
   'password' => 'The password is incorrect.',
   'present' => 'The :attribute field must be present.',
-  'regex' => 'The :attribute format is invalid.',
+  'regex' => ':attributeには、同じ半角英数字を連続して6回以上入力しないでください。',
   'required'             => ':attribute は必須入力です。',
   'required_if' => 'The :attribute field is required when :other is :value.',
   'required_unless' => 'The :attribute field is required unless :other is in :values.',

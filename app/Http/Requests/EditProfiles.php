@@ -24,7 +24,7 @@ class EditProfiles extends FormRequest
     public function rules()
     {
         return [
-            'nickname'=>'min:2| max:255',
+            'nickname'=>['required','string','min:2','max:30','regex:/^(?:(?!(.)\1{5,}).)*$/'],
             'email'=> 'max:255| email',
         ];
     }

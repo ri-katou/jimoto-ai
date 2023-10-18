@@ -1004,8 +1004,8 @@ spot-addles .syoukaijou-honbun {
 
 .preview-button-sub {
     margin-top: 2%;
-    margin-left: 43%;
-    margin-bottom: 3%;
+    margin-left: 50%;
+
 }
 
 .preview-pic1-sam img {
@@ -1025,7 +1025,15 @@ spot-addles .syoukaijou-honbun {
 
 .preview-bottom-text {
     font-weight: bold;
-    margin-left: 5%;
+    font-size: 1.5rem;
+}
+
+.preview-bottom {
+    margin-left: 20%;
+}
+
+.preview-back { 
+    margin-left: 20%;
 }
 
 /* disp */

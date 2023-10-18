@@ -24,7 +24,7 @@ class SpotSearch extends FormRequest
     public function rules()
     {
         return [
-            'search' => 'nullable|max:50'
+            'search' => 'max:50'
         ];
     }
 

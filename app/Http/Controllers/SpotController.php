@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SpotSearch;
 use Illuminate\Http\Request;
 use App\category;
 use App\Syoukaijou;
@@ -154,7 +155,7 @@ class SpotController extends Controller
         return view('jimoto_spot_search', compact('syoukaijou', 'count', 'categoryConditions', 'municipalitieCondetions','interest_list', 'interest_count','visited_list','visited_count'));
     }
 
-    public function keywordSearch(Request $Request)
+    public function keywordSearch(SpotSearch $Request)
     {
         $search = $Request->input('search');
             if ($search) {

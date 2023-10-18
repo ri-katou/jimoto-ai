@@ -6,6 +6,15 @@
             <input type="search" name="search" placeholder="キーワードを入力" size="40">
             <input type="submit" value="検索する">
         </form>
+        @if($errors->any())
+        <div class="error-message">
+            <ul>
+                @error('search')
+                <li>{{ $message }}</li>
+                @enderror
+            </ul>
+        </div>
+        @endif
     </div>
     <select name="example">
         <option>新着順</option>

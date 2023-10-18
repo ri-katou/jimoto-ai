@@ -22,7 +22,7 @@
           </ul>
         </div>
         @endif
-        <div><textarea name="title" id="" cols="80" rows="2">{{ old('title') }}</textarea></div>
+        <div class="create-form"><input type="text" name="title" id="" value="{{ old('title') }}"></div>
       </div>
       <div class="syoukaijou-main">
         <div class="syoukaijou-honbun">本文（必須）</div>
@@ -109,17 +109,35 @@
         @if($errors->any())
         <div class="error-message">
           <ul>
-            @error('title')
+            @error('spotname')
             <li>{{ $message }}</li>
             @enderror
           </ul>
         </div>
         @endif
-        <div class="form"><textarea name="spotname" id="" cols="80" rows="1">{{ old('spotname') }}</textarea></div>
+        <div class="create-form"><input type="text" name="spotname" id="" value="{{ old('spotname') }}"></textarea></div>
         <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
-        <div class="form"><textarea name="address" id="" cols="80" rows="1">{{ old('address') }}</textarea></div>
+        @if($errors->any())
+        <div class="error-message">
+          <ul>
+            @error('addles')
+            <li>{{ $message }}</li>
+            @enderror
+          </ul>
+        </div>
+        @endif
+        <div class="create-form"><input type="text" name="addles" id="" value="{{ old('addles') }}"></textarea></div>
         <div class="syoukaijou-supot-url">URL（任意）</div>
-        <div class="form"><textarea name="url" id="" cols="80" rows="1">{{ old('url') }}</textarea></div>
+        @if($errors->any())
+        <div class="error-message">
+          <ul>
+            @error('url')
+            <li>{{ $message }}</li>
+            @enderror
+          </ul>
+        </div>
+        @endif
+        <div class="create-form"><input type="text" name="url" id="" value="{{ old('url') }}"></div>
       </div>
 
       <div class="syoukaijou-bottom">

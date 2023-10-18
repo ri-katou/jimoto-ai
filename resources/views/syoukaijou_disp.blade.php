@@ -3,7 +3,7 @@
 <div class="disp-top">
   <div class="return">戻る</div>
   @if($syoukaijou[0]->creater_id == Auth::id())
-  <div class="delete"><a class="disp-delete" href=#>この投稿を削除する</a></div>
+  <div class="delete"><a class="disp-delete" href="{{route('syoukaijou.delete',['id' => $syoukaijou[0]->syoukaijous_id])}}">この投稿を削除する</a></div>
   @endif
 </div>
 <div class="syoukaijou">
@@ -34,7 +34,7 @@
       <div class="preview-spot">
         <div class="spotname">{{$syoukaijou[0]->spotname}}</div>
       </div>
-      <div class="syoukaijou-text">{{$syoukaijou[0]->main}}</div>
+      <div class="syoukaijou-text">{{$syoukaijou[0]->body}}</div>
       <div class="ittemitai"></div>
       <div class="ittayo"></div>
     </div>

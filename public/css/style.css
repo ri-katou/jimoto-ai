@@ -38,6 +38,8 @@ li {
 
 /* 共通パーツ */
 .fav_btn {
+    width: 220px;
+    margin: -0.5rem 0 0 auto;
     display: flex;
     justify-content: space-around;
 }
@@ -45,9 +47,8 @@ li {
     color: gray;
     font-size: 1.5rem;
 }
-.fav_btn-interest {
-    text-align: center;
-}
+
+.fav_btn-interest,
 .fav-btn-visited {
     display: flex;
     justify-content: space-around;
@@ -55,6 +56,11 @@ li {
 }
 .fav_btn-interest:hover {
     cursor: pointer;
+    padding-top: 1px;
+}
+.fav-btn-visited:hover {
+    cursor: pointer;
+    padding-top: 1px;
 }
 .interest-active {
     color: pink;
@@ -75,9 +81,10 @@ li {
     color: #339dff;
     background: transparent;
 }
-.link a:hover {
+.link :hover {
     color: #339dff;
     text-decoration: underline;
+    cursor: pointer;
 }
 .link a:visited {
     color: #339dff;
@@ -316,7 +323,6 @@ li {
     margin-top: 2vh;
 }
 .header-profile-icon {
-    background-color: #339dff;
     width: 70px;
     height: 70px;
     border-radius: 35px;
@@ -530,6 +536,10 @@ footer {
 }
 
 .home-body {
+    font-size: 1.5rem;
+}
+
+.home-body midasi {
     margin-bottom: 26px;
 }
 
@@ -541,10 +551,15 @@ footer {
 
 .dummy {
     height: 250px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.dummy a {
+    color: #339dff;
 }
 
 .profile-icon {
-    background-color: #339dff;
     width: 200px;
     height: 200px;
     border-radius: 100%;
@@ -686,6 +701,10 @@ footer {
     line-height: 2;
 }
 
+.create-form input {
+    width: 76%;
+}
+
 .syoukaijou-top {
     margin-bottom: 2%;
 }
@@ -744,6 +763,9 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+}
+.profile-icon-img {
+    border-radius: 100%;
 }
 /* profile_edit */
 .profile-edit-center-content {
@@ -1004,8 +1026,8 @@ spot-addles .syoukaijou-honbun {
 
 .preview-button-sub {
     margin-top: 2%;
-    margin-left: 43%;
-    margin-bottom: 3%;
+    margin-left: 50%;
+
 }
 
 .preview-pic1-sam img {
@@ -1025,7 +1047,15 @@ spot-addles .syoukaijou-honbun {
 
 .preview-bottom-text {
     font-weight: bold;
-    margin-left: 5%;
+    font-size: 1.5rem;
+}
+
+.preview-bottom {
+    margin-left: 20%;
+}
+
+.preview-back { 
+    margin-left: 20%;
 }
 
 /* disp */

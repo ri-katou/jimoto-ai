@@ -23,34 +23,41 @@ class CreateController extends Controller
         $file_name3 = $Request->file('image3');
         $file_name4 = $Request->file('image4');
 
-        $Request->file('image1')->storeAs('', $file_name1);
+        $Request->file('image1')->storeAs('public/storage', $file_name1);
+        $file_name1 = 'storage/' . $file_name1;
 
        if(is_null($file_name2)){
-        $file_name2 = '/image/noimage.jpg';
+        $imagePath2 = '/image/';
+        $file_name2 = 'noimage.jpg';
        } else {
+        $imagePath2 = 'storage/';
         $file_name2 = $Request->file('image2')->getClientOriginalName();
-        $Request->file('image2')->storeAs('', $file_name2);
+        $Request->file('image2')->storeAs('public/storage', $file_name2);
        };
 
        if(is_null($file_name3)){
-        $file_name3 = '/image/noimage.jpg';
+        $imagePath3 = '/image/';
+        $file_name3 = 'noimage.jpg';
        } else {
+        $imagePath3 = 'storage/';
         $file_name3 = $Request->file('image3')->getClientOriginalName();
-        $Request->file('image3')->storeAs('', $file_name3);
+        $Request->file('image3')->storeAs('public/storage', $file_name3);
        };
 
        if(is_null($file_name4)){
-        $file_name4 = '/image/noimage.jpg';
+        $imagePath4 = '/image/';
+        $file_name4 = 'noimage.jpg';
        } else {
+        $imagePath4 = 'storage/';
         $file_name4 = $Request->file('image4')->getClientOriginalName();
-        $Request->file('image4')->storeAs('', $file_name4);
+        $Request->file('image4')->storeAs('public/storage', $file_name4);
        };
 
 
         $category = Category::where('id', $Request->category)->first();
         $municipalitie = Municipalitie::where('id', $Request->municipalitie)->first();
         $day = Carbon::now();
-        return view('preview', compact('category', 'Request', 'municipalitie', 'day','file_name1','file_name2','file_name3','file_name4'));
+        return view('preview', compact('category', 'Request', 'municipalitie', 'day','file_name1','file_name2','file_name3','file_name4', 'imagePath2','imagePath3','imagePath4'));
     }
 
 
@@ -66,24 +73,24 @@ class CreateController extends Controller
         // バケットの`jimotoaiImage`フォルダへアップロード
 
 
-        $path1 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path( 'app/'.$image1), 'public');
+        $path1 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path( 'app/public/'.$image1), 'public');
 
         $path2 = $image2;
         $path3 = $image3;
         $path4 = $image4;
 
         if($image2 !== '/image/noimage.jpg'){
-            $path2 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/'. $image2), 'public');
+            $path2 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image2), 'public');
             $path2 = Storage::disk('s3')->url($path2);
         };
 
         if($image3 !== '/image/noimage.jpg'){
-            $path3 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/'. $image3), 'public');
+            $path3 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image3), 'public');
             $path3 = Storage::disk('s3')->url($path3);
         };
 
         if($image4 !== '/image/noimage.jpg'){
-            $path4 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/'. $image4), 'public');
+            $path4 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image4), 'public');
             $path4 = Storage::disk('s3')->url($path4);
         };
 
@@ -116,5 +123,8 @@ class CreateController extends Controller
         $category = Category::all();
 
         return view('syoukaijou_create', compact('userdetail','municipalitie', 'category'));
+    }
+    public function delete(){
+        
     }
 }

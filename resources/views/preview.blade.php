@@ -118,7 +118,9 @@
             </form>
         </div>
     </div>
+    <div class="preview-back">
     <div class="return">戻る</div>
+    </div>
 
     
 @endsection

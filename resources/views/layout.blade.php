@@ -10,7 +10,6 @@
     <link rel="apple-touch-icon" type="image/png" href="/apple-touch-icon-180x180.png">
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="/css/style.css">
 
 </head>
@@ -26,7 +25,7 @@
             <div class="header-login">
                 <div class="header-mypage">
                     <div class="header-profile-icon">
-                        <img src="" alt="myimage">
+                        <img src="{{ isset(\App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image )? \App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image : 'https://jimotoai2023.s3.ap-northeast-1.amazonaws.com/jimotoaiprofile/cgj35n6IhyLz3mbaMJ3kt0EfsRtP1yuIJhDDJ9XP.jpg'}}" alt="myimage" class="profile-icon-img">
                     </div>
                     <a href="{{ route('home') }}" class="link">マイページへ</a>
                 </div>
@@ -52,10 +51,10 @@
     </main>
     <footer>
     </footer>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/script.js') }}"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
-    </script>
+    @yield('script')
 </body>
 
 </html>

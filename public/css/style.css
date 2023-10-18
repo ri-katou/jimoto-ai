@@ -570,14 +570,11 @@ footer {
 .mottomiru {
     display: flex;
     justify-content: flex-end;
+    padding: 1.5em 0;
 }
 
 .card-margin {
     margin-bottom: 5px;
-}
-
-.mottomiru {
-    margin-bottom: 10px;
 }
 
 .toukou {

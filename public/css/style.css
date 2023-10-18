@@ -38,6 +38,8 @@ li {
 
 /* 共通パーツ */
 .fav_btn {
+    width: 220px;
+    margin: -0.5rem 0 0 auto;
     display: flex;
     justify-content: space-around;
 }

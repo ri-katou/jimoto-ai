@@ -48,7 +48,7 @@
                             </div>
                             <div class="preview-main-sam">
                                 <div class="preview-pics-sam">
-                                    <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
+                                    <div class="preview-pic1-sam"><img src="{{ $item->image1 }}" alt="1枚目"></div>
                                 </div>
                                 <div class="preview-honbun">
                                     <div class="honbun-sum">{{ $item->body }}</div>

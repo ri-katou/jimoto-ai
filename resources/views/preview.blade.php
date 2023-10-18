@@ -83,19 +83,18 @@
                       </div>
                         <div class="preview-honbun">
                             <div class="honbun-sum">{{ $Request->main }}</div>
-                            <div class="fav_btn">
-                                <div class="fav_btn-interest">
-                                    <i class="fav_btn-interest-icon fas fa-heart interest-active"></i>
-                                </div>
-                                <div class="fav-btn-visited">
-                                    <i class="fav_btn-visited-icon fas fa-flag visited-active"></i>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div class="fav_btn">
+                        <div class="fav_btn-interest">
+                            <i class="fav_btn-interest-icon fas fa-heart interest-active"></i>
+                        </div>
+                        <div class="fav-btn-visited">
+                            <i class="fav_btn-visited-icon fas fa-flag visited-active"></i>
                         </div>
                     </div>
                 </div>
             </div>
-            </a>
         </div>
     </div>
     <div class="preview-bottom">

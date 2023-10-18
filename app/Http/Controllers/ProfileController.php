@@ -10,14 +10,15 @@ use App\User_detail;
 use Illuminate\Support\Facades\Auth;
 use App\Syoukaijou;
 use App\category;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
     public function showProfile() {
         $user = Auth::user();
-        $municipalitie = User::find(Auth::id())->join('user_details','users.id','=','user_details.user_id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->get();
+        $user_detail = User::find(Auth::id())->join('user_details','users.id','=','user_details.user_id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->get();
 
-        return view('profile',compact('user','municipalitie'));
+        return view('profile',compact('user','user_detail'));
     }
     public function showProfileEdit(){
         $user = Auth::user();
@@ -41,6 +42,18 @@ class ProfileController extends Controller
         $user_detail->save();
 
         return redirect()->route('home');
+
+    }
+    public function profileEditImg(Request $request){
+        $imageName = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs('profile', $imageName);
+        $path1 = Storage::disk('s3')->putFile('jimotoaiProfile', storage_path( 'app/profile/'.$imageName), 'public');
+        $user_detail = User_detail::find(Auth::id());
+        $user_detail->icon_image = Storage::disk('s3')->url($path1);
+        $user_detail->save();
+
+        return redirect()->route('profile');
 
     }
 }

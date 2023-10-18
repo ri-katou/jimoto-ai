@@ -26,6 +26,7 @@ class CreateController extends Controller
         $file_name1 = 'storage/' . $file_name1;
 
         $Request->file('image1')->storeAs('public/storage', $file_name1);
+        $file_name1 = 'storage/' . $file_name1;
 
        if(is_null($file_name2)){
         $imagePath2 = '/image/';

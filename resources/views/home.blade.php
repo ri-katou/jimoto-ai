@@ -26,6 +26,7 @@
     <div class="syoukaijou-all">
         <div class="syoukaijyou-hyouji">
                 <div class="home-body midasi block-green">
+
                     &nbsp;自分の投稿した紹介状
                 </div>
                 @if (count($post) >= 1)
@@ -89,6 +90,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     @endforeach
                 </div>
@@ -165,8 +167,10 @@
                                 </div>
 
                             </div>
+
                         </div>
                         @endforeach
+
                     </div>
                 @else
                 <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>

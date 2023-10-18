@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
     <div class="home">
         <div class="syoukaijou-header">
             <div class="home-icon-right">
@@ -21,11 +22,13 @@
                 </a>
             </div>
         </div>
-        <div class="all-list-syoukai">
-            <div class="syoukaijou-all">
-                <div class="syoukaijyou-hyouji">
+    </div>
+    <div class="all-list-syoukai">
+        <div class="syoukaijou-all">
+            <div class="syoukaijyou-hyouji">
+                <div class="block-green">
                     <div class="home-body midasi">
-                        自分の投稿した紹介状
+                    &nbsp;自分の投稿した紹介状
                     </div>
                     <div class="card-margin">
                         @if (count($post) >= 1)
@@ -103,8 +106,10 @@
                         @else
                             <div class="dummy">投稿がされていません<br><a href="{{ route('syoukaijou.create') }}">紹介状作成はこちら</a>
                             </div>
-                        @endif
+                        </a>
+                        @endforeach
                     </div>
+
                     <div class="mottomiru link"><a href="{{ route('home.interest.check') }}">もっと見る</a></div>
                 </div>
                 <div class="syoukaijyou-hyouji">
@@ -182,12 +187,13 @@
                                     </div>
                                 @endforeach
                             </div>
-                        @else
-                            <div class="dummy">行ってみたいがありません</div>
-                        @endif
-
+                        </a>
+                        @endforeach
                     </div>
-                    <div class="mottomiru link"><a href="{{ route('home.interest.check') }}">もっと見る</a></div>
+                    @else
+                    <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br><div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div></div>
+                    @endif
+
                 </div>
                 <div class="syoukaijyou-hyouji">
                     <div class="home-body midasi">
@@ -263,12 +269,14 @@
                                     </div>
                                 @endforeach
                             </div>
-                        @else
-                            <div class="dummy">行ったよ がありません</div>
-                        @endif
+                        </a>
+                        @endforeach
                     </div>
-                    <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+                    @else
+                    <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br><div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div></div>
+                    @endif
                 </div>
+                <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
             </div>
         </div>
     </div>

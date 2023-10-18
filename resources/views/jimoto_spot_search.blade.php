@@ -1,25 +1,33 @@
 @extends('layout')
 @section('content')
-    <div class="jimoto-search-top">
-        <div class="jimoto-search">
-            <form class="keywordserch" action="{{ route('keyword.search') }}" method="get">
-                <input type="search" name="search" placeholder="キーワードを入力" size="40">
-                <input type="submit" value="検索する" name="sourtNew">
-            </form>
+<div class="jimoto-search-top">
+    <div class="jimoto-search">
+        <form class="keywordserch" action="{{ route('keyword.search') }}" method="get">
+            <input type="search" name="search" placeholder="キーワードを入力" size="40">
+            <input type="submit" value="検索する" name="sourtNew">
+        </form>
+        @if($errors->any())
+        <div class="error-message">
+            <ul>
+                @error('search')
+                <li>{{ $message }}</li>
+                @enderror
+            </ul>
         </div>
-        <select class="sourtselect" name="example">
-            <option value="sourtNew">新着順</option>
-            <option value="sourtInterest">行ってみたいが多い順</option>
-            <option value="sourtVisited">訪問済みが多い順</option>
-        </select>
+        @endif
     </div>
+    <select class="sourtselect" name="example">
+        <option value="sourtNew">新着順</option>
+        <option value="sourtInterest">行ってみたいが多い順</option>
+        <option value="sourtVisited">訪問済みが多い順</option>
+    </select>
+</div>
 
-    <div class="janru-area-search">
-        <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
-        <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}">ジャンルを指定して探す</a></div>
-        <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
-    </div>
-
+<div class="janru-area-search">
+    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
+    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}">ジャンルを指定して探す</a></div>
+    <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
 
 
         <div class="search-title">検索条件</div>
@@ -183,4 +191,4 @@
 
     </script>
 
-@endsection
+    @endsection

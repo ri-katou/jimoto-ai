@@ -79,7 +79,7 @@ return [
   'max' => [
     'numeric' => 'The :attribute may not be greater than :max.',
     'file' => 'The :attribute may not be greater than :max kilobytes.',
-    'string' => ' :attribute は255文字以内で入力してください。',
+    'string' => ' :attribute は :max 文字以内で入力してください。',
     'array' => 'The :attribute may not have more than :max items.',
   ],
   'mimes' => 'The :attribute must be a file of type: :values.',
@@ -115,7 +115,7 @@ return [
   'timezone' => 'The :attribute must be a valid zone.',
   'unique'               => '入力いただいた :attribute はすでに使用されています。',
   'uploaded' => 'The :attribute failed to upload.',
-  'url' => 'The :attribute format is invalid.',
+  'url' => ':attribute 表記が正しくありません。',
   'uuid' => 'The :attribute must be a valid UUID.',
 
   /*
@@ -137,7 +137,7 @@ return [
       'title' => 'タイトル',
       'main' => '本文',
       'janru' => 'ジャンル',
-      'spot-name' => 'スポット名',
+      'spotname' => 'スポット名',
       'addles' => '住所',
       'url' => 'URL',
       'password' => 'パスワード',
@@ -163,11 +163,12 @@ return [
     'title' => 'タイトル',
     'main' => '本文',
     'janru' => 'ジャンル',
-    'spot-name' => 'スポット名',
+    'spotname' => 'スポット名',
     'addles' => '住所',
     'url' => 'URL',
     'password' => 'パスワード',
     'pic' => '画像',
+    'search' => '検索'
   ],
 
 ];

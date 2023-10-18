@@ -536,6 +536,10 @@ footer {
 }
 
 .home-body {
+    font-size: 1.5rem;
+}
+
+.home-body midasi {
     margin-bottom: 26px;
 }
 
@@ -547,6 +551,12 @@ footer {
 
 .dummy {
     height: 250px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.dummy a {
+    color: #339dff;
 }
 
 .profile-icon {
@@ -689,6 +699,10 @@ footer {
 .syoukaijou_create {
     margin-left: 25%;
     line-height: 2;
+}
+
+.create-form input {
+    width: 76%;
 }
 
 .syoukaijou-top {

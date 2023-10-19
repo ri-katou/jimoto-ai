@@ -295,16 +295,32 @@ li {
 .pagination {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 .page-item {
-    font-size: 1rem;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 18px;
+    border: #83ff36 solid 2px;
+    background-color: #ccf397;
+}
+.page-item a{ 
+    color: #484848;
+}
+.page-item:hover{
+    background-color: #12f128;
+}
+.active{
+    color: #484848;
+    background-color: #5bf534;
 }
 /* header */
 .header-fixed {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 998;
     margin-bottom: 30px;
 }
 .header-container {

@@ -16,7 +16,13 @@ class ProfileController extends Controller
 {
     public function showProfile() {
         $user = Auth::user();
-        $user_detail = User::find(Auth::id())->join('user_details','users.id','=','user_details.user_id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->get();
+        $user_detail = User::select(
+            'users.id as users_id',
+            'users.name',
+            'users.email',
+            'user_details.icon_image',
+            'municipalities.municipalities_name')
+            ->join('user_details','users.id','=','user_details.user_id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->where('users.id',Auth::id())->get();
 
         return view('profile',compact('user','user_detail'));
     }

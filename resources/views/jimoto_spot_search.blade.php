@@ -33,7 +33,11 @@
         <div class="search-title">検索条件</div>
         <div class="if-keyword-area-janru">
             @if ($search)
-                <div class="if-keyword">キーワード：{{ $search }}</div>
+            <div class="if-keyword">キーワード：
+            @foreach($search as $item)
+                {{ $item }}
+                @endforeach
+            </div>
             @else
                 <div class="if-janru">ジャンル：
                     @if ($categoryConditions)

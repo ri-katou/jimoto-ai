@@ -164,7 +164,7 @@ $(document).ready(function () {
 
     //マイページの画像変更
     $(function () {
-        $('input[type=file]').change(function () {
+        $('.profile-img-edit-input').change(function () {
             var file = $(this).prop('files')[0];
 
             // 画像以外は処理を停止

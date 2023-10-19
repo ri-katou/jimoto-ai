@@ -288,7 +288,18 @@ li {
 .error-message li {
     list-style: none;
 }
-
+/* ページネーション */
+.pagenate {
+    margin: 2rem 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.page-item {
+    font-size: 1rem;
+}
 /* header */
 .header-fixed {
     position: sticky;

@@ -53,16 +53,44 @@
 @section('script')
 <script>
   function initMap() {
+    function success(pos) {
+    //現在地の取得
+    var lat = pos.coords.latitude;
+		var lng = pos.coords.longitude;
+		var latlng = new google.maps.LatLng(lat, lng);
+
     let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 8,
-      center: {
-        lat: 36.653141021728516,
-        lng: 150.644
-      }
+      center: latlng
     });
+    var marker = new google.maps.Marker({
+			position: latlng,
+			map: map,
+      icon: {
+		fillColor: "blue",                //塗り潰し色
+		fillOpacity: 0.7,                    //塗り潰し透過率
+		path: google.maps.SymbolPath.CIRCLE, //円を指定
+		scale: 10,                           //円のサイズ
+		strokeColor: "#FF0000",              //枠の色
+		strokeWeight: 0                    //枠の透過率
+	}
+    }) //現在地のマーカー
+
     let geocoder = new google.maps.Geocoder();
     geocodeAddress(geocoder, map);
   }
+  function fail(error) {
+		alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+		var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
+		var map = new google.maps.Map(document.getElementById('maps'), {
+			zoom: 10,
+			center: latlng
+		});
+	}
+	navigator.geolocation.getCurrentPosition(success, fail);
+}
+
+
 
   function geocodeAddress(geocoder, resultsMap) {
     // ここに紹介状テーブルのアドレス列の数字を一個づつ入れて行って処理を実行したい

@@ -31,7 +31,7 @@
             <div class="profile-usereria">
                 <div class="profile-useereria-title underline-green">あなたのエリア</div>
                 <div class="profile-eria-output">
-                    {{ $user_detail[0]['municipalities_name'] }}
+                    {{ $user_detail[0]->municipalities_name}}
                 </div>
             </div>
         </div>

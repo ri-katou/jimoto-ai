@@ -29,8 +29,7 @@
         <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
     </div>
 
-
-
+  
 
     <div class="jimoto-spot-content">
         {{-- ここから紹介状１枚 --}}

@@ -128,7 +128,17 @@ class CreateController extends Controller
 
         return view('syoukaijou_create', compact('userdetail','municipalitie', 'category'));
     }
-    public function delete(){
-        
+    public function delete(int $id)
+    {
+        $syoukaijou = Syoukaijou::find($id);
+
+        if(Auth::id() === $syoukaijou->user_id){
+        DB::beginTransaction();
+        Syoukaijou::find($id)->delete();
+        DB::commit();
+        return redirect()->route('home');
+        } else {
+            return redirect()->route('home');
+        }
     }
 }

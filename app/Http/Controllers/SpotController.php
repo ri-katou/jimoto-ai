@@ -213,7 +213,7 @@ class SpotController extends Controller
                         'category_name',
                         'interest_count.interest_count',
                         'visited_count.visited_count'
-                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orWhere('title', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
                     
                 } else {
                     ${$syoukaijou . $key} = Syoukaijou::select(
@@ -232,7 +232,7 @@ class SpotController extends Controller
                         'category_name',
                         'interest_count.interest_count',
                         'visited_count.visited_count'
-                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+                    )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orWhere('title', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
                     $syoukaijou = collect($syoukaijou)->merge(${$syoukaijou . $key});
                 }
             }

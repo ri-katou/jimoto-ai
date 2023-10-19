@@ -211,5 +211,25 @@ document.querySelector("#mask").onclick = function () {
     }
 };
 
+//アニメーション
+
+const myFunc = ()=>{
+
+    const form = document.forms[0];
+    const button = form.querySelector('button');
+    const loader = form.querySelector('.loader');
+
+    button.addEventListener('click', (e)=>{
+
+        //ローダーを表示する
+        loader.style.display = 'block';
+
+        //～
+        //非同期処理追加
+        //～
+
+    }, false);
+};
+myFunc();
 
 

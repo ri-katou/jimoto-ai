@@ -6,7 +6,14 @@
             <input type="search" name="search" placeholder="キーワードを入力" size="40">
             <input type="submit" value="検索する">
         </form>
-        @if($errors->any())
+    </div>
+    <select name="example">
+        <option>新着順</option>
+        <option>行ってみたいが多い順</option>
+        <option>訪問済みが多い順</option>
+    </select>
+</div>
+@if($errors->any())
         <div class="error-message">
             <ul>
                 @error('search')
@@ -15,13 +22,6 @@
             </ul>
         </div>
         @endif
-    </div>
-    <select name="example">
-        <option>新着順</option>
-        <option>行ってみたいが多い順</option>
-        <option>訪問済みが多い順</option>
-    </select>
-</div>
 
 
 <div class="janru-area-search">

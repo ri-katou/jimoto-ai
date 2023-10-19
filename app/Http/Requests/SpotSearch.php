@@ -24,7 +24,7 @@ class SpotSearch extends FormRequest
     public function rules()
     {
         return [
-            'search' => 'max:50'
+            'search' => 'min:2|max:50'
         ];
     }
 
@@ -32,6 +32,7 @@ class SpotSearch extends FormRequest
     {
         return [
             'search.max' => '50文字以下で検索してください。',
+            'search.min' => '2文字以上で検索してください。',
         ];
     }
 }

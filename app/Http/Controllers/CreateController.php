@@ -12,6 +12,7 @@ use App\Category;
 use App\Post;
 use Illuminate\Support\Facades\Storage;
 use App\User_detail;
+use Illuminate\Support\Facades\DB;
 
 
 class CreateController extends Controller
@@ -65,7 +66,7 @@ class CreateController extends Controller
 
     public function create(Request $Request)
     {
-
+        DB::beginTransaction();
          //s3アップロード開始
         $image1 = $Request->image1;
         $image2 = $Request->image2;
@@ -113,6 +114,7 @@ class CreateController extends Controller
         $syoukaijou->updated_at = Carbon::now();
 
         $syoukaijou->save();
+        DB::commit();
 
         return redirect()->route('home');
     }

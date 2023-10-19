@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'Auth'], function () {
     // ユーザー周り
     Route::get('user/area_select/', 'UserEriaContoroller@index');
     Route::post('user/area_select/', 'UserEriaContoroller@areaChoice')->name('area.select');

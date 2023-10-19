@@ -1027,7 +1027,6 @@ spot-addles .syoukaijou-honbun {
 .preview-button-sub {
     margin-top: 2%;
     margin-left: 50%;
-
 }
 
 .preview-pic1-sam img {
@@ -1054,7 +1053,7 @@ spot-addles .syoukaijou-honbun {
     margin-left: 20%;
 }
 
-.preview-back { 
+.preview-back {
     margin-left: 20%;
 }
 
@@ -1181,11 +1180,6 @@ spot-addles .syoukaijou-honbun {
     display: flex;
     justify-content: center;
 }
-.list-head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .syoukaijougrit {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1197,6 +1191,9 @@ spot-addles .syoukaijou-honbun {
     height: 250px;
 }
 .list-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 388px;
     height: 5rem;
     flex-shrink: 0;
@@ -1204,7 +1201,13 @@ spot-addles .syoukaijou-honbun {
     border-top: 3px solid #ebff9c;
     border-right: 3px solid #ebff9c;
     border-left: 3px solid #ebff9c;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.3);
+}
+.list-head-back {
+    background-color: white;
+}
+.post-list-head-img-rgba {
+    opacity: 0.4;
 }
 .post-all-space {
     width: 1164px;

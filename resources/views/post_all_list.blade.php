@@ -2,10 +2,10 @@
 @section('content')
 <div class="post-all-list">
   <div class="post-list-header">
-    <div class="list-head">
+    <div class="list-head  list-head-back">
       <a href="{{route('home.post.check')}}">
         <div class="post-syoukaijou-head container">
-          <div class="post-img"><img src="/image/mail8.svg" alt class="free-svg"></div>
+          <div class="post-img"><img src="/image/mail8.svg" alt="free-svg" class="free-svg "></div>
           <div class="post-head-font post-underline-green">投稿した紹介状</div>
 
         </div>
@@ -14,7 +14,7 @@
     <div class="list-head">
       <a href="{{route('home.interest.check')}}">
         <div class="post-syoukaijou-head container">
-          <div class="post-img"><img src="/image/hart2.svg" alt="free-svg"></div>
+          <div class="post-img"><img src="/image/hart2.svg" alt="free-svg" class="free-svg post-list-head-img-rgba"></div>
           <div class="post-head-font">行ってみたい</div>
 
         </div>
@@ -23,7 +23,7 @@
     <div class="list-head">
       <a href="{{route('home.visit.check')}}">
         <div class="post-syoukaijou-head container">
-          <div class="post-img"><img src="/image/goal.svg" alt class="free-svg"></div>
+          <div class="post-img"><img src="/image/goal.svg" alt="free-svg" class="free-svg post-list-head-img-rgba"></div>
           <div class="post-head-font">行ったよ</div>
 
         </div>

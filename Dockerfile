@@ -41,6 +41,9 @@ RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/
 # プロジェクトファイルの所有者を、rootユーザーからApacheのデフォルトユーザーに変更
 RUN chown -Rf www-data:www-data ./
 
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_NO_INTERACTION 1
+
 # venderの作成
 RUN composer install
 

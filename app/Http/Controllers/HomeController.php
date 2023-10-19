@@ -136,7 +136,7 @@ class HomeController extends Controller
             ->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')
             ->where('syoukaijous.user_id', '=', Auth::id())
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->get();
+            ->paginate(9);
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -174,7 +174,7 @@ class HomeController extends Controller
             ->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')
             ->where('interests.user_id', '=', Auth::id())
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->get();
+            ->paginate(9);
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -211,7 +211,7 @@ class HomeController extends Controller
             ->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')
             ->where('visiteds.user_id', '=', Auth::id())
             ->orderBy('Syoukaijous.created_at', 'desc')
-            ->get();
+            ->paginate(9);
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 

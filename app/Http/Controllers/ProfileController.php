@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Syoukaijou;
 use App\category;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -38,6 +39,7 @@ class ProfileController extends Controller
         return view('profile_edit_check',compact('input','municipalitie'));
     }
     public function profileEditRegi(EditProfiles $request){
+        DB::beginTransaction();
         $user = Auth::user();
         $user_detail = User_detail::find($user->id);
         $user->name = $request->input('nickname');
@@ -46,11 +48,12 @@ class ProfileController extends Controller
 
         $user->save();
         $user_detail->save();
-
+        DB::commit();
         return redirect()->route('home');
 
     }
     public function profileEditImg(Request $request){
+        DB::beginTransaction();
         $imageName = $request->file('image')->getClientOriginalName();
 
         $request->file('image')->storeAs('profile', $imageName);
@@ -58,6 +61,12 @@ class ProfileController extends Controller
         $user_detail = User_detail::find(Auth::id());
         $user_detail->icon_image = Storage::disk('s3')->url($path1);
         $user_detail->save();
+        
+        $oldimage = $request->input('old_image');
+        $s3_delete = Storage::disk('s3')->delete($oldimage);
+        
+        Storage::disk('public')->delete('profile', $imageName);
+        DB::commit();
 
         return redirect()->route('profile');
 

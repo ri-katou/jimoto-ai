@@ -45,7 +45,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_NO_INTERACTION 1
 
 # venderの作成
-RUN composer install
+RUN composer update
 
 # APP_KEYの表示
 # ここを修正（不要の為、コメントアウト）RUN php artisan key:generate --show

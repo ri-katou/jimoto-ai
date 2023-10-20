@@ -22,8 +22,8 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('register/check/', function () {
-    return view('register_check');
-})->name('register.check');
+    return view('auth/register_check');
+});
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
 Route::group(['middleware' => 'auth'], function () {

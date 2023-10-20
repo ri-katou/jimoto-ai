@@ -1,4 +1,5 @@
 # ビルド対象から除外するファイル・フォルダ一覧
+# オリジナルの認証になっているためvender配下のRegisterUser.phpがビルド対象になっていないと困るので、venderをビルド対象に含めた
 node_modules/
 .dockerignore
 .gitignore

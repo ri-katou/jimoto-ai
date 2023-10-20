@@ -5,7 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  
   <title>地元あい</title>
 </head>
 
@@ -19,7 +23,7 @@
         <label class="login-btn"><button type="button"><a href="{{route('login')}}">ログイン</a></button></label>
         <br><br><br><br>
         <div class="logo-sub">jimoto</br>&emsp;ai</div>
-        <div class="yusei">
+        <div class="yu-sei">
           <div class="vertical">
             あなたが知ってる地元のお店やグルメ<br><br><br>
             &emsp;&emsp;あなただけが知ってる地元の景色<br><br><br>
@@ -82,7 +86,6 @@
 
       </div>
     </main>
-    <hooter>a</hooter>
   </div>
 </body>
 

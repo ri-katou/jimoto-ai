@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSyoukaijou;
 use Illuminate\Http\Request;
-use App\syoukaijou;
+use App\Syoukaijou;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use App\Municipalitie;
@@ -29,45 +29,45 @@ class CreateController extends Controller
         $Request->file('image1')->storeAs('public/storage', $file_name1);
         $file_name1 = 'storage/' . $file_name1;
 
-       if(is_null($file_name2)){
-        $imagePath2 = '/image/';
-        $file_name2 = 'noimage.jpg';
-       } else {
-        $imagePath2 = 'storage/';
-        $file_name2 = $Request->file('image2')->getClientOriginalName();
-        $Request->file('image2')->storeAs('public/storage', $file_name2);
-       };
+        if (is_null($file_name2)) {
+            $imagePath2 = '/image/';
+            $file_name2 = 'noimage.jpg';
+        } else {
+            $imagePath2 = 'storage/';
+            $file_name2 = $Request->file('image2')->getClientOriginalName();
+            $Request->file('image2')->storeAs('public/storage', $file_name2);
+        };
 
-       if(is_null($file_name3)){
-        $imagePath3 = '/image/';
-        $file_name3 = 'noimage.jpg';
-       } else {
-        $imagePath3 = 'storage/';
-        $file_name3 = $Request->file('image3')->getClientOriginalName();
-        $Request->file('image3')->storeAs('public/storage', $file_name3);
-       };
+        if (is_null($file_name3)) {
+            $imagePath3 = '/image/';
+            $file_name3 = 'noimage.jpg';
+        } else {
+            $imagePath3 = 'storage/';
+            $file_name3 = $Request->file('image3')->getClientOriginalName();
+            $Request->file('image3')->storeAs('public/storage', $file_name3);
+        };
 
-       if(is_null($file_name4)){
-        $imagePath4 = '/image/';
-        $file_name4 = 'noimage.jpg';
-       } else {
-        $imagePath4 = 'storage/';
-        $file_name4 = $Request->file('image4')->getClientOriginalName();
-        $Request->file('image4')->storeAs('public/storage', $file_name4);
-       };
+        if (is_null($file_name4)) {
+            $imagePath4 = '/image/';
+            $file_name4 = 'noimage.jpg';
+        } else {
+            $imagePath4 = 'storage/';
+            $file_name4 = $Request->file('image4')->getClientOriginalName();
+            $Request->file('image4')->storeAs('public/storage', $file_name4);
+        };
 
 
         $category = Category::where('id', $Request->category)->first();
         $municipalitie = Municipalitie::where('id', $Request->municipalitie)->first();
         $day = Carbon::now();
-        return view('preview', compact('category', 'Request', 'municipalitie', 'day','file_name1','file_name2','file_name3','file_name4', 'imagePath2','imagePath3','imagePath4'));
+        return view('preview', compact('category', 'Request', 'municipalitie', 'day', 'file_name1', 'file_name2', 'file_name3', 'file_name4', 'imagePath2', 'imagePath3', 'imagePath4'));
     }
 
 
     public function create(Request $Request)
     {
         DB::beginTransaction();
-         //s3アップロード開始
+        //s3アップロード開始
         $image1 = $Request->image1;
         $image2 = $Request->image2;
         $image3 = $Request->image3;
@@ -76,24 +76,24 @@ class CreateController extends Controller
         // バケットの`jimotoaiImage`フォルダへアップロード
 
 
-        $path1 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path( 'app/public/'.$image1), 'public');
+        $path1 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/' . $image1), 'public');
 
         $path2 = $image2;
         $path3 = $image3;
         $path4 = $image4;
 
-        if($image2 !== '/image/noimage.jpg'){
-            $path2 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image2), 'public');
+        if ($image2 !== '/image/noimage.jpg') {
+            $path2 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/' . $image2), 'public');
             $path2 = Storage::disk('s3')->url($path2);
         };
 
-        if($image3 !== '/image/noimage.jpg'){
-            $path3 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image3), 'public');
+        if ($image3 !== '/image/noimage.jpg') {
+            $path3 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/' . $image3), 'public');
             $path3 = Storage::disk('s3')->url($path3);
         };
 
-        if($image4 !== '/image/noimage.jpg'){
-            $path4 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/'. $image4), 'public');
+        if ($image4 !== '/image/noimage.jpg') {
+            $path4 = Storage::disk('s3')->putFile('jimotoaiImage', storage_path('app/public/' . $image4), 'public');
             $path4 = Storage::disk('s3')->url($path4);
         };
 
@@ -122,21 +122,21 @@ class CreateController extends Controller
 
     public function showCreate()
     {
-        $userdetail = User_detail::select('user_details.municipalitie_id','municipalities.municipalities_name')->join('users','user_details.user_id','=','users.id')->join('municipalities','user_details.municipalitie_id','=','municipalities.id')->where('user_details.user_id',Auth::id())->get();
+        $userdetail = User_detail::select('user_details.municipalitie_id', 'municipalities.municipalities_name')->join('users', 'user_details.user_id', '=', 'users.id')->join('municipalities', 'user_details.municipalitie_id', '=', 'municipalities.id')->where('user_details.user_id', Auth::id())->get();
         $municipalitie = Municipalitie::all();
         $category = Category::all();
 
-        return view('syoukaijou_create', compact('userdetail','municipalitie', 'category'));
+        return view('syoukaijou_create', compact('userdetail', 'municipalitie', 'category'));
     }
     public function delete(int $id)
     {
         $syoukaijou = Syoukaijou::find($id);
 
-        if(Auth::id() === $syoukaijou->user_id){
-        DB::beginTransaction();
-        Syoukaijou::find($id)->delete();
-        DB::commit();
-        return redirect()->route('home');
+        if (Auth::id() === $syoukaijou->user_id) {
+            DB::beginTransaction();
+            Syoukaijou::find($id)->delete();
+            DB::commit();
+            return redirect()->route('home');
         } else {
             return redirect()->route('home');
         }

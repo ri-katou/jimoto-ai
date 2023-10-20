@@ -43,7 +43,7 @@ class HomeController extends Controller
             ->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')
             ->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')
             ->where('syoukaijous.user_id', '=', Auth::user()->id)
-            ->orderBy('Syoukaijous.created_at', 'desc')
+            ->orderBy('Syoukaijous.created_a', 'desc')
             ->limit(3)->get();
 
         $interest = Interest::select(
@@ -220,3 +220,5 @@ class HomeController extends Controller
         return view('visited_all_list', compact('visitedAll', 'interest_list', 'visited_list'));
     }
 }
+
+

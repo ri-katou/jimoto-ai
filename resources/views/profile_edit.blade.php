@@ -5,8 +5,21 @@
             @csrf
             <div class="profile-container">
                 <div class="profile-image">
-                    <div class="profile-myimage profile-icon"><img src="" alt="myimage"></div>
-                    <div class="profile-edit-link">[<a href="#" class="link">編集</a>]</div>
+                    <div class=" profile-icon">
+                        <img src="{{ isset(\App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image )? \App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image : 'https://jimotoai2023.s3.ap-northeast-1.amazonaws.com/jimotoaiprofile/cgj35n6IhyLz3mbaMJ3kt0EfsRtP1yuIJhDDJ9XP.jpg'}}" alt="myimage" class="profile-icon-img">
+                    </div>
+                    <div class="profile-img-edit link">
+                        <form action="{{route('edit.image')}}" method="POST" enctype="multipart/form-data" id="profile-img-edit-form">
+                            @csrf
+                        <label>
+                            <span class="file-btn">
+                                [画像の編集]
+                                <input type="file" name="image" class="profile-img-edit-input" style="display:none" accept="image/*">
+                                <input type="hidden" name="old_image" accept="image/*" value="{{ \App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image }}">
+                            </span>
+                        </label>
+                    </form>
+                    </div>
                 </div>
                 <div class="profile-nickname">{{ $user->name }}</div>
             </div>

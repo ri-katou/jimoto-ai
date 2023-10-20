@@ -120,13 +120,13 @@
         @if($errors->any())
         <div class="error-message">
           <ul>
-            @error('addles')
+            @error('address')
             <li>{{ $message }}</li>
             @enderror
           </ul>
         </div>
         @endif
-        <div class="create-form"><input type="text" name="addles" id="" value="{{ old('addles') }}"></textarea></div>
+        <div class="create-form"><input type="text" name="address" id="" value="{{ old('address') }}"></textarea></div>
         <div class="syoukaijou-supot-url">URL（任意）</div>
         @if($errors->any())
         <div class="error-message">

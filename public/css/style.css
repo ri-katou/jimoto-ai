@@ -115,10 +115,6 @@ li {
 
 .vertical {
     writing-mode: vertical-rl;
-    font-size: 1.7rem;
-    margin-left: 44%;
-    writing-mode: vertical-rl;
-    font-size: 1.7rem;
     margin-left: 44%;
 }
 
@@ -147,7 +143,6 @@ li {
 }
 .btn-orange:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 .btn-green {
     display: block;
@@ -163,7 +158,6 @@ li {
 
 .btn-green:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 .btn-delete {
     display: block;
@@ -189,7 +183,6 @@ li {
 }
 .btn-delete:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .underline-green {
@@ -236,7 +229,6 @@ li {
 }
 .btn-gray:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .hidden {
@@ -255,7 +247,6 @@ li {
 }
 .btn-daidai:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .area-tag {
@@ -444,8 +435,8 @@ footer {
     border-radius: 150px;
     font-style: none;
     display: flex;
-    width: 15%;
-    height: 10%;
+    width: 200px;
+    padding: 1rem 0;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -456,41 +447,36 @@ footer {
 
 .top-pic4 {
     width: 15%;
-    height: auto;
     position: relative;
     margin-top: 15%;
 }
 
 .top-pic5 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -5vh;
-    left: 12vh;
+    top: -30px;
+    left: 90px;
 }
 
 .top-pic6 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -10vh;
-    left: 25vh;
+    top: -60px;
+    left: 180px;
 }
 
 .top-pic7 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -15vh;
-    left: 45vh;
+    top: -90px;
+    left: 270px;
 }
 
 .top-pic8 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -20vh;
-    left: 60vh;
+    top: -120px;
+    left: 360px;
 }
 
 .top-bottom-comment {
@@ -613,6 +599,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     padding: 1.5em 0;
+    font-size: 1.2rem;
 }
 
 .card-margin {
@@ -994,7 +981,6 @@ spot-addles .syoukaijou-honbun {
 
 .spot-info {
     font-size: 1.5rem;
-    margin-right: 75%;
     margin-bottom: 3%;
     margin-top: 3%;
 }
@@ -1107,7 +1093,6 @@ spot-addles .syoukaijou-honbun {
 
 .disp-delete:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .disp-retrune {
@@ -1505,7 +1490,17 @@ spot-addles .syoukaijou-honbun {
 }
 
 /* タブレットサイズ */
-@media (max-width: 959px) {
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+    .preview-syoukaijou-top {
+        display: block;
+    }
+
+    .preview-main{
+        display: block;
+    }
+
     .home-icon-left {
         visibility: hidden;
     }
@@ -1525,5 +1520,83 @@ spot-addles .syoukaijou-honbun {
     .spot-map {
         margin: 0 auto;
     }
+}
+
+
+/* スマホサイズ */
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+
+    .btn-orange {
+        width: 150px;
+    }
+    .btn-green {
+        width: 150px;
+    }
+    .janru-area-search {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+
+    /*TOPページ*/
+    .top-logo img {
+        margin-left: -45%;
+        position: relative;
+    }
+    .login-btn button{
+        width: 150px;
+        position: absolute;
+        left: 60%;
+        top: 4%;
+    }
+    .logo-sub {
+        margin-left: 40px;
+    }
+    .top-pic-right img{
+        margin-top: 50px;
+        width: 100px;
+        height: 150px;
+    }
+    .top-pic4 {
+        width: 15%;
+        position: relative;
+        margin-top: 15%;
+    }
+    .top-pic5 {
+        width: 100%;
+        position: absolute;
+        top: -15px;
+        left: 45px;
+    }
+    .top-pic6 {
+        width: 100%;
+        position: absolute;
+        top: -30px;
+        left: 90px;
+    }
+    .top-pic7 {
+        width: 100%;
+        position: absolute;
+        top: -45px;
+        left: 135px;
+    }
+    .top-pic8 {
+        width: 100%;
+        position: absolute;
+        top: -60px;
+        left: 180px;
+    }
+    .vertical {
+        margin-left: 30%;
+    }
+    .top-kaiin {
+      margin-left: -10%;
+    }
+    /*TOPページ終了*/
+
+
+
 }
 

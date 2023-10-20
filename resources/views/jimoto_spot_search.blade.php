@@ -58,7 +58,7 @@
                     @endif
                 </div>
             @endif
-            <div class="search-disp">検索結果：{{ $count }}件</div>
+            <div class="search-disp">検索結果：{{ $syoukaijou->total() }}件</div>
 
 </div>
 </div>
@@ -125,6 +125,9 @@
     </div>
     {{-- ここまで紹介状1枚 --}}
 </div>
+<div class="pagenate">
+    {{ $syoukaijou->links() }}
+    </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>

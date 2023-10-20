@@ -100,6 +100,9 @@
         {{-- ここまで紹介状1枚 --}}
         </div>
       </div>
+      <div class="pagenate">
+        {{ $interestAll->links() }}
+        </div>
     </div>
   </div>
 </div>

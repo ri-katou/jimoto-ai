@@ -8,6 +8,7 @@ use App\User_detail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserEriaContoroller extends Controller
 {
@@ -35,7 +36,8 @@ class UserEriaContoroller extends Controller
 
     public function areaChoice(Request $request)
     {
-
+        DB::beginTransaction();
+        
         $detail = new User_detail();
         // データベース接続
 
@@ -45,6 +47,8 @@ class UserEriaContoroller extends Controller
         $detail->updated_at = Carbon::now();
         // データベースに保存
         $detail->save();
+        
+        DB::commit();
         // 登録が完了したらリダイレクト
         return
             redirect()->route('home');

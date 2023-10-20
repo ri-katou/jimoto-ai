@@ -25,7 +25,7 @@
 <div class="all-list-syoukai">
     <div class="syoukaijou-all">
         <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green">
+                <div class="home-body midasi block-green yu-sei">
 
                     &nbsp;自分の投稿した紹介状
                 </div>
@@ -104,7 +104,7 @@
             <div class="mottomiru link"><a href="{{ route('home.post.check') }}">もっと見る</a></div>
 
             <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green">
+                <div class="home-body midasi block-green yu-sei">
                 &nbsp;行ってみたい
                 </div>
                     @if (count($interest) >= 1)
@@ -183,7 +183,7 @@
             <div class="mottomiru link"><a href="{{ route('home.interest.check') }}">もっと見る</a></div>
 
             <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green">
+                <div class="home-body midasi block-green yu-sei">
                 &nbsp;行ったよ
                 </div>
                     @if (count($visited) >= 1)

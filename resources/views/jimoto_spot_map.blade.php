@@ -1,11 +1,35 @@
 @extends('layout')
 @section('content')
-<div class="jimoto-search-top">
-  <div class="jimoto-search">
-    <form class="keywordserch" action="{{ route('keyword.search') }}" method="get">
-      <input type="search" name="search" placeholder="キーワードを入力" size="40">
-      <input type="submit" value="検索する" name="sourtNew">
-    </form>
+
+  <div class="jimoto-search-top">
+    <div class="jimoto-search">
+      <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
+          <input type="text" name="search" placeholder="キーワードを入力">
+          <input type="submit" value="検索" name="sourtNew">
+      </form>
+  </div>
+    <select name="example">
+      <option>新着順</option>
+      <option>行ってみたいが多い順</option>
+      <option>訪問済みが多い順</option>
+    </select>
+  </div>
+  @if($errors->any())
+        <div class="error-message">
+            <ul>
+                @error('search')
+                <li>{{ $message }}</li>
+                @enderror
+            </ul>
+        </div>
+        @endif
+
+  <div class="janru-area-search">
+    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
+    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
+    <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+  </div>
+
   </div>
   <select name="example">
     <option>新着順</option>

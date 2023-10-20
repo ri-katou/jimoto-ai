@@ -14,6 +14,7 @@ class UserEriaContoroller extends Controller
 {
     public function index()
     {
+        DB::beginTransaction();
         // すべての市区町村を取得する
         // Area::find(1)->municipalities()->get();
         $tone_numata = Area::find(1)->municipalities()->get();
@@ -24,6 +25,19 @@ class UserEriaContoroller extends Controller
         // foreach ($tone_numata as $numatacity) {
         //     echo $numatacity->municipalities;
         // }
+        
+        
+        $detail = new User_detail();
+        // データベース接続
+
+        $detail->user_id = Auth::id();
+        $detail->municipalitie_id = 12 ;    //前橋
+        $detail->created_at = Carbon::now();
+        $detail->updated_at = Carbon::now();
+        // データベースに保存
+        $detail->save();
+        
+        DB::commit();
 
         return view('area_select', [
             'tone_numata' => $tone_numata,
@@ -38,13 +52,10 @@ class UserEriaContoroller extends Controller
     {
         DB::beginTransaction();
         
-        $detail = new User_detail();
+        $detail = User_detail::Where('user_id',Auth::id())->get();
         // データベース接続
 
-        $detail->user_id = Auth::id();
         $detail->municipalitie_id = intval($request->input('area_choice'));
-        $detail->created_at = Carbon::now();
-        $detail->updated_at = Carbon::now();
         // データベースに保存
         $detail->save();
         

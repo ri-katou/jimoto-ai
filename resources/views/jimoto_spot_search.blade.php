@@ -2,9 +2,9 @@
 @section('content')
 <div class="jimoto-search-top">
     <div class="jimoto-search">
-        <form class="keywordserch" action="{{ route('keyword.search') }}" method="get">
-            <input type="search" name="search" placeholder="キーワードを入力" size="40">
-            <input type="submit" value="検索する" name="sourtNew">
+        <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
+            <input type="text" name="search" placeholder="キーワードを入力">
+            <input type="submit" value="検索" name="sourtNew">
         </form>
     </div>
     <select class="sourtselect" name="example">

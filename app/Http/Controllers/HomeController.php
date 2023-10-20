@@ -220,3 +220,5 @@ class HomeController extends Controller
         return view('visited_all_list', compact('visitedAll', 'interest_list', 'visited_list'));
     }
 }
+
+

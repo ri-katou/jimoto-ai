@@ -21,6 +21,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('index');
 });
+Route::get('register/check/', function () {
+    return view('auth/register_check');
+});
 Route::post('register/check/', 'UserController@showRegisterCheck')->name('register.check');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -55,20 +58,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('create/', 'CreateController@showCreate')->name('syoukaijou.create'); //作成画面へのリンク
     Route::post('create/', 'CreateController@showPreview')->name('preview.edit'); //プレビューの表示（入力の送信)
     Route::post('create/preview/', 'CreateController@create')->name('create'); //紹介状のDB登録
-    Route::get('syoukaijou/delete/{id}','CreateController@delete')->name('syoukaijou.delete');
+    Route::get('syoukaijou/delete/{id}', 'CreateController@delete')->name('syoukaijou.delete');
 
     // 発見
-    Route::get('jimoto_spot/','SpotController@showSpot')->name('spot.search');
-    Route::get('syoukaijou/{id}','SpotController@showDisp')->name('syoukaijou.disp');
+    Route::get('jimoto_spot/', 'SpotController@showSpot')->name('spot.search');
+    Route::get('syoukaijou/{id}', 'SpotController@showDisp')->name('syoukaijou.disp');
     Route::get('jimoto_spot/filter/', 'SpotController@showSpotFilter')->name('spot.filter'); //エリア、ジャンル検索画面
-    Route::get('jimoto_spot/search/','spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
-    Route::post('jimoto_spot/serch','SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
+    Route::get('jimoto_spot/search/', 'spotController@keywordSearch')->name('keyword.search'); //キーワード検索の結果
+    Route::post('jimoto_spot/serch', 'SpotController@serchFilter')->name('spot.serch'); //エリア、ジャンル絞り込みの結果
     Route::get('jimoto_spot/map/', 'SpotController@spotMap')->name('spot.map'); //マップ検索画面
 
 
     //行ってみたい
-    Route::post('/interest','InterestController@interestAjax')->name('interest');
+    Route::post('/interest', 'InterestController@interestAjax')->name('interest');
     //行っったよ
-    Route::post('/visited','visitedController@visitedAjax')->name('visited');
-
+    Route::post('/visited', 'visitedController@visitedAjax')->name('visited');
 });

@@ -97,11 +97,10 @@
       let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
       let origin = location.origin;
       let infoWindows = [];
-      console.log(origin);
 
       addresspin.forEach(function(element) {
         let getMapid = (element.nextElementSibling.textContent).trim();
-        let routesmap = '/syoukaijou/' + getMapid + '/';
+        let routesmap = location.protocol + '//' + location.hostname + '/syoukaijou/' + getMapid + '/';
         let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
           element.textContent.replace(',', '<br>') +
           '</a></div>';
@@ -110,7 +109,6 @@
           'address': trimname
         }, function(results, status) {
           if (status === 'OK') {
-            console.log(results);
             resultsMap.setCenter(results[0].geometry.location);
             let marker = new google.maps.Marker({
               map: resultsMap,

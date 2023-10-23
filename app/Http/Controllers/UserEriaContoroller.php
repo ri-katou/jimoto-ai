@@ -54,7 +54,6 @@ class UserEriaContoroller extends Controller
         
         $detail = User_detail::Where('user_id',Auth::id())->first();
         // データベース接続
-        dd($request->input('area_choice'));
         $detail->municipalitie_id = intval($request->input('area_choice'));
         // データベースに保存
         $detail->save();

@@ -52,7 +52,7 @@ class UserEriaContoroller extends Controller
     {
         DB::beginTransaction();
         
-        $detail = User_detail::Where('user_id',Auth::id())->get();
+        $detail = User_detail::Where('user_id',Auth::id())->first();
         // データベース接続
 
         $detail->municipalitie_id = intval($request->input('area_choice'));

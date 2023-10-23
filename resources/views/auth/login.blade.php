@@ -2,12 +2,12 @@
 @section('content')
 <div class="login">
   <div class="login_body">
-    <div class="midasi login-header">ログイン</div>
+    <div class="midasi login-header yu-sei underline-purple">ログイン</div>
     <form action="{{ route('login') }}" method="post">
       @csrf
       <div class="login-form">
         <div class="form-inner">
-          <div class="register-part">メールアドレスを入力してください</div>
+          <div class="register-part">メールアドレスを入力してください。</div>
           @if ($errors->any())
           <div class="error-message">
             <ul>
@@ -17,10 +17,10 @@
             </ul>
           </div>
           @endif
-          <input type=" email" class="form" name="email">
+          <input type=" email" placeholder="jimotoai@gunma.jp" class="form" name="email">
         </div>
         <div class="form-inner">
-          <div class="login-form-top">パスワードを入力してください</div>
+          <div class="login-form-top">パスワードを入力してください。</div>
           @if ($errors->any())
           <div class="error-message">
             <ul>

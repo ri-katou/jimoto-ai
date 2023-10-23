@@ -62,7 +62,8 @@
 
 
 </div>
-
+@endsection
+@section('script')
 {{-- ここから画面表示しない --}}
 <div class="address-choice" style="display: none;">
   <div class="item-unique">
@@ -73,6 +74,8 @@
   </div>
 </div>
 {{-- ここまで画面表示しない --}}
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', '')}}&callback=initMap">
+</script>
 <script>
   function initMap() {
     let map = new google.maps.Map(document.getElementById('map'), {

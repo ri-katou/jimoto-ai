@@ -18,7 +18,7 @@
                                 <input type="hidden" name="old_image" accept="image/*" value="{{ \App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image }}">
                             </span>
                         </label>
-                    </form>
+                    
                     </div>
                 </div>
                 <div class="profile-nickname">{{ $user->name }}</div>

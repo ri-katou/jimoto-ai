@@ -301,7 +301,6 @@
         var origin = location.origin;
         var $syoukaijouId = $visitedIcon.dataset.id;
         var $myId = $visitedIcon.dataset.me;
-        console.log($myId);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")

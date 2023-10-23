@@ -14,7 +14,7 @@ class InterestController extends Controller
 
         DB::beginTransaction();
 
-        $rec = Interest::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->get();
+        $rec = Interest::where('user_id', $request->input('user_id'))->where('syoukaijou_id', $request->syoukaijou_id)->get();
         $fav_falg = 0;
 
         if ($rec->isEmpty()) {
@@ -27,8 +27,9 @@ class InterestController extends Controller
             $interest->save();
             $fav_falg = 1;
         } else {
-            Interest::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
+            $interest = Interest::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
 
+            $interest->save();
             $fav_falg = 0;
         }
         DB::commit();

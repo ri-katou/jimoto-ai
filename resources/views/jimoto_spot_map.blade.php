@@ -2,29 +2,30 @@
 @section('content')
 
 
-  <div class="jimoto-search-top">
-    <div class="jimoto-search">
-      <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
-          <input type="text" name="search" placeholder="キーワードを入力">
-          <input type="submit" value="検索" name="sourtNew">
-      </form>
+<div class="jimoto-search-top">
+  <div class="jimoto-search">
+    <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
+      <input type="text" name="search" placeholder="キーワードを入力">
+      <input type="submit" value="検索" name="sourtNew">
+    </form>
   </div>
-    
-  </div>
-  @if($errors->any())
-        <div class="error-message text-align-center">
-            <ul>
-                @error('search')
-                <li>{{ $message }}</li>
-                @enderror
-            </ul>
-        </div>
-        @endif
 
-  <div class="janru-area-search">
-    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
-    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
-    <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
+@if($errors->any())
+<div class="error-message text-align-center">
+  <ul>
+    @error('search')
+    <li>{{ $message }}</li>
+    @enderror
+  </ul>
+</div>
+@endif
+
+<div class="janru-area-search">
+  <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
+  <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
+  <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
 
 
 
@@ -40,7 +41,7 @@
         スポット名：{{$item->spotname}},住所：{{$item->address}}
       </p>
       <p>
-        {{$item->id}}
+        https://jimotoai.onrender.com:/syoukaijou/{{$item->id}}
       </p>
     </div>
     @endforeach
@@ -98,12 +99,12 @@
       let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
       let origin = location.origin;
       let infoWindows = [];
-      console.log(origin);
 
       addresspin.forEach(function(element) {
         let getMapid = (element.nextElementSibling.textContent).trim();
-        let routesmap = '/syoukaijou/' + getMapid + '/';
-        let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
+        // let routesmap = location.protocol + '//' + location.hostname + ':80/syoukaijou/' + getMapid + '/';
+        console.log(getMapid);
+        let spotinfo = '<div class="sample"><a href=" ' + getMapid + '">' +
           element.textContent.replace(',', '<br>') +
           '</a></div>';
         let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);
@@ -111,7 +112,6 @@
           'address': trimname
         }, function(results, status) {
           if (status === 'OK') {
-            console.log(results);
             resultsMap.setCenter(results[0].geometry.location);
             let marker = new google.maps.Marker({
               map: resultsMap,

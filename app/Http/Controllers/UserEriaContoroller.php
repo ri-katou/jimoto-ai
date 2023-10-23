@@ -25,8 +25,8 @@ class UserEriaContoroller extends Controller
         // foreach ($tone_numata as $numatacity) {
         //     echo $numatacity->municipalities;
         // }
-        
-        
+
+
         $detail = new User_detail();
         // データベース接続
 
@@ -37,7 +37,7 @@ class UserEriaContoroller extends Controller
         $detail->updated_at = Carbon::now();
         // データベースに保存
         $detail->save();
-        
+
         DB::commit();
 
         return view('area_select', [
@@ -52,13 +52,13 @@ class UserEriaContoroller extends Controller
     public function areaChoice(Request $request)
     {
         DB::beginTransaction();
-        
-        $detail = User_detail::Where('user_id',Auth::id())->first();
+
+        $detail = User_detail::Where('user_id', Auth::id())->first();
         // データベース接続
         $detail->municipalitie_id = intval($request->input('area_choice'));
         // データベースに保存
         $detail->save();
-        
+
         DB::commit();
         // 登録が完了したらリダイレクト
         return

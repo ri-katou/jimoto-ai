@@ -138,6 +138,6 @@
       })
     };
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', '')}}&callback=initMap">
   </script>
   @endsection

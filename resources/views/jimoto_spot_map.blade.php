@@ -40,7 +40,7 @@
           スポット名：{{$item->spotname}},住所：{{$item->address}}
         </p>
         <p>
-          {{$item->id}}
+          https://jimotoai.onrender.com:/syoukaijou/{{$item->id}}
         </p>
       </div>
       @endforeach
@@ -101,8 +101,9 @@
 
         addresspin.forEach(function(element) {
           let getMapid = (element.nextElementSibling.textContent).trim();
-          let routesmap = location.protocol + '//' + location.hostname + ':80/syoukaijou/' + getMapid + '/';
-          let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
+          // let routesmap = location.protocol + '//' + location.hostname + ':80/syoukaijou/' + getMapid + '/';
+          console.log(getMapid);
+          let spotinfo = '<div class="sample"><a href=" ' + getMapid + '">' +
             element.textContent.replace(',', '<br>') +
             '</a></div>';
           let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);

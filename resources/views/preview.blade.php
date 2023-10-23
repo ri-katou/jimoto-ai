@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="syoukaijou-title">{{ $Request->title }}</div>
+    <div class="syoukaijou-title underline-green">{{ $Request->title }}</div>
     <div class="preview-main">
         <div class="preview-pics">
             <div class="preview-pic1"><img src="storage/{{$file_name1}}"></div>
@@ -66,7 +66,7 @@
                 <div class="preview-syoukaijou-top-sam">
                     <div class="sum-top">
                         <div class="syoukaijou-day-sam">{{ $day }}</div>
-                        <div class="syoukaijou-title-sam">{{ $Request->title }}</div>
+                        <div class="syoukaijou-title-sam underline-green">{{ $Request->title }}</div>
                     </div>
                     <div class="janru-area-sam">
                         <div class="janru-tag">

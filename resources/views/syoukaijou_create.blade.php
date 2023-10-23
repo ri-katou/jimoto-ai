@@ -2,7 +2,7 @@
 @section('content')
 <div class="syoukaijou_create">
   <div class="syoukaijou-top">
-    <div class="syoukaijou-daimei">紹介状作成</div>
+    <div class="syoukaijou-daimei yu-sei underline-black">紹介状作成</div>
     <div class="return">戻る</div>
   </div>
   <div class="syoukaijou-create">

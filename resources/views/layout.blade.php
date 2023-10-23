@@ -34,6 +34,9 @@
                 </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
+                    <div class="header-logout-icon">
+                        <img src="/image/logout.png" alt="myimage" class="logout">
+                    </div>
                     <input type="submit" value="ログアウト" class="link">
                 </form>
                 <div class="header-btn">

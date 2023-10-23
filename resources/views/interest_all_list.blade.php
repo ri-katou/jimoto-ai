@@ -45,7 +45,7 @@
                             <div class="preview-syoukaijou-top-sam">
                                 <div class="sum-top">
                                     <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                                    <div class="syoukaijou-title-sam">{{ $item->title }}</div>
+                                    <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
                                 </div>
                                 <div class="janru-area-sam">
                                     <div class="janru-tag">

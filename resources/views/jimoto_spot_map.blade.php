@@ -102,7 +102,7 @@
       addresspin.forEach(function(element) {
         let getMapid = (element.nextElementSibling.textContent).trim();
         let routesmap = '/syoukaijou/' + getMapid + '/';
-        let spotinfo = '<div class="sample"><a href=" ' + origin + routesmap + '">' +
+        let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
           element.textContent.replace(',', '<br>') +
           '</a></div>';
         let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);

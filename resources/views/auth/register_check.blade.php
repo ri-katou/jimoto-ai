@@ -2,7 +2,7 @@
 @section('content')
 <div class="register login">
   <div class="register-body">
-    <div class="midasi register-check-header">以下の内容でお間違えないですか</div>
+    <div class="midasi register-check-header">以下の内容でお間違えないですか？</div>
   </div>
   <form action="{{route('register')}}" method="post">
     @csrf

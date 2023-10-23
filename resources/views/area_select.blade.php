@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="yu-sei area-choice midasi block-green">エリア選択画面</div>
+<div class="yu-sei area-choice midasi block-green">&nbsp;エリア選択画面</div>
 
 <div class="area-teach">あなたの素敵な地元を教えてください!!</div>
 <div class="hidden" id="mask"></div>
@@ -74,14 +74,14 @@
     <div class="answer btn-green" id="answer">OK</div>
   </div>
   <div class="modal" id="modal">
+  <div class="area-check-text">こちらの内容でよろしいですか？</div>
     <div class="check-text-space">
-      <div class="area-text btn-white">無し</div>
+      <div class="area-text jimoto-select">無し</div>
     </div>
-    <div class="area-check-text">こちらの内容でよろしいですか？</div>
     <div class="modal-space">
       <div class="exit-space">
         <div class="close exit" id="close">戻る</div>
-        <div><input type="submit" class="btn-green-modal" value="登録する"></div>
+        <div><input type="submit" class="btn-green-modal" value="決定する"></div>
       </div>
     </div>
   </div>

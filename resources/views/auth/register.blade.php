@@ -57,7 +57,7 @@
           <input type="password" class="form" name="password">
         </div>
         <div class="register-inner login-form-to">
-          <div class="register-part">パスワードをもう一度入力してください。<font color="red">(必須)<font color="def"></div>
+          <div class="register-part">確認のため、パスワードをもう一度入力してください。<font color="red">(必須)<font color="def"></div>
           @if ($errors->any())
           <div class="error-message">
             <ul>

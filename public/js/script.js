@@ -122,6 +122,12 @@ $(document).ready(function () {
             $('#profile-img-edit-form').submit();
         });
     });
+    // ハンバーガーメニュー
+    $(".hamberger-menu").click(function () {//ボタンがクリックされたら
+        $(this).children().toggleClass("fa-bars");
+        $(this).children().toggleClass("fa-times");
+          $(".gNav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+      });
 
     $('form').on('submit', function(){
         console.log(this);

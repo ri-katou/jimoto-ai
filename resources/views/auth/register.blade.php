@@ -15,10 +15,10 @@
   <form action="{{route('register.check')}}" method="post">
     @csrf
     <div class="register-body">
-      <div class="midasi login-header">ユーザー登録画面</div>
+      <div class="midasi login-header yu-sei underline-green">ユーザー登録画面</div>
       <div class="register-form">
         <div class="register-inner login-form-to">
-          <div class="register-part">ニックネームを入力してください</div>
+          <div class="register-part">ニックネームを入力してください。<font color="red">(必須)<font color="def"></div>
           @if ($errors->any())
           <div class="error-message">
             <ul>
@@ -28,10 +28,10 @@
             </ul>
           </div>
           @endif
-          <input type="nickname" class="form" name="name" value="{{ old('name') }}">
+          <input type="nickname" class="form" name="name" placeholder="群馬太郎" value="{{ old('name') }}">
         </div>
         <div class="register-inner login-form-to">
-          <div class="register-part">メールアドレスを入力してください</div>
+          <div class="register-part">メールアドレスを入力してください。<font color="red">(必須)<font color="def"></div>
           @if ($errors->any())
           <div class="error-message">
             <ul>
@@ -41,10 +41,10 @@
             </ul>
           </div>
           @endif
-          <input type="email" class="form" name="email" value="{{ old('email') }}">
+          <input type="email" class="form" name="email"  placeholder="jimotoai@gunma.jp" value="{{ old('email') }}">
         </div>
         <div class="register-inner login-form-to">
-          <div class="register-part">パスワードを入力してください</div>
+          <div class="register-part">パスワードを入力してください。<font color="red">(必須)<font color="def"></div>
           @if ($errors->any())
           <div class="error-message">
             <ul>
@@ -57,7 +57,7 @@
           <input type="password" class="form" name="password">
         </div>
         <div class="register-inner login-form-to">
-          <div class="register-part">パスワードをもう一度入力してください</div>
+          <div class="register-part">パスワードをもう一度入力してください。<font color="red">(必須)<font color="def"></div>
           @if ($errors->any())
           <div class="error-message">
             <ul>

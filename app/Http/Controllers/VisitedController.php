@@ -14,21 +14,22 @@ class VisitedController extends Controller
 
         DB::beginTransaction();
 
-        $rec = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->get();
+        $rec = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->first();
         $fav_falg = 0;
 
         if ($rec->isEmpty()) {
-            $interest = new Visited();
-            $interest->user_id = $request->input('user_id');
-            $interest->syoukaijou_id = $request->input('syoukaijou_id');
-            $interest->created_at = Carbon::now();
-            $interest->updated_at = Carbon::now();
+            $visited = new Visited();
+            $visited->user_id = $request->input('user_id');
+            $visited->syoukaijou_id = $request->input('syoukaijou_id');
+            $visited->created_at = Carbon::now();
+            $visited->updated_at = Carbon::now();
 
-            $interest->save();
+            $visited->save();
             $fav_falg = 1;
         } else {
-            Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
+           $visited = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
 
+            $visited->save();
             $fav_falg = 0;
         }
         DB::commit();

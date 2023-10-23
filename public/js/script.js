@@ -36,67 +36,6 @@ $(document).ready(function () {
             console.log("else");
         }
     });
-    // // 行ってみたいボタン
-    //  function interest () {
-    //     console.log('ok');
-    //     var origin = location.origin;
-    //     var $syoukaijouId = $(this).parent().parent().attr('id');
-    //     var $myId = $(this).parent().parent().data('me');
-    //     let $interestIcon = $(this);
-    //     $.ajaxSetup({
-    //         headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
-    //     });
-    //     $.ajax({
-    //         url: origin + "/interest ",
-    //         type: 'post',
-    //         data: {
-    //             'syoukaijou_id': $syoukaijouId,
-    //             'user_id': $myId,
-    //         }, success: function (data) {
-    //             if (data == 1) {
-    //                 $interestIcon.addClass('interest-active');
-    //                 let countNow = Number($interestIcon.next().text());
-    //                 $interestIcon.next().text(countNow + 1);
-    //             } else {
-    //                 $interestIcon.removeClass('interest-active');
-    //                 let countNow = Number($interestIcon.next().text());
-    //                 $interestIcon.next().text(countNow - 1);
-    //             }
-    //         }
-    //     });
-    //     return false;
-    // }
-    // 行ったよボタン
-    // $(".fav_btn-visited-icon").on("click", function () {
-    //     var origin = location.origin;
-    //     var $syoukaijouId = $(this).parent().parent().attr('id');
-    //     var $myId = $(this).parent().parent().data('me');
-    //     let $visitedIcon = $(this);
-    //     $.ajaxSetup({
-    //         headers: { 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content") },
-    //     });
-    //     $.ajax({
-    //         url: origin + "/visited ",
-    //         type: 'post',
-    //         data: {
-    //             'syoukaijou_id': $syoukaijouId,
-    //             'user_id': $myId,
-    //         }, success: function (data) {
-    //             if (data == 1) {
-
-    //                 $visitedIcon.addClass('visited-active');
-    //                 let countNow = Number($visitedIcon.next().text());
-    //                 $visitedIcon.next().text(countNow + 1);
-    //             } else {
-    //                 $visitedIcon.removeClass('visited-active');
-    //                 let countNow = Number($visitedIcon.next().text());
-    //                 $visitedIcon.next().text(countNow - 1);
-    //             }
-    //         }
-    //     });
-    //     return false;
-    // });
-
 
     //プロフィール編集にてエリアを選ぶと表記変更
     $(".profile-edit-eria-change").change(function () {
@@ -255,7 +194,7 @@ $(document).ready(function () {
 /* preview */
 
 
-// モーダル
+// エリアセレクトのモーダル
 let show = false;
 
 document.getElementById("answer").addEventListener('click', function () {

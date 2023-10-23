@@ -136,10 +136,35 @@ li {
     text-align: center;
     padding: 0.5rem 0 1rem 0;
     font-weight: bold;
-    background-color: white;
+    background-color: rgb(254, 255, 210);
     border-radius: 150px;
     border: 1px solid black;
     width: 200px;
+}
+.jimoto-select {
+  background-color: transparent;
+  border: 1px solid #eaff00;
+  color: #00132C;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.jimoto-select:before {
+  background-color: #ffffb7f8;
+  content: "";
+  height: calc(100% + 10px);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  transition: background-color 300ms ease-in;
+  width: calc(100% + 10px);
+  z-index: -1;
 }
 .btn-orange:active {
     box-shadow: none;
@@ -279,6 +304,9 @@ li {
     width: 98%;
     padding: 4px 0;
     margin-bottom: 5%;
+}
+.form::placeholder{
+    opacity: 75%;
 }
 .error-message {
     color: #f00;
@@ -634,9 +662,9 @@ footer {
 }
 
 .dummy {
-    height: 250px;
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .dummy a {
@@ -669,7 +697,7 @@ footer {
 .mottomiru {
     display: flex;
     justify-content: flex-end;
-    padding: 1.5em 0;
+    padding: 1.1em 0;
     font-size: 1.2rem;
 }
 
@@ -719,14 +747,16 @@ footer {
 .register-check-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .register-part {
     margin-bottom: 15px;
 }
 
 .register-check {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 .register-check-space {
     margin-bottom: 20px;
@@ -749,12 +779,15 @@ footer {
 
 .area-choice {
     margin: 0 0 23px 120px;
+    font-size: 1.2rem;
 }
 
 .area-teach {
     display: flex;
     justify-content: center;
-    margin: 0 0 91px 0;
+    margin: 80px 0 80px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .city-select {
@@ -1402,6 +1435,8 @@ spot-addles .syoukaijou-honbun {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0 16%;
+    margin-left: 5%;
 }
 
 .modal {
@@ -1414,7 +1449,7 @@ spot-addles .syoukaijou-honbun {
     text-align: center;
     width: 500px;
     padding: 25px;
-    border: 1px solid #ccc;
+    border: 1px solid #e5ff9d;
     position: fixed;
     margin: 0 auto;
     top: 50%;
@@ -1485,12 +1520,10 @@ spot-addles .syoukaijou-honbun {
     width: 200px;
 }
 
-.area-check-text {
-    padding: 30px 0;
-}
 .check-text-space {
     display: flex;
     justify-content: center;
+    padding: 35px 0;
 }
 .area-select-center {
     display: flex;

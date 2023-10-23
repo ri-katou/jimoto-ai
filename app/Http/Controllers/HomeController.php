@@ -45,6 +45,10 @@ class HomeController extends Controller
             ->where('syoukaijous.user_id', '=', Auth::user()->id)
             ->orderBy('syoukaijous.created_at', 'desc')
             ->limit(3)->get();
+            foreach($post as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $interest = Interest::select(
             'interests.user_id as interest_user_id',
@@ -72,6 +76,10 @@ class HomeController extends Controller
             ->where('interests.user_id', '=', Auth::id())->orderBy('syoukaijous.created_at', 'desc')
             ->limit(3)
             ->get();
+            foreach($interest as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $visited = Visited::select(
             'visiteds.user_id as visited_user_id',
@@ -100,6 +108,10 @@ class HomeController extends Controller
             ->orderBy('syoukaijous.created_at', 'desc')
             ->limit(3)
             ->get();
+            foreach($visited as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -137,6 +149,10 @@ class HomeController extends Controller
             ->where('syoukaijous.user_id', '=', Auth::id())
             ->orderBy('syoukaijous.created_at', 'desc')
             ->paginate(9);
+            foreach($postAll as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -175,6 +191,10 @@ class HomeController extends Controller
             ->where('interests.user_id', '=', Auth::id())
             ->orderBy('syoukaijous.created_at', 'desc')
             ->paginate(9);
+            foreach($interestAll as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -212,6 +232,10 @@ class HomeController extends Controller
             ->where('visiteds.user_id', '=', Auth::id())
             ->orderBy('syoukaijous.created_at', 'desc')
             ->paginate(9);
+            foreach($visitedAll as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 

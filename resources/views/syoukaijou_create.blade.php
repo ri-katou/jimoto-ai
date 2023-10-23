@@ -22,7 +22,7 @@
           </ul>
         </div>
         @endif
-        <div class="create-form"><input type="text" name="title" id="" value="{{ old('title') }}"></div>
+        <div class="create-form"><input class="form" type="text" name="title" id="" value="{{ old('title') }}"></div>
       </div>
       <div class="syoukaijou-main">
         <div class="syoukaijou-honbun">本文（必須）</div>
@@ -115,7 +115,7 @@
           </ul>
         </div>
         @endif
-        <div class="create-form"><input type="text" name="spotname" id="" value="{{ old('spotname') }}"></textarea></div>
+        <div class="create-form"><input class="form" type="text" name="spotname" id="" value="{{ old('spotname') }}"></textarea></div>
         <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
         @if($errors->any())
         <div class="error-message">
@@ -126,7 +126,7 @@
           </ul>
         </div>
         @endif
-        <div class="create-form"><input type="text" name="address" id="" value="{{ old('address') }}"></textarea></div>
+        <div class="create-form"><input class="form" type="text" name="address" id="" value="{{ old('address') }}"></textarea></div>
         <div class="syoukaijou-supot-url">URL（任意）</div>
         @if($errors->any())
         <div class="error-message">
@@ -137,7 +137,7 @@
           </ul>
         </div>
         @endif
-        <div class="create-form"><input type="text" name="url" id="" value="{{ old('url') }}"></div>
+        <div class="create-form"><input class="form" type="text" name="url" id="" value="{{ old('url') }}"></div>
       </div>
 
       <div class="syoukaijou-bottom">

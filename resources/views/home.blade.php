@@ -25,238 +25,235 @@
 <div class="all-list-syoukai">
     <div class="syoukaijou-all">
         <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green yu-sei">
+            <div class="home-body midasi block-green yu-sei">
 
-                    &nbsp;自分の投稿した紹介状
-                </div>
-                @if (count($post) >= 1)
-                {{-- ここから紹介状１枚 --}}
-                <div class="syoukaijou-card">
-                    @foreach ($post as $item)
-                    <div class="syou">
-                        <div class="syoukaijou-sam">
-                            <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
-                                <div class="preview-syoukaijou-top-sam">
-                                    <div class="sum-top">
-                                        <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                                        <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
+                &nbsp;自分の投稿した紹介状
+            </div>
+            @if (count($post) >= 1)
+            {{-- ここから紹介状１枚 --}}
+            <div class="syoukaijou-card">
+                @foreach ($post as $item)
+                <div class="syou">
+                    <div class="syoukaijou-sam">
+                        <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
+                            <div class="preview-syoukaijou-top-sam">
+                                <div class="sum-top">
+                                    <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
+                                    <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
+                                </div>
+                                <div class="janru-area-sam">
+                                    <div class="janru-tag">
+                                        {{ $item->category_name }}
                                     </div>
-                                    <div class="janru-area-sam">
-                                        <div class="janru-tag">
-                                            {{ $item->category_name }}
-                                        </div>
-                                        <div class="area-tag">
-                                            <div class="area-sub">{{ $item->municipalities_name }}</div>
-                                        </div>
+                                    <div class="area-tag">
+                                        <div class="area-sub">{{ $item->municipalities_name }}</div>
                                     </div>
                                 </div>
-                                <div class="preview-main-sam">
-                                    <div class="preview-pics-sam">
-                                        <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
-                                        <div class="preview-pics-sub">
-                                            <div class="preview-pic2-sam"></div>
-                                            <div class="preview-pic3-sam"></div>
-                                            <div class="preview-pic4-sam"></div>
-                                        </div>
-                                    </div>
-                                    <div class="preview-honbun">
-                                        <div class="honbun-sum">{{ $item->body }}</div>
-
+                            </div>
+                            <div class="preview-main-sam">
+                                <div class="preview-pics-sam">
+                                    <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
+                                    <div class="preview-pics-sub">
+                                        <div class="preview-pic2-sam"></div>
+                                        <div class="preview-pic3-sam"></div>
+                                        <div class="preview-pic4-sam"></div>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
-                                <div class="fav_btn-interest">
-                                    <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
+                                <div class="preview-honbun">
+                                    <div class="honbun-sum">{{ $item->body }}</div>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
+                            <div class="fav_btn-interest">
+                                <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
                             @foreach ($interest_list as $value)
                             @if ($item->syoukaijous_id == $value->syoukaijou_id)
                             interest-active
                             @endif @endforeach"></i>
-                                    <div class="interest-count">
-                                        {{ $item->interest_count }}
-                                    </div>
+                                <div class="interest-count">
+                                    {{ $item->interest_count }}
                                 </div>
+                            </div>
 
-                                <div class="fav-btn-visited">
-                                    <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
+                            <div class="fav-btn-visited">
+                                <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
                             @foreach ($visited_list as $value)
                             @if ($item->syoukaijous_id == $value->syoukaijou_id)
                             visited-active
                             @endif @endforeach
                             "></i>
-                                    <div class="visited-count">
-                                        {{ $item->visited_count }}
-                                    </div>
+                                <div class="visited-count">
+                                    {{ $item->visited_count }}
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    @endforeach
+
                 </div>
-                {{-- ここまで紹介状１枚 --}}
-                @else
-                <div class="dummy">投稿がされていません<br><a href="{{ route('syoukaijou.create') }}">紹介状作成はこちら</a>
-                </div>
-                @endif
+                @endforeach
+            </div>
+            {{-- ここまで紹介状１枚 --}}
+            <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            @else
+            <div class="dummy">投稿がされていません<br><a href="{{ route('syoukaijou.create') }}">紹介状作成はこちら</a>
+            </div>
+            @endif
         </div>
 
-            <div class="mottomiru link"><a href="{{ route('home.post.check') }}">もっと見る</a></div>
-
-            <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green yu-sei">
+        <div class="syoukaijyou-hyouji">
+            <div class="home-body midasi block-green yu-sei">
                 &nbsp;行ってみたい
-                </div>
-                    @if (count($interest) >= 1)
-                    <div class="syoukaijou-card">
-                        @foreach ($interest as $item)
-                        <div class="syou">
-                            <div class="syoukaijou-sam">
-                                <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
-                                    <div class="preview-syoukaijou-top-sam">
-                                        <div class="sum-top">
-                                            <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                                            <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
-                                        </div>
-                                        <div class="janru-area-sam">
-                                            <div class="janru-tag">
-                                                {{ $item->category_name }}
-                                            </div>
-                                            <div class="area-tag">
-                                                <div class="area-sub">{{ $item->municipalities_name }}</div>
-                                            </div>
-                                        </div>
+            </div>
+            @if (count($interest) >= 1)
+            <div class="syoukaijou-card">
+                @foreach ($interest as $item)
+                <div class="syou">
+                    <div class="syoukaijou-sam">
+                        <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
+                            <div class="preview-syoukaijou-top-sam">
+                                <div class="sum-top">
+                                    <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
+                                    <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
+                                </div>
+                                <div class="janru-area-sam">
+                                    <div class="janru-tag">
+                                        {{ $item->category_name }}
                                     </div>
-                                    <div class="preview-main-sam">
-                                        <div class="preview-pics-sam">
-                                            <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
-                                            <div class="preview-pics-sub">
-                                                <div class="preview-pic2-sam"></div>
-                                                <div class="preview-pic3-sam"></div>
-                                                <div class="preview-pic4-sam"></div>
-                                            </div>
-                                        </div>
-                                        <div class="preview-honbun">
-                                            <div class="honbun-sum">{{ $item->body }}</div>
-                                        </div>
+                                    <div class="area-tag">
+                                        <div class="area-sub">{{ $item->municipalities_name }}</div>
                                     </div>
-                                </a>
-                                <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
-                                    <div class="fav_btn-interest">
-                                        <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
+                                </div>
+                            </div>
+                            <div class="preview-main-sam">
+                                <div class="preview-pics-sam">
+                                    <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
+                                    <div class="preview-pics-sub">
+                                        <div class="preview-pic2-sam"></div>
+                                        <div class="preview-pic3-sam"></div>
+                                        <div class="preview-pic4-sam"></div>
+                                    </div>
+                                </div>
+                                <div class="preview-honbun">
+                                    <div class="honbun-sum">{{ $item->body }}</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
+                            <div class="fav_btn-interest">
+                                <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
                                 @foreach ($interest_list as $value)
                                 @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                 interest-active
                                 @endif @endforeach"></i>
-                                        <div class="interest-count">
-                                            {{ $item->interest_count }}
-                                        </div>
-                                    </div>
+                                <div class="interest-count">
+                                    {{ $item->interest_count }}
+                                </div>
+                            </div>
 
-                                    <div class="fav-btn-visited">
-                                        <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
+                            <div class="fav-btn-visited">
+                                <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
                                 @foreach ($visited_list as $value)
                                 @if ($item->syoukaijous_id == $value->syoukaijou_id)
                                 visited-active
                                 @endif @endforeach
                                 "></i>
-                                        <div class="visited-count">
-                                            {{ $item->visited_count }}
-                                        </div>
-                                    </div>
+                                <div class="visited-count">
+                                    {{ $item->visited_count }}
                                 </div>
-
                             </div>
-
                         </div>
-                        @endforeach
 
                     </div>
-                @else
-                <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
-                    <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>
-                </div>
-                @endif
 
+                </div>
+                @endforeach
             </div>
+            <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            @else
+            <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
+                <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>
+            </div>
+            @endif
 
-            <div class="mottomiru link"><a href="{{ route('home.interest.check') }}">もっと見る</a></div>
+        </div>
 
-            <div class="syoukaijyou-hyouji">
-                <div class="home-body midasi block-green yu-sei">
+        <div class="syoukaijyou-hyouji">
+            <div class="home-body midasi block-green yu-sei">
                 &nbsp;行ったよ
-                </div>
-                    @if (count($visited) >= 1)
-                    <div class="syoukaijou-card">
-                        @foreach ($visited as $item)
-                        <div class="syou">
-                            <div class="syoukaijou-sam">
-                                <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
-                                    <div class="preview-syoukaijou-top-sam">
-                                        <div class="sum-top">
-                                            <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                                            <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
-                                        </div>
-                                        <div class="janru-area-sam">
-                                            <div class="janru-tag">
-                                                {{ $item->category_name }}
-                                            </div>
-                                            <div class="area-tag">
-                                                <div class="area-sub">{{ $item->municipalities_name }}</div>
-                                            </div>
-                                        </div>
+            </div>
+            @if (count($visited) >= 1)
+            <div class="syoukaijou-card">
+                @foreach ($visited as $item)
+                <div class="syou">
+                    <div class="syoukaijou-sam">
+                        <a class="syoukaijou-link" href="{{ route('syoukaijou.disp', ['id' => $item->syoukaijous_id]) }}">
+                            <div class="preview-syoukaijou-top-sam">
+                                <div class="sum-top">
+                                    <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
+                                    <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
+                                </div>
+                                <div class="janru-area-sam">
+                                    <div class="janru-tag">
+                                        {{ $item->category_name }}
                                     </div>
-                                    <div class="preview-main-sam">
-                                        <div class="preview-pics-sam">
-                                            <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
-                                            <div class="preview-pics-sub">
-                                                <div class="preview-pic2-sam"></div>
-                                                <div class="preview-pic3-sam"></div>
-                                                <div class="preview-pic4-sam"></div>
-                                            </div>
-                                        </div>
-                                        <div class="preview-honbun">
-                                            <div class="honbun-sum">{{ $item->body }}</div>
-                                        </div>
+                                    <div class="area-tag">
+                                        <div class="area-sub">{{ $item->municipalities_name }}</div>
                                     </div>
-                                </a>
-                                <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
-                                    <div class="fav_btn-interest">
-                                        <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
+                                </div>
+                            </div>
+                            <div class="preview-main-sam">
+                                <div class="preview-pics-sam">
+                                    <div class="preview-pic1-sam"><img id="gazo" src="{{ $item->image1 }}"></div>
+                                    <div class="preview-pics-sub">
+                                        <div class="preview-pic2-sam"></div>
+                                        <div class="preview-pic3-sam"></div>
+                                        <div class="preview-pic4-sam"></div>
+                                    </div>
+                                </div>
+                                <div class="preview-honbun">
+                                    <div class="honbun-sum">{{ $item->body }}</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="fav_btn" id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}">
+                            <div class="fav_btn-interest">
+                                <i onclick="interest(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-interest-icon fas fa-heart 
                         @foreach ($interest_list as $value)
                         @if ($item->syoukaijous_id == $value->syoukaijou_id)
                         interest-active
                         @endif @endforeach"></i>
-                                        <div class="interest-count">
-                                            {{ $item->interest_count }}
-                                        </div>
-                                    </div>
+                                <div class="interest-count">
+                                    {{ $item->interest_count }}
+                                </div>
+                            </div>
 
-                                    <div class="fav-btn-visited">
-                                        <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
+                            <div class="fav-btn-visited">
+                                <i onclick="visited(this)" data-id="{{ $item->syoukaijous_id }}" data-me="{{ Auth::id() }}" class="fav_btn-visited-icon fas fa-flag 
                         @foreach ($visited_list as $value)
                         @if ($item->syoukaijous_id == $value->syoukaijou_id)
                         visited-active
                         @endif @endforeach
                         "></i>
-                                        <div class="visited-count">
-                                            {{ $item->visited_count }}
-                                        </div>
-                                    </div>
+                                <div class="visited-count">
+                                    {{ $item->visited_count }}
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                     </div>
-                @else
-                <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
-                    <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>
                 </div>
-                @endif
+                @endforeach
             </div>
             <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            @else
+            <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
+                <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>
+            </div>
+            @endif
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

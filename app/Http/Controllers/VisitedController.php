@@ -14,7 +14,7 @@ class VisitedController extends Controller
 
         DB::beginTransaction();
 
-        $rec = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->first();
+        $rec = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->get();
         $fav_falg = 0;
 
         if ($rec->isEmpty()) {
@@ -27,9 +27,8 @@ class VisitedController extends Controller
             $visited->save();
             $fav_falg = 1;
         } else {
-           $visited = Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
+            Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();
 
-            $visited->save();
             $fav_falg = 0;
         }
         DB::commit();

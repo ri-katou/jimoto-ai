@@ -41,6 +41,10 @@ class SpotController extends Controller
             'visited_count.visited_count'
         )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
 
+        foreach($syoukaijouAll as $item){
+            $substr = substr($item->create_day,0,10);
+            $item->create_day = str_replace('-','/',$substr);
+        }
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get(); //ユーザーの行ってみたい一覧
         $visited_list = Visited::select('syoukaijou_id')->where('user_id', Auth::id())->get(); //ユーザーの行ったよ一覧
 
@@ -89,6 +93,10 @@ class SpotController extends Controller
                 'interest_count.interest_count',
                 'visited_count.visited_count'
             )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->whereIN('category_id', $request->categoryCheck)->Wherein('municipalities_id', $request->municipalitieCheck)->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+            foreach($syoukaijou as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
         } else if (isset($request->categoryCheck)) {
             $syoukaijou = Syoukaijou::select(
                 'syoukaijous.id as syoukaijous_id',
@@ -107,6 +115,10 @@ class SpotController extends Controller
                 'interest_count.interest_count',
                 'visited_count.visited_count'
             )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->whereIN('category_id', $request->categoryCheck)->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+            foreach($syoukaijou as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
         } else if (isset($request->municipalitieCheck)) {
             $syoukaijou = Syoukaijou::select(
                 'syoukaijous.id as syoukaijous_id',
@@ -125,6 +137,10 @@ class SpotController extends Controller
                 'interest_count.interest_count',
                 'visited_count.visited_count'
             )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->whereIN('municipalities_id', $request->municipalitieCheck)->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+            foreach($syoukaijou as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
         } else {
             $syoukaijou = Syoukaijou::select(
                 'syoukaijous.id as syoukaijous_id',
@@ -143,6 +159,7 @@ class SpotController extends Controller
                 'interest_count.interest_count',
                 'visited_count.visited_count'
             )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+
         };
         $interest_list = Interest::select('syoukaijou_id')->where('user_id', Auth::id())->get();
 
@@ -193,6 +210,10 @@ class SpotController extends Controller
                     'interest_count.interest_count',
                     'visited_count.visited_count'
                 )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+                foreach($syoukaijou as $item){
+                    $substr = substr($item->create_day,0,10);
+                    $item->create_day = str_replace('-','/',$substr);
+                }
             } else {
 
                 foreach ($wordArraySearched as $key => $value) {
@@ -214,6 +235,10 @@ class SpotController extends Controller
                             'interest_count.interest_count',
                             'visited_count.visited_count'
                         )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orWhere('title', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+                        foreach($syoukaijou as $item){
+                            $substr = substr($item->create_day,0,10);
+                            $item->create_day = str_replace('-','/',$substr);
+                        }
                     } else {
                         ${$syoukaijou . $key} = Syoukaijou::select(
                             'syoukaijous.id as syoukaijous_id',
@@ -232,6 +257,10 @@ class SpotController extends Controller
                             'interest_count.interest_count',
                             'visited_count.visited_count'
                         )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->where('body', 'like', "%$value%")->orWhere('title', 'like', "%$value%")->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+                        foreach($syoukaijou as $item){
+                            $substr = substr($item->create_day,0,10);
+                            $item->create_day = str_replace('-','/',$substr);
+                        }
                         $syoukaijou = collect($syoukaijou)->merge(${$syoukaijou . $key});
                     }
                 }
@@ -259,6 +288,10 @@ class SpotController extends Controller
                 'interest_count.interest_count',
                 'visited_count.visited_count'
             )->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')->join('categories', 'syoukaijous.category_id', '=', 'categories.id')->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')->orderBy('syoukaijous.created_at', 'desc')->paginate(9);
+            foreach($syoukaijou as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
         }
 
         $count = count($syoukaijou);
@@ -298,6 +331,10 @@ class SpotController extends Controller
             ->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')
             ->leftJoin(DB::raw("({$visited_count->toSql()}) as visited_count"), 'syoukaijous.id', '=', 'visited_count.syoukaijou_id')
             ->where('syoukaijous.id', '=', $id)->paginate(9);
+            foreach($syoukaijou as $item){
+                $substr = substr($item->create_day,0,10);
+                $item->create_day = str_replace('-','/',$substr);
+            }
 
 
         return view('syoukaijou_disp', compact('syoukaijou'));

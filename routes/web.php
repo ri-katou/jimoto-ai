@@ -72,5 +72,5 @@ Route::group(['middleware' => 'auth'], function () {
     //行ってみたいボタン
     Route::post('/interest', 'InterestController@interestAjax')->name('interest');
     //行っったよボタン
-    Route::post('/visited', 'visitedController@visitedAjax')->name('visited');
+    Route::post('/visited', 'VisitedController@visitedAjax')->name('visited');
 });

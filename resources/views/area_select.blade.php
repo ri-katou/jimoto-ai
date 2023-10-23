@@ -20,7 +20,6 @@
       </div>
     </div>
 
-
     <div class="seibu">
       <div class="yu-sei midasi area-select-top underline-blue">西部</div>
       <div class="city-select">

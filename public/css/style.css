@@ -3,17 +3,21 @@ html {
     font-size: 16px;
     color: #383838;
 }
+
 * {
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
     color: black;
 }
+
 main {
     margin: 0 auto;
     max-width: 1024px;
 }
+
 body {
     background-color: #f7ffd5;
 }
@@ -21,6 +25,7 @@ body {
 img {
     max-width: 100%;
 }
+
 input[type="submit"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -29,9 +34,11 @@ input[type="submit"] {
     font: inherit;
     outline: none;
 }
+
 input[type="submit"]:hover {
     cursor: pointer;
 }
+
 li {
     list-style: none;
 }
@@ -43,6 +50,7 @@ li {
     display: flex;
     justify-content: space-around;
 }
+
 .fas {
     color: gray;
     font-size: 1.5rem;
@@ -54,56 +62,70 @@ li {
     justify-content: space-around;
     gap: 0.5rem;
 }
+
 .fav_btn-interest:hover {
     cursor: pointer;
     padding-top: 1px;
 }
+
 .fav-btn-visited:hover {
     cursor: pointer;
     padding-top: 1px;
 }
+
 .interest-active {
     color: pink;
 }
+
 .visited-active {
     color: #12f128;
 }
+
 .interest-count,
 .visited-count {
     color: gray;
     font-size: 1rem;
 }
+
 .container {
     display: flex;
     align-items: center;
 }
+
 .link {
     color: #339dff;
     background: transparent;
 }
-.link a{
+
+.link a {
     color: #339dff;
 }
+
 .link :hover {
     color: #339dff;
     text-decoration: underline;
     cursor: pointer;
 }
+
 .link a:visited {
     color: #339dff;
 }
+
 .return {
     color: #555;
     font-size: 1.5rem;
     padding-left: 35px;
     position: relative;
 }
+
 .return:hover {
     cursor: pointer;
 }
+
 .return:active {
     margin-top: 2px;
 }
+
 .return::before {
     content: "";
     position: absolute;
@@ -144,34 +166,38 @@ li {
     border: 1px solid black;
     width: 200px;
 }
+
 .jimoto-select {
-  background-color: transparent;
-  border: 1px solid #eaff00;
-  color: #00132C;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 16px 23px;
-  position: relative;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+    background-color: transparent;
+    border: 1px solid #eaff00;
+    color: #00132C;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
+
 .jimoto-select:before {
-  background-color: #ffffb7f8;
-  content: "";
-  height: calc(100% + 10px);
-  position: absolute;
-  right: -5px;
-  top: -5px;
-  transition: background-color 300ms ease-in;
-  width: calc(100% + 10px);
-  z-index: -1;
+    background-color: #ffffb7f8;
+    content: "";
+    height: calc(100% + 10px);
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    transition: background-color 300ms ease-in;
+    width: calc(100% + 10px);
+    z-index: -1;
 }
+
 .btn-orange:active {
     box-shadow: none;
 }
+
 .btn-green {
     display: block;
     height: 3rem;
@@ -187,6 +213,7 @@ li {
 .btn-green:active {
     box-shadow: none;
 }
+
 .btn-delete {
     display: block;
     text-align: center;
@@ -198,6 +225,7 @@ li {
     width: 200px;
     position: relative;
 }
+
 .btn-delete::before {
     content: "";
     position: absolute;
@@ -209,6 +237,7 @@ li {
     top: 0;
     left: 0;
 }
+
 .btn-delete:active {
     box-shadow: none;
 }
@@ -218,31 +247,37 @@ li {
     border-bottom: 2px #12f128 solid;
     margin-bottom: 1rem;
 }
+
 .underline-orange {
     width: max-content;
     border-bottom: 2px #ff7a00 solid;
     margin-bottom: 1rem;
 }
+
 .underline-pink {
     width: max-content;
     border-bottom: 2px palevioletred solid;
     margin-bottom: 1rem;
 }
+
 .underline-blue {
     width: max-content;
     border-bottom: 2px skyblue solid;
     margin-bottom: 1rem;
 }
+
 .underline-purple {
     width: max-content;
     border-bottom: 2px purple solid;
     margin-bottom: 1rem;
 }
+
 .underline-black {
     width: max-content;
     border-bottom: 2px rgb(0, 0, 0) solid;
     margin-bottom: 1rem;
 }
+
 .block-green {
     width: max-content;
     border-left: #12f128 6px solid;
@@ -260,6 +295,7 @@ li {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
 }
+
 .btn-gray:active {
     box-shadow: none;
 }
@@ -278,6 +314,7 @@ li {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
 }
+
 .btn-daidai:active {
     box-shadow: none;
 }
@@ -303,20 +340,25 @@ li {
     width: 150px;
     height: 35px;
 }
+
 .form {
     width: 98%;
     padding: 4px 0;
     margin-bottom: 5%;
 }
-.form::placeholder{
+
+.form::placeholder {
     opacity: 75%;
 }
+
 .error-message {
     color: #f00;
 }
+
 .error-message li {
     list-style: none;
 }
+
 .text-align-center {
     text-align: center;
     margin-top: -4.5%;
@@ -378,11 +420,13 @@ li {
 .pagenate {
     margin: 2rem 0;
 }
+
 .pagination {
     display: flex;
     justify-content: center;
     gap: 1.2rem;
 }
+
 .page-item {
     text-align: center;
     width: 35px;
@@ -392,16 +436,20 @@ li {
     border: #83ff36 solid 2px;
     background-color: #ccf397;
 }
-.page-item a{ 
+
+.page-item a {
     color: #484848;
 }
-.page-item:hover{
+
+.page-item:hover {
     background-color: #12f128;
 }
-.active{
+
+.active {
     color: #484848;
     background-color: #5bf534;
 }
+
 /* header */
 .header-fixed {
     position: sticky;
@@ -409,13 +457,13 @@ li {
     z-index: 998;
     margin-bottom: 30px;
 }
+
 .header-container {
-    width: 95%;
-    margin: 0 5vh;
     display: flex;
     justify-content: space-between;
     background-color: #f7ffd5;
 }
+
 .header-login {
     display: flex;
     justify-content: space-between;
@@ -423,6 +471,11 @@ li {
     margin-bottom: 10px;
     gap: 1rem;
 }
+
+.header-mypage {
+    text-align: center;
+}
+
 .header-not-login {
     display: flex;
     justify-content: center;
@@ -430,32 +483,49 @@ li {
     margin-bottom: 10px;
     gap: 1rem;
 }
+
 .logo {
     width: 150px;
     height: 150px;
-    margin-top: 2vh;
 }
+
 .header-profile-icon {
     width: 70px;
     height: 70px;
     border-radius: 35px;
     margin: 0 auto;
 }
-.header-logout-icon {
+
+.header-logout {
+    text-align: center;
+}
+
+.logout-icon {
     width: 50px;
     height: 50px;
-    border-radius: 35px;
-    margin: 0 0 10px 20px;
+}
+
+/* ヘッダーのハンバーガーメニュー関連 */
+.hamberger-menu {
+    display: none;
+    height: 50px;
+    margin-top: 2rem;
+}
+.hamberger-menu i {
+    text-align: center;
+    font-size: 2.5rem;
 }
 
 .yu-sei {
     font-family: "Raleway", sans-serif;
     font-family: "Yusei Magic", sans-serif;
 }
+
 /* footer */
 footer {
     height: 100px;
 }
+
 /* top */
 .top-logo {
     width: 150px;
@@ -463,6 +533,7 @@ footer {
     margin-left: 10vh;
     padding-top: 5vh;
 }
+
 /* top */
 
 .vertical {
@@ -619,6 +690,7 @@ footer {
     margin: 0 auto 0 auto;
     max-width: 568px;
 }
+
 .login-header {
     margin-bottom: 55px;
     font-size: 1.2rem;
@@ -637,12 +709,14 @@ footer {
     text-align: center;
     justify-content: space-between;
 }
+
 .login-btn-space {
     display: flex;
     text-align: center;
     justify-content: space-between;
     margin-bottom: 30px;
 }
+
 /*login.blade.php register.blade.php*/
 
 .home {
@@ -691,6 +765,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .home-icon-left {
     display: flex;
     justify-content: center;
@@ -754,6 +829,7 @@ footer {
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 .register-part {
     margin-bottom: 15px;
 }
@@ -761,6 +837,7 @@ footer {
 .register-check {
     margin-bottom: 40px;
 }
+
 .register-check-space {
     margin-bottom: 20px;
 }
@@ -801,6 +878,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .area-img {
     width: 300px;
     height: 300px;
@@ -809,6 +887,7 @@ footer {
 .register-form {
     margin-bottom: 5%;
 }
+
 /*register_check.blade.php*/
 
 /* syoukaijou_create */
@@ -825,9 +904,11 @@ footer {
 .syoukaijou-top {
     margin-bottom: 2%;
 }
+
 .syoukaijou-day {
     white-space: nowrap;
 }
+
 .syoukaijou-daimei {
     margin-right: 40%;
 }
@@ -848,11 +929,13 @@ footer {
 .syoukaijou-supot-url-form {
     margin-bottom: 2%;
 }
+
 /* profile */
 .profile {
     margin: 0 auto;
     max-width: 580px;
 }
+
 .profile-container {
     display: flex;
     justify-content: center;
@@ -861,33 +944,40 @@ footer {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .profile-nickname {
     font-size: 2rem;
 }
+
 .profile-center-content {
     margin: 0 auto;
     width: max-content;
 }
+
 .profile-email-output,
 .profile-eria-output {
     font-size: 1.2rem;
     padding-left: 1rem;
     margin-bottom: 2rem;
 }
+
 .profile-botom-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
 }
+
 .profile-icon-img {
     border-radius: 100%;
 }
+
 /* profile_edit */
 .profile-edit-center-content {
     margin: 0 auto;
     width: max-content;
 }
+
 .profile-edit-now-nickname,
 .profile-edit-now-email,
 .profile-edit-now-eria {
@@ -896,21 +986,25 @@ footer {
     margin-bottom: 0.5rem;
     margin-left: 1rem;
 }
+
 .profile-edit-nickname-input,
 .profile-edit-email-input {
     margin-bottom: 3rem;
     margin-left: 1rem;
 }
+
 /* profile_edit_check */
 .profile-edit-check-message {
     text-align: center;
     margin-bottom: 2rem;
 }
+
 .profile-edit-check-email,
 .profile-edit-check-nickname,
 .profile-edit-check-eria {
     margin-left: 1rem;
 }
+
 .profile-edit-check-email-output,
 .profile-edit-check-nickname-output,
 .profile-edit-check-eria-output {
@@ -926,6 +1020,7 @@ footer {
 .syoukaijou-title {
     word-wrap: break-word;
 }
+
 .syoukaijou-top {
     display: flex;
     justify-content: left;
@@ -940,9 +1035,11 @@ footer {
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
 }
+
 .syoukaijou-honbun {
     font-size: 1.5rem;
 }
+
 spot-addles .syoukaijou-honbun {
     margin-left: -15%;
 }
@@ -955,6 +1052,7 @@ spot-addles .syoukaijou-honbun {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
 .syoukaijou-jyanru-area {
     margin-top: 5%;
     display: grid;
@@ -973,9 +1071,11 @@ spot-addles .syoukaijou-honbun {
     margin-top: 3%;
     font-size: 1.5rem;
 }
+
 .syoukaijou-supot-url-form {
     margin-bottom: 2%;
 }
+
 .syoukaijou-bottom {
     display: flex;
     justify-content: left;
@@ -1218,6 +1318,7 @@ spot-addles .syoukaijou-honbun {
 .jimoto-search {
     margin-right: 10%;
 }
+
 .jimoto-search {
     display: flex;
     align-items: center;
@@ -1298,14 +1399,17 @@ spot-addles .syoukaijou-honbun {
     margin: 0 auto;
     width: max-content;
 }
+
 .user-delete-message {
     margin-bottom: 2rem;
 }
+
 /* spot_filter */
 .spot-filter-content {
     max-width: 60vw;
     margin: 0 auto;
 }
+
 .spot-filter-content-genre-title-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1318,12 +1422,14 @@ spot-addles .syoukaijou-honbun {
     padding-left: 0;
     margin-left: 1rem;
 }
+
 .spot-filter-content-aria-title-container {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
     margin-bottom: 2rem;
 }
+
 .spot-filter-genre-submit {
     margin: 0 auto 100px auto;
 }
@@ -1333,20 +1439,24 @@ spot-addles .syoukaijou-honbun {
     display: flex;
     justify-content: center;
 }
+
 .post-list-header {
     display: flex;
     justify-content: center;
 }
+
 .syoukaijougrit {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 30px 0;
 }
+
 .post-grid {
     width: 350px;
     height: 250px;
 }
+
 .list-head {
     display: flex;
     justify-content: center;
@@ -1360,12 +1470,15 @@ spot-addles .syoukaijou-honbun {
     border-left: 3px solid #ebff9c;
     background: rgba(255, 255, 255, 0.3);
 }
+
 .list-head-back {
     background-color: white;
 }
+
 .post-list-head-img-rgba {
     opacity: 0.4;
 }
+
 .post-all-space {
     width: 1164px;
     height: 921px;
@@ -1376,17 +1489,21 @@ spot-addles .syoukaijou-honbun {
     border-left: 3px solid #ebff9c;
     background: #fff;
 }
+
 .post-syoukaijou-head {
     gap: 30px;
 }
+
 .post-head-font {
     font-size: 1.7rem;
 }
+
 .post-head-img {
     width: 50px;
     height: 50px;
     background-color: #12f128;
 }
+
 .post-underline-green {
     width: max-content;
     border-bottom: 2px #12f128 solid;
@@ -1395,17 +1512,21 @@ spot-addles .syoukaijou-honbun {
 .list-left {
     background-color: #339dff;
 }
+
 .all-list-syoukai {
     display: flex;
     justify-content: center;
 }
+
 .syoukaijou-all {
     width: 100%;
 }
+
 .free-svg {
     width: 50px;
     height: 50px;
 }
+
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
 
 /* モーダル */
@@ -1417,13 +1538,16 @@ spot-addles .syoukaijou-honbun {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 #mask.hidden {
     display: none;
 }
+
 #mask {
     background: rgba(0, 0, 0, 0);
     position: fixed;
@@ -1494,12 +1618,15 @@ spot-addles .syoukaijou-honbun {
     padding-left: 35px;
     position: relative;
 }
+
 .exit:hover {
     cursor: pointer;
 }
+
 .exit:active {
     margin-top: 2px;
 }
+
 .exit::before {
     content: "";
     position: absolute;
@@ -1528,10 +1655,12 @@ spot-addles .syoukaijou-honbun {
     justify-content: center;
     padding: 35px 0;
 }
+
 .area-select-center {
     display: flex;
     justify-content: center;
 }
+
 /* モーダル */
 
 /* 検索結果画面開始 */
@@ -1572,6 +1701,7 @@ spot-addles .syoukaijou-honbun {
     width: 998px;
     height: 690px;
 }
+
 #map {
     height: 500px;
     width: 90%;
@@ -1594,24 +1724,28 @@ spot-addles .syoukaijou-honbun {
 /* タブレットサイズ */
 
 @media screen and (max-width: 959px) {
-	/* 959px以下に適用されるCSS（タブレット用） */
+
+    /* 959px以下に適用されるCSS（タブレット用） */
     .preview-syoukaijou-top {
         display: block;
     }
 
-    .preview-main{
+    .preview-main {
         display: block;
     }
 
     .home-icon-left {
-        visibility: hidden;
+        display: none;
     }
+
     main {
         max-width: 767px;
     }
+
     .syoukaijou-all {
         width: 100%;
     }
+
     .syoukaijou-card {
         grid-template-columns: 1fr;
     }
@@ -1619,6 +1753,7 @@ spot-addles .syoukaijou-honbun {
     .syou {
         margin: 0 auto;
     }
+
     .spot-map {
         margin: 0 auto;
     }
@@ -1627,18 +1762,47 @@ spot-addles .syoukaijou-honbun {
 
 /* スマホサイズ */
 @media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
+    /* 480px以下に適用されるCSS（スマホ用） */
 
     .btn-orange {
         width: 150px;
     }
+
     .btn-green {
         width: 150px;
     }
+
     .janru-area-search {
         display: grid;
         grid-template-columns: 1fr;
         gap: 0.5rem;
+    }
+
+    /* ヘッダー */
+
+    .hamberger-menu {
+        display: block;
+        margin-right: 1rem;
+    }
+    .hamberger-menu :hover{
+        cursor: pointer;
+    }
+    .gNav {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        right: -120%;
+        top: 75px;
+    }
+
+    .panelactive {
+        right: 0;
+        transition: all 0.3s;
+    }
+
+    .header-logout,
+    .header-mypage {
+        margin-bottom: 1rem;
     }
 
 
@@ -1647,58 +1811,68 @@ spot-addles .syoukaijou-honbun {
         margin-left: -45%;
         position: relative;
     }
-    .login-btn a{
+
+    .login-btn a {
         width: 150px;
         position: absolute;
         left: 60%;
         top: 4%;
     }
+
     .logo-sub {
         margin-left: 40px;
     }
-    .top-pic-right img{
+
+    .top-pic-right img {
         margin-top: 50px;
         width: 100px;
         height: 150px;
     }
+
     .top-pic4 {
         width: 15%;
         position: relative;
         margin-top: 15%;
     }
+
     .top-pic5 {
         width: 100%;
         position: absolute;
         top: -15px;
         left: 45px;
     }
+
     .top-pic6 {
         width: 100%;
         position: absolute;
         top: -30px;
         left: 90px;
     }
+
     .top-pic7 {
         width: 100%;
         position: absolute;
         top: -45px;
         left: 135px;
     }
+
     .top-pic8 {
         width: 100%;
         position: absolute;
         top: -60px;
         left: 180px;
     }
+
     .vertical {
         margin-left: 30%;
     }
+
     .top-kaiin {
-      margin-left: -10%;
+        margin-left: -10%;
     }
+
     /*TOPページ終了*/
 
 
 
 }
-

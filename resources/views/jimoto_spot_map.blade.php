@@ -1,32 +1,32 @@
 @extends('layout')
 @section('content')
 
-  <div class="jimoto-search-top">
-    <div class="jimoto-search">
-      <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
-          <input type="text" name="search" placeholder="キーワードを入力">
-          <input type="submit" value="検索" name="sourtNew">
-      </form>
-  </div>
-    
-  </div>
-  @if($errors->any())
-        <div class="error-message">
-            <ul>
-                @error('search')
-                <li>{{ $message }}</li>
-                @enderror
-            </ul>
-        </div>
-        @endif
-
-  <div class="janru-area-search">
-    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
-    <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
-    <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+<div class="jimoto-search-top">
+  <div class="jimoto-search">
+    <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
+      <input type="text" name="search" placeholder="キーワードを入力">
+      <input type="submit" value="検索" name="sourtNew">
+    </form>
   </div>
 
-  
+</div>
+@if($errors->any())
+<div class="error-message">
+  <ul>
+    @error('search')
+    <li>{{ $message }}</li>
+    @enderror
+  </ul>
+</div>
+@endif
+
+<div class="janru-area-search">
+  <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
+  <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
+  <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
+
+
 <div class="spot-map">
   <div class="spot-filter-map block-green">マップで探す</div>
 
@@ -97,7 +97,8 @@
       let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
       let origin = location.origin;
       let infoWindows = [];
-      
+      console.log(origin);
+
       addresspin.forEach(function(element) {
         let getMapid = (element.nextElementSibling.textContent).trim();
         let routesmap = '/syoukaijou/' + getMapid + '/';

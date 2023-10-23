@@ -95,7 +95,7 @@
       // ここに紹介状テーブルのアドレス列の数字を一個づつ入れて行って処理を実行したい
       let addresspin = document.querySelectorAll('.address-choice .item-in-address')
       let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
-      let origin = location.protocol + location.hostname;
+      let origin = location.origin;
       let infoWindows = [];
       console.log(origin);
 

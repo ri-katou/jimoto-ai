@@ -101,7 +101,7 @@
 
         addresspin.forEach(function(element) {
           let getMapid = (element.nextElementSibling.textContent).trim();
-          let routesmap = location.protocol + '//' + location.hostname + ':/syoukaijou/' + getMapid + '/';
+          let routesmap = location.protocol + '//' + location.hostname + ':80/syoukaijou/' + getMapid + '/';
           let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
             element.textContent.replace(',', '<br>') +
             '</a></div>';

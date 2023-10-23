@@ -20,7 +20,7 @@
     <main>
       <div class="page-top">
         <div class="top-logo"><img src="/image/jimotoai-logo.png" alt="logo"></div>
-        <label class="login-btn"><button type="button"><a href="{{route('login')}}">ログイン</a></button></label>
+        <label class="login-btn"><a type="button" href="{{route('login')}}">ログイン</a></label>
         <br><br><br><br>
         <div class="logo-sub">jimoto</br>&emsp;ai</div>
         <div class="yu-sei">

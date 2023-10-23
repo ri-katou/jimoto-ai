@@ -81,6 +81,9 @@ li {
     color: #339dff;
     background: transparent;
 }
+.link a{
+    color: #339dff;
+}
 .link :hover {
     color: #339dff;
     text-decoration: underline;
@@ -210,6 +213,11 @@ li {
     border-bottom: 2px purple solid;
     margin-bottom: 1rem;
 }
+.underline-black {
+    width: max-content;
+    border-bottom: 2px rgb(0, 0, 0) solid;
+    margin-bottom: 1rem;
+}
 .block-green {
     width: max-content;
     border-left: #12f128 6px solid;
@@ -272,6 +280,8 @@ li {
 }
 .form {
     width: 98%;
+    padding: 4px 0;
+    margin-bottom: 5%;
 }
 .error-message {
     color: #f00;
@@ -279,6 +289,63 @@ li {
 .error-message li {
     list-style: none;
 }
+.text-align-center {
+    text-align: center;
+    margin-top: -4.5%;
+    margin-left: -35%;
+}
+
+.sourtselect {
+    position: relative;
+}
+
+.sourtselect::before,
+.sourtselect::after {
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.sourtselect::before {
+    right: 0;
+    display: inline-block;
+    width: 2.8em;
+    height: 2em;
+    border-radius: 0 3px 3px 0;
+    background-color: #fdc709a3;
+    content: '';
+}
+
+.sourtselect::after {
+    position: absolute;
+    top: 35%;
+    right: 1.4em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+}
+
+.sourtselect select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 230px;
+    height: 2em;
+    padding: .4em 3.6em .4em .8em;
+    border: 2px solid #d9d9d9;
+    border-radius: 3px;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.sourtselect select:focus {
+    outline: 1px solid #d9d9d9;
+}
+
 /* ページネーション */
 .pagenate {
     margin: 2rem 0;
@@ -345,6 +412,12 @@ li {
     height: 70px;
     border-radius: 35px;
     margin: 0 auto;
+}
+.header-logout-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+    margin: 0 0 10px 20px;
 }
 
 .yu-sei {
@@ -427,7 +500,7 @@ footer {
     margin: 10% 50%;
 }
 
-.login-btn button {
+.login-btn a {
     margin-top: 2vh;
     font-size: 1.2rem;
     font-weight: bold;
@@ -520,6 +593,7 @@ footer {
 }
 .login-header {
     margin-bottom: 55px;
+    font-size: 1.2rem;
 }
 
 .form-inner {
@@ -529,17 +603,17 @@ footer {
 .login-form-top {
     margin-bottom: 30px;
 }
-.login-btn-space {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
 
 .login-link {
     display: flex;
     text-align: center;
     justify-content: space-between;
+}
+.login-btn-space {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 /*login.blade.php register.blade.php*/
 
@@ -648,18 +722,14 @@ footer {
 .register-check-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .register-part {
     margin-bottom: 15px;
 }
 
-.register-check-part {
-    margin-bottom: 10px;
-}
-
 .register-check {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .register-check-space {
     margin-bottom: 20px;
@@ -726,7 +796,6 @@ footer {
     white-space: nowrap;
 }
 .syoukaijou-daimei {
-    font-size: 1.5rem;
     margin-right: 40%;
 }
 
@@ -846,7 +915,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .syoukaijou-pic-button {
-    margin-left: 22%;
+    margin-left: 40%;
 }
 
 .syoukaijou-pics {
@@ -1545,7 +1614,7 @@ spot-addles .syoukaijou-honbun {
         margin-left: -45%;
         position: relative;
     }
-    .login-btn button{
+    .login-btn a{
         width: 150px;
         position: absolute;
         left: 60%;

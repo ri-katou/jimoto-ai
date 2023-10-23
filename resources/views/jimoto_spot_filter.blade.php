@@ -7,21 +7,23 @@
             <input type="submit" value="検索" name="sourtNew">
         </form>
     </div>
-    <select name="example">
-        <option>新着順</option>
-        <option>行ってみたいが多い順</option>
-        <option>訪問済みが多い順</option>
-    </select>
+    <label class="sourtselect">
+        <select name="example">
+            <option value="sourtNew">新着順</option>
+            <option value="sourtInterest">行ってみたいが多い順</option>
+            <option value="sourtVisited">訪問済みが多い順</option>
+        </select>
+    </label>
 </div>
 @if($errors->any())
-        <div class="error-message">
-            <ul>
-                @error('search')
-                <li>{{ $message }}</li>
-                @enderror
-            </ul>
-        </div>
-        @endif
+<div class="error-message text-align-center">
+    <ul>
+        @error('search')
+        <li>{{ $message }}</li>
+        @enderror
+    </ul>
+</div>
+@endif
 
 
 <div class="janru-area-search">

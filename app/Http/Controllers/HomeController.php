@@ -129,7 +129,7 @@ class HomeController extends Controller
             'interest_count.interest_count',
             'visited_count.visited_count'
         )
-            ->join('Users', 'syoukaijous.user_id', '=', 'users.id')
+            ->join('users', 'syoukaijous.user_id', '=', 'users.id')
             ->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')
             ->join('categories', 'syoukaijous.category_id', '=', 'categories.id')
             ->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')
@@ -167,7 +167,7 @@ class HomeController extends Controller
             'interest_count.interest_count',
             'visited_count.visited_count'
         )->rightJoin('syoukaijous', 'interests.syoukaijou_id', '=', 'syoukaijous.id')
-            ->join('Users', 'syoukaijous.user_id', '=', 'users.id')
+            ->join('users', 'syoukaijous.user_id', '=', 'users.id')
             ->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')
             ->join('categories', 'syoukaijous.category_id', '=', 'categories.id')
             ->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')
@@ -204,7 +204,7 @@ class HomeController extends Controller
             'interest_count.interest_count',
             'visited_count.visited_count'
         )->rightJoin('syoukaijous', 'visiteds.syoukaijou_id', '=', 'syoukaijous.id')
-            ->join('Users', 'syoukaijous.user_id', '=', 'users.id')
+            ->join('users', 'syoukaijous.user_id', '=', 'users.id')
             ->join('municipalities', 'syoukaijous.municipalities_id', '=', 'municipalities.id')
             ->join('categories', 'syoukaijous.category_id', '=', 'categories.id')
             ->leftJoin(DB::raw("({$interest_count->toSql()}) as interest_count"), 'syoukaijous.id', '=', 'interest_count.syoukaijou_id')
@@ -220,5 +220,3 @@ class HomeController extends Controller
         return view('visited_all_list', compact('visitedAll', 'interest_list', 'visited_list'));
     }
 }
-
-

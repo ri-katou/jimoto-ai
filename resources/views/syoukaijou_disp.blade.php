@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="syoukaijou-title">{{$syoukaijou[0]->title}}</div>
+  <div class="syoukaijou-title underline-green">{{$syoukaijou[0]->title}}</div>
   <div class="preview-main">
     <div class="preview-pics">
       <div class="preview-pic1"><img src="{{$syoukaijou[0]->image1}}" alt="1枚目"></div>

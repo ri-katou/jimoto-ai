@@ -7,14 +7,16 @@
             <input type="submit" value="検索" name="sourtNew">
         </form>
     </div>
-    <select class="sourtselect" name="example">
-        <option value="sourtNew">新着順</option>
-        <option value="sourtInterest">行ってみたいが多い順</option>
-        <option value="sourtVisited">訪問済みが多い順</option>
-    </select>
+    <label class="sourtselect">
+        <select name="example">
+            <option value="sourtNew">新着順</option>
+            <option value="sourtInterest">行ってみたいが多い順</option>
+            <option value="sourtVisited">訪問済みが多い順</option>
+        </select>
+    </label>
 </div>
 @if($errors->any())
-        <div class="error-message">
+        <div class="error-message text-align-center">
             <ul>
                 @error('search')
                 <li>{{ $message }}</li>
@@ -73,7 +75,7 @@
                     <div class="preview-syoukaijou-top-sam">
                         <div class="sum-top">
                             <div class="syoukaijou-day-sam">{{ $item->create_day }}</div>
-                            <div class="syoukaijou-title-sam">{{ $item->title }}</div>
+                            <div class="syoukaijou-title-sam underline-green">{{ $item->title }}</div>
                         </div>
                         <div class="janru-area-sam">
                             <div class="janru-tag">

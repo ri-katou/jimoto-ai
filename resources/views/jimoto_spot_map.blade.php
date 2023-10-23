@@ -11,7 +11,7 @@
     
   </div>
   @if($errors->any())
-        <div class="error-message">
+        <div class="error-message text-align-center">
             <ul>
                 @error('search')
                 <li>{{ $message }}</li>

@@ -15,7 +15,7 @@
             <button type="submit" aria-label="検索"></button>
         </form> --}}
     <label class="sourtselect">
-        <select name="example">
+        <select name="example" class="sourtselect-box">
             <option value="sourtNew">新着順</option>
             <option value="sourtInterest">行ってみたいが多い順</option>
             <option value="sourtVisited">訪問済みが多い順</option>

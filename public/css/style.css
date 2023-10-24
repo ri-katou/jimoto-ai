@@ -36,12 +36,13 @@ li {
     list-style: none;
 }
 .pic-label {
+    width: max-content;
     padding: 10px 25px;
     color: #000000;
     background-color: #abc0ff;
     cursor: pointer;
     border-radius: 40px 40px;
-    
+
 }
 input[type="file"] {
     display: none;

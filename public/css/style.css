@@ -35,6 +35,7 @@ input[type="submit"]:hover {
 li {
     list-style: none;
 }
+
 .pic-label {
     width: max-content;
     padding: 10px 25px;

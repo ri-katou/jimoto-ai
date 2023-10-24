@@ -18,6 +18,12 @@
 
 </head>
 <body>
-  500
+  <div class="error-hand-back-image">
+    <div class="error-hand-message">
+      <p>ページが表示できません。</p>
+      <p>ご不便おかけして大変申し訳ありません。</p>
+    </div>
+    <div class="back-home"><a class="link" href="{{route('home')}}">ホームへ戻る</a></div>
+    </div>
 </body>
 </html>

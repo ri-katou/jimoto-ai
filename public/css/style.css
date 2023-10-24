@@ -1734,6 +1734,24 @@ spot-addles .syoukaijou-honbun {
     line-height: 30px;
     padding-left: 10px;
 }
+.error-hand-back-image {
+background-image: url(../../storage/app/404error.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+height: 90vh;
+width: 100%;
+}
+.error-hand-message {
+    font-size: 2rem;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+.back-home {
+    font-size: 1.5rem;
+    text-align: center;
+}
 
 /* タブレットサイズ */
 

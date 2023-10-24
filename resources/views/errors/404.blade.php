@@ -18,6 +18,12 @@
 
 </head>
 <body>
-  404
+  <div class="error-hand-back-image">
+  <div class="error-hand-message">
+    <p>404</p>
+    <p>お探しのページが見つかりません。</p>
+  </div>
+  <div class="back-home"><a class="link" href="{{route('home')}}">ホームへ戻る</a></div>
+  </div>
 </body>
 </html>

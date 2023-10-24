@@ -35,6 +35,17 @@ input[type="submit"]:hover {
 li {
     list-style: none;
 }
+.pic-label {
+    padding: 10px 25px;
+    color: #000000;
+    background-color: #abc0ff;
+    cursor: pointer;
+    border-radius: 40px 40px;
+    
+}
+input[type="file"] {
+    display: none;
+}
 
 /* 共通パーツ */
 .fav_btn {
@@ -833,9 +844,9 @@ footer {
     margin-bottom: 1%;
 }
 
-.syoukaijou-pics {
-    display: flex;
-    column-gap: 10px;
+.syoukaijou-pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-supot-title {
@@ -937,9 +948,7 @@ footer {
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
 }
-.syoukaijou-honbun {
-    font-size: 1.5rem;
-}
+
 spot-addles .syoukaijou-honbun {
     margin-left: -15%;
 }
@@ -1031,10 +1040,6 @@ spot-addles .syoukaijou-honbun {
     justify-content: right;
 }
 
-.syoukaijou-title {
-    font-size: 1.5rem;
-    margin-bottom: 3%;
-}
 
 .preview-main {
     display: flex;

@@ -15,7 +15,7 @@
             <button type="submit" aria-label="検索"></button>
         </form> --}}
     <label class="sourtselect">
-        <select name="example">
+        <select name="example" class="sourtselect-box">
             <option value="sourtNew">新着順</option>
             <option value="sourtInterest">行ってみたいが多い順</option>
             <option value="sourtVisited">訪問済みが多い順</option>
@@ -111,10 +111,9 @@
     // 行ってみたいボタン
     function interest(icon) {
         let $interestIcon = icon;
-        var origin = location.origin;
-        var $syoukaijouId = $interestIcon.dataset.id;
-        var $myId = $interestIcon.dataset.me;
-        console.log($myId);
+        let origin = location.origin;
+        let $syoukaijouId = $interestIcon.dataset.id;
+        let $myId = $interestIcon.dataset.me;
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
@@ -144,10 +143,9 @@
     // 行ったよボタン
     function visited(icon) {
         let $visitedIcon = icon;
-        var origin = location.origin;
-        var $syoukaijouId = $visitedIcon.dataset.id;
-        var $myId = $visitedIcon.dataset.me;
-        console.log($myId);
+        let origin = location.origin;
+        let $syoukaijouId = $visitedIcon.dataset.id;
+        let $myId = $visitedIcon.dataset.me;
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")

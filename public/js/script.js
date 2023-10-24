@@ -61,8 +61,8 @@ $(document).ready(function () {
 
     //ソート
     //  行ってみたい順
-    $(".sourtselect").on('change', function () {
-        if ($(".sourtselect").val() == 'sourtInterest') {
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtInterest') {
             let sortSyoukaijou = '';
             sortSyoukaijou = $('.syou').sort(function (a, b) {
                 if ($(a).data("interest") < $(b).data("interest")) {
@@ -78,8 +78,8 @@ $(document).ready(function () {
         };
     });
     //  行ったよ順
-    $(".sourtselect").on('change', function () {
-        if ($(".sourtselect").val() == 'sourtVisited') {
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtVisited') {
             let sortSyoukaijou = '';
             sortSyoukaijou = $('.syou').sort(function (a, b) {
                 if ($(a).data("visited") < $(b).data("visited")) {
@@ -95,8 +95,8 @@ $(document).ready(function () {
         };
     });
     // 新着順（再読み込みするだけ）
-    $(".sourtselect").on('change', function () {
-        if ($(".sourtselect").val() == 'sourtNew') {
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtNew') {
             location.reload();
         };
     });
@@ -122,6 +122,12 @@ $(document).ready(function () {
             $('#profile-img-edit-form').submit();
         });
     });
+    // ハンバーガーメニュー
+    $(".hamberger-menu").click(function () {//ボタンがクリックされたら
+        $(this).children().toggleClass("fa-bars");
+        $(this).children().toggleClass("fa-times");
+          $(".gNav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+      });
 
     $('form').on('submit', function(){
         console.log(this);

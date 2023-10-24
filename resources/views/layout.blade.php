@@ -25,25 +25,28 @@
                     <img src="/image/jimotoai-logo.png" alt="logo"></a>
             </div>
             @if (Auth::check())
-            <div class="header-login">
+            <div class="hamberger-menu"><i class="fas fa-bars" style="color: #424242;"></i></div>
+            <nav class="header-login gNav ">
                 <div class="header-mypage">
                     <div class="header-profile-icon">
                         <img src="{{ isset(\App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image )? \App\User_detail::select('icon_image')->where('user_id',Auth::id())->first()->icon_image : 'https://jimotoai2023.s3.ap-northeast-1.amazonaws.com/jimotoaiprofile/cgj35n6IhyLz3mbaMJ3kt0EfsRtP1yuIJhDDJ9XP.jpg'}}" alt="myimage" class="profile-icon-img">
                     </div>
                     <a href="{{ route('home') }}" class="link">マイページへ</a>
                 </div>
+                <div class="header-logout">
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
                     <div class="header-logout-icon">
-                        <img src="/image/logout.png" alt="myimage" class="logout">
+                        <img src="/image/logout.png" alt="myimage" class="logout-icon">
                     </div>
                     <input type="submit" value="ログアウト" class="link">
                 </form>
+                </div>
                 <div class="header-btn">
                     <a class="btn-orange" href="{{route('syoukaijou.create')}}">紹介状の作成</a><br>
                     <a class="btn-green" href="{{route('spot.search')}}">紹介状の発見</a>
                 </div>
-            </div>
+            </nav>
             @else
             <div class="header-not-login">
                 <a class="btn-orange" href="{{ route('register') }}">新規登録</a><br>

@@ -63,7 +63,7 @@ class CreateController extends Controller
         return view('preview', compact('category', 'Request', 'municipalitie', 'day', 'file_name1', 'file_name2', 'file_name3', 'file_name4', 'imagePath2', 'imagePath3', 'imagePath4'));
     }
 
-
+    //DBに登録
     public function create(Request $Request)
     {
         DB::beginTransaction();

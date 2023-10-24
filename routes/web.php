@@ -69,8 +69,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('jimoto_spot/map/', 'SpotController@spotMap')->name('spot.map'); //マップ検索画面
 
 
-    //行ってみたい
+    //行ってみたいボタン
     Route::post('/interest', 'InterestController@interestAjax')->name('interest');
-    //行っったよ
+    //行っったよボタン
     Route::post('/visited', 'visitedController@visitedAjax')->name('visited');
 });

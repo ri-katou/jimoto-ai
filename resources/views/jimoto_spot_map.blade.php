@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 
+
   <div class="jimoto-search-top">
     <div class="jimoto-search">
       <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
@@ -24,9 +25,9 @@
     <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
     <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
     <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
-  </div>
 
-  
+
+
 <div class="spot-map">
   <div class="spot-filter-map block-green">マップで探す</div>
 
@@ -97,11 +98,12 @@
       let spotname = document.querySelectorAll('.address-choice .item-in-spotname')
       let origin = location.origin;
       let infoWindows = [];
-      
+      console.log(origin);
+
       addresspin.forEach(function(element) {
         let getMapid = (element.nextElementSibling.textContent).trim();
         let routesmap = '/syoukaijou/' + getMapid + '/';
-        let spotinfo = '<div class="sample"><a href=" ' + origin + routesmap + '">' +
+        let spotinfo = '<div class="sample"><a href=" ' + routesmap + '">' +
           element.textContent.replace(',', '<br>') +
           '</a></div>';
         let trimname = element.textContent.substr((element.textContent).indexOf(',') + 4);

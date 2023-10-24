@@ -18,13 +18,13 @@ class VisitedController extends Controller
         $fav_falg = 0;
 
         if ($rec->isEmpty()) {
-            $interest = new Visited();
-            $interest->user_id = $request->input('user_id');
-            $interest->syoukaijou_id = $request->input('syoukaijou_id');
-            $interest->created_at = Carbon::now();
-            $interest->updated_at = Carbon::now();
+            $visited = new Visited();
+            $visited->user_id = $request->input('user_id');
+            $visited->syoukaijou_id = $request->input('syoukaijou_id');
+            $visited->created_at = Carbon::now();
+            $visited->updated_at = Carbon::now();
 
-            $interest->save();
+            $visited->save();
             $fav_falg = 1;
         } else {
             Visited::where('user_id', $request->user_id)->where('syoukaijou_id', $request->syoukaijou_id)->delete();

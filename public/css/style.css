@@ -92,6 +92,9 @@ input[type="file"] {
     color: #339dff;
     background: transparent;
 }
+.link a{
+    color: #339dff;
+}
 .link :hover {
     color: #339dff;
     text-decoration: underline;

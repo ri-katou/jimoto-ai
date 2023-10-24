@@ -95,7 +95,7 @@
                 @endforeach
             </div>
             {{-- ここまで紹介状１枚 --}}
-            <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            <div class="mottomiru link"><a href="{{route('home.post.check')}}">もっと見る</a></div>
             @else
             <div class="dummy">投稿がされていません<br><a href="{{ route('syoukaijou.create') }}">紹介状作成はこちら</a>
             </div>
@@ -170,7 +170,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            <div class="mottomiru link"><a href="{{route('home.interest.check')}}">もっと見る</a></div>
             @else
             <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
                 <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>
@@ -245,7 +245,7 @@
                 </div>
                 @endforeach
             </div>
-            <div class="mottomiru link"><a href="{{ route('home.visit.check') }}">もっと見る</a></div>
+            <div class="mottomiru link"><a href="{{route('home.visit.check')}}">もっと見る</a></div>
             @else
             <div class="dummy">みんなの紹介状を見て自分の行ってみたいを探してみよう！<br><br>
                 <div class="dammy-link"><a href="{{route('spot.search')}}">紹介状</a>はこちら</div>

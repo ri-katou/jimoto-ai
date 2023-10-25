@@ -752,7 +752,7 @@ footer {
 .syoukaijou-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 39.5px;
+    gap: 43px 21.5px;
 }
 
 .dummy {
@@ -1257,8 +1257,8 @@ spot-addles .syoukaijou-honbun {
 
 .preview-pic1-sam img {
     margin-left: 10%;
-    height: 100px;
-    width: 100px;
+    height: 87.5px;
+    width: 90px;
 }
 
 .preview-main-sam {
@@ -1460,11 +1460,6 @@ spot-addles .syoukaijou-honbun {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 30px 0;
-}
-
-.post-grid {
-    width: 350px;
-    height: 250px;
 }
 
 .list-head {

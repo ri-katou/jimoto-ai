@@ -1455,13 +1455,6 @@ spot-addles .syoukaijou-honbun {
     justify-content: center;
 }
 
-.syoukaijougrit {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 30px 0;
-}
-
 .list-head {
     display: flex;
     justify-content: center;

@@ -1,908 +1,908 @@
 /* 共通設定 */
 html {
-    font-size: 16px;
-    color: #383838;
+  font-size: 16px;
+  color: #383838;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 main {
-    margin: 0 auto;
-    max-width: 1024px;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
 body {
-    background-color: #f7ffd5;
+  background-color: #f7ffd5;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 input[type="submit"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    font: inherit;
-    outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  font: inherit;
+  outline: none;
 }
 
 input[type="submit"]:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .pic-label {
-    width: max-content;
-    padding: 10px 25px;
-    color: #000000;
-    background-color: #abc0ff;
-    cursor: pointer;
-    border-radius: 40px 40px;
+  width: max-content;
+  padding: 10px 25px;
+  color: #000000;
+  background-color: #abc0ff;
+  cursor: pointer;
+  border-radius: 40px 40px;
 }
 input[type="file"] {
-    display: none;
+  display: none;
 }
 
 /* 共通パーツ */
 .fav_btn {
-    width: 220px;
-    margin: -0.5rem 0 0 auto;
-    display: flex;
-    justify-content: space-around;
+  width: 220px;
+  margin: -0.5rem 0 0 auto;
+  display: flex;
+  justify-content: space-around;
 }
 
 .fas {
-    color: gray;
-    font-size: 1.5rem;
+  color: gray;
+  font-size: 1.5rem;
 }
 
 .fav_btn-interest,
 .fav-btn-visited {
-    display: flex;
-    justify-content: space-around;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
 }
 
 .fav_btn-interest:hover {
-    cursor: pointer;
-    padding-top: 1px;
+  cursor: pointer;
+  padding-top: 1px;
 }
 
 .fav-btn-visited:hover {
-    cursor: pointer;
-    padding-top: 1px;
+  cursor: pointer;
+  padding-top: 1px;
 }
 
 .interest-active {
-    color: pink;
+  color: pink;
 }
 
 .visited-active {
-    color: #12f128;
+  color: #12f128;
 }
 
 .interest-count,
 .visited-count {
-    color: gray;
-    font-size: 1rem;
+  color: gray;
+  font-size: 1rem;
 }
 
 .container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-    color: #339dff;
-    background: transparent;
+  color: #339dff;
+  background: transparent;
 }
 
 .link a {
-    color: #339dff;
+  color: #339dff;
 }
 
 .link :hover {
-    color: #339dff;
-    text-decoration: underline;
-    cursor: pointer;
+  color: #339dff;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .link a:visited {
-    color: #339dff;
+  color: #339dff;
 }
 
 .return {
-    color: #555;
-    font-size: 1.5rem;
-    padding-left: 35px;
-    position: relative;
+  color: #555;
+  font-size: 1.5rem;
+  padding-left: 35px;
+  position: relative;
 }
 
 .return:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .return:active {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 
 .return::before {
-    content: "";
-    position: absolute;
-    background-image: url(../image/arrow.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
+  content: "";
+  position: absolute;
+  background-image: url(../image/arrow.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
 }
 
 .vertical {
-    writing-mode: vertical-rl;
-    margin-left: 44%;
+  writing-mode: vertical-rl;
+  margin-left: 44%;
 }
 
 .btn-orange {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    padding: 1rem 0;
-    font-weight: bold;
-    background-color: #fdc709a3;
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+  display: block;
+  height: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background-color: #fdc709a3;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
 .btn-white {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    padding: 0.5rem 0 1rem 0;
-    font-weight: bold;
-    background-color: rgb(254, 255, 210);
-    border-radius: 150px;
-    border: 1px solid black;
-    width: 200px;
+  display: block;
+  height: 3rem;
+  text-align: center;
+  padding: 0.5rem 0 1rem 0;
+  font-weight: bold;
+  background-color: rgb(254, 255, 210);
+  border-radius: 150px;
+  border: 1px solid black;
+  width: 200px;
 }
 
 .jimoto-select {
-    background-color: transparent;
-    border: 1px solid #eaff00;
-    color: #00132c;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    padding: 16px 23px;
-    position: relative;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+  background-color: transparent;
+  border: 1px solid #eaff00;
+  color: #00132c;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 .jimoto-select:before {
-    background-color: #ffffb7f8;
-    content: "";
-    height: calc(100% + 10px);
-    position: absolute;
-    right: -5px;
-    top: -5px;
-    transition: background-color 300ms ease-in;
-    width: calc(100% + 10px);
-    z-index: -1;
+  background-color: #ffffb7f8;
+  content: "";
+  height: calc(100% + 10px);
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  transition: background-color 300ms ease-in;
+  width: calc(100% + 10px);
+  z-index: -1;
 }
 
 .btn-orange:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn-green {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    padding: 1rem 0;
-    font-weight: bold;
-    background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+  display: block;
+  height: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
 .btn-green:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn-delete {
-    display: block;
-    text-align: center;
-    padding: 1rem 0 1rem 2rem;
-    font-weight: bold;
-    background-color: red;
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
-    position: relative;
+  display: block;
+  text-align: center;
+  padding: 1rem 0 1rem 2rem;
+  font-weight: bold;
+  background-color: red;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  position: relative;
 }
 
 .btn-delete::before {
-    content: "";
-    position: absolute;
-    background-image: url(../image/dust-box.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
+  content: "";
+  position: absolute;
+  background-image: url(../image/dust-box.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
 }
 
 .btn-delete:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .underline-green {
-    width: max-content;
-    border-bottom: 2px #12f128 solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px #12f128 solid;
+  margin-bottom: 1rem;
 }
 
 .underline-orange {
-    width: max-content;
-    border-bottom: 2px #ff7a00 solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px #ff7a00 solid;
+  margin-bottom: 1rem;
 }
 
 .underline-pink {
-    width: max-content;
-    border-bottom: 2px palevioletred solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px palevioletred solid;
+  margin-bottom: 1rem;
 }
 
 .underline-blue {
-    width: max-content;
-    border-bottom: 2px skyblue solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px skyblue solid;
+  margin-bottom: 1rem;
 }
 
 .underline-purple {
-    width: max-content;
-    border-bottom: 2px purple solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px purple solid;
+  margin-bottom: 1rem;
 }
 
 .underline-black {
-    width: max-content;
-    border-bottom: 2px rgb(0, 0, 0) solid;
-    margin-bottom: 1rem;
+  width: max-content;
+  border-bottom: 2px rgb(0, 0, 0) solid;
+  margin-bottom: 1rem;
 }
 
 .block-green {
-    width: max-content;
-    border-left: #12f128 6px solid;
-    border-bottom: #12f128 2px solid;
-    margin-bottom: 2rem;
+  width: max-content;
+  border-left: #12f128 6px solid;
+  border-bottom: #12f128 2px solid;
+  margin-bottom: 2rem;
 }
 
 .btn-gray {
-    display: block;
-    text-align: center;
-    padding: 1rem 0;
-    font-weight: bold;
-    background-color: #d9d9d9;
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background-color: #d9d9d9;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
 .btn-gray:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .btn-daidai {
-    display: block;
-    text-align: center;
-    padding: 1rem 0;
-    font-weight: bold;
-    background-color: #ff7a00;
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+  display: block;
+  text-align: center;
+  padding: 1rem 0;
+  font-weight: bold;
+  background-color: #ff7a00;
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
 .btn-daidai:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .area-tag {
-    display: block;
-    text-align: center;
-    border-radius: 50px;
-    border: 2px solid rgba(204, 6, 253, 0.22);
-    background: rgba(204, 6, 253, 0.22);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 150px;
-    height: 35px;
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid rgba(204, 6, 253, 0.22);
+  background: rgba(204, 6, 253, 0.22);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 35px;
 }
 
 .janru-tag {
-    display: block;
-    text-align: center;
-    border-radius: 50px;
-    border: 2px solid #ffcd1e;
-    background: rgba(253, 199, 6, 0.3);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 150px;
-    height: 35px;
+  display: block;
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid #ffcd1e;
+  background: rgba(253, 199, 6, 0.3);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 150px;
+  height: 35px;
 }
 
 .form {
-    width: 98%;
-    padding: 4px 0;
-    margin-bottom: 5%;
+  width: 98%;
+  padding: 4px 0;
+  margin-bottom: 5%;
 }
 
 .form::placeholder {
-    opacity: 75%;
+  opacity: 75%;
 }
 
 .error-message {
-    color: #f00;
+  color: #f00;
 }
 
 .error-message li {
-    list-style: none;
+  list-style: none;
 }
 
 .text-align-center {
-    text-align: center;
-    margin-top: -4.5%;
-    margin-left: -35%;
+  text-align: center;
+  margin-top: -4.5%;
+  margin-left: -35%;
 }
 
 .sourtselect {
-    position: relative;
+  position: relative;
 }
 
 .sourtselect::before,
 .sourtselect::after {
-    position: absolute;
-    content: "";
-    pointer-events: none;
+  position: absolute;
+  content: "";
+  pointer-events: none;
 }
 
 .sourtselect::before {
-    right: 0;
-    display: inline-block;
-    width: 2.8em;
-    height: 2em;
-    border-radius: 0 3px 3px 0;
-    background-color: #fdc709a3;
-    content: "";
+  right: 0;
+  display: inline-block;
+  width: 2.8em;
+  height: 2em;
+  border-radius: 0 3px 3px 0;
+  background-color: #fdc709a3;
+  content: "";
 }
 
 .sourtselect::after {
-    position: absolute;
-    top: 35%;
-    right: 1.4em;
-    transform: translate(50%, -50%) rotate(45deg);
-    width: 6px;
-    height: 6px;
-    border-bottom: 3px solid #fff;
-    border-right: 3px solid #fff;
-    content: "";
+  position: absolute;
+  top: 35%;
+  right: 1.4em;
+  transform: translate(50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  content: "";
 }
 
 .sourtselect select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    min-width: 230px;
-    height: 2em;
-    padding: 0.4em 3.6em 0.4em 0.8em;
-    border: 2px solid #d9d9d9;
-    border-radius: 3px;
-    color: #333333;
-    font-size: 1em;
-    cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 230px;
+  height: 2em;
+  padding: 0.4em 3.6em 0.4em 0.8em;
+  border: 2px solid #d9d9d9;
+  border-radius: 3px;
+  color: #333333;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 .sourtselect select:focus {
-    outline: 1px solid #d9d9d9;
+  outline: 1px solid #d9d9d9;
 }
 
 /* ページネーション */
 .pagenate {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 .page-item {
-    text-align: center;
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-    border-radius: 18px;
-    border: #83ff36 solid 2px;
-    background-color: #ccf397;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  font-size: 1.2rem;
+  border-radius: 18px;
+  border: #83ff36 solid 2px;
+  background-color: #ccf397;
 }
 
 .page-item a {
-    color: #484848;
+  color: #484848;
 }
 
 .page-item:hover {
-    background-color: #12f128;
+  background-color: #12f128;
 }
 
 .active {
-    color: #484848;
-    background-color: #5bf534;
+  color: #484848;
+  background-color: #5bf534;
 }
 
 /* header */
 .header-fixed {
-    position: sticky;
-    top: 0;
-    z-index: 998;
-    margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  margin-bottom: 30px;
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    background-color: #f7ffd5;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f7ffd5;
 }
 
 .header-login {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 10px;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 10px;
+  gap: 1rem;
 }
 
 .header-mypage {
-    text-align: center;
+  text-align: center;
 }
 
 .header-not-login {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    margin-bottom: 10px;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-bottom: 10px;
+  gap: 1rem;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
-    margin: 1rem 0 0 1rem;
+  width: 150px;
+  height: 150px;
+  margin: 1rem 0 0 1rem;
 }
 .logo img {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .header-profile-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
-    margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  margin: 0 auto;
 }
 
 .header-logout {
-    text-align: center;
+  text-align: center;
 }
 
 .logout-icon {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 /* ヘッダーのハンバーガーメニュー関連 */
 .hamberger-menu {
-    display: none;
-    height: 50px;
-    margin-top: 2rem;
+  display: none;
+  height: 50px;
+  margin-top: 2rem;
 }
 .hamberger-menu i {
-    text-align: center;
-    font-size: 2.5rem;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .yu-sei {
-    font-family: "Raleway", sans-serif;
-    font-family: "Yusei Magic", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
 }
 
 /* footer */
 footer {
-    height: 100px;
+  height: 100px;
 }
 
 /* top */
 .top-logo {
-    width: 150px;
-    height: 150px;
-    margin-left: 10vh;
-    padding-top: 5vh;
+  width: 150px;
+  height: 150px;
+  margin-left: 10vh;
+  padding-top: 5vh;
 }
 
 /* top */
 
 .vertical {
-    writing-mode: vertical-rl;
-    font-size: 1.7rem;
-    margin-left: 44%;
+  writing-mode: vertical-rl;
+  font-size: 1.7rem;
+  margin-left: 44%;
 }
 
 .logo-sub {
-    float: left;
-    position: relative;
-    display: inline;
-    font-size: 1.7rem;
-    font-weight: bold;
+  float: left;
+  position: relative;
+  display: inline;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .top-pic-right {
-    text-align: right;
-    margin-top: -27%;
-    margin-right: 2%;
+  text-align: right;
+  margin-top: -27%;
+  margin-right: 2%;
 }
 
 .top-pic-right img {
-    width: 20%;
-    height: 60vh;
+  width: 20%;
+  height: 60vh;
 }
 
 .top-pic-left img {
-    width: 25%;
-    height: auto;
-    border-radius: 157px;
-    display: inline-block;
-    margin-top: -20%;
-    margin-left: 5%;
+  width: 25%;
+  height: auto;
+  border-radius: 157px;
+  display: inline-block;
+  margin-top: -20%;
+  margin-left: 5%;
 }
 
 .top-middle-comment {
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: Yusei Magic;
-    margin-left: 10%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: Yusei Magic;
+  margin-left: 10%;
 }
 
 .top-pic-middle img {
-    width: 35%;
-    height: 40%;
-    border-radius: 150px;
-    margin-right: 5%;
-    display: inline;
-    float: right;
+  width: 35%;
+  height: 40%;
+  border-radius: 150px;
+  margin-right: 5%;
+  display: inline;
+  float: right;
 }
 
 .top-mori-icon img {
-    width: 7%;
-    height: 7%;
-    margin: 10% 50%;
+  width: 7%;
+  height: 7%;
+  margin: 10% 50%;
 }
 
 .middle-mori-icon img {
-    display: inline-flex;
-    width: 7%;
-    height: 7%;
-    margin: 10% 50%;
+  display: inline-flex;
+  width: 7%;
+  height: 7%;
+  margin: 10% 50%;
 }
 
 .login-btn a {
-    margin-top: 2vh;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #fdc709a3;
-    border-radius: 150px;
-    font-style: none;
-    display: flex;
-    width: 200px;
-    padding: 1rem 0;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    right: 10vh;
+  margin-top: 2vh;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #fdc709a3;
+  border-radius: 150px;
+  font-style: none;
+  display: flex;
+  width: 200px;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  right: 10vh;
 }
 
 .top-pic4 {
-    width: 15%;
-    position: relative;
-    margin-top: 15%;
+  width: 15%;
+  position: relative;
+  margin-top: 15%;
 }
 
 .top-pic5 {
-    width: 100%;
-    position: absolute;
-    top: -30px;
-    left: 90px;
+  width: 100%;
+  position: absolute;
+  top: -30px;
+  left: 90px;
 }
 
 .top-pic6 {
-    width: 100%;
-    position: absolute;
-    top: -60px;
-    left: 180px;
+  width: 100%;
+  position: absolute;
+  top: -60px;
+  left: 180px;
 }
 
 .top-pic7 {
-    width: 100%;
-    position: absolute;
-    top: -90px;
-    left: 270px;
+  width: 100%;
+  position: absolute;
+  top: -90px;
+  left: 270px;
 }
 
 .top-pic8 {
-    width: 100%;
-    position: absolute;
-    top: -120px;
-    left: 360px;
+  width: 100%;
+  position: absolute;
+  top: -120px;
+  left: 360px;
 }
 
 .top-bottom-comment {
-    font-size: 1.2rem;
-    font-weight: bold;
-    word-wrap: normal;
-    width: 504px;
-    margin-left: -10%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  word-wrap: normal;
+  width: 504px;
+  margin-left: -10%;
 }
 
 .top-bottom {
-    display: flex;
-    margin-left: 13%;
-    margin-top: 3%;
-    margin-bottom: 5%;
+  display: flex;
+  margin-left: 13%;
+  margin-top: 3%;
+  margin-bottom: 5%;
 }
 
 .top-kaiin {
-    margin-top: 20%;
-    margin-left: 20%;
-    font-size: 1.5rem;
+  margin-top: 20%;
+  margin-left: 20%;
+  font-size: 1.5rem;
 }
 
 .top-kaiin-btn {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .top-bottom-right {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-left: 10%;
-    margin-top: -20%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 10%;
+  margin-top: -20%;
 }
 
 /*top*/
 
 /*login.blade.php register.blade.php*/
 .login {
-    margin: 0 auto 0 auto;
-    max-width: 568px;
+  margin: 0 auto 0 auto;
+  max-width: 568px;
 }
 
 .login-header {
-    margin-bottom: 55px;
-    font-size: 1.2rem;
+  margin-bottom: 55px;
+  font-size: 1.2rem;
 }
 
 .form-inner {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 }
 
 .login-form-top {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .login-link {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
 }
 
 .login-btn-space {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 /*login.blade.php register.blade.php*/
 
 .home {
-    margin: 0 auto 0 auto;
-    max-width: 100%;
+  margin: 0 auto 0 auto;
+  max-width: 100%;
 }
 
 .home-body {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .home-body midasi {
-    margin-bottom: 26px;
+  margin-bottom: 26px;
 }
 
 .syoukaijou-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 39.5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 39.5px;
 }
 
 .dummy {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .dummy a {
-    color: #339dff;
+  color: #339dff;
 }
 
 .profile-icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    margin-bottom: 1rem;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
 }
 
 .syoukaijou-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 39px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 39px;
 }
 
 .icon-prof {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .home-icon-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mottomiru {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.1em 0;
-    font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.1em 0;
+  font-size: 1.2rem;
 }
 
 .card-margin {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .toukou {
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 241px;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 241px;
 }
 
 .icon-space {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 477px;
-    height: 136px;
-    border: 3px solid #b89d40;
-    background: #12f128;
-    box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 477px;
+  height: 136px;
+  border: 3px solid #b89d40;
+  background: #12f128;
+  box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.3);
 }
 
 .serch-syoukaijou {
-    color: #f7ffd5;
-    font-size: 32px;
+  color: #f7ffd5;
+  font-size: 32px;
 }
 
 .letter-svg {
-    position: relative;
-    right: 27px;
-    width: 90px;
-    height: 90px;
+  position: relative;
+  right: 27px;
+  width: 90px;
+  height: 90px;
 }
 
 .glass-svg {
-    position: absolute;
-    top: 330px;
-    right: 380px;
-    width: 90px;
-    height: 90px;
+  position: absolute;
+  top: 330px;
+  right: 380px;
+  width: 90px;
+  height: 90px;
 }
 
 /*register_check.blade.php*/
 
 .register-check-header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .register-part {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .register-check {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .register-check-space {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .register-check-point {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .area-select-choice {
-    display: flex;
-    justify-content: center;
-    gap: 72px;
-    margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 72px;
+  margin-bottom: 30px;
 }
 
 .area-select-top {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .area-choice {
-    margin: 0 0 23px 120px;
-    font-size: 1.2rem;
+  margin: 0 0 23px 120px;
+  font-size: 1.2rem;
 }
 
 .area-teach {
-    display: flex;
-    justify-content: center;
-    margin: 80px 0 80px 0;
-    font-weight: bold;
-    font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  margin: 80px 0 80px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .city-select {
-    list-style: none;
+  list-style: none;
 }
 
 .area-photo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .area-img {
-    width: 300px;
-    height: 300px;
+  width: 300px;
+  height: 300px;
 }
 
 .register-form {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 /*register_check.blade.php*/
@@ -910,769 +910,768 @@ footer {
 /* syoukaijou_create */
 
 .syoukaijou_create {
-    margin-left: 25%;
-    line-height: 2;
+  margin-left: 25%;
+  line-height: 2;
 }
 
 .create-form input {
-    width: 76%;
+  width: 76%;
 }
 
 .syoukaijou-top {
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 .syoukaijou-day {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .syoukaijou-daimei {
-    margin-right: 40%;
+  margin-right: 40%;
 }
 
 .syoukaijou-title-daimei {
-    margin-bottom: 1%;
+  margin-bottom: 1%;
 }
 
 .syoukaijou-pic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-supot-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .syoukaijou-supot-url-form {
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 /* profile */
 .profile {
-    margin: 0 auto;
-    max-width: 580px;
+  margin: 0 auto;
+  max-width: 580px;
 }
 
 .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .profile-nickname {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .profile-center-content {
-    margin: 0 auto;
-    width: max-content;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .profile-email-output,
 .profile-eria-output {
-    font-size: 1.2rem;
-    padding-left: 1rem;
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .profile-botom-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
 
 .profile-icon-img {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 
 /* profile_edit */
 .profile-edit-center-content {
-    margin: 0 auto;
-    width: max-content;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .profile-edit-now-nickname,
 .profile-edit-now-email,
 .profile-edit-now-eria {
-    gap: 2rem;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
-    margin-left: 1rem;
+  gap: 2rem;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .profile-edit-nickname-input,
 .profile-edit-email-input {
-    margin-bottom: 3rem;
-    margin-left: 1rem;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
 }
 
 /* profile_edit_check */
 .profile-edit-check-message {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .profile-edit-check-email,
 .profile-edit-check-nickname,
 .profile-edit-check-eria {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .profile-edit-check-email-output,
 .profile-edit-check-nickname-output,
 .profile-edit-check-eria-output {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* syoukaijou_create */
 
 .syoukaijou_create {
-    line-height: 2;
+  line-height: 2;
 }
 
 .syoukaijou-title {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .syoukaijou-top {
-    display: flex;
-    justify-content: left;
-    margin-bottom: 2%;
+  display: flex;
+  justify-content: left;
+  margin-bottom: 2%;
 }
 
 .syoukaijou-daimei {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .syoukaijou-title-daimei {
-    margin-bottom: 1%;
+  margin-bottom: 1%;
 }
 
 .syoukaijou-honbun {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 spot-addles .syoukaijou-honbun {
-    margin-left: -15%;
+  margin-left: -15%;
 }
 
 .syoukaijou-pic-button {
-    margin-left: 40%;
+  margin-left: 40%;
 }
 
 .syoukaijou-pics {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .syoukaijou-jyanru-area {
-    margin-top: 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-jyanru-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .syoukaijou-area-title {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .syoukaijou-supot-title {
-    margin-top: 3%;
-    font-size: 1.5rem;
+  margin-top: 3%;
+  font-size: 1.5rem;
 }
 
 .syoukaijou-supot-url-form {
-    margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 .syoukaijou-bottom {
-    display: flex;
-    justify-content: left;
+  display: flex;
+  justify-content: left;
 }
 
 .syoukaijou-bottom {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .syoukaijou-view {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* preview */
 
 .preview-top {
-    display: flex;
-    justify-content: left;
-    margin-left: 15%;
-    margin-right: -30%;
+  display: flex;
+  justify-content: left;
+  margin-left: 15%;
+  margin-right: -30%;
 }
 
 .preview-daimei {
-    font-size: 1.5rem;
-    margin-right: 35%;
-    margin-bottom: 3%;
+  font-size: 1.5rem;
+  margin-right: 35%;
+  margin-bottom: 3%;
 }
 
 .preview-naiyou {
-    margin-left: 15%;
-    margin-bottom: 3%;
+  margin-left: 15%;
+  margin-bottom: 3%;
 }
 
 .syoukaijou {
-    text-align: left;
-    margin: 0 5%;
-    padding: 5%;
-    background-color: #ffffff;
-    border-radius: 64px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  margin: 0 5%;
+  padding: 5%;
+  background-color: #ffffff;
+  border-radius: 64px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .syoukaijou-day {
-    margin-right: 20%;
-    margin-bottom: 3%;
+  margin-right: 20%;
+  margin-bottom: 3%;
 }
 
 .preview-syoukaijou-top {
-    display: flex;
-    justify-content: left;
+  display: flex;
+  justify-content: left;
 }
 
 .janru-area {
-    margin-left: 25%;
-    display: flex;
-    justify-content: right;
+  margin-left: 25%;
+  display: flex;
+  justify-content: right;
 }
 
 .preview-main {
-    display: flex;
-    justify-content: left;
+  display: flex;
+  justify-content: left;
 }
 
 .preview-pic1 img {
-    margin-top: 15%;
-    margin-right: 20%;
-    max-width: 500px;
-    max-width: 300px;
-    max-height: 300px;
+  margin-top: 15%;
+  margin-right: 20%;
+  max-width: 500px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .preview-pics-sub {
-    margin-top: 2%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2%;
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
 }
 
 .preview-honbun {
-    margin-left: 5%;
-    margin-bottom: 3%;
+  margin-left: 5%;
+  margin-bottom: 3%;
 }
 
 .syoukaijou-text {
-    width: 480px;
-    max-height: 400px;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 480px;
+  max-height: 400px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .preview-spot-info {
-    text-align: left;
+  text-align: left;
 }
 
 .preview-spot {
-    margin-bottom: 5%;
-    font-size: 1.5rem;
+  margin-bottom: 5%;
+  font-size: 1.5rem;
 }
 
 .spot-info {
-    font-size: 1.5rem;
-    margin-bottom: 3%;
-    margin-top: 3%;
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 .preview-spot-info {
-    margin-left: 5%;
+  margin-left: 5%;
 }
 
 .preview-sam {
-    margin-top: 5%;
-    margin-bottom: 3%;
-    font-size: 1.5rem;
+  margin-top: 5%;
+  margin-bottom: 3%;
+  font-size: 1.5rem;
 }
 
 .syoukaijou-day-sam {
-    margin-top: 5%;
-    margin-left: 5%;
-    white-space: nowrap;
+  margin-top: 5%;
+  margin-left: 5%;
+  white-space: nowrap;
 }
 
 .syoukaijou-sam-disp {
-    margin-left: 15%;
-    margin-bottom: 3%;
+  margin-left: 15%;
+  margin-bottom: 3%;
 }
 
 .syoukaijou-sam {
-    width: 350px;
-    height: 250px;
-    border-radius: 20px;
-    background: #fff;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 250px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .preview-syoukaijou-top-sam {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .syoukaijou-title-sam {
-    margin-top: 2%;
-    margin-left: 10%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  margin-top: 2%;
+  margin-left: 10%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .preview-main-sam {
-    display: flex;
-    justify-content: left;
+  display: flex;
+  justify-content: left;
 }
 
 .janru-area-sam {
-    display: flex;
-    justify-content: right;
-    margin-top: 3%;
+  display: flex;
+  justify-content: right;
+  margin-top: 3%;
 }
 
 .preview-button-sub {
-    margin-top: 2%;
-    margin-left: 50%;
+  margin-top: 2%;
+  margin-left: 50%;
 }
 
 .preview-pic1-sam img {
-    margin-left: 10%;
-    height: 100px;
-    width: 100px;
+  margin-left: 10%;
+  height: 100px;
+  width: 100px;
 }
 
 .preview-main-sam {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .preview-sam-all {
-    margin-left: 15%;
-    margin-bottom: 5%;
+  margin-left: 15%;
+  margin-bottom: 5%;
 }
 
 .preview-bottom-text {
-    font-weight: bold;
-    font-size: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .preview-bottom {
-    margin-left: 20%;
+  margin-left: 20%;
 }
 
 .preview-back {
-    margin-left: 20%;
+  margin-left: 20%;
 }
 
 /* disp */
 
 .disp-top {
-    display: flex;
-    justify-content: left;
-    margin-left: 15%;
-    margin-bottom: 3%;
+  display: flex;
+  justify-content: left;
+  margin-left: 15%;
+  margin-bottom: 3%;
 }
 
 .disp-delete {
-    margin-left: 200%;
-    display: block;
-    color: #ffffff;
-    background: #f00;
-    padding-top: 5%;
-    width: 200px;
-    height: 40px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    text-align: center;
+  margin-left: 200%;
+  display: block;
+  color: #ffffff;
+  background: #f00;
+  padding-top: 5%;
+  width: 200px;
+  height: 40px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
 }
 
 .disp-delete:active {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .disp-retrune {
-    margin-right: 30%;
-    margin-bottom: 5%;
+  margin-right: 30%;
+  margin-bottom: 5%;
 }
 
 .disp-map {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 /* jimoto spot */
 
 .jimoto-search-top {
-    display: flex;
-    justify-content: center;
-    width: 30;
-    margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  width: 30;
+  margin-bottom: 5%;
 }
 
 .jimoto-search {
-    margin-right: 10%;
+  margin-right: 10%;
 }
 
 .jimoto-search {
-    display: flex;
-    align-items: center;
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 .jimoto-search input {
-    width: 250px;
-    height: 45px;
-    padding: 5px 15px;
-    border: none;
-    box-sizing: border-box;
-    background-color: #f0f0f0;
-    font-size: 1em;
-    outline: none;
+  width: 250px;
+  height: 45px;
+  padding: 5px 15px;
+  border: none;
+  box-sizing: border-box;
+  background-color: #f0f0f0;
+  font-size: 1em;
+  outline: none;
 }
 
 .jimoto-search input::placeholder {
-    color: #767d83;
+  color: #767d83;
 }
 
 .jimoto-search input[type="submit"] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 45px;
-    border: none;
-    background-color: #fdc709;
-    cursor: pointer;
-    font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 45px;
+  border: none;
+  background-color: #fdc709;
+  cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .jimoto-search input[type="submit"]::after {
-    width: 20px;
-    height: 20px;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  content: "";
 }
 
 .janru-area-search {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5%;
-    z-index: 2;
-    gap: 0 5%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  z-index: 2;
+  gap: 0 5%;
 }
 
 .syoukaijou-link {
-    width: 350px;
-    height: 250px;
+  width: 350px;
+  height: 250px;
 }
 
 .jimoto-spot-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 }
 
 .honbun-sum {
-    width: 220px;
-    max-height: 70px;
-    word-wrap: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  width: 220px;
+  max-height: 70px;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .fav_btn {
-    display: flex;
+  display: flex;
 }
 
 /* user?delete */
 .user-delete-center-content {
-    margin: 0 auto;
-    width: max-content;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .user-delete-message {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* spot_filter */
 .spot-filter-content {
-    max-width: 60vw;
-    margin: 0 auto;
+  max-width: 60vw;
+  margin: 0 auto;
 }
 
 .spot-filter-content-genre-title-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .spot-filter-content-genre-title-item ul,
 .spot-filter-content-aria-title-item ul {
-    padding-left: 0;
-    margin-left: 1rem;
+  padding-left: 0;
+  margin-left: 1rem;
 }
 
 .spot-filter-content-aria-title-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .spot-filter-genre-submit {
-    margin: 0 auto 100px auto;
+  margin: 0 auto 100px auto;
 }
 
 /* start 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
 .all-list {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .post-list-header {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .syoukaijougrit {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 0;
 }
 
 .post-grid {
-    width: 350px;
-    height: 250px;
+  width: 350px;
+  height: 250px;
 }
 
 .list-head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 33%;
-    height: 5rem;
-    flex-shrink: 0;
-    border-radius: 30px 50px 0px 0px;
-    border-top: 3px solid #ebff9c;
-    border-right: 3px solid #ebff9c;
-    border-left: 3px solid #ebff9c;
-    background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 5rem;
+  flex-shrink: 0;
+  border-radius: 30px 50px 0px 0px;
+  border-top: 3px solid #ebff9c;
+  border-right: 3px solid #ebff9c;
+  border-left: 3px solid #ebff9c;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .list-head-back {
-    background-color: white;
+  background-color: white;
 }
 
 .post-list-head-img-rgba {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 .post-all-space {
-    width: 99%;
-    height: 921px;
-    flex-shrink: 0;
-    border-radius: 0px 0px 30px 30px;
-    border-right: 3px solid #ebff9c;
-    border-bottom: 3px solid #ebff9c;
-    border-left: 3px solid #ebff9c;
-    background: #fff;
+  width: 99%;
+  height: 921px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 30px 30px;
+  border-right: 3px solid #ebff9c;
+  border-bottom: 3px solid #ebff9c;
+  border-left: 3px solid #ebff9c;
+  background: #fff;
 }
 
 .post-syoukaijou-head {
-    gap: 30px;
+  gap: 30px;
 }
 
 .post-head-font {
-    font-size: 1.7rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .post-head-img {
-    width: 50px;
-    height: 50px;
-    background-color: #12f128;
+  width: 50px;
+  height: 50px;
+  background-color: #12f128;
 }
 
 .post-underline-green {
-    width: max-content;
-    border-bottom: 2px #12f128 solid;
+  width: max-content;
+  border-bottom: 2px #12f128 solid;
 }
 
 .list-left {
-    background-color: #339dff;
+  background-color: #339dff;
 }
 
 .all-list-syoukai {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .syoukaijou-all {
-    width: 100%;
+  width: 100%;
 }
 
 .free-svg {
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
 
 /* モーダル */
 .answer:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 @keyframes show {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 #mask.hidden {
-    display: none;
+  display: none;
 }
 
 #mask {
-    background: rgba(0, 0, 0, 0);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .exit-space {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0 16%;
-    margin-left: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 16%;
+  margin-left: 5%;
 }
 
 .modal {
-    display: none;
+  display: none;
 }
 
 .modal.show {
-    border-radius: 30px;
-    font-size: 20px;
-    text-align: center;
-    width: 500px;
-    padding: 25px;
-    border: 1px solid #e5ff9d;
-    position: fixed;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    color: #000;
-    z-index: 2;
-    display: block;
-    animation: show 1s linear 0s;
-    z-index: 1;
+  border-radius: 30px;
+  font-size: 20px;
+  text-align: center;
+  width: 500px;
+  padding: 25px;
+  border: 1px solid #e5ff9d;
+  position: fixed;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #000;
+  z-index: 2;
+  display: block;
+  animation: show 1s linear 0s;
+  z-index: 1;
 }
 
 .mask.hidden {
-    display: none;
+  display: none;
 }
 
 .close {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .close:hover {
-    opacity: 0.3;
+  opacity: 0.3;
 }
 
 .mask {
-    background: rgba(0, 0, 0, 0.4);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .exit {
-    color: #555;
-    font-size: 1.5rem;
-    padding-left: 35px;
-    position: relative;
+  color: #555;
+  font-size: 1.5rem;
+  padding-left: 35px;
+  position: relative;
 }
 
 .exit:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .exit:active {
-    margin-top: 2px;
+  margin-top: 2px;
 }
 
 .exit::before {
-    content: "";
-    position: absolute;
-    background-image: url(../image/arrow.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
+  content: "";
+  position: absolute;
+  background-image: url(../image/arrow.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
 }
 
 .btn-green-modal {
-    display: block;
-    height: 3rem;
-    text-align: center;
-    font-weight: bold;
-    background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
-    border-radius: 150px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+  display: block;
+  height: 3rem;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+  border-radius: 150px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 200px;
 }
 
 .check-text-space {
-    display: flex;
-    justify-content: center;
-    padding: 35px 0;
+  display: flex;
+  justify-content: center;
+  padding: 35px 0;
 }
 
 .area-select-center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* モーダル */
@@ -1680,248 +1679,248 @@ spot-addles .syoukaijou-honbun {
 /* 検索結果画面開始 */
 
 .search-title {
-    margin-left: 10%;
+  margin-left: 10%;
 }
 
 .search-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 2%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2%;
 }
 
 .if-area-janru {
-    display: flex;
-    gap: 0 10%;
-    margin-bottom: 2%;
+  display: flex;
+  gap: 0 10%;
+  margin-bottom: 2%;
 }
 
 .search-disp {
-    font-weight: bold;
-    font-size: 1.2rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .search-pull {
-    margin-left: 90%;
-    margin-bottom: 2%;
+  margin-left: 90%;
+  margin-bottom: 2%;
 }
 
 /* マップ検索画面 */
 .spot-map {
-    margin: 0 auto 0 auto;
-    max-width: 998px;
+  margin: 0 auto 0 auto;
+  max-width: 998px;
 }
 
 .map-space {
-    width: 998px;
-    height: 690px;
+  width: 998px;
+  height: 690px;
 }
 
 #map {
-    height: 500px;
-    width: 90%;
+  height: 500px;
+  width: 90%;
 }
 
 #floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 35%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    line-height: 30px;
-    padding-left: 10px;
+  position: absolute;
+  top: 10px;
+  left: 35%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
 }
 .error-hand-back-image {
-    background-image: url(../../storage/app/404error.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    width: 100%;
+  background-image: url(../../storage/app/404error.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  width: 100%;
 }
 
 .error-hand-message {
-    font-size: 2rem;
-    margin-top: 100px;
-    margin-bottom: 150px;
-    text-align: center;
+  font-size: 2rem;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
 }
 .back-home {
-    font-size: 1.5rem;
-    text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 /* タブレットサイズ */
 
 @media screen and (max-width: 959px) {
-    /* 959px以下に適用されるCSS（タブレット用） */
-    .preview-syoukaijou-top {
-        display: block;
-    }
+  /* 959px以下に適用されるCSS（タブレット用） */
+  .preview-syoukaijou-top {
+    display: block;
+  }
 
-    .preview-main {
-        display: block;
-    }
+  .preview-main {
+    display: block;
+  }
 
-    .home-icon-left {
-        display: none;
-    }
+  .home-icon-left {
+    display: none;
+  }
 
-    main {
-        max-width: 767px;
-    }
+  main {
+    max-width: 767px;
+  }
 
-    .syoukaijou-all {
-        width: 100%;
-    }
+  .syoukaijou-all {
+    width: 100%;
+  }
 
-    .syoukaijou-card {
-        grid-template-columns: 1fr;
-    }
+  .syoukaijou-card {
+    grid-template-columns: 1fr;
+  }
 
-    .syou {
-        margin: 0 auto;
-    }
+  .syou {
+    margin: 0 auto;
+  }
 
-    .spot-map {
-        margin: 0 auto;
-    }
-    /* 三兄弟 */
-    .syoukaijougrit {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px 0;
-    }
+  .spot-map {
+    margin: 0 auto;
+  }
+  /* 三兄弟 */
+  .syoukaijougrit {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px 0;
+  }
 
-    .hidden-head {
-        width: 19%;
-    }
-    .center-head {
-        width: 61%;
-    }
+  .hidden-head {
+    width: 19%;
+  }
+  .center-head {
+    width: 61%;
+  }
 
-    .post-grid {
-        width: 350px;
-        height: 250px;
-    }
+  .post-grid {
+    width: 350px;
+    height: 250px;
+  }
 
-    .post-head-font {
-        font-size: 1rem;
-    }
+  .post-head-font {
+    font-size: 1rem;
+  }
 }
 
 /* スマホサイズ */
 @media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
+  /* 480px以下に適用されるCSS（スマホ用） */
 
-    .btn-orange {
-        width: 150px;
-    }
+  .btn-orange {
+    width: 150px;
+  }
 
-    .btn-green {
-        width: 150px;
-    }
+  .btn-green {
+    width: 150px;
+  }
 
-    .janru-area-search {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
+  .janru-area-search {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 
-    /* ヘッダー */
+  /* ヘッダー */
 
-    .hamberger-menu {
-        display: block;
-        margin-right: 1rem;
-    }
-    .hamberger-menu :hover {
-        cursor: pointer;
-    }
-    .gNav {
-        display: block;
-        position: fixed;
-        z-index: 999;
-        right: -120%;
-        top: 75px;
-    }
+  .hamberger-menu {
+    display: block;
+    margin-right: 1rem;
+  }
+  .hamberger-menu :hover {
+    cursor: pointer;
+  }
+  .gNav {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    right: -120%;
+    top: 75px;
+  }
 
-    .panelactive {
-        right: 0;
-        transition: all 0.3s;
-    }
+  .panelactive {
+    right: 0;
+    transition: all 0.3s;
+  }
 
-    .header-logout,
-    .header-mypage {
-        margin-bottom: 1rem;
-    }
+  .header-logout,
+  .header-mypage {
+    margin-bottom: 1rem;
+  }
 
-    /*TOPページ*/
-    .top-logo img {
-        margin-left: -45%;
-        position: relative;
-    }
+  /*TOPページ*/
+  .top-logo img {
+    margin-left: -45%;
+    position: relative;
+  }
 
-    .login-btn a {
-        width: 150px;
-        position: absolute;
-        left: 60%;
-        top: 4%;
-    }
+  .login-btn a {
+    width: 150px;
+    position: absolute;
+    left: 60%;
+    top: 4%;
+  }
 
-    .logo-sub {
-        margin-left: 40px;
-    }
+  .logo-sub {
+    margin-left: 40px;
+  }
 
-    .top-pic-right img {
-        margin-top: 50px;
-        width: 100px;
-        height: 150px;
-    }
+  .top-pic-right img {
+    margin-top: 50px;
+    width: 100px;
+    height: 150px;
+  }
 
-    .top-pic4 {
-        width: 15%;
-        position: relative;
-        margin-top: 15%;
-    }
+  .top-pic4 {
+    width: 15%;
+    position: relative;
+    margin-top: 15%;
+  }
 
-    .top-pic5 {
-        width: 100%;
-        position: absolute;
-        top: -15px;
-        left: 45px;
-    }
+  .top-pic5 {
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    left: 45px;
+  }
 
-    .top-pic6 {
-        width: 100%;
-        position: absolute;
-        top: -30px;
-        left: 90px;
-    }
+  .top-pic6 {
+    width: 100%;
+    position: absolute;
+    top: -30px;
+    left: 90px;
+  }
 
-    .top-pic7 {
-        width: 100%;
-        position: absolute;
-        top: -45px;
-        left: 135px;
-    }
+  .top-pic7 {
+    width: 100%;
+    position: absolute;
+    top: -45px;
+    left: 135px;
+  }
 
-    .top-pic8 {
-        width: 100%;
-        position: absolute;
-        top: -60px;
-        left: 180px;
-    }
+  .top-pic8 {
+    width: 100%;
+    position: absolute;
+    top: -60px;
+    left: 180px;
+  }
 
-    .vertical {
-        margin-left: 30%;
-    }
+  .vertical {
+    margin-left: 30%;
+  }
 
-    .top-kaiin {
-        margin-left: -10%;
-    }
+  .top-kaiin {
+    margin-left: -10%;
+  }
 
-    /*TOPページ終了*/
+  /*TOPページ終了*/
 }

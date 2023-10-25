@@ -68,4 +68,6 @@ RUN composer dump-autoload
 
 # RUN php artisan db:seed --class=MunicipalitiesTableSeeder
 
+RUN php artisan storage:link
+
 RUN php artisan view:clear

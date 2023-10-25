@@ -26,8 +26,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        // // if (App::environment('production','staging')) {
-        // URL::forceScheme('https');
-        // // }
+        // if (App::environment('production','staging')) {
+        URL::forceScheme('https');
+        // }
     }
 }

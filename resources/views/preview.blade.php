@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="preview-top">
-    <div class="preview-daimei">紹介状作成</div>
+    <div class="preview-daimei yu-sei underline-black">紹介状作成</div>
     <div class="return">戻る</div>
 </div>
 <div class="preview-naiyou">この内容でよろしいですか？</div>

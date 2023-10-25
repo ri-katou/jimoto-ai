@@ -1766,7 +1766,9 @@ spot-addles .syoukaijou-honbun {
     }
 
     .syoukaijou-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 30px;
+        gap: 20px 74px;
     }
 
     .syou {
@@ -1775,12 +1777,6 @@ spot-addles .syoukaijou-honbun {
 
     .spot-map {
         margin: 0 auto;
-    }
-    /* 三兄弟 */
-    .syoukaijougrit {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px 0;
     }
 
     .hidden-head {
@@ -1797,6 +1793,12 @@ spot-addles .syoukaijou-honbun {
 
     .post-head-font {
         font-size: 1rem;
+    }
+}
+/* 紹介状　二列表示の限界 */
+@media screen and (max-width: 729px) {
+    .syoukaijou-card {
+        grid-template-columns: 1fr;
     }
 }
 

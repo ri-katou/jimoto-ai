@@ -195,7 +195,44 @@ $(document).ready(function () {
         }
     })
 
-}); //ここまでJquery
+}); 
+
+$('input[name = "image1"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image1').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+$('input[name = "image2"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image2').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+
+
+//ここまでJquery
 
 /* preview */
 

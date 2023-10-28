@@ -11,7 +11,8 @@
       <div class="syoukaijou-title">
 
         <div class="syoukaijou-title-daimei">
-          <div class="yusei">タイトル入力(必須)</div>
+          <div class="yusei">タイトル入力<font color="red">(必須)<font color="def">
+          </div>
         </div>
         @if($errors->any())
         <div class="error-message">
@@ -25,7 +26,8 @@
         <div class="create-form"><input class="form" type="text" name="title" id="" value="{{ old('title') }}"></div>
       </div>
       <div class="syoukaijou-main">
-        <div class="syoukaijou-honbun">本文（必須）</div>
+        <div class="syoukaijou-honbun">本文<font color="red">(必須)<font color="def">
+        </div>
         @if($errors->any())
         <div class="error-message">
           <ul>
@@ -35,23 +37,53 @@
           </ul>
         </div>
         @endif
-        <div class="form"><textarea name="main" id="" cols="80" rows="20">{{ old('main') }}</textarea></div>
+        <div class="form-text"><textarea class="create-textarea" name="main">{{ old('main') }}</textarea></div>
       </div>
-      <div class="syoukaijou-view">スポットビュー（１枚必須）</div>
+      <div class="syoukaijou-view">スポットビュー<font color="red">(１枚必須)</font>
+        <font color="def"></font>
+      </div>
       @if($errors->any())
-        <div class="error-message">
-          <ul>
-            @error('image1')
-            <li>{{ $message }}</li>
-            @enderror
-          </ul>
-        </div>
-        @endif
+      <div class="error-message">
+        <ul>
+          @error('image1')
+          <li>{{ $message }}</li>
+          @enderror
+        </ul>
+      </div>
+      @endif
       <div class="syoukaijou-pic">
-        <input type="file" name="image1" accept="image/*">
-        <input type="file" name="image2" accept="image/*">
-        <input type="file" name="image3" accept="image/*">
-        <input type="file" name="image4" accept="image/*">
+        <div>
+          <label>
+          <img class="image1" accept="image/*" src="/image/noimage.jpg">
+            <div class="pic-label">
+              <input type="file" name="image1" accept="image/*">ファイルを選択<font color="red">(必須)</font><br>
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>
+          <img class="image2" accept="image/*" src="/image/noimage.jpg">
+            <div class="pic-label">
+              <input type="file" name="image2" accept="image/*">ファイルを選択<br>
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>
+          <img class="image3" accept="image/*" src="/image/noimage.jpg">
+            <div class="pic-label">
+              <input type="file" name="image3" accept="image/*">ファイルを選択<br>
+            </div>
+          </label>
+        </div>
+        <div>
+          <label>
+          <img class="image4" accept="image/*" src="/image/noimage.jpg">
+            <div class="pic-label">
+              <input type="file" name="image4" accept="image/*">ファイルを選択
+            </div>
+          </label>
+        </div>
       </div>
       <div class="syoukaijou-jyanru-area">
         <div class="syoukaijou-jyanru">
@@ -65,8 +97,8 @@
               </ul>
             </div>
             @endif
-            <div class="form-group">
-              <select class="form-control" id="id" name="category">
+            <div class="form-group sourtselect">
+              <select class="form-control sourtselect-box" id="id" name="category">
                 @foreach ($category as $item)
                 <option value="{{ $item->id }}">{{ $item->category_name }}</option>
                 @endforeach
@@ -87,13 +119,13 @@
             </div>
             @endif
             <div class="area-select">
-              <div class="form-group">
-                <select class="form-control" id="id" name="municipalitie">
+              <div class="form-group sourtselect">
+                <select class="form-control sourtselect-box" id="id" name="municipalitie">
                   @if(count($userdetail)>0)
-                    @if($item->id = $userdetail[0]->municipalitie_id)
-                    <option value="{{ $userdetail[0]->municipalitie_id }}" selected>{{$userdetail[0]->municipalities_name}}</option>
-                    @endif
-                    @endif
+                  @if($item->id = $userdetail[0]->municipalitie_id)
+                  <option value="{{ $userdetail[0]->municipalitie_id }}" selected>{{$userdetail[0]->municipalities_name}}</option>
+                  @endif
+                  @endif
                   @foreach ($municipalitie as $item)
                   <option value="{{ $item->id }}">{{ $item->municipalities_name }}</option>
                   @endforeach
@@ -105,7 +137,7 @@
       </div>
       <div class="syoukaijou-supot">
         <div class="syoukaijou-supot-title">スポット情報</div>
-        <div class="syoukaijou-supot-name">スポット名、店名（必須）</div>
+        <div class="syoukaijou-supot-name">スポット名、店名(必須)</div>
         @if($errors->any())
         <div class="error-message">
           <ul>
@@ -116,7 +148,7 @@
         </div>
         @endif
         <div class="create-form"><input class="form" type="text" name="spotname" id="" value="{{ old('spotname') }}"></textarea></div>
-        <div class="syoukaijou-supot-zyusyo">住所（任意）</div>
+        <div class="syoukaijou-supot-zyusyo">住所(任意)</div>
         @if($errors->any())
         <div class="error-message">
           <ul>
@@ -127,7 +159,7 @@
         </div>
         @endif
         <div class="create-form"><input class="form" type="text" name="address" id="" value="{{ old('address') }}"></textarea></div>
-        <div class="syoukaijou-supot-url">URL（任意）</div>
+        <div class="syoukaijou-supot-url">URL(任意)</div>
         @if($errors->any())
         <div class="error-message">
           <ul>

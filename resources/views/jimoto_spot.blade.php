@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<div class="serch-ittem">
 <div class="jimoto-search-top">
     <div class="jimoto-search">
         <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
@@ -22,6 +23,7 @@
         </select>
     </label>
 </div>
+
 @if($errors->any())
 <div class="error-message text-align-center">
     <ul>
@@ -37,7 +39,7 @@
     <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}">ジャンルを指定して探す</a></div>
     <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
 </div>
-
+</div>
 
 
 <div class="jimoto-spot-content">

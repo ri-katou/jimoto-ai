@@ -478,7 +478,9 @@ textarea{
     color: #484848;
     background-color: #5bf534;
 }
-
+.pagination {
+    padding: 0;
+}
 /* header */
 .header-fixed {
     position: sticky;
@@ -514,13 +516,20 @@ textarea{
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin: 1rem 0 0 1rem;
 }
+
 .logo img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+}
+
+.header-create-btn,
+.header-serch-btn {
+    height: auto;
+    padding: 8px 0;
 }
 
 .header-profile-icon {
@@ -545,6 +554,7 @@ textarea{
     height: 50px;
     margin-top: 2rem;
 }
+
 .hamberger-menu i {
     text-align: center;
     font-size: 2.5rem;
@@ -559,6 +569,7 @@ textarea{
 footer {
     height: 100px;
 }
+
 
 /* top */
 .top-logo {
@@ -1353,20 +1364,18 @@ spot-addles .syoukaijou-honbun {
 .jimoto-search-top {
     display: flex;
     justify-content: center;
-    width: 30;
-    margin-bottom: 5%;
-}
-
-.jimoto-search {
-    margin-right: 10%;
-}
-
-.jimoto-search {
-    display: flex;
     align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.jimoto-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
+    width: 300px;
 }
 
 .jimoto-search input {
@@ -1762,20 +1771,23 @@ spot-addles .syoukaijou-honbun {
     line-height: 30px;
     padding-left: 10px;
 }
+
 .error-hand-back-image {
-background-image: url(../../storage/app/404error.jpg);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-height: 90vh;
-width: 100%;
+    background-image: url(../../storage/app/404error.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
 }
+
 .error-hand-message {
     font-size: 2rem;
     margin-top: 100px;
     margin-bottom: 150px;
     text-align: center;
 }
+
 .back-home {
     font-size: 1.5rem;
     text-align: center;
@@ -1844,9 +1856,11 @@ width: 100%;
         display: block;
         margin-right: 1rem;
     }
-    .hamberger-menu :hover{
+
+    .hamberger-menu :hover {
         cursor: pointer;
     }
+
     .gNav {
         display: block;
         position: fixed;
@@ -1865,6 +1879,22 @@ width: 100%;
         margin-bottom: 1rem;
     }
 
+    /* 共通 */
+    .serch-ittem {
+        width: 95vw;
+        text-align: center;
+    }
+    .jimoto-search-top {
+        display: block;
+    }
+    .jimoto-search {
+        width: 300px;
+        margin-bottom: 1rem;
+        margin: 0 auto;
+    }
+    .jimoto-spot-content {
+        grid-template-columns: 1fr;
+    }
 
     /*TOPページ*/
     .top-logo img {
@@ -1932,6 +1962,10 @@ width: 100%;
     }
 
     /*TOPページ終了*/
+    /* プロフィール */
+    .profile-container {
+        display: block;
+    }
 
    /*紹介状作成*/
    .syoukaijou-pic {

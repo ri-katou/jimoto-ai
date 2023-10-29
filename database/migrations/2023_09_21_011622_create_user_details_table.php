@@ -16,8 +16,9 @@ class CreateUserDetailsTable extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('municipalitie_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->string('icon_image', 255);
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('icon_image', 255)->nullable();
             $table->timestamps();
         });
     }

@@ -79,7 +79,7 @@ return [
   'max' => [
     'numeric' => 'The :attribute may not be greater than :max.',
     'file' => 'The :attribute may not be greater than :max kilobytes.',
-    'string' => ' :attribute は255文字以内で入力してください。',
+    'string' => ' :attribute は30文字以内で入力してください。',
     'array' => 'The :attribute may not have more than :max items.',
   ],
   'mimes' => 'The :attribute must be a file of type: :values.',
@@ -87,7 +87,7 @@ return [
   'min' => [
     'numeric' => 'The :attribute must be at least :min.',
     'file' => 'The :attribute must be at least :min kilobytes.',
-    'string' => ' :attribute は２文字以上で入力してください。',
+    'string' => ' :attribute は :min 文字以上で入力してください。',
     'array' => 'The :attribute must have at least :min items.',
   ],
   'not_in' => 'The selected :attribute is invalid.',
@@ -95,7 +95,7 @@ return [
   'numeric' => 'The :attribute must be a number.',
   'password' => 'The password is incorrect.',
   'present' => 'The :attribute field must be present.',
-  'regex' => 'The :attribute format is invalid.',
+  'regex' => ':attributeには、同じ半角英数字を連続して6回以上入力しないでください。',
   'required'             => ':attribute は必須入力です。',
   'required_if' => 'The :attribute field is required when :other is :value.',
   'required_unless' => 'The :attribute field is required unless :other is in :values.',
@@ -115,7 +115,7 @@ return [
   'timezone' => 'The :attribute must be a valid zone.',
   'unique'               => '入力いただいた :attribute はすでに使用されています。',
   'uploaded' => 'The :attribute failed to upload.',
-  'url' => 'The :attribute format is invalid.',
+  'url' => ':attribute 表記が正しくありません。',
   'uuid' => 'The :attribute must be a valid UUID.',
 
   /*
@@ -134,7 +134,14 @@ return [
       'rule-name' => 'custom-message',
       'nickname' => 'ニックネーム',
       'email' => 'メールアドレス',
+      'title' => 'タイトル',
+      'main' => '本文',
+      'janru' => 'ジャンル',
+      'spotname' => 'スポット名',
+      'addles' => '住所',
+      'url' => 'URL',
       'password' => 'パスワード',
+      'pic' => '画像',
     ],
   ],
 
@@ -151,8 +158,17 @@ return [
 
   'attributes' => [
     'nickname' => 'ニックネーム',
+    'name' => 'ニックネーム（名前）',
     'email' => 'メールアドレス',
+    'title' => 'タイトル',
+    'main' => '本文',
+    'janru' => 'ジャンル',
+    'spotname' => 'スポット名',
+    'addles' => '住所',
+    'url' => 'URL',
     'password' => 'パスワード',
+    'pic' => '画像',
+    'search' => '検索'
   ],
 
 ];

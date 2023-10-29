@@ -6,74 +6,279 @@ $(document).ready(function () {
     });
 
     // 編集ボタンを押すと入力フォームの出現
-    let togleForm = $(this).parent().parent().next();
-    if (togleForm.is([value != ""])) {
-        togleForm.removeClass("hidden");
-    }
+
     $(".edit-btn").on("click", function () {
-        togleForm.removeClass("hidden");
+        let togleForm = $(this).parent().parent().next();
+        togleForm.toggleClass("hidden");
+        $(this).toggleClass("hidden");
     });
 
-    // ログアウト処理
-    $('.logout').on('click',function($e){
-        $e.preventDefault();
-        $('#logout-form').submit();
+    // 大項目をチェックすると小項目が全部チェックされる
+
+    // 1. 「全選択」する
+
+    $(".check").on("click", function () {
+        let check = $(this).parent().next().children().children().children();
+        if ($(this).children().is(":checked")) {
+            $(check).prop("checked", this.click);
+
+        } else {
+            $(check).prop("checked", false);
+            $(this).prop("checked", false);
+        }
+    });
+
+    $(".aria-check").click(function () {
+        if ($(this).prop("cheked")) {
+            let area_id = $(this).attr("class");
+            $("." + area_id).prop("checked", true);
+        } else {
+            console.log("else");
+        }
+    });
+
+    //プロフィール編集にてエリアを選ぶと表記変更
+    $(".profile-edit-eria-change").change(function () {
+        let neweria = $("[name=eria] option:selected").text();
+
+        $(".profile-eria-output").text(neweria);
+    });
+
+    $(".area_choice").change(function () {
+        let areatext = $(this).parent().text();
+        $(".area-text").text(areatext);
+    });
+
+    // 日付のフォーマット
+    $(".syoukaijou-day-sam").text().replaceAll('-', '/').slice(0, 10);
+
+
+    // $("#answer").on('click',function(){
+    //     $("#modal").addClass('show');
+    //     $("#mask").removeClass('hidden');
+    //     show = true;
+    // })
+
+    //ソート
+    //  行ってみたい順
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtInterest') {
+            let sortSyoukaijou = '';
+            sortSyoukaijou = $('.syou').sort(function (a, b) {
+                if ($(a).data("interest") < $(b).data("interest")) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            })
+            $('.syoukaijou-card').empty();
+            sortSyoukaijou.each(function () {
+                $('.syoukaijou-card').append($(this));
+            });
+        };
+    });
+    //  行ったよ順
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtVisited') {
+            let sortSyoukaijou = '';
+            sortSyoukaijou = $('.syou').sort(function (a, b) {
+                if ($(a).data("visited") < $(b).data("visited")) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            })
+            $('.syoukaijou-card').empty();
+            sortSyoukaijou.each(function () {
+                $('.syoukaijou-card').append($(this));
+            });
+        };
+    });
+    // 新着順（再読み込みするだけ）
+    $(".sourtselect-box").on('change', function () {
+        if ($(".sourtselect-box").val() == 'sourtNew') {
+            location.reload();
+        };
+    });
+
+    //マイページの画像変更
+    $(function () {
+        $('.profile-img-edit-input').change(function () {
+            var file = $(this).prop('files')[0];
+
+            // 画像以外は処理を停止
+            if (!file.type.match('image.*')) {
+                // クリア
+                $(this).val('');
+                $('.profile-icon').html('');
+                return;
+            }
+            var reader = new FileReader();
+            reader.onload = function () {
+                var img_src = $('.profile-icon-img').attr('src', reader.result);
+
+            }
+            reader.readAsDataURL(file);
+            $('#profile-img-edit-form').submit();
+        });
+    });
+    // ハンバーガーメニュー
+    $(".hamberger-menu").click(function () {//ボタンがクリックされたら
+        $(this).children().toggleClass("fa-bars");
+        $(this).children().toggleClass("fa-times");
+          $(".gNav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+      });
+
+    $('form').on('submit', function(){
+        console.log(this);
+        let insertHtml=`
+        <!-- loading -->
+        <div id="loading"">
+            <div class="cv-spinner">
+                <span class="spinner"></span>
+                <p>...少々お待ち下さい。</p>
+            </div>
+        </div>
+        <!-- loading -->
+        `
+        let insertCSS=`
+        <style>
+            #loading{
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                width: 100%;
+                height:100%;
+                background: rgba(0,0,0,0.6);
+            }
+            #loading .cv-spinner {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #loading .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px #ddd solid;
+                border-top: 4px #999 solid;
+                border-radius: 50%;
+                animation: sp-anime 0.8s infinite linear;
+            }
+            #loading p {
+                line-height: 40px;
+                margin: 0 0 0 8px;
+                text-align: center;
+                color: #ddd
+            }
+            @keyframes sp-anime {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(359deg); }
+            }
+            #loading.is-hide{
+                display:none;
+            }
+        </style>
+        `
+        document.getElementsByTagName('head')[0].insertAdjacentHTML('beforeend', insertCSS);
+        document.getElementsByTagName('body')[0].insertAdjacentHTML('afterbegin', insertHtml);
+    });
+
+    $('#delete').on('click',function(e){
+        let result = window.confirm('この投稿を削除しますか？')
+        if(result){
+            $('#delete').off();
+        }else{
+            e.preventDefault();
+            console.log('end');
+        }
     })
+
+}); 
+
+$('input[name = "image1"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image1').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
 });
 
-function previewFile(file) {
-    // プレビュー画像を追加する要素
-    const preview = document.getElementById("preview");
-
-    // FileReaderオブジェクトを作成
-    const reader = new FileReader();
-
-    // ファイルが読み込まれたときに実行する
-    reader.onload = function (e) {
-        const imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
-        const img = document.createElement("img"); // img要素を作成
-        img.src = imageUrl; // 画像のURLをimg要素にセット
-        preview.appendChild(img); // #previewの中に追加
-    };
-
-    // いざファイルを読み込む
-    reader.readAsDataURL(file);
-}
-
-// <input>でファイルが選択されたときの処理
-const fileInput = document.getElementById("example");
-const handleFileSelect = () => {
-    const files = fileInput.files;
-    for (let i = 0; i < files.length; i++) {
-        previewFile(files[i]);
+$('input[name = "image2"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image2').attr('src', e.target.result);
     }
-};
-fileInput.addEventListener("change", handleFileSelect);
+    file.readAsDataURL(e.target.files[0]);
+});
+
+
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
+});
+
+
+
+//ここまでJquery
 
 /* preview */
 
-//画像を配列に格納する
-var img = new Array();
 
-img[0] = new Image();
-img[0].src = "image/0.jpg";
-img[1] = new Image();
-img[1].src = "image/1.jpg";
-img[2] = new Image();
-img[2].src = "image/2.jpg";
+// エリアセレクトのモーダル
+let show = false;
 
-//画像番号用のグローバル変数
-var cnt = 0;
+document.getElementById("answer").addEventListener('click', function () {
+    document.getElementById("modal").classList.add("show"); // 画面表示
+    document.getElementById("mask").classList.remove("hidden"); //マスク表示
+    show = true;
+});
 
-//画像切り替え関数
-function changeIMG() {
-    //画像番号を進める
-    if (cnt == 2) {
-        cnt = 0;
-    } else {
-        cnt++;
+document.getElementById("close").onclick = function () {
+    // flag = 0;
+    document.getElementById("modal").classList.remove("show"); // 閉じる
+    document.getElementById("mask").classList.add("hidden"); //マスク非表示
+};
+document.querySelector("#mask").onclick = function () {
+    // flag = 0;
+    if (document.getElementById("modal").classList.contains("show")) {
+        document.getElementById("modal").classList.remove("show"); // 閉じる
+        document.getElementById("mask").classList.add("hidden"); //マスク非表示
     }
+};
 
-    //画像を切り替える
-    document.getElementById("gazo").src = img[cnt].src;
-}
+//アニメーション
+
+const myFunc = ()=>{
+
+    const form = document.forms[0];
+    const button = form.querySelector('button');
+    const loader = form.querySelector('.loader');
+
+    button.addEventListener('click', (e)=>{
+
+        //ローダーを表示する
+        loader.style.display = 'block';
+
+        //～
+        //非同期処理追加
+        //～
+
+    }, false);
+};
+myFunc();
+
+
+

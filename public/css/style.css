@@ -1,18 +1,23 @@
 /* 共通設定 */
 html {
     font-size: 16px;
+    color: #383838;
 }
+
 * {
     box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
     color: black;
 }
+
 main {
     margin: 0 auto;
     max-width: 1024px;
 }
+
 body {
     background-color: #f7ffd5;
 }
@@ -20,56 +25,120 @@ body {
 img {
     max-width: 100%;
 }
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    font: inherit;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.pic-label {
+    width: max-content;
+    padding: 5px 10px;
+    color: #c9c9c9;
+    background-color: #535753;
+    cursor: pointer;
+    border-radius: 40px 40px;
+}
+input[type="file"] {
+    display: none;
+}
+
 /* 共通パーツ */
+.fav_btn {
+    width: 220px;
+    margin: -0.5rem 0 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fas {
+    color: gray;
+    font-size: 1.5rem;
+}
+
+.fav_btn-interest,
+.fav-btn-visited {
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.fav_btn-interest:hover {
+    cursor: pointer;
+    padding-top: 1px;
+}
+
+.fav-btn-visited:hover {
+    cursor: pointer;
+    padding-top: 1px;
+}
+
+.interest-active {
+    color: pink;
+}
+
+.visited-active {
+    color: #12f128;
+}
+
+.interest-count,
+.visited-count {
+    color: gray;
+    font-size: 1rem;
+}
+
 .container {
     display: flex;
     align-items: center;
 }
+
 .link {
     color: #339dff;
+    background: transparent;
 }
-.link a:hover {
+
+.link a {
+    color: #339dff;
+}
+
+.link :hover {
     color: #339dff;
     text-decoration: underline;
+    cursor: pointer;
 }
+
 .link a:visited {
     color: #339dff;
 }
+
 .return {
     color: #555;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-left: 35px;
     position: relative;
+    width: fit-content;
 }
+
 .return:hover {
     cursor: pointer;
 }
+
 .return:active {
     margin-top: 2px;
 }
-.return::before {
-    content: "";
-    position: absolute;
-    background-image: url(../image/arrow.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    left: 0;
-}
-.return {
-    color: #555;
-    font-size: 2rem;
-    padding-left: 35px;
-    position: relative;
-}
-.return:hover {
-    cursor: pointer;
-}
-.return:active {
-    margin-top: 2px;
-}
+
 .return::before {
     content: "";
     position: absolute;
@@ -84,15 +153,12 @@ img {
 
 .vertical {
     writing-mode: vertical-rl;
-    font-size: 1.7rem;
-    margin-left: 44%;
-    writing-mode: vertical-rl;
-    font-size: 1.7rem;
     margin-left: 44%;
 }
 
 .btn-orange {
     display: block;
+    height: 3rem;
     text-align: center;
     padding: 1rem 0;
     font-weight: bold;
@@ -101,12 +167,53 @@ img {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
 }
+
+.btn-white {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    padding: 0.5rem 0 1rem 0;
+    font-weight: bold;
+    background-color: rgb(254, 255, 210);
+    border-radius: 150px;
+    border: 1px solid black;
+    width: 200px;
+}
+
+.jimoto-select {
+    background-color: transparent;
+    border: 1px solid #eaff00;
+    color: #00132c;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 16px 23px;
+    position: relative;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.jimoto-select:before {
+    background-color: #ffffb7f8;
+    content: "";
+    height: calc(100% + 10px);
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    transition: background-color 300ms ease-in;
+    width: calc(100% + 10px);
+    z-index: -1;
+}
+
 .btn-orange:active {
     box-shadow: none;
-    margin-top: 3px;
 }
+
 .btn-green {
     display: block;
+    height: 3rem;
     text-align: center;
     padding: 1rem 0;
     font-weight: bold;
@@ -118,8 +225,8 @@ img {
 
 .btn-green:active {
     box-shadow: none;
-    margin-top: 3px;
 }
+
 .btn-delete {
     display: block;
     text-align: center;
@@ -131,8 +238,9 @@ img {
     width: 200px;
     position: relative;
 }
+
 .btn-delete::before {
-    content: '';
+    content: "";
     position: absolute;
     background-image: url(../image/dust-box.svg);
     background-size: 100%;
@@ -142,9 +250,9 @@ img {
     top: 0;
     left: 0;
 }
+
 .btn-delete:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .underline-green {
@@ -152,9 +260,48 @@ img {
     border-bottom: 2px #12f128 solid;
     margin-bottom: 1rem;
 }
+
+.underline-orange {
+    width: max-content;
+    border-bottom: 2px #ff7a00 solid;
+    margin-bottom: 1rem;
+}
+
+.underline-red {
+    width: max-content;
+    border-bottom: 2px #ff1b1b solid;
+    margin-bottom: 1rem;
+}
+
+.underline-pink {
+    width: max-content;
+    border-bottom: 2px palevioletred solid;
+    margin-bottom: 1rem;
+}
+
+.underline-blue {
+    width: max-content;
+    border-bottom: 2px skyblue solid;
+    margin-bottom: 1rem;
+}
+
+.underline-purple {
+    width: max-content;
+    border-bottom: 2px purple solid;
+    margin-bottom: 1rem;
+}
+
+.underline-black {
+    width: max-content;
+    border-bottom: 2px rgb(0, 0, 0) solid;
+    margin-bottom: 1rem;
+}
+
 .block-green {
-    border-left: #12f128 6px bold;
+    width: max-content;
+    border-left: #12f128 6px solid;
     border-bottom: #12f128 2px solid;
+    margin-bottom: 2rem;
 }
 
 .btn-gray {
@@ -165,11 +312,11 @@ img {
     background-color: #d9d9d9;
     border-radius: 150px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+    width:  200px;
 }
+
 .btn-gray:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .hidden {
@@ -186,9 +333,9 @@ img {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
 }
+
 .btn-daidai:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .area-tag {
@@ -212,35 +359,224 @@ img {
     width: 150px;
     height: 35px;
 }
+
 .form {
     width: 98%;
+    padding: 4px 0 4px 10px;
+    margin-bottom: 5%;
+    border-radius: 10px;
+    border: #f5cf7d 0.5px solid;
+}
+
+textarea{
+    padding: 4px 0 4px 10px;
+    border-radius: 10px;
+    border: #f5cf7d 0.5px solid;
+}
+
+
+.form::placeholder {
+    opacity: 75%;
+}
+
+.error-message {
+    color: #f00;
+}
+
+.error-message li {
+    list-style: none;
+}
+
+.text-align-center {
+    text-align: center;
+    margin-top: -4.5%;
+    margin-left: -35%;
+}
+
+.sourtselect {
+    position: relative;
+    width: 230px;
+}
+
+.sourtselect::before,
+.sourtselect::after {
+    position: absolute;
+    content: "";
+    pointer-events: none;
+}
+
+.sourtselect::before {
+    right: 0;
+    display: inline-block;
+    width: 2.8em;
+    height: 2em;
+    border-radius: 0 3px 3px 0;
+    background-color: #fdc709a3;
+    content: "";
+}
+
+.sourtselect::after {
+    position: absolute;
+    top: 35%;
+    right: 1.4em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 6px;
+    height: 6px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: "";
+}
+
+.sourtselect select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 230px;
+    height: 2em;
+    padding: 0.4em 3.6em 0.4em 0.8em;
+    border: 2px solid #d9d9d9;
+    border-radius: 3px;
+    color: #333333;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.sourtselect select:focus {
+    outline: 1px solid #d9d9d9;
+}
+
+/* ページネーション */
+.pagenate {
+    margin: 2rem 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.page-item {
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 18px;
+    border: #83ff36 solid 2px;
+    background-color: #ccf397;
+}
+
+.page-item a {
+    color: #484848;
+}
+
+.page-item:hover {
+    background-color: #12f128;
+}
+
+.active {
+    color: #484848;
+    background-color: #5bf534;
+}
+.pagination {
+    padding: 0;
 }
 /* header */
-header {
-    margin: 0 5vh;
-    padding: 100px 0;
+.header-fixed {
+    position: sticky;
+    top: 0;
+    z-index: 998;
     margin-bottom: 30px;
 }
+
 .header-container {
-    width: 95%;
-    margin: 5vh 10vh 0 10vh;
     display: flex;
     justify-content: space-between;
-    /* position: fixed; */
-    top: 0;
-    left: 0;
+    background-color: #f7ffd5;
 }
+
+.header-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 10px;
+    gap: 1rem;
+}
+
+.header-mypage {
+    text-align: center;
+}
+
 .header-not-login {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    margin-bottom: 10px;
     gap: 1rem;
 }
-.logo {
-    width: 150px;
-    height: 150px;
-    margin-top: 5vh;
+.header-btn {
+    margin-top: 8px;
 }
+.header-btn  a{
+    margin: 0 auto 1rem auto;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 1rem 0 0 1rem;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.header-create-btn,
+.header-serch-btn {
+    height: auto;
+    padding: 8px 0;
+}
+
+.header-profile-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    margin: 0 auto;
+}
+
+.header-logout {
+    text-align: center;
+}
+
+.logout-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* ヘッダーのハンバーガーメニュー関連 */
+.hamberger-menu {
+    display: none;
+    height: 50px;
+    margin-top: 2rem;
+}
+
+.hamberger-menu i {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.yu-sei {
+    font-family: "Raleway", sans-serif;
+    font-family: "Yusei Magic", sans-serif;
+}
+
+/* footer */
+footer {
+    height: 100px;
+}
+
+
 /* top */
 .top-logo {
     width: 150px;
@@ -248,6 +584,7 @@ header {
     margin-left: 10vh;
     padding-top: 5vh;
 }
+
 /* top */
 
 .vertical {
@@ -313,7 +650,7 @@ header {
     margin: 10% 50%;
 }
 
-.login-btn button {
+.login-btn a {
     margin-top: 2vh;
     font-size: 1.2rem;
     font-weight: bold;
@@ -321,8 +658,8 @@ header {
     border-radius: 150px;
     font-style: none;
     display: flex;
-    width: 15%;
-    height: 10%;
+    width: 200px;
+    padding: 1rem 0;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -331,53 +668,46 @@ header {
     right: 10vh;
 }
 
-.top-bottom-comment {
-    position: relative;
-}
-
 .top-pic4 {
     width: 15%;
-    height: auto;
     position: relative;
     margin-top: 15%;
-    margin-left: 10%;
 }
 
 .top-pic5 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -5vh;
-    left: 12vh;
+    top: -30px;
+    left: 90px;
 }
 
 .top-pic6 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -10vh;
-    left: 25vh;
+    top: -60px;
+    left: 180px;
 }
 
 .top-pic7 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -15vh;
-    left: 45vh;
+    top: -90px;
+    left: 270px;
 }
 
 .top-pic8 {
     width: 100%;
-    height: auto;
     position: absolute;
-    top: -20vh;
-    left: 60vh;
+    top: -120px;
+    left: 360px;
 }
 
 .top-bottom-comment {
     font-size: 1.2rem;
     font-weight: bold;
+    word-wrap: normal;
+    width: 504px;
+    margin-left: -10%;
 }
 
 .top-bottom {
@@ -391,6 +721,10 @@ header {
     margin-top: 20%;
     margin-left: 20%;
     font-size: 1.5rem;
+}
+
+.top-kaiin-btn {
+    margin-top: 5%;
 }
 
 .top-bottom-right {
@@ -407,8 +741,10 @@ header {
     margin: 0 auto 0 auto;
     max-width: 568px;
 }
+
 .login-header {
     margin-bottom: 55px;
+    font-size: 1.2rem;
 }
 
 .form-inner {
@@ -418,6 +754,13 @@ header {
 .login-form-top {
     margin-bottom: 30px;
 }
+
+.login-link {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
 .login-btn-space {
     display: flex;
     text-align: center;
@@ -425,39 +768,42 @@ header {
     margin-bottom: 30px;
 }
 
-.login-link {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-}
 /*login.blade.php register.blade.php*/
 
 .home {
     margin: 0 auto 0 auto;
-    max-width: 1129px;
+    max-width: 100%;
 }
 
 .home-body {
+    font-size: 1.5rem;
+}
+
+.home-body midasi {
     margin-bottom: 26px;
 }
 
 .syoukaijou-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 39.5px;
-    height: 250px;
+    gap: 43px 21.5px;
 }
 
-.syou {
-    background-color: #339dff;
+.dummy {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dummy a {
+    color: #339dff;
 }
 
 .profile-icon {
-    background-color: #339dff;
     width: 200px;
     height: 200px;
     border-radius: 100%;
-    margin-bottom: 39.3px;
+    margin-bottom: 1rem;
 }
 
 .syoukaijou-header {
@@ -470,6 +816,7 @@ header {
     display: flex;
     justify-content: center;
 }
+
 .home-icon-left {
     display: flex;
     justify-content: center;
@@ -479,14 +826,12 @@ header {
 .mottomiru {
     display: flex;
     justify-content: flex-end;
+    padding: 1.1em 0;
+    font-size: 1.2rem;
 }
 
 .card-margin {
     margin-bottom: 5px;
-}
-
-.mottomiru {
-    margin-bottom: 10px;
 }
 
 .toukou {
@@ -527,22 +872,23 @@ header {
 }
 
 /*register_check.blade.php*/
+
 .register-check-header {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
+
 .register-part {
     margin-bottom: 15px;
 }
 
-.register-check-part {
-    margin-bottom: 10px;
+.register-check {
+    margin-bottom: 40px;
 }
 
-.register-check {
-    margin-bottom: 30px;
-}
 .register-check-space {
     margin-bottom: 20px;
 }
@@ -564,12 +910,15 @@ header {
 
 .area-choice {
     margin: 0 0 23px 120px;
+    font-size: 1.2rem;
 }
 
 .area-teach {
     display: flex;
     justify-content: center;
-    margin: 0 0 91px 0;
+    margin: 80px 0 80px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .city-select {
@@ -580,100 +929,148 @@ header {
     display: flex;
     justify-content: center;
 }
+
 .area-img {
     width: 300px;
     height: 300px;
 }
+
+.register-form {
+    margin-bottom: 5%;
+}
+
 /*register_check.blade.php*/
 
 /* syoukaijou_create */
-
+.red {
+    color: red;
+}
+.syoukaijou-pic img{
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 3%;
+    margin-left: 3%;
+}
 .syoukaijou_create {
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
+    width: 80vw;
+    max-width: 750px;
+    margin: 0 auto;
     line-height: 2;
 }
 
 .syoukaijou-top {
-    display: flex;
-    justify-content: center;
     margin-bottom: 2%;
 }
+
 .syoukaijou-day {
     white-space: nowrap;
 }
-.syoukaijou-daimei {
-    font-size: 1.5rem;
-    margin-right: 40%;
+
+.syoukaijou-pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.syoukaijou-title-daimei {
-    margin-bottom: 1%;
-    margin-right: 40%;
-}
-.syoukaijou-honbun {
-    margin-right: 45%;
-}
-.syoukaijou-pics {
-    display: flex;
-    column-gap: 10px;
-}
-.syoukaijou-jyanru-area {
-    display: flex;
-    justify-content: center;
-}
-.syoukaijou-jyanru {
-    margin-right: 20%;
-}
 .syoukaijou-supot-title {
     font-size: 1.5rem;
-    margin-right: 40%;
 }
-.syoukaijou-supot-name {
-    margin-right: 36%;
+
+.create-textarea {
+    width: 100%;
+    height: 400px;
 }
-.syoukaijou-supot-zyusyo {
-    margin-right: 45%;
-}
-.syoukaijou-supot-url {
-    margin-right: 45%;
-}
-.syoukaijou-supot-url-form {
-    margin-bottom: 2%;
-}
-.syoukaijou-bottom {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15%;
-}
+
 /* profile */
 .profile {
     margin: 0 auto;
+    max-width: 580px;
 }
+
 .profile-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
+
 .profile-nickname {
     font-size: 2rem;
 }
 
+.profile-center-content {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.profile-email-output,
+.profile-eria-output {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-botom-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.profile-icon-img {
+    border-radius: 100%;
+}
+
+/* profile_edit */
+.profile-edit-center-content {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.profile-edit-now-nickname,
+.profile-edit-now-email,
+.profile-edit-now-eria {
+    gap: 2rem;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+.profile-edit-nickname-input,
+.profile-edit-email-input {
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+}
+
+/* profile_edit_check */
+.profile-edit-check-message {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-edit-check-email,
+.profile-edit-check-nickname,
+.profile-edit-check-eria {
+    margin-left: 1rem;
+}
+
+.profile-edit-check-email-output,
+.profile-edit-check-nickname-output,
+.profile-edit-check-eria-output {
+    margin-bottom: 2rem;
+}
+
 /* syoukaijou_create */
 
-.syoukaijou_create {
-    line-height: 2;
-}
-
 .syoukaijou-title {
-    margin-left: 14%;
     word-wrap: break-word;
 }
+
 .syoukaijou-top {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     margin-bottom: 2%;
-    margin-left: 10%;
 }
 
 .syoukaijou-daimei {
@@ -684,64 +1081,51 @@ header {
 .syoukaijou-title-daimei {
     margin-bottom: 1%;
 }
+
 .syoukaijou-honbun {
-    margin-left: -15%;
+    font-size: 1.2rem;
 }
 
-.syoukaijou-pic-button {
-    margin-left: 22%;
-}
 
 .syoukaijou-pics {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
 .syoukaijou-jyanru-area {
-    margin-top: 5%;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-jyanru-title {
-    font-size: 1.5rem;
-}
-
-.area-select {
-    width: 100px;
-    margin-top: -15%;
+    font-size: 1.2rem;
 }
 
 .syoukaijou-area-title {
-    font-size: 1.5rem;
-    margin-left: -70%;
+    font-size: 1.2rem;
 }
 
 .syoukaijou-supot-title {
     margin-top: 3%;
     font-size: 1.5rem;
-    margin-left: -15%;
 }
-.syoukaijou-supot-name {
-    margin-left: -12%;
-}
-.syoukaijou-supot-zyusyo {
-    margin-left: -15%;
-}
-.syoukaijou-supot-url {
-    margin-left: -15%;
-}
+
 .syoukaijou-supot-url-form {
     margin-bottom: 2%;
 }
+
 .syoukaijou-bottom {
     display: flex;
-    justify-content: left;
-    margin-bottom: 15%;
+    justify-content: space-around;
 }
 
 .syoukaijou-bottom {
     margin-top: 5%;
-    margin-left: 25%;
+}
+
+.syoukaijou-view {
+    font-size: 1.2rem;
 }
 
 /* preview */
@@ -784,15 +1168,9 @@ header {
 }
 
 .janru-area {
-    margin-left: 40%;
+    margin-left: 25%;
     display: flex;
     justify-content: right;
-}
-
-.syoukaijou-title {
-    font-size: 1.5rem;
-    margin-right: 40%;
-    margin-bottom: 3%;
 }
 
 .preview-main {
@@ -839,7 +1217,6 @@ header {
 
 .spot-info {
     font-size: 1.5rem;
-    margin-right: 75%;
     margin-bottom: 3%;
     margin-top: 3%;
 }
@@ -850,13 +1227,14 @@ header {
 
 .preview-sam {
     margin-top: 5%;
-
     margin-bottom: 3%;
     font-size: 1.5rem;
 }
 
 .syoukaijou-day-sam {
-    margin: 2%;
+    margin-top: 5%;
+    margin-left: 5%;
+    white-space: nowrap;
 }
 
 .syoukaijou-sam-disp {
@@ -865,7 +1243,6 @@ header {
 }
 
 .syoukaijou-sam {
-    width: 350px;
     height: 250px;
     border-radius: 20px;
     background: #fff;
@@ -876,15 +1253,12 @@ header {
     margin-top: 10px;
 }
 
-.sum-top {
-    display: flex;
-    justify-content: left;
-}
-
 .syoukaijou-title-sam {
     margin-top: 2%;
     margin-left: 10%;
-    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .preview-main-sam {
@@ -900,14 +1274,13 @@ header {
 
 .preview-button-sub {
     margin-top: 2%;
-    margin-left: 43%;
-    margin-bottom: 3%;
+    margin-left: 50%;
 }
 
-.preview-pic1-sam {
+.preview-pic1-sam img {
     margin-left: 10%;
-    height: 100px;
-    width: 100px;
+    height: 87.5px;
+    width: 90px;
 }
 
 .preview-main-sam {
@@ -921,7 +1294,15 @@ header {
 
 .preview-bottom-text {
     font-weight: bold;
-    margin-left: 5%;
+    font-size: 1.5rem;
+}
+
+.preview-bottom {
+    margin-left: 20%;
+}
+
+.preview-back {
+    margin-left: 20%;
 }
 
 /* disp */
@@ -947,7 +1328,6 @@ header {
 
 .disp-delete:active {
     box-shadow: none;
-    margin-top: 3px;
 }
 
 .disp-retrune {
@@ -956,7 +1336,7 @@ header {
 }
 
 .disp-map {
-    margin: 20%;
+    margin-top: 2rem;
 }
 
 /* jimoto spot */
@@ -964,12 +1344,53 @@ header {
 .jimoto-search-top {
     display: flex;
     justify-content: center;
-    width: 30;
-    margin-bottom: 5%;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .jimoto-search {
-    margin-right: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
+    width: 300px;
+}
+
+.jimoto-search input {
+    width: 250px;
+    height: 45px;
+    padding: 5px 15px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    font-size: 1em;
+    outline: none;
+}
+
+.jimoto-search input::placeholder {
+    color: #767d83;
+}
+
+.jimoto-search input[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 45px;
+    border: none;
+    background-color: #fdc709;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.jimoto-search input[type="submit"]::after {
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    content: "";
 }
 
 .janru-area-search {
@@ -977,6 +1398,7 @@ header {
     justify-content: center;
     margin-bottom: 5%;
     z-index: 2;
+    gap: 0 5%;
 }
 
 .syoukaijou-link {
@@ -984,34 +1406,670 @@ header {
     height: 250px;
 }
 
-.jimoto-sam {
+.jimoto-spot-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2%;
+    gap: 1rem;
 }
 
 .honbun-sum {
     width: 220px;
-    max-height: 95px;
+    max-height: 70px;
     word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.fav_btn-ittemitai {
-    margin-top: 3%;
+.fav_btn {
+    display: flex;
+}
+
+/* user?delete */
+.user-delete-center-content {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.user-delete-message {
+    margin-bottom: 2rem;
+}
+
+/* spot_filter */
+.spot-filter-content {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.spot-filter-content-genre-title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.spot-filter-content-genre-title-item ul,
+.spot-filter-content-aria-title-item ul {
+    padding-left: 0;
+    margin-left: 1rem;
+}
+
+.spot-filter-content-aria-title-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.spot-filter-genre-submit {
+    margin: 0 auto 100px auto;
+}
+
+/* start 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
+.all-list {
+    display: flex;
+    justify-content: center;
+}
+
+.post-list-header {
+    display: flex;
+    justify-content: center;
+}
+
+.list-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.333%;
+    height: 5rem;
+    flex-shrink: 0;
+    border-radius: 30px 50px 0px 0px;
+    border-top: 3px solid #ebff9c;
+    border-right: 3px solid #ebff9c;
+    border-left: 3px solid #ebff9c;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.list-head-back {
+    background-color: white;
+}
+
+.post-list-head-img-rgba {
+    opacity: 0.4;
+}
+
+.post-all-space {
+    max-width: 1164px;
+    height: 921px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 30px 30px;
+    border-right: 3px solid #ebff9c;
+    border-bottom: 3px solid #ebff9c;
+    border-left: 3px solid #ebff9c;
+    background: #fff;
+}
+
+.post-syoukaijou-head {
+    gap: 30px;
+}
+
+.post-head-font {
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-head-img {
+    width: 50px;
+    height: 50px;
+    background-color: #12f128;
+}
+
+.post-underline-green {
+    width: max-content;
+    border-bottom: 2px #12f128 solid;
+}
+
+.list-left {
+    background-color: #339dff;
+}
+
+.all-list-syoukai {
+    display: flex;
+    justify-content: center;
+}
+
+.syoukaijou-all {
+    width: 100%;
+}
+
+.free-svg {
+    width: 35px;
+    height: 35px;
+}
+
+/* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
+
+/* モーダル */
+.answer:hover {
+    opacity: 0.7;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#mask.hidden {
+    display: none;
+}
+
+#mask {
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.exit-space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 16%;
     margin-left: 5%;
 }
 
-.fav-btn-ittayo {
-    margin-top: -27%;
-    margin-left: 50%;
+.modal {
+    display: none;
 }
 
-.ittayo-math {
-    margin-left: 15px;
+.modal.show {
+    border-radius: 30px;
+    font-size: 20px;
+    text-align: center;
+    width: 500px;
+    padding: 25px;
+    border: 1px solid #e5ff9d;
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: #000;
+    z-index: 2;
+    display: block;
+    animation: show 1s linear 0s;
+    z-index: 1;
 }
 
-.ittemitai-math {
-    margin-left: 15px;
+.mask.hidden {
+    display: none;
 }
+
+.close {
+    cursor: pointer;
+}
+
+.close:hover {
+    opacity: 0.3;
+}
+
+.mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.exit {
+    color: #555;
+    font-size: 1.5rem;
+    padding-left: 35px;
+    position: relative;
+}
+
+.exit:hover {
+    cursor: pointer;
+}
+
+.exit:active {
+    margin-top: 2px;
+}
+
+.exit::before {
+    content: "";
+    position: absolute;
+    background-image: url(../image/arrow.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    left: 0;
+}
+
+.btn-green-modal {
+    display: block;
+    height: 3rem;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1));
+    border-radius: 150px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+}
+
+.check-text-space {
+    display: flex;
+    justify-content: center;
+    padding: 35px 0;
+}
+
+.area-select-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* モーダル */
+
+/* 検索結果画面開始 */
+
+.search-title {
+    margin-left: 10%;
+}
+
+.search-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+}
+
+.if-area-janru {
+    display: flex;
+    gap: 0 10%;
+    margin-bottom: 2%;
+}
+
+.search-disp {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.search-pull {
+    margin-left: 90%;
+    margin-bottom: 2%;
+}
+
+/* マップ検索画面 */
+.spot-map {
+    margin: 0 auto 0 auto;
+    max-width: 998px;
+}
+
+.map-space {
+    width: 998px;
+    height: 690px;
+}
+
+#map {
+    height: 500px;
+    width: 90%;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 35%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.error-hand-back-image {
+    background-image: url(../../storage/app/404error.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.error-hand-message {
+    font-size: 2rem;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+.back-home {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* タブレットサイズ */
+
+@media screen and (max-width: 959px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+    .preview-syoukaijou-top {
+        display: block;
+    }
+
+    .preview-main {
+        display: block;
+    }
+
+    .home-icon-left {
+        display: none;
+    }
+
+    main {
+        max-width: 767px;
+    }
+
+    .syoukaijou-all {
+        width: 100%;
+    }
+
+    .syoukaijou-card {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 30px;
+        gap: 20px 74px;
+    }
+
+    .syou {
+        margin: 0 auto;
+    }
+
+    .spot-map {
+        margin: 0 auto;
+    }
+
+    .hidden-head {
+        width: 19%;
+    }
+    .center-head {
+        width: 61%;
+    }
+
+    .post-grid {
+        width: 350px;
+        height: 250px;
+    }
+
+    .post-head-font {
+        font-size: 1rem;
+    }
+}
+/* 紹介状　二列表示の限界 */
+@media screen and (max-width: 729px) {
+    .syoukaijou-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* スマホサイズ */
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+
+    .btn-orange {
+        width: 150px;
+        font-size: 0.8rem;
+    }
+
+    .btn-green {
+        width: 150px;
+        font-size: 0.8rem;
+    }
+
+    .janru-area-search {
+        gap: 8px;
+    }
+    .janru-search ,
+    .map-search  {
+        width: 33%;
+    }
+    .janru-search a,
+    .map-search  a{
+        width: 100%;
+        font-weight: 100;
+        font-size: 0.6rem;
+    }
+
+    /* ヘッダー */
+
+    .hamberger-menu {
+        display: block;
+        margin-right: 1rem;
+    }
+    .hamberger-menu :hover {
+        cursor: pointer;
+    }
+
+    .gNav {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        right: -120%;
+        top: 75px;
+        height: 90vh;
+        width: 45vw;
+        background-color: #f7ffd5;
+    }
+
+    .panelactive {
+        right: 0;
+        transition: all 0.3s;
+    }
+
+    .header-logout,
+    .header-mypage {
+        margin-bottom: 1rem;
+    }
+
+
+    /* 共通 */
+    .serch-ittem {
+        width: 95vw;
+        text-align: center;
+    }
+    .jimoto-search-top {
+        display: block;
+    }
+    .jimoto-search {
+        width: 300px;
+        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
+    }
+    .jimoto-spot-content {
+        grid-template-columns: 1fr;
+    }
+    /*TOPページ*/
+    .top-logo img {
+        margin-left: -45%;
+        position: relative;
+    }
+
+    .login-btn a {
+        width: 150px;
+        position: absolute;
+        left: 60%;
+        top: 4%;
+    }
+
+    .logo-sub {
+        margin-left: 40px;
+    }
+
+    .top-pic-right img {
+        margin-top: 50px;
+        width: 100px;
+        height: 150px;
+    }
+
+    .top-pic4 {
+        width: 15%;
+        position: relative;
+        margin-top: 15%;
+    }
+
+    .top-pic5 {
+        width: 100%;
+        position: absolute;
+        top: -15px;
+        left: 45px;
+    }
+
+    .top-pic6 {
+        width: 100%;
+        position: absolute;
+        top: -30px;
+        left: 90px;
+    }
+
+    .top-pic7 {
+        width: 100%;
+        position: absolute;
+        top: -45px;
+        left: 135px;
+    }
+
+    .top-pic8 {
+        width: 100%;
+        position: absolute;
+        top: -60px;
+        left: 180px;
+    }
+
+    .vertical {
+        margin-left: 30%;
+    }
+
+    .top-kaiin {
+        margin-left: -10%;
+    }
+
+    /*TOPページ終了*/
+
+    /* プロフィール */
+    .profile-container {
+        display: block;
+    }
+
+    /* home */
+    .syoukaijou-header {
+        display: block;
+    }
+    .profile-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px auto;
+    }
+    .profile-botom-btn {
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+    .profile-botom-btn a ,
+    .profile-botom-btn input,
+    .profile-botom-btn div{
+        margin: 0 auto 1rem auto;
+    }
+    .profile-botom-btn div {
+        text-align: center;
+    }
+/* 紹介状作成画面 */
+    .syoukaijou-jyanru-area {
+        grid-template-columns: 1fr;
+    }
+    .syoukaijou-bottom {
+        display: block;
+    }
+    .syoukaijou-pic-button input,
+    .syoukaijou-bottom div{
+        margin: 1rem auto;
+    }
+/* 紹介状発見 */
+    .syoukaijou-card {
+        gap: 0.5rem;
+    }
+    .syoukaijou-text {
+        width: 300px;
+    }
+    .preview-top {
+        margin: 0 auto;
+    }
+    .preview-sam-all {
+        margin: 0 5% 2rem 5%;
+    }
+    .preview-bottom {
+        margin:  0 auto;
+    }
+    .preview-bottom-text {
+        text-align: center;
+    }
+    .preview-button-sub {
+        margin: 0;
+    }
+    .preview-button-sub input {
+        margin: 1rem auto;
+    }
+    .preview-back {
+        margin: 0;
+    }
+    .preview-back div {
+        margin: 0 auto;
+    }
+    /* もっとみる */
+    .post-all-space {
+        width: 95vw;
+    }
+    .list-head {
+        width: 25vw;
+        height: auto;
+    }
+    .list-head-back {
+        width: 45vw;
+    }
+    .post-head-font {
+        font-size: 0.8rem;
+    }
+    .post-syoukaijou-head {
+        display: block;
+    }
+    .post-img {
+        text-align: center;
+    }
+    .post-img img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ジャンルエリア検索 */
+    .spot-filter-content-genre-title-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .spot-filter-content-aria-title-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .spot-filter-content {
+        max-width: 80vw;
+    }
+}
+

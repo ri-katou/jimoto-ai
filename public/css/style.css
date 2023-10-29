@@ -45,9 +45,9 @@ li {
 
 .pic-label {
     width: max-content;
-    padding: 10px 25px;
-    color: #000000;
-    background-color: #abc0ff;
+    padding: 5px 10px;
+    color: #c9c9c9;
+    background-color: #535753;
     cursor: pointer;
     border-radius: 40px 40px;
 }
@@ -128,6 +128,7 @@ input[type="file"] {
     font-size: 1.5rem;
     padding-left: 35px;
     position: relative;
+    width: fit-content;
 }
 
 .return:hover {
@@ -266,6 +267,12 @@ input[type="file"] {
     margin-bottom: 1rem;
 }
 
+.underline-red {
+    width: max-content;
+    border-bottom: 2px #ff1b1b solid;
+    margin-bottom: 1rem;
+}
+
 .underline-pink {
     width: max-content;
     border-bottom: 2px palevioletred solid;
@@ -305,7 +312,7 @@ input[type="file"] {
     background-color: #d9d9d9;
     border-radius: 150px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
+    width:  200px;
 }
 
 .btn-gray:active {
@@ -355,9 +362,18 @@ input[type="file"] {
 
 .form {
     width: 98%;
-    padding: 4px 0;
+    padding: 4px 0 4px 10px;
     margin-bottom: 5%;
+    border-radius: 10px;
+    border: #f5cf7d 0.5px solid;
 }
+
+textarea{
+    padding: 4px 0 4px 10px;
+    border-radius: 10px;
+    border: #f5cf7d 0.5px solid;
+}
+
 
 .form::placeholder {
     opacity: 75%;
@@ -379,6 +395,7 @@ input[type="file"] {
 
 .sourtselect {
     position: relative;
+    width: 230px;
 }
 
 .sourtselect::before,
@@ -414,7 +431,7 @@ input[type="file"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    min-width: 230px;
+    width: 230px;
     height: 2em;
     padding: 0.4em 3.6em 0.4em 0.8em;
     border: 2px solid #d9d9d9;
@@ -461,7 +478,9 @@ input[type="file"] {
     color: #484848;
     background-color: #5bf534;
 }
-
+.pagination {
+    padding: 0;
+}
 /* header */
 .header-fixed {
     position: sticky;
@@ -495,15 +514,28 @@ input[type="file"] {
     margin-bottom: 10px;
     gap: 1rem;
 }
+.header-btn {
+    margin-top: 8px;
+}
+.header-btn  a{
+    margin: 0 auto 1rem auto;
+}
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin: 1rem 0 0 1rem;
 }
+
 .logo img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+}
+
+.header-create-btn,
+.header-serch-btn {
+    height: auto;
+    padding: 8px 0;
 }
 
 .header-profile-icon {
@@ -528,6 +560,7 @@ input[type="file"] {
     height: 50px;
     margin-top: 2rem;
 }
+
 .hamberger-menu i {
     text-align: center;
     font-size: 2.5rem;
@@ -542,6 +575,7 @@ input[type="file"] {
 footer {
     height: 100px;
 }
+
 
 /* top */
 .top-logo {
@@ -908,14 +942,20 @@ footer {
 /*register_check.blade.php*/
 
 /* syoukaijou_create */
-
-.syoukaijou_create {
-    margin-left: 25%;
-    line-height: 2;
+.red {
+    color: red;
 }
-
-.create-form input {
-    width: 76%;
+.syoukaijou-pic img{
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+.syoukaijou_create {
+    width: 80vw;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 2;
 }
 
 .syoukaijou-top {
@@ -924,14 +964,6 @@ footer {
 
 .syoukaijou-day {
     white-space: nowrap;
-}
-
-.syoukaijou-daimei {
-    margin-right: 40%;
-}
-
-.syoukaijou-title-daimei {
-    margin-bottom: 1%;
 }
 
 .syoukaijou-pic {
@@ -943,8 +975,9 @@ footer {
     font-size: 1.5rem;
 }
 
-.syoukaijou-supot-url-form {
-    margin-bottom: 2%;
+.create-textarea {
+    width: 100%;
+    height: 400px;
 }
 
 /* profile */
@@ -1030,17 +1063,13 @@ footer {
 
 /* syoukaijou_create */
 
-.syoukaijou_create {
-    line-height: 2;
-}
-
 .syoukaijou-title {
     word-wrap: break-word;
 }
 
 .syoukaijou-top {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     margin-bottom: 2%;
 }
 
@@ -1054,16 +1083,9 @@ footer {
 }
 
 .syoukaijou-honbun {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
-spot-addles .syoukaijou-honbun {
-    margin-left: -15%;
-}
-
-.syoukaijou-pic-button {
-    margin-left: 40%;
-}
 
 .syoukaijou-pics {
     display: grid;
@@ -1071,17 +1093,17 @@ spot-addles .syoukaijou-honbun {
 }
 
 .syoukaijou-jyanru-area {
-    margin-top: 5%;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .syoukaijou-jyanru-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .syoukaijou-area-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .syoukaijou-supot-title {
@@ -1095,7 +1117,7 @@ spot-addles .syoukaijou-honbun {
 
 .syoukaijou-bottom {
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
 }
 
 .syoukaijou-bottom {
@@ -1103,7 +1125,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .syoukaijou-view {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 /* preview */
@@ -1322,20 +1344,18 @@ spot-addles .syoukaijou-honbun {
 .jimoto-search-top {
     display: flex;
     justify-content: center;
-    width: 30;
-    margin-bottom: 5%;
-}
-
-.jimoto-search {
-    margin-right: 10%;
-}
-
-.jimoto-search {
-    display: flex;
     align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.jimoto-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.25);
+    width: 300px;
 }
 
 .jimoto-search input {
@@ -1478,7 +1498,7 @@ spot-addles .syoukaijou-honbun {
 }
 
 .post-all-space {
-    width: 100%;
+    max-width: 1164px;
     height: 921px;
     flex-shrink: 0;
     border-radius: 0px 0px 30px 30px;
@@ -1721,6 +1741,7 @@ spot-addles .syoukaijou-honbun {
     line-height: 30px;
     padding-left: 10px;
 }
+
 .error-hand-back-image {
     background-image: url(../../storage/app/404error.jpg);
     background-repeat: no-repeat;
@@ -1736,6 +1757,7 @@ spot-addles .syoukaijou-honbun {
     margin-bottom: 150px;
     text-align: center;
 }
+
 .back-home {
     font-size: 1.5rem;
     text-align: center;
@@ -1808,16 +1830,26 @@ spot-addles .syoukaijou-honbun {
 
     .btn-orange {
         width: 150px;
+        font-size: 0.8rem;
     }
 
     .btn-green {
         width: 150px;
+        font-size: 0.8rem;
     }
 
     .janru-area-search {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: 8px;
+    }
+    .janru-search ,
+    .map-search  {
+        width: 33%;
+    }
+    .janru-search a,
+    .map-search  a{
+        width: 100%;
+        font-weight: 100;
+        font-size: 0.6rem;
     }
 
     /* ヘッダー */
@@ -1829,12 +1861,16 @@ spot-addles .syoukaijou-honbun {
     .hamberger-menu :hover {
         cursor: pointer;
     }
+
     .gNav {
         display: block;
         position: fixed;
         z-index: 999;
         right: -120%;
         top: 75px;
+        height: 90vh;
+        width: 45vw;
+        background-color: #f7ffd5;
     }
 
     .panelactive {
@@ -1847,6 +1883,23 @@ spot-addles .syoukaijou-honbun {
         margin-bottom: 1rem;
     }
 
+
+    /* 共通 */
+    .serch-ittem {
+        width: 95vw;
+        text-align: center;
+    }
+    .jimoto-search-top {
+        display: block;
+    }
+    .jimoto-search {
+        width: 300px;
+        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto;
+    }
+    .jimoto-spot-content {
+        grid-template-columns: 1fr;
+    }
     /*TOPページ*/
     .top-logo img {
         margin-left: -45%;
@@ -1913,4 +1966,110 @@ spot-addles .syoukaijou-honbun {
     }
 
     /*TOPページ終了*/
+
+    /* プロフィール */
+    .profile-container {
+        display: block;
+    }
+
+    /* home */
+    .syoukaijou-header {
+        display: block;
+    }
+    .profile-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 8px auto;
+    }
+    .profile-botom-btn {
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+    .profile-botom-btn a ,
+    .profile-botom-btn input,
+    .profile-botom-btn div{
+        margin: 0 auto 1rem auto;
+    }
+    .profile-botom-btn div {
+        text-align: center;
+    }
+/* 紹介状作成画面 */
+    .syoukaijou-jyanru-area {
+        grid-template-columns: 1fr;
+    }
+    .syoukaijou-bottom {
+        display: block;
+    }
+    .syoukaijou-pic-button input,
+    .syoukaijou-bottom div{
+        margin: 1rem auto;
+    }
+/* 紹介状発見 */
+    .syoukaijou-card {
+        gap: 0.5rem;
+    }
+    .syoukaijou-text {
+        width: 300px;
+    }
+    .preview-top {
+        margin: 0 auto;
+    }
+    .preview-sam-all {
+        margin: 0 5% 2rem 5%;
+    }
+    .preview-bottom {
+        margin:  0 auto;
+    }
+    .preview-bottom-text {
+        text-align: center;
+    }
+    .preview-button-sub {
+        margin: 0;
+    }
+    .preview-button-sub input {
+        margin: 1rem auto;
+    }
+    .preview-back {
+        margin: 0;
+    }
+    .preview-back div {
+        margin: 0 auto;
+    }
+    /* もっとみる */
+    .post-all-space {
+        width: 95vw;
+    }
+    .list-head {
+        width: 25vw;
+        height: auto;
+    }
+    .list-head-back {
+        width: 45vw;
+    }
+    .post-head-font {
+        font-size: 0.8rem;
+    }
+    .post-syoukaijou-head {
+        display: block;
+    }
+    .post-img {
+        text-align: center;
+    }
+    .post-img img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* ジャンルエリア検索 */
+    .spot-filter-content-genre-title-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .spot-filter-content-aria-title-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .spot-filter-content {
+        max-width: 80vw;
+    }
 }
+

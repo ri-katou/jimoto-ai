@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<div class="serch-ittem">
 <div class="jimoto-search-top">
     <div class="jimoto-search">
         <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
@@ -7,13 +8,6 @@
             <input type="submit" value="検索" name="sourtNew">
         </form>
     </div>
-
-    {{-- <form action="#" class="search-form-006">
-            <label>
-                <input type="text" placeholder="キーワードを入力">
-            </label>
-            <button type="submit" aria-label="検索"></button>
-        </form> --}}
     <label class="sourtselect">
         <select name="example" class="sourtselect-box">
             <option value="sourtNew">新着順</option>
@@ -22,6 +16,7 @@
         </select>
     </label>
 </div>
+
 @if($errors->any())
 <div class="error-message text-align-center">
     <ul>
@@ -37,7 +32,7 @@
     <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}">ジャンルを指定して探す</a></div>
     <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
 </div>
-
+</div>
 
 
 <div class="jimoto-spot-content">

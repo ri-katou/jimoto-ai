@@ -197,25 +197,39 @@ $(document).ready(function () {
 
 }); 
 
-$('input[name = "image1"]').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.image1').text(file.name);
+$('input[name = "image1"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image1').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
 });
 
-$('input[name = "image2"]').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.image2').text(file.name);
+$('input[name = "image2"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image2').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
 });
 
-$('input[name = "image3"]').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.image3').text(file.name);
+
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
 });
 
-$('input[name = "image4"]').on('change', function () {
-    let file = $(this).prop('files')[0];
-    $('.image4').text(file.name);
+$('input[name = "image3"]').on('change', function (e) {
+    let file = new FileReader();
+    file.onload = function (e) {
+        $('.image3').attr('src', e.target.result);
+    }
+    file.readAsDataURL(e.target.files[0]);
 });
+
 
 
 //ここまでJquery

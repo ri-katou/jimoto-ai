@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-
+<div class="serch-ittem">
 <div class="jimoto-search-top">
   <div class="jimoto-search">
     <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
@@ -25,6 +25,7 @@
   <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
   <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
   <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
 </div>
 
 
@@ -60,7 +61,7 @@
         var latlng = new google.maps.LatLng(lat, lng);
 
         let map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
+          zoom: 10,
           center: latlng
         });
         var marker = new google.maps.Marker({
@@ -84,7 +85,7 @@
         alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
         var latlng = new google.maps.LatLng(35.6812405, 139.7649361); //東京駅
         var map = new google.maps.Map(document.getElementById('maps'), {
-          zoom: 10,
+          zoom: 8,
           center: latlng
         });
       }

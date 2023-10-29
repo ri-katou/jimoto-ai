@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-
+<div class="serch-ittem">
 <div class="jimoto-search-top">
   <div class="jimoto-search">
     <form action="{{ route('keyword.search') }}" method="get" class="serchForm container">
@@ -25,6 +25,7 @@
   <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#aria">エリアを指定して探す</a></div>
   <div class="janru-search"><a class="btn-gray" href="{{ route('spot.filter') }}#genre">ジャンルを指定して探す</a></div>
   <div class="map-search"><a class="btn-gray" href="{{ route('spot.map') }}">マップから探す</a></div>
+</div>
 </div>
 
 

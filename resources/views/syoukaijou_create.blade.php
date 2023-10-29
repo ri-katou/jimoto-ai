@@ -5,13 +5,12 @@
     <div class="syoukaijou-daimei yu-sei underline-black">紹介状作成</div>
     <div class="return">戻る</div>
   </div>
-  <div class="syoukaijou-create">
     <form action="{{ route('preview.edit') }}" method="post" enctype="multipart/form-data">
       @csrf
       <div class="syoukaijou-title">
 
         <div class="syoukaijou-title-daimei">
-          <div class="yusei">タイトル入力<font color="red">(必須)<font color="def">
+          <div class="yusei">タイトル入力<span class="red">(必須)</span>
           </div>
         </div>
         @if($errors->any())
@@ -26,7 +25,7 @@
         <div class="create-form"><input class="form" type="text" name="title" id="" value="{{ old('title') }}"></div>
       </div>
       <div class="syoukaijou-main">
-        <div class="syoukaijou-honbun">本文<font color="red">(必須)<font color="def">
+        <div class="syoukaijou-honbun">本文<span class="red">(必須)</span>
         </div>
         @if($errors->any())
         <div class="error-message">
@@ -39,8 +38,7 @@
         @endif
         <div class="form-text"><textarea class="create-textarea" name="main">{{ old('main') }}</textarea></div>
       </div>
-      <div class="syoukaijou-view">スポットビュー<font color="red">(１枚必須)</font>
-        <font color="def"></font>
+      <div class="syoukaijou-view">スポットの写真<span class="red">(１枚必須)</span>
       </div>
       @if($errors->any())
       <div class="error-message">
@@ -56,7 +54,7 @@
           <label>
           <img class="image1" accept="image/*" src="/image/noimage.jpg">
             <div class="pic-label">
-              <input type="file" name="image1" accept="image/*">ファイルを選択<font color="red">(必須)</font><br>
+              <input type="file" name="image1" accept="image/*">ファイルを選択<span class="red">(必須)</span>
             </div>
           </label>
         </div>
@@ -137,7 +135,7 @@
       </div>
       <div class="syoukaijou-supot">
         <div class="syoukaijou-supot-title">スポット情報</div>
-        <div class="syoukaijou-supot-name">スポット名、店名(必須)</div>
+        <div class="syoukaijou-supot-name">スポット名、店名<span class="red">(必須)</span></div>
         @if($errors->any())
         <div class="error-message">
           <ul>
@@ -173,10 +171,9 @@
       </div>
 
       <div class="syoukaijou-bottom">
-        <div class="return">戻る</div>
         <div class="syoukaijou-pic-button"><input class="btn-daidai" type="submit" value="投稿する"></div>
+        <div class="return">戻る</div>
       </div>
     </form>
-  </div>
 </div>
 @endsection

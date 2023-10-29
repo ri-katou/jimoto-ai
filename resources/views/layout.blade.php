@@ -43,7 +43,7 @@
                 </form>
                 </div>
                 <div class="header-btn">
-                    <a class="btn-orange header-create-btn" href="{{route('syoukaijou.create')}}">紹介状の作成</a><br>
+                    <a class="btn-orange header-create-btn" href="{{route('syoukaijou.create')}}">紹介状の作成</a>
                     <a class="btn-green header-serch-btn" href="{{route('spot.search')}}">紹介状の発見</a>
                 </div>
             </nav>

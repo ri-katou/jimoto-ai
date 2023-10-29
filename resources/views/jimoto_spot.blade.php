@@ -8,13 +8,6 @@
             <input type="submit" value="検索" name="sourtNew">
         </form>
     </div>
-
-    {{-- <form action="#" class="search-form-006">
-            <label>
-                <input type="text" placeholder="キーワードを入力">
-            </label>
-            <button type="submit" aria-label="検索"></button>
-        </form> --}}
     <label class="sourtselect">
         <select name="example" class="sourtselect-box">
             <option value="sourtNew">新着順</option>

@@ -50,7 +50,6 @@ li {
     background-color: #535753;
     cursor: pointer;
     border-radius: 40px 40px;
-
 }
 input[type="file"] {
     display: none;
@@ -184,7 +183,7 @@ input[type="file"] {
 .jimoto-select {
     background-color: transparent;
     border: 1px solid #eaff00;
-    color: #00132C;
+    color: #00132c;
     font-size: 24px;
     font-weight: 700;
     line-height: 24px;
@@ -402,7 +401,7 @@ textarea{
 .sourtselect::before,
 .sourtselect::after {
     position: absolute;
-    content: '';
+    content: "";
     pointer-events: none;
 }
 
@@ -413,7 +412,7 @@ textarea{
     height: 2em;
     border-radius: 0 3px 3px 0;
     background-color: #fdc709a3;
-    content: '';
+    content: "";
 }
 
 .sourtselect::after {
@@ -425,7 +424,7 @@ textarea{
     height: 6px;
     border-bottom: 3px solid #fff;
     border-right: 3px solid #fff;
-    content: '';
+    content: "";
 }
 
 .sourtselect select {
@@ -434,7 +433,7 @@ textarea{
     -moz-appearance: none;
     width: 230px;
     height: 2em;
-    padding: .4em 3.6em .4em .8em;
+    padding: 0.4em 3.6em 0.4em 0.8em;
     border: 2px solid #d9d9d9;
     border-radius: 3px;
     color: #333333;
@@ -787,7 +786,7 @@ footer {
 .syoukaijou-card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 39.5px;
+    gap: 43px 21.5px;
 }
 
 .dummy {
@@ -1174,7 +1173,6 @@ footer {
     justify-content: right;
 }
 
-
 .preview-main {
     display: flex;
     justify-content: left;
@@ -1245,7 +1243,6 @@ footer {
 }
 
 .syoukaijou-sam {
-    width: 350px;
     height: 250px;
     border-radius: 20px;
     background: #fff;
@@ -1282,8 +1279,8 @@ footer {
 
 .preview-pic1-sam img {
     margin-left: 10%;
-    height: 100px;
-    width: 100px;
+    height: 87.5px;
+    width: 90px;
 }
 
 .preview-main-sam {
@@ -1391,11 +1388,10 @@ footer {
 .jimoto-search input[type="submit"]::after {
     width: 20px;
     height: 20px;
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E");
     background-repeat: no-repeat;
-    content: '';
+    content: "";
 }
-
 
 .janru-area-search {
     display: flex;
@@ -1479,23 +1475,11 @@ footer {
     justify-content: center;
 }
 
-.syoukaijougrit {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 30px 0;
-}
-
-.post-grid {
-    width: 350px;
-    height: 250px;
-}
-
 .list-head {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 388px;
+    width: 33.333%;
     height: 5rem;
     flex-shrink: 0;
     border-radius: 30px 50px 0px 0px;
@@ -1530,6 +1514,9 @@ footer {
 
 .post-head-font {
     font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .post-head-img {
@@ -1557,8 +1544,8 @@ footer {
 }
 
 .free-svg {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
 }
 
 /* end 投稿した紹介状、いいね、行ったよ一覧(post_all_list)*/
@@ -1779,7 +1766,6 @@ footer {
 /* タブレットサイズ */
 
 @media screen and (max-width: 959px) {
-
     /* 959px以下に適用されるCSS（タブレット用） */
     .preview-syoukaijou-top {
         display: block;
@@ -1802,7 +1788,9 @@ footer {
     }
 
     .syoukaijou-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 30px;
+        gap: 20px 74px;
     }
 
     .syou {
@@ -1812,8 +1800,29 @@ footer {
     .spot-map {
         margin: 0 auto;
     }
-}
 
+    .hidden-head {
+        width: 19%;
+    }
+    .center-head {
+        width: 61%;
+    }
+
+    .post-grid {
+        width: 350px;
+        height: 250px;
+    }
+
+    .post-head-font {
+        font-size: 1rem;
+    }
+}
+/* 紹介状　二列表示の限界 */
+@media screen and (max-width: 729px) {
+    .syoukaijou-card {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* スマホサイズ */
 @media screen and (max-width: 480px) {
@@ -1849,7 +1858,6 @@ footer {
         display: block;
         margin-right: 1rem;
     }
-
     .hamberger-menu :hover {
         cursor: pointer;
     }
@@ -1875,6 +1883,7 @@ footer {
         margin-bottom: 1rem;
     }
 
+
     /* 共通 */
     .serch-ittem {
         width: 95vw;
@@ -1891,7 +1900,6 @@ footer {
     .jimoto-spot-content {
         grid-template-columns: 1fr;
     }
-
     /*TOPページ*/
     .top-logo img {
         margin-left: -45%;
@@ -1958,6 +1966,7 @@ footer {
     }
 
     /*TOPページ終了*/
+
     /* プロフィール */
     .profile-container {
         display: block;
@@ -2063,3 +2072,4 @@ footer {
         max-width: 80vw;
     }
 }
+

@@ -37,10 +37,8 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         // if (App::environment('production','staging')) {
-
-        // URL::forceScheme('https');
-
-        // }
+            URL::forceScheme('https');
+            // }
     }
 
     /**

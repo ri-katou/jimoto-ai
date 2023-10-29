@@ -209,6 +209,8 @@ input[type="file"] {
 
 .btn-orange:active {
     box-shadow: none;
+    background-color: #ffffff;
+    border:  1px solid #fdc709a3;
 }
 
 .btn-green {
@@ -225,6 +227,8 @@ input[type="file"] {
 
 .btn-green:active {
     box-shadow: none;
+    background-color: #ffffff;
+    border: linear-gradient(rgba(18, 241, 40, 1), rgba(0, 227, 174, 1)) 1px solid;
 }
 
 .btn-delete {

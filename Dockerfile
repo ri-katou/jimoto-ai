@@ -53,20 +53,20 @@ RUN composer update
 # ここを追記（マイグレーションの実行）
 # --force オプションで、対話無しで実行
 
-# RUN php artisan migrate
+RUN php artisan migrate
 
 # RUN php artisan migrate:fresh --force
 
 RUN composer dump-autoload
 
 # シーダーの実行
-# RUN php artisan db:seed --class=AreasTableSeeder
+RUN php artisan db:seed --class=AreasTableSeeder
 
-# RUN php artisan db:seed --class=CategoriesTableSeeder
+RUN php artisan db:seed --class=CategoriesTableSeeder
 
-# RUN php artisan db:seed --class=GenresTableSeeder
+RUN php artisan db:seed --class=GenresTableSeeder
 
-# RUN php artisan db:seed --class=MunicipalitiesTableSeeder
+RUN php artisan db:seed --class=MunicipalitiesTableSeeder
 
 RUN php artisan storage:link
 

@@ -88,5 +88,4 @@
   <!-- <div><input type="submit" class="btn-green" value="OK"></div> -->
 </form>
 
-<!-- <div class="area-photo"><img src="/image/gunma.png" class="area-img"></div> -->
 @endsection

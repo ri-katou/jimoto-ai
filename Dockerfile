@@ -60,13 +60,13 @@ RUN php artisan migrate
 RUN composer dump-autoload
 
 # シーダーの実行
-# RUN php artisan db:seed --class=AreasTableSeeder
+RUN php artisan db:seed --class=AreasTableSeeder
 
-# RUN php artisan db:seed --class=CategoriesTableSeeder
+RUN php artisan db:seed --class=CategoriesTableSeeder
 
-# RUN php artisan db:seed --class=GenresTableSeeder
+RUN php artisan db:seed --class=GenresTableSeeder
 
-# RUN php artisan db:seed --class=MunicipalitiesTableSeeder
+RUN php artisan db:seed --class=MunicipalitiesTableSeeder
 
 RUN php artisan storage:link
 

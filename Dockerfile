@@ -68,6 +68,8 @@ RUN php artisan db:seed --class=GenresTableSeeder
 
 RUN php artisan db:seed --class=MunicipalitiesTableSeeder
 
+RUN composer require league/flysystem-aws-s3-v3
+
 RUN php artisan storage:link
 
 RUN php artisan view:clear
